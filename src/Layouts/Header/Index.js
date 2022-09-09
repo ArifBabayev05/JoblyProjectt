@@ -10,6 +10,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from 'react-redux'
 import { SET_ACTIVE_USER, REMOVE_ACTIVE_USER } from '../../Redux/Slice/authSlice';
 import { ShowOnLogin, ShowOnLogout } from '../HiddenLinks/HiddenLinks';
+import { ShowOnAdmin } from '../HiddenLinks/Router';
 
 function Index() {
   const navigate = useNavigate();
@@ -86,6 +87,10 @@ function Index() {
 
               </ShowOnLogin>
             </div>
+              <ShowOnAdmin>
+                <a>Hi Admin</a>
+                
+              </ShowOnAdmin>
 
 
 

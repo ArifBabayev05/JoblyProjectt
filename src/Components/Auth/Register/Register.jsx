@@ -80,7 +80,7 @@ function Register() {
                     Hesabınız Var?
                     <Link style={{ 'textDecoration': 'none' }} to='/login'>&nbsp; &nbsp;Daxil Olun</Link>
                   </p>
-                  {loading && <Loader />}
+                  {loading && <p>Yüklənir...</p>}
                   <input type="submit" value="Daxil Olun" class="login " />
 
                   <span class="d-block text-left my-4 text-muted"> </span>

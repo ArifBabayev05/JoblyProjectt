@@ -1,12 +1,27 @@
-// import React from 'react'
-// import { Navigate, Outlet } from 'react-router-dom'
+import {useSelector} from 'react-redux' 
+import { Route } from 'react-router-dom'
+import Admin from '../../Pages/Admin'
+import { selectEmail } from '../../Redux/Slice/authSlice'
 
-// const PrivateRoutes = () => {
-//     let auth = {'user':'arif@ba.com'}
-//     console.log(auth);
-//     return (
-//         auth.user ? <Outlet/> : <Navigate to='/login'/>
-//       )
-// }
+export const ShowOnAdmin = ({children}) => {
+    const isLoggedIn = useSelector(selectEmail)
 
-// export default PrivateRoutes
+    if(isLoggedIn == 'admin@gmail.com'){
+        return children;
+
+    }
+    
+    //    else{
+    //     // return null
+    //    }
+}
+export const ShowOnUser = ({children}) => {
+    const isLoggedIn = useSelector(selectEmail)
+
+    if(isLoggedIn){
+        return children;
+    }
+    
+        // return null;
+}
+

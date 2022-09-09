@@ -8,6 +8,7 @@ import { auth } from '../Firebase/config'
 import Loader from '../../Jobs/Loader'
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import image from '../../../Assets/Images/Hero/l.svg'
+import { Navigate, Outlet } from "react-router-dom";
 
 
 
@@ -33,53 +34,28 @@ function Login() {
 
     }
     const loginUser = (e) => {
-        
+
         e.preventDefault();
         setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 toast.success("Uğurla Tamamlandı!");
                 const user = userCredential.user;
-                console.log(user);
+                console.log(user.email);
                 setLoading(false);
                 navigate("/")
-
+                
             })
             .catch((error) => {
                 setLoading(false);
                 toast.error(error.message);
             });
+
+
+       
     }
 
     return (
-        // <section className='container text-center'>
-        //     <div className='form'>
-        //         <h2>Login</h2>
-        //         <form onSubmit={loginUser}>
-        //             <div>
-        //                 <input type='text' className='m-2' placeholder='Emaili daxil edin.'
-        //                     required value={email} onChange={(e) => setEmail(e.target.value)} />
-        //                 <input type='text' className='m-2' placeholder='Şifrəni daxil edin.'
-        //                     required value={password} onChange={(e) => setPassword(e.target.value)} />
-        //             </div>
-        //             {loading && <Loader />}
-        //             <button  className='btn btn-primary'>Daxil Olun</button>
-        //             <div className='links'>
-        //                 <Link to='/reset'>
-        //                     Şifrəni Yenilə
-        //                 </Link>
-        //             </div>
-        //             <p>-- və ya --</p>
-        //         </form>
-        //         <ToastContainer />
-        //         <button type='submit' onClick={signInWithGoogle} className='btn btn-danger'> Google ilə Daxil Olun</button>
-        //         <p>
-        //             Hesabınız Yoxdur?
-        //             <Link to='/register'>Qeydiyyatdan Keçin</Link>
-        //         </p>
-        //     </div>
-        // </section>
-
         <div class="content">
             <div class="container">
                 <div class="row">
@@ -111,11 +87,11 @@ function Login() {
                                             Şifrəni Yenilə
                                         </Link>
                                     </div>
-                                        <p className='mb-4'>
-                                            Hesabınız Yoxdur?
-                                            <Link style={{'textDecoration':'none'}} to='/register'>&nbsp; &nbsp;Qeydiyyatdan Keçin</Link>
-                                        </p>
-                                    {loading && <Loader />}
+                                    <p className='mb-4'>
+                                        Hesabınız Yoxdur?
+                                        <Link style={{ 'textDecoration': 'none' }} to='/register'>&nbsp; &nbsp;Qeydiyyatdan Keçin</Link>
+                                    </p>
+                                    {loading && <p>Yüklənir...</p>}
                                     <input type="submit" value="Daxil Olun" class="login " />
 
                                     <span class="d-block text-left my-4 text-muted">&mdash; &mdash; və ya &mdash; &mdash; </span>

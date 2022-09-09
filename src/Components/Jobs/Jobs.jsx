@@ -98,7 +98,7 @@ function Jobs() {
       <button className='search__submit' type='submit'>
                   <img src='https://www.citypng.com/public/uploads/small/116400840186bmo0mkghcdq8hn99wmpbh9wrgbytghidisi7e41vegbclccrb6kg9hrk0ebgqrpc5ezz2tjtkvsfsvk7yfbakowxbpvrzsakde3.png'   alt='some value'/>
       </button>
-
+    {/* <button onClick={()=>sorting("salary")}>Maaşa görə sırala</button> */}
     </form>
      </div>
 
