@@ -39,14 +39,15 @@ function App() {
           <Route path='register' element={<Register/>}/>
           <Route path='reset' element={<Reset/>}/>
           <Route path='/*' element={<Error/>}/>
-          <Route path='/admin' element={<Admin/>}/>
 
-          
+          <Route path='/admin' element={<Admin/>}/>
          
           
+        
         </Routes>
       <Footer/>
       </BrowserRouter>
+     
     </div>
   );
 }

@@ -14,10 +14,10 @@ export const Footer = () => {
                 <div className='footer__container container'>
                     <div className='footer__logo'>
                         <a href='/#'>
-                            <img alt='Value' src={logo}/>
+                            <img alt='Value' src={logo} />
                         </a>
-                    
-                       
+
+
                     </div>
 
                     <nav className='nav'>
@@ -35,24 +35,30 @@ export const Footer = () => {
 
                     <div className='footer__lang'>
                         <div className='social__button'>
-                            <a href='https://www.instagram.com/' rel="noreferrer" target="_blank" className='me-4'>
-                                
-                                <div className='social'>
-                                    <img src={instagram} alt='logo'></img>
-                                    
+                            <div className='row'>
+                                <div className='col-6'>
+                                    <a href='https://www.instagram.com/' rel="noreferrer" target="_blank" className='me-4'>
+
+                                        <div className='social'>
+                                            <img src={instagram} alt='logo'></img>
+
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
-                            <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/'>
-                                <div className='social'>
-                                    <img src={linkedin} alt='logo'></img>
-                    
+                                <div className='col-6'>
+                                    <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/'>
+                                        <div className='social'>
+                                            <img src={linkedin} alt='logo'></img>
+
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
+                            </div>
                         </div>
 
                     </div>
                 </div>
             </footer>
         </div>
-      );
+    );
 };

@@ -73,6 +73,7 @@ function Jobs() {
     content = 
     products.data.filter(product=>{
       if (query === "") {
+        
         return product;
       } else if(product.name.toLowerCase().includes(query.toLowerCase())) {
         
@@ -82,6 +83,7 @@ function Jobs() {
         
         return product;
       }
+    
     }).map((product)=>
     <div key={product.id}>
       <JobCard product={product}/>
