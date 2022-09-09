@@ -1,0 +1,83 @@
+.card {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  margin: 30px 0 30px 0;
+  border: none;
+  background-color: #F8F8F9;
+}
+.card .card-header {
+  background-color: var(--pink);
+  padding: 50px 50px 0 50px;
+}
+.card .card-header p {
+  color: white;
+}
+.card .card-header .d-flex .headerImage {
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.card .card-header .d-flex .headerImage img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.card .card-header .d-flex h1 {
+  color: white;
+  align-items: center;
+  display: flex;
+}
+.card .card-header .salaryInfo {
+  display: grid;
+}
+.card .card-header .salaryInfo p {
+  margin-bottom: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: rgba(242, 239, 254, 0.337254902);
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-weight: 500;
+  font-size: 12px;
+}
+.card .apply {
+  justify-content: flex-end;
+  display: flex;
+  top: -20px;
+  position: relative;
+  margin-right: 60px;
+}
+.card .apply button {
+  background-color: rgb(93, 56, 255);
+  border: 1.5px solid #F8F8F9;
+  color: white;
+}
+.card .apply :hover {
+  background-color: rgb(114, 82, 255);
+  border: 1.5px solid #F8F8F9;
+  color: white;
+}
+.card .apply :focus {
+  outline: none;
+}
+.card .card-body .top_infos p {
+  margin-right: 20px;
+  margin-left: 20px;
+  color: #525252;
+  display: list-item;
+}
+.card .card-body .body_infos .works p {
+  display: list-item;
+  color: #525252;
+}
+.card .card-body .body_infos .skills p {
+  display: list-item;
+  margin-left: 20px;
+}
+.card .card-footer {
+  background-color: #F8F8F9;
+}
+.card .card-footer h6 {
+  top: 5px;
+  margin-right: 30px;
+  position: relative;
+}/*# sourceMappingURL=Home.css.map */

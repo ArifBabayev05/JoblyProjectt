@@ -1,0 +1,21 @@
+@import "../Colors.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar .container img {
+  width: 80px;
+}
+.navbar .container form .search a {
+  text-decoration: none;
+  font-weight: 500;
+  color: rgb(38, 38, 38);
+}
+.navbar .container form a {
+  font-weight: 500;
+  text-decoration: none;
+  font-weight: 500;
+  color: rgb(38, 38, 38);
+}/*# sourceMappingURL=Header.css.map */

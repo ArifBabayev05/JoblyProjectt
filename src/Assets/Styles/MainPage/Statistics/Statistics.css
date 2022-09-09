@@ -1,0 +1,22 @@
+@import "../../Colors.css";
+.col .card {
+  border: none;
+}
+.col .card .card-body {
+  margin: 0 !important;
+  padding: 24px 48px !important;
+  background-color: rgba(242, 244, 250, 0.4392156863);
+  border-radius: 16px;
+}
+.col .card .card-body .card-title {
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 80px;
+  color: var(--pink);
+}
+.col .card .card-body .card-text {
+  margin-top: 12px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 36px;
+}/*# sourceMappingURL=Statistics.css.map */

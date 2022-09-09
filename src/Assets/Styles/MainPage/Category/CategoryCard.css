@@ -1,0 +1,40 @@
+.cardd .category_card {
+  margin-bottom: 50px;
+  padding: 20px 10px 5px;
+  transition: all 0.4s;
+  border-radius: 7px;
+  background-color: #fff;
+}
+.cardd .category_card .cb-header {
+  text-align: center;
+}
+.cardd .category_card .cb-header img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+.cardd .category_card .cb-header .job_count {
+  text-align: center;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+.cardd .category_card .cb-body {
+  text-align: center;
+}
+.cardd .category_card .cb-body h3 {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
+}
+.cardd .category_card .cb-body p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.cardd :hover {
+  background-color: var(--pinkBG);
+  color: white;
+}/*# sourceMappingURL=Categorycard.css.map */

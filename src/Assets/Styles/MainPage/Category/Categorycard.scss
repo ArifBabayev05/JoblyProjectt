@@ -1,0 +1,51 @@
+.cardd {
+    .category_card {
+        margin-bottom: 50px;
+        padding: 20px 10px 5px;
+        transition: all 0.4s;
+        border-radius: 7px;
+        background-color: #fff;
+
+        .cb-header {
+            text-align: center;
+
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 10px;
+            }
+
+            .job_count {
+                text-align: center;
+                display: inline-block;
+                background: rgba(0, 0, 0, 0.08);
+                padding: 5px 8px;
+                border-radius: 4px;
+                // color: #333;
+
+            }
+        }
+
+        .cb-body {
+            text-align: center;
+
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                text-align: center;
+                margin-top: 20px;
+                // color: #372354;
+            }
+            p {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+    }:hover{
+        // transition: 0.2s all;
+        background-color: var(--pinkBG);
+        color: white;
+    }
+}

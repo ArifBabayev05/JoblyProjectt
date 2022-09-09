@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.image img {
+  width: 100%;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}/*# sourceMappingURL=Image.css.map */

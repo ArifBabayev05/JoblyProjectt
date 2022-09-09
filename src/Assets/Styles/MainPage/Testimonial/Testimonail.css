@@ -1,0 +1,18 @@
+@import "../../Colors.css";
+.info img {
+  width: 100px;
+}
+.info p {
+  color: var(--gray);
+  width: 80%;
+}
+.info a {
+  display: flex;
+  margin-top: 80px;
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+}
+.info a:hover {
+  color: var(--pink);
+}/*# sourceMappingURL=Testimonail.css.map */

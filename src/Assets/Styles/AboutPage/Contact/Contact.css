@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Title h1 {
+  font-size: 68px;
+  font-weight: 700;
+  line-height: 78px;
+  color: black;
+}
+
+.infos {
+  margin-top: 50px;
+}
+.infos .add {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.infos .add h3 {
+  font-size: 28px;
+  line-height: 48px;
+  color: #2C2C2C;
+  font-weight: 400;
+}
+.infos .add a {
+  cursor: pointer;
+  text-decoration: underline;
+  position: relative;
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 500;
+  color: #785BF4;
+  opacity: 0.9;
+}
+.infos .add a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  position: relative;
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 500;
+  color: #785BF4;
+  opacity: 1;
+}/*# sourceMappingURL=Contact.css.map */

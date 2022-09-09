@@ -1,0 +1,29 @@
+@import "../../Colors.css";
+
+
+.col {
+    .card {
+        border: none;
+
+        .card-body {
+            margin: 0 !important;
+            padding: 24px 48px !important;
+            background-color: #f2f4fa70;
+            border-radius: 16px;
+
+            .card-title {
+                font-weight: 600;
+                font-size: 72px;
+                line-height: 80px;
+                color: var(--pink);
+            }
+
+            .card-text {
+                margin-top: 12px;
+                font-weight: 500;
+                font-size: 22px;
+                line-height: 36px;
+            }
+        }
+    }
+}

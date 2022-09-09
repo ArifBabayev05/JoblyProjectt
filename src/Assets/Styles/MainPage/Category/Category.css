@@ -1,0 +1,15 @@
+.category {
+  margin-top: 100px;
+  text-align: center;
+}
+.category .fade-up {
+  font-size: 40px;
+  font-weight: 700 !important;
+}
+.category hr {
+  width: 200px;
+  height: 1px;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+}/*# sourceMappingURL=Category.css.map */

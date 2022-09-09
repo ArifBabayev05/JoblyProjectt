@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.text {
+    font-size: 100px;
+}
+
+.searchJob {
+    border-radius: 10px;
+    position: relative;
+
+    .searchBar {
+        position: relative;
+        font-size: inherit;
+        width: 250px;
+        height: 64px;
+
+        border-radius: 40px;
+        background-color: #EDF3FA;
+        border: none;
+        outline: none;
+
+        font-weight: 300;
+
+    }
+
+    button {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        width: 48px;
+        height: 48px;
+        border-radius: 48px;
+        background-color: #785BF4;
+        border: none;
+
+        img {
+            vertical-align: baseline;
+            width: 30px;
+            margin-top: 5px;
+        }
+    }
+}
+
+
+
+
+
+
+.aa {
+    .myCard {
+        width: 100%;
+        border-radius: 12px;
+        position: relative;
+        align-items: center;
+
+        img {
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            border-radius: 50px;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        h3 {
+            margin-left: 100px;
+            color: white;
+            text-decoration: none;
+
+        }
+
+        .deadline {
+            color: rgba(0, 0, 0, 0.904);
+            margin-right: 25px;
+            border-radius: 10px;
+            padding: 2px;
+
+            background-color: rgba(224, 200, 255, 0.799);
+            position: absolute;
+
+            left: 100px;
+            top: 58px;
+
+            p {
+                display: contents;
+            }
+
+        }
+
+        .viewMore {
+            margin-right: 25px;
+            border-radius: 6px;
+            padding: 2px;
+            background-color: rgba(255, 255, 255, 0.923);
+            position: absolute;
+
+            right: 20px;
+
+            a {
+                color: var(--pink);
+
+                text-decoration: none;
+                display: contents;
+            }
+
+        }
+
+
+    }
+
+}

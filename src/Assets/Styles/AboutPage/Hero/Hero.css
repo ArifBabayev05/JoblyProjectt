@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about .MainText h1 {
+  font-size: 60px;
+  font-weight: 700;
+  font-size: 62px;
+  line-height: 72px;
+  font-weight: 600;
+  color: #2C2C2C;
+}
+.about .MainText h1 span {
+  color: var(--pink);
+}
+.about .subHeading .text {
+  justify-content: space-between;
+  display: flex;
+  position: relative;
+  margin-top: 45px;
+  display: flex;
+}
+.about .subHeading .text p {
+  width: 46%;
+  position: relative;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 300;
+}
+.about .subHeading .text p strong {
+  font-weight: 700;
+}
+
+.about .subHeading .text p:first-child::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 120%;
+  top: -10%;
+  right: -9%;
+  border: 1px solid #2C2C2C;
+}
+
+.text p {
+  width: 46%;
+  position: relative;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 300;
+}
+
+/*# sourceMappingURL=Hero.css.map *//*# sourceMappingURL=Hero.css.map */
