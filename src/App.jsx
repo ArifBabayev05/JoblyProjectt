@@ -12,6 +12,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from './Layouts/Header/Index'
 import Error from './Pages/ErrorPage'
+import './App.css'
 // import Header from './Layouts/Header/Header'
 
 import {Footer} from './Layouts/Footer/Index'
