@@ -75,22 +75,23 @@ function Index() {
               <ShowOnLogin>
 
                 <div class="dropdown ms-3">
-                  <a style={{'cursor':'pointer'}} class="dropdown-toggle" href='/#'  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a style={{ 'cursor': 'pointer' }} class="dropdown-toggle" href='/#' id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Profilim
                   </a>
+
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="/#">Salam {displayname}</a></li>
                     <li><a class="dropdown-item" href="/#"> Tənzimləmələr</a></li>
+                    <ShowOnAdmin>
+                      <li><a class="dropdown-item" href="/admin"> Admin Panel</a></li>
+                    </ShowOnAdmin>
                     <li><a class="dropdown-item" href="/#" onClick={logoutUser} >Çıxış</a></li>
                   </ul>
                 </div>
 
               </ShowOnLogin>
             </div>
-              <ShowOnAdmin>
-                <a>Hi Admin</a>
-                
-              </ShowOnAdmin>
+
 
 
 
@@ -98,7 +99,7 @@ function Index() {
               <ShowOnLogout>
                 <Link to='/login'>Daxil Olun</Link>
               </ShowOnLogout>
-             
+
               <ToastContainer />
 
             </div>

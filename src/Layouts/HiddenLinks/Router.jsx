@@ -10,15 +10,11 @@ export const ShowOnAdmin = ({children}) => {
         return children;
 
     }
-    
-    //    else{
-    //     // return null
-    //    }
 }
 export const ShowOnUser = ({children}) => {
     const isLoggedIn = useSelector(selectEmail)
 
-    if(isLoggedIn){
+    if(!(isLoggedIn == 'admin@gmail.com')){
         return children;
     }
     
