@@ -19,6 +19,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+// import PrivateRoutes from './Layouts/HiddenLinks/Router';
 
 function App() {
 
@@ -38,8 +39,6 @@ function App() {
           <Route path='register' element={<Register/>}/>
           <Route path='reset' element={<Reset/>}/>
           <Route path='/*' element={<Error/>}/>
-          
-
           
         </Routes>
       <Footer/>

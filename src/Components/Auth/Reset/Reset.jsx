@@ -51,7 +51,7 @@ function Reset() {
         <div className="row">
 
         <div className="col-md-6 d-flex justify-content-center mb-5">
-            <img src={image} alt="Image" className="img-fluid" />
+            <img src={image} alt="Imaasdge" className="img-fluid" />
           </div>
           <div className="col-md-6 contents">
             <div className="row justify-content-center">
@@ -84,6 +84,7 @@ function Reset() {
 
 
                 </form>
+                <ToastContainer/>
               </div>
             </div>
 

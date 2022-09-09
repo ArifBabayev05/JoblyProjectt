@@ -35,14 +35,14 @@ export const Footer = () => {
 
                     <div className='footer__lang'>
                         <div className='social__button'>
-                            <a href='https://www.instagram.com/' target="_blank" className='me-4'>
+                            <a href='https://www.instagram.com/' rel="noreferrer" target="_blank" className='me-4'>
                                 
                                 <div className='social'>
                                     <img src={instagram} alt='logo'></img>
                                     
                                 </div>
                             </a>
-                            <a target="_blank" href='https://www.linkedin.com/'>
+                            <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/'>
                                 <div className='social'>
                                     <img src={linkedin} alt='logo'></img>
                     

@@ -22,6 +22,7 @@ function Login() {
         signInWithPopup(auth, provider)
             .then((result) => {
                 // const user = result.user;
+                // console.log(user);
                 toast.success("Qeydiyyat Uğurludur!")
                 navigate("/")
             }).catch((error) => {
@@ -32,6 +33,7 @@ function Login() {
 
     }
     const loginUser = (e) => {
+        
         e.preventDefault();
         setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
@@ -82,7 +84,7 @@ function Login() {
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 d-flex justify-content-center mb-5">
-                        <img src={image} alt="Image" class="img-fluid" />
+                        <img src={image} alt="Imasdage" class="img-fluid" />
                     </div>
                     <div class="col-md-6 contents">
                         <div class="row justify-content-center">
@@ -124,13 +126,14 @@ function Login() {
                                         <div class="google-btn">
 
                                             <div class="google-icon-wrapper">
-                                                <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                                                <img class="google-icon" alt='valur' src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                                             </div>
 
                                             <p type='submit' onClick={signInWithGoogle} class="btn-text"><b>Google ilə daxil olun</b></p>
                                         </div>
                                     </div>
                                 </form>
+                                <ToastContainer />
                             </div>
                         </div>
 

@@ -14,7 +14,7 @@ function Register() {
   const [password, setPassword] = useState("")
   const [cPassword, setCPassword] = useState("")
   const navigate = useNavigate()
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   // setLoading(true);
   const registerUser = (e) => {
     e.preventDefault();
@@ -29,7 +29,9 @@ function Register() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         toast.success("Qeydiyyat Uğurludur!")
-        const user = userCredential.user;
+        ////////////////////////////////////////////////////////////////////////////////
+        // const user = userCredential.user;
+        ////////////////////////////////////////////////////////////////////////////////
         setLoading(false);
         // console.log(user);
         navigate('/')
@@ -78,19 +80,21 @@ function Register() {
                     Hesabınız Var?
                     <Link style={{ 'textDecoration': 'none' }} to='/login'>&nbsp; &nbsp;Daxil Olun</Link>
                   </p>
+                  {loading && <Loader />}
                   <input type="submit" value="Daxil Olun" class="login " />
 
                   <span class="d-block text-left my-4 text-muted"> </span>
 
 
                 </form>
+                <ToastContainer/>
               </div>
             </div>
 
           </div>
 
           <div class="col-md-6 d-flex justify-content-center mb-5">
-            <img src={image} alt="Image" class="img-fluid" />
+            <img src={image} alt="Imagsdae" class="img-fluid" />
           </div>
 
         </div>

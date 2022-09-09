@@ -35,7 +35,7 @@ function Index() {
         if (user.displayName == null) {
           const u1 = user.email.substring(0, user.email.indexOf("@"));
           const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
-          console.log(uName);
+          // console.log(uName);
           setDisplayName(uName);
 
         } else {
@@ -74,7 +74,7 @@ function Index() {
               <ShowOnLogin>
 
                 <div class="dropdown ms-3">
-                  <a style={{'cursor':'pointer'}} class="dropdown-toggle"  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a style={{'cursor':'pointer'}} class="dropdown-toggle" href='/#'  id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Profilim
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
