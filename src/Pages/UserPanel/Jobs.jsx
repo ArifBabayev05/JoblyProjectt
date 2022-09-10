@@ -1,5 +1,5 @@
 import React from 'react'
-import Home from '../Components/Jobs/Home'
+import Home from '../../Components/Jobs/Home'
 
 function Jobs() {
 

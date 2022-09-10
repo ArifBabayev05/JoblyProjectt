@@ -1,5 +1,5 @@
 import React from 'react'
-import Resett from '../Components/Auth/Reset/Reset'
+import Resett from '../../Components/Auth/Reset/Reset'
 
 function Reset() {
   return (

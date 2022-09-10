@@ -1,5 +1,5 @@
 import React from 'react'
-import Jobs from '../Components/Jobs/Jobs'
+import Jobs from '../../Components/Jobs/Jobs'
 
 
 
