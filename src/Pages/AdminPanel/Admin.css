@@ -1,0 +1,9 @@
+.borderr{
+    border-top-right-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+background-color: #775bf4;
+    border-top: 1px solid #785BF4;
+    border-bottom: 1px solid #785BF4;
+    border-right: 1px solid #785BF4;
+
+}
