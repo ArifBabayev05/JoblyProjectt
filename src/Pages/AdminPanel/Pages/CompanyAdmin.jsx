@@ -37,6 +37,12 @@ const CompanyAdmin = () => {
                         <div class="row flex-nowrap">
                             <Sidebar />
                             <div class="col py-3">
+                                <div className='row'>
+                                    <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
+                                        <h3>Şirkətlər</h3>
+                                        <button  className='btn btn-success position-relative'>Şirkət Əlavə Et</button>
+                                    </div>
+                                </div>
                                 <div style={{ 'overflow-x': 'auto' }}>
                                     <table>
                                         <tr>

@@ -19,7 +19,7 @@ function index() {
               bir çox şirkət tərəfindən 
               görünməsi şansını əldə et.</p>
 
-          <a href='/#' className='mt-5 '>Daha çox</a>    
+          <a href='/login' className='mt-5 '>Daha çox</a>    
         </div>
         <div className='info col-lg-4'>
           <img src={info2}  alt='some value'/>
@@ -28,7 +28,7 @@ function index() {
           <p className=''>Öz şəxsi CV-ni məlumatlar hissəsinə yerləşdirərək 
     daha çox iş imkanları əldə et.</p>
 
-          <a href='/#' className='mt-5 '>Daha çox</a>    
+          <a href='/job' className='mt-5 '>Daha çox</a>    
         </div>
         <div className='info col-lg-4'>
           <img src={info1}  alt='some value'/>
@@ -36,7 +36,7 @@ function index() {
           <h3 className='mt-5 mb-4 fw-bold'>İş Axtarın</h3>
           <p className=''>Yeni iş imkanlarını kəşf edin və karyeranızda növbəti <br/> addımı atın.</p>
 
-          <a href='/#' className='mt-5'>Daha çox</a>    
+          <a href='/job' className='mt-5'>Daha çox</a>    
         </div>
       </div>
 

@@ -23,6 +23,8 @@ import {
 } from "react-router-dom";
 import VacancyAdmin from './Pages/AdminPanel/Pages/VacancyAdmin';
 import CompanyAdmin from './Pages/AdminPanel/Pages/CompanyAdmin';
+import CategoryAdmin from './Pages/AdminPanel/Pages/CategoryAdmin';
+
 
 function App() {
 
@@ -46,6 +48,8 @@ function App() {
           <Route path='/admin' element={<Admin/>}/>
           <Route path='/companyAdmin' element={<CompanyAdmin/>}/>
           <Route path='/vacancyAdmin' element={<VacancyAdmin/>}/>
+          <Route path='/categoryAdmin' element={<CategoryAdmin/>}/>
+
 
 
          

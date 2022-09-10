@@ -13,7 +13,7 @@ function Index() {
 
   //data.at(-1) last element of array
   useEffect(() => {
-    axios.get("http://localhost:35374/api/Company/getall")
+    axios.get("http://localhost:53410/api/Company/getall")
       .then(res=>setCompany(res.data.at(-1).id))
       
   })
@@ -23,7 +23,7 @@ function Index() {
     
   })
   useEffect(() => {
-    axios.get("http://localhost:35374/api/Vacancies/getall")
+    axios.get("http://localhost:53410/api/Vacancies/getall")
       .then(res=>setVacancy(res.data.at(-1).id))
 
   })

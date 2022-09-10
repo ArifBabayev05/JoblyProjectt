@@ -1,14 +1,15 @@
-import axios from 'axios'
-import React,{useState,useEffect} from 'react'
-import Loader from '../../../Components/Jobs/Loader'
-import { ShowOnAdmin, ShowOnUser } from '../../../Layouts/HiddenLinks/Router'
-import '../Admin.css'
+import React, { useState, useEffect } from 'react'
 import Sidebar from '../Sidebar/Sidebar'
+import { ShowOnAdmin, ShowOnUser } from '../../../Layouts/HiddenLinks/Router'
+import Loader from '../../../Components/Jobs/Loader'
+import axios from 'axios'
+import '../Admin.css'
 
-const VacancyAdmin = () => {
+
+const CategoryAdmin = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:53410/api/Vacancies/getall')
+        axios.get('http://localhost:53410/api/Categories/getall')
             .then(res => {
                 setData(res.data)
             }).catch(err => console.log(err))
@@ -17,13 +18,8 @@ const VacancyAdmin = () => {
         return (
             <tr>
                 <td>{data.id}</td>
-                <td>{data.name}</td>
-                <td>{data.company.name}</td>
-                <td >{data.category.name}</td>
-                <td >{data.city.name}</td>
-                <td>{data.typeOfwork}</td>
-                <td>{data.deadline.slice(0, 10)}</td>
-                <td>{data.salary}</td>
+                <td> {data.name}</td>
+                {/* <img style={{ 'width': '35px', 'height': '35px', 'border-radius': '50%' }} className='me-3' src={data.image.name} /> */}
                 <td><button className='btn text-white btn-info update'>Yenilə</button></td>
                 <td><button className='btn btn-danger delete'>Sil</button></td>
 
@@ -38,27 +34,21 @@ const VacancyAdmin = () => {
                         <div class="row flex-nowrap">
                             <Sidebar />
                             <div class="col py-3">
-                            <div className='row'>
+                                <div className='row'>
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
-                                        <h3>Vakansiyalar</h3>
-                                        <button  className='btn btn-success position-relative'>Vakansiya Əlavə Et</button>
+                                        <h3>Kateqoriyalar</h3>
+                                        <button  className='btn btn-success position-relative'>Kateqoriya Əlavə Et</button>
                                     </div>
                                 </div>
-                            <div style={{ 'overflow-x': 'auto' }}>
-                                    <table className='table-bordered '>
+                                <div style={{ 'overflow-x': 'auto' }}>
+                                    <table>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Vakansiya Adı</th>
-                                            <th>Şirkət Adı</th>
-                                            <th>Kateqoriya</th>
-                                            <th>Ünvanı</th>
-
-                                            <th>İşçi növü</th>
-                                            <th>Son Tarix</th>
-                                            <th> Maaş</th>
-
+                                            <th>Adı</th>
                                             <th className='text-info'>Yəniləmək</th>
                                             <th className='text-danger'>Silmək</th>
+
+
 
                                         </tr>
                                         {array}
@@ -78,4 +68,4 @@ const VacancyAdmin = () => {
     )
 }
 
-export default VacancyAdmin
+export default CategoryAdmin

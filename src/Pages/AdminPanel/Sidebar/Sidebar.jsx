@@ -9,7 +9,7 @@ const Sidebar = () => {
                 </a>
                 <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li className="nav-item">
-                        <a href="/#" className="nav-link align-middle px-0">
+                        <a href="/admin" className="nav-link align-middle px-0">
                             <i className="fs-4 bi-house"></i> <span className="ms-1 text-white d-none d-sm-inline">Əsas Səhifə</span>
                         </a>
                     </li>
@@ -25,26 +25,8 @@ const Sidebar = () => {
                     </li>
 
                     <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
-                            <i className="fs-4 bi-grid"></i> <span className="ms-1 d-none d-sm-inline">Products <i className="fa-solid fa-chevron-down"></i></span> </a>
-                        <ul className="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                            <li className="w-100">
-                                <a href="/#" className="nav-link px-0"> <span className="d-none d-sm-inline">Product</span> 1</a>
-                            </li>
-                            <li>
-                                <a href="/#" className="nav-link px-0"> <span className="d-none d-sm-inline">Product</span> 2</a>
-                            </li>
-                            <li>
-                                <a href="/#" className="nav-link px-0"> <span className="d-none d-sm-inline">Product</span> 3</a>
-                            </li>
-                            <li>
-                                <a href="/#" className="nav-link px-0"> <span className="d-none d-sm-inline">Product</span> 4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/#" className="nav-link px-0 align-middle">
-                            <i className="fs-4 bi-people"></i> <span className="ms-1 d-none d-sm-inline">Customers</span> </a>
+                        <a href="/categoryAdmin" className="nav-link px-0 align-middle">
+                            <i className="fs-4 bi-people"></i> <span className="ms-1 d-none d-sm-inline">Kateqoriyalar</span> </a>
                     </li>
                 </ul>
 
