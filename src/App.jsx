@@ -7,7 +7,7 @@ import Post from './Pages/PostJob'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
 import Reset from './Pages/Reset'
-import Admin from './Pages/Admin'
+import Admin from './Pages/AdminPanel/Admin'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from './Layouts/Header/Index'

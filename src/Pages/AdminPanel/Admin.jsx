@@ -1,7 +1,7 @@
 import React from 'react'
-import { ShowOnAdmin, ShowOnUser } from '../Layouts/HiddenLinks/Router'
-import ErrorPage from './ErrorPage'
-import '../Assets/Styles/Admin/Admin.css'
+import { ShowOnAdmin, ShowOnUser } from '../../Layouts/HiddenLinks/Router'
+import ErrorPage from '../ErrorPage'
+import '../../Assets/Styles/Admin/Admin.css'
 function Admin() {
     return (
         <div>
@@ -10,22 +10,6 @@ function Admin() {
                 <div>
                     Hello Adminss
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             </ShowOnAdmin>
 
