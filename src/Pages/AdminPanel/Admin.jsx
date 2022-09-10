@@ -1,14 +1,22 @@
 import React from 'react'
 import { ShowOnAdmin, ShowOnUser } from '../../Layouts/HiddenLinks/Router'
 import ErrorPage from '../UserPanel/ErrorPage'
-import '../../Assets/Styles/Admin/Admin.css'
+import './Admin.css'
+import { Link } from 'react-router-dom'
+import './Admin.css'
+import Sidebar from './components/Sidebar/Sidebar'
+
 function Admin() {
     return (
         <div>
 
             <ShowOnAdmin>
-                <div>
-                    Hello Adminss
+                <div className='Dashboard'>
+                    <div className='AppGlass'>
+
+                    <Sidebar/>
+                    </div>
+
                 </div>
 
             </ShowOnAdmin>
