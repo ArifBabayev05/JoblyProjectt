@@ -5,10 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../Firebase/config'
-import Loader from '../../Jobs/Loader'
+// import Loader from '../../Jobs/Loader'
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import image from '../../../Assets/Images/Hero/l.svg'
-import { Navigate, Outlet } from "react-router-dom";
 
 
 

@@ -1,14 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ShowOnAdmin, ShowOnUser } from '../../Layouts/HiddenLinks/Router'
 import ErrorPage from '../UserPanel/ErrorPage'
 import './Admin.css'
 import '../../App.css'
-import { Link } from 'react-router-dom'
-import logo from '../../Assets/Images/Hero/arrow.png'
-import jlogo from '../../Assets/Images/Admin/logo.png'
-
 import './Admin.css'
 import Sidebar from './Sidebar/Sidebar'
+import Home from './Home/Home'
 function Admin() {
 
     return (
@@ -19,9 +16,8 @@ function Admin() {
                         <div class="row flex-nowrap">
                             <Sidebar />
                             <div class="col py-3">
-                                Content area...
+                                <Home/>
                             </div>
-
                         </div>
                     </div>
                 </div>

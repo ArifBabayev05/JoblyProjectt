@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './Layouts/Header/Index'
 import Error from './Pages/UserPanel/ErrorPage'
 import './App.css'
-// import Header from './Layouts/Header/Header'
+
 
 import {Footer} from './Layouts/Footer/Index'
 import {
@@ -21,6 +21,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import VacancyAdmin from './Pages/AdminPanel/Pages/VacancyAdmin';
+import CompanyAdmin from './Pages/AdminPanel/Pages/CompanyAdmin';
 
 function App() {
 
@@ -42,6 +44,9 @@ function App() {
           <Route path='/*' element={<Error/>}/>
 
           <Route path='/admin' element={<Admin/>}/>
+          <Route path='/companyAdmin' element={<CompanyAdmin/>}/>
+          <Route path='/vacancyAdmin' element={<VacancyAdmin/>}/>
+
 
          
           

@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './Register.css'
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../Firebase/config'
-import Loader from '../../Jobs/Loader'
+// import Loader from '../../Jobs/Loader'
 import image from '../../../Assets/Images/Hero/lq.svg'
 
 
