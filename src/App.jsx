@@ -21,6 +21,7 @@ import CategoryAdmin from './Pages/AdminPanel/Pages/CategoryAdmin';
 import CategoryAdd from './Pages/AdminPanel/CRUD/CategoryAdd';
 import CompanyAdd from './Pages/AdminPanel/CRUD/CompanyAdd';
 import VacancyAdd from './Pages/AdminPanel/CRUD/VacancyAdd';
+import Test from './Pages/AdminPanel/Test';
 
 
 function App() {
@@ -53,6 +54,9 @@ function App() {
           <Route path='admin/categoryAdd' element={<CategoryAdd />} />
           <Route path='admin/companyAdd' element={<CompanyAdd />} />
           <Route path='admin/vacancyAdd' element={<VacancyAdd />} />
+          <Route path='admin/vacancyAdd' element={<VacancyAdd />} />
+          <Route path='test' element={<Test/>} />
+
 
 
 

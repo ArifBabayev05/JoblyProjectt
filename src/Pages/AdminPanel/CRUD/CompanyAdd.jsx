@@ -5,9 +5,11 @@ import Sidebar from '../Sidebar/Sidebar'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom'
 // import { error } from 'console'
 
 const CompanyAdd = () => {
+    const navigate = useNavigate();
     console.log(new Date().toJSON());
     const [loading, setLoading] = useState(false)
     const url = 'http://localhost:53410/api/Company/add';
@@ -17,11 +19,11 @@ const CompanyAdd = () => {
         telNumber: "",
         imageId: "",
         createdDate: ""
+        
     })
     function submit(e) {
         e.preventDefault();
         setLoading(false);
-        // const fd = new FormData();
         axios.post(url, {
             name: data.name,
             mail: data.mail,
@@ -30,19 +32,19 @@ const CompanyAdd = () => {
             createdDate : new Date().toJSON()
         }).then(res => {
             setLoading(false);
-            // console.log(res.data);
-            toast.success("Uğurla Əlavə Olundu")
+            console.log(res);
+            toast.success("Uğurla Əlavə Olundu");
+            navigate("/companyadmin")
         }).catch(() => {
             toast.error("Əməliyyat Uğursuzdur.");
-            toast.info("Mənfi ədəd daxil edilə bilməz");
         })
     }
+    
     function handle(e) {
         setLoading(false);
         const newData = { ...data }
         newData[e.target.id] = e.target.value;
         setData(newData);
-        // toast.success("Uğurla Əlavə Olundu")
     }
     return (
         <div>
@@ -52,36 +54,36 @@ const CompanyAdd = () => {
                         <div class="row flex-nowrap">
                             <Sidebar />
                             <div class="col py-3">
-                                <form onSubmit={(e) => submit(e)}>
+                                <form encType='multipart/formdata' onSubmit={(e) => submit(e)}>
                                     {loading && <Loader />}
                                     <div class="row mb-3">
                                         <label for="inputEmail" class="col-sm-2 col-form-label">Ad</label>
                                         <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="name" class="form-control" id="name" placeholder="Ad" />
+                                            <input onChange={(e) => handle(e)} value={data.value} required type="name" class="form-control" id="name" placeholder="Ad" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                                         <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="mail" class="form-control" id="mail" placeholder="Email" />
+                                            <input onChange={(e) => handle(e)} value={data.value} required type="mail" class="form-control" id="mail" placeholder="Email" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="inputEmail" class="col-sm-2 col-form-label">Telefon Nömrəsi</label>
                                         <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="tel" class="form-control" id="telNumber" placeholder="Telefon Nömrəsi" />
+                                            <input onChange={(e) => handle(e)} value={data.value} required type="tel" class="form-control" id="telNumber" placeholder="Telefon Nömrəsi" />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="inputEmail" class="col-sm-2 col-form-label">İmage İd</label>
                                         <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="text" class="form-control" id="imageId" placeholder="İmage İd " />
+                                            <input onChange={(e) => handle(e)} value={data.value} required type="text" class="form-control" id="imageId" placeholder="İmage İd " />
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="inputEmail" class="col-sm-2 col-form-label">İmage upload</label>
                                         <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="file" class="form-control" id="imageId" placeholder="İmage İd " />
+                                            <input onChange={(e) => handle(e)} value={data.value} accept='image/*' type="file" class="form-control" id="image" placeholder="İmage İd " />
                                         </div>
                                     </div>
 
