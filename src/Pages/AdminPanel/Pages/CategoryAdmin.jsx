@@ -4,6 +4,7 @@ import { ShowOnAdmin, ShowOnUser } from '../../../Layouts/HiddenLinks/Router'
 import Loader from '../../../Components/Jobs/Loader'
 import axios from 'axios'
 import '../Admin.css'
+import CategoryAdd from '../CRUD/CategoryAdd'
 
 
 const CategoryAdmin = () => {
@@ -37,7 +38,7 @@ const CategoryAdmin = () => {
                                 <div className='row'>
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
                                         <h3>Kateqoriyalar</h3>
-                                        <button  className='btn btn-success position-relative'>Kateqoriya Əlavə Et</button>
+                                        <a href='/CategoryAdd'  className='btn btn-success position-relative'>Kateqoriya Əlavə Et</a>
                                     </div>
                                 </div>
                                 <div style={{ 'overflow-x': 'auto' }}>

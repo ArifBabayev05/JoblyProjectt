@@ -15,7 +15,7 @@ import Error from './Pages/UserPanel/ErrorPage'
 import './App.css'
 
 
-import {Footer} from './Layouts/Footer/Index'
+import { Footer } from './Layouts/Footer/Index'
 import {
   BrowserRouter,
   Routes,
@@ -24,41 +24,49 @@ import {
 import VacancyAdmin from './Pages/AdminPanel/Pages/VacancyAdmin';
 import CompanyAdmin from './Pages/AdminPanel/Pages/CompanyAdmin';
 import CategoryAdmin from './Pages/AdminPanel/Pages/CategoryAdmin';
+import CategoryAdd from './Pages/AdminPanel/CRUD/CategoryAdd';
 
 
 function App() {
 
   return (
     <div className="App">
-      
-      <ToastContainer/>
+
+      <ToastContainer />
       <BrowserRouter>
-      <Header/>
+        <Header />
         <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='about' element={<About/>}/>
-          <Route path='job/:id' element={<Job/>}/>
-          <Route path='job' element={<JobList/>}/>
-          <Route path='postjob' element={<Post/>}/>
-          <Route path='login' element={<Login/>}/>
-          <Route path='register' element={<Register/>}/>
-          <Route path='reset' element={<Reset/>}/>
-          <Route path='/*' element={<Error/>}/>
+          {/* User Panel Pages */}
+          <Route path='/' element={<Home />} />
+          <Route path='about' element={<About />} />
+          <Route path='job/:id' element={<Job />} />
+          <Route path='job' element={<JobList />} />
+          <Route path='postjob' element={<Post />} />
+          <Route path='login' element={<Login />} />
+          <Route path='register' element={<Register />} />
+          <Route path='reset' element={<Reset />} />
+          <Route path='/*' element={<Error />} />
 
-          <Route path='/admin' element={<Admin/>}/>
-          <Route path='/companyAdmin' element={<CompanyAdmin/>}/>
-          <Route path='/vacancyAdmin' element={<VacancyAdmin/>}/>
-          <Route path='/categoryAdmin' element={<CategoryAdmin/>}/>
+          {/* Admin Panel Pages */}
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/companyAdmin' element={<CompanyAdmin />} />
+          <Route path='/vacancyAdmin' element={<VacancyAdmin />} />
+          <Route path='/categoryAdmin' element={<CategoryAdmin />} />
+
+          {/* Admin Panel CRUD Pages */}
+          <Route path='/categoryAdd' element={<CategoryAdd />} />
 
 
 
-         
-          
-        
+
+
+
+
+
         </Routes>
-      <Footer/>
+        <Footer />
       </BrowserRouter>
-     
+
     </div>
   );
 }
