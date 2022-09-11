@@ -21,7 +21,9 @@ const CompanyAdmin = () => {
                 <td><img style={{ 'width': '35px', 'height': '35px', 'border-radius': '50%' }} className='me-3' src={data.image.name} /> {data.name}</td>
                 <td >+{data.telNumber}</td>
                 <td>{data.mail}</td>
-                <td>{data.createdDate.slice(0, 10)}</td>
+                {/* <td>{data.createdDate.slice(0, 10)}</td> */}
+                <td>{data.createdDate}</td>
+
 
                 <td><button className='btn text-white btn-info update'>Yenilə</button></td>
                 <td><button className='btn btn-danger delete'>Sil</button></td>
@@ -40,7 +42,7 @@ const CompanyAdmin = () => {
                                 <div className='row'>
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
                                         <h3>Şirkətlər</h3>
-                                        <button  className='btn btn-success position-relative'>Şirkət Əlavə Et</button>
+                                        <a href='admin/companyadd'  className='btn btn-success position-relative'>Şirkət Əlavə Et</a>
                                     </div>
                                 </div>
                                 <div style={{ 'overflow-x': 'auto' }}>

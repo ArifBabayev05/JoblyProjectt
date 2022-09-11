@@ -2,10 +2,8 @@ import React from 'react'
 import Loader from '../../../Components/Jobs/Loader'
 import { ShowOnAdmin, ShowOnUser } from '../../../Layouts/HiddenLinks/Router'
 import Sidebar from '../Sidebar/Sidebar'
-const CategoryAdd = () => {
-    const url = 'http://localhost:53410/api/Categories/add';
 
-
+const VacancyAdd = () => {
     return (
         <div>
             <ShowOnAdmin>
@@ -14,8 +12,7 @@ const CategoryAdd = () => {
                         <div class="row flex-nowrap">
                             <Sidebar />
                             <div class="col py-3">
-                                <h1 style={{'color': '#785BF4'}} className='fw-bolder mb-4'>Kateqoriya Əlavəsi</h1>
-                                <form className='container col-8' style={{'display': 'inline-block'}}>
+                                <form>
                                     <div class="row mb-3">
                                         <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                                         <div class="col-sm-10">
@@ -28,9 +25,17 @@ const CategoryAdd = () => {
                                             <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
                                         </div>
                                     </div>
+                                    <div class="row mb-3">
+                                        <div class="col-sm-10 offset-sm-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="checkRemember" />
+                                                <label class="form-check-label" for="checkRemember">Remember me</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-sm-10 offset-sm-2">
-                                            <button type="submit" style={{'background-color': '#785BF4',"outline":'none','border':'none'}} class="btn btn-primary">Əlavə Et</button>
+                                            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} class="btn btn-primary">Əlavə Et</button>
                                         </div>
                                     </div>
                                 </form>
@@ -49,4 +54,4 @@ const CategoryAdd = () => {
     )
 }
 
-export default CategoryAdd
+export default VacancyAdd

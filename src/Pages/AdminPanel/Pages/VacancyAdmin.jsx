@@ -41,7 +41,7 @@ const VacancyAdmin = () => {
                             <div className='row'>
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
                                         <h3>Vakansiyalar</h3>
-                                        <button  className='btn btn-success position-relative'>Vakansiya Əlavə Et</button>
+                                        <a href='admin/vacancyadd'  className='btn btn-success position-relative'>Vakansiya Əlavə Et</a>
                                     </div>
                                 </div>
                             <div style={{ 'overflow-x': 'auto' }}>

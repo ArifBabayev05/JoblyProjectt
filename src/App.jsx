@@ -1,3 +1,4 @@
+import './App.css'
 import React from 'react';
 import Home from './Pages/UserPanel/Home'
 import About from './Pages/UserPanel/About'
@@ -12,19 +13,14 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from './Layouts/Header/Index'
 import Error from './Pages/UserPanel/ErrorPage'
-import './App.css'
-
-
 import { Footer } from './Layouts/Footer/Index'
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VacancyAdmin from './Pages/AdminPanel/Pages/VacancyAdmin';
 import CompanyAdmin from './Pages/AdminPanel/Pages/CompanyAdmin';
 import CategoryAdmin from './Pages/AdminPanel/Pages/CategoryAdmin';
 import CategoryAdd from './Pages/AdminPanel/CRUD/CategoryAdd';
+import CompanyAdd from './Pages/AdminPanel/CRUD/CompanyAdd';
+import VacancyAdd from './Pages/AdminPanel/CRUD/VacancyAdd';
 
 
 function App() {
@@ -54,7 +50,10 @@ function App() {
           <Route path='/categoryAdmin' element={<CategoryAdmin />} />
 
           {/* Admin Panel CRUD Pages */}
-          <Route path='/categoryAdd' element={<CategoryAdd />} />
+          <Route path='admin/categoryAdd' element={<CategoryAdd />} />
+          <Route path='admin/companyAdd' element={<CompanyAdd />} />
+          <Route path='admin/vacancyAdd' element={<VacancyAdd />} />
+
 
 
 
