@@ -4,7 +4,7 @@ import { ShowOnAdmin, ShowOnUser } from '../../../Layouts/HiddenLinks/Router'
 import Loader from '../../../Components/Jobs/Loader'
 import axios from 'axios'
 import '../Admin.css'
-import CategoryAdd from '../CRUD/CategoryAdd'
+import CategoryAdd from '../CRUD/Category/CategoryAdd'
 
 
 const CategoryAdmin = () => {

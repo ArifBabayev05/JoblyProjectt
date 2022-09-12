@@ -18,8 +18,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VacancyAdmin from './Pages/AdminPanel/Pages/VacancyAdmin';
 import CompanyAdmin from './Pages/AdminPanel/Pages/CompanyAdmin';
 import CategoryAdmin from './Pages/AdminPanel/Pages/CategoryAdmin';
-import CategoryAdd from './Pages/AdminPanel/CRUD/CategoryAdd';
-import CompanyAdd from './Pages/AdminPanel/CRUD/CompanyAdd';
+import CategoryAdd from './Pages/AdminPanel/CRUD/Category/CategoryAdd';
+import CompanyAdd from './Pages/AdminPanel/CRUD/Company/CompanyAdd';
 import VacancyAdd from './Pages/AdminPanel/CRUD/VacancyAdd';
 import Test from './Pages/AdminPanel/Test';
 
@@ -55,7 +55,7 @@ function App() {
           <Route path='admin/companyAdd' element={<CompanyAdd />} />
           <Route path='admin/vacancyAdd' element={<VacancyAdd />} />
           <Route path='admin/vacancyAdd' element={<VacancyAdd />} />
-          <Route path='test' element={<Test/>} />
+          
 
 
 
