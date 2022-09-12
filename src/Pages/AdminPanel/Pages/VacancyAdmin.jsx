@@ -22,16 +22,16 @@ const VacancyAdmin = (props) => {
         // navigate("/companyupdate")
 
     }
-    const Delete=(id,e)=>{
+    const Delete = (id, e) => {
         const url = `http://localhost:53410/api/Vacancies/delete?id=${id}`
         console.log(id);
         e.preventDefault();
 
         axios.post(url)
-        .then(res => {
-            toast.success("Uğurla silindi")
-            console.log(res.data)
-        }).catch(err => toast.error(err))
+            .then(res => {
+                toast.success("Uğurla silindi")
+                console.log(res.data)
+            }).catch(err => toast.error(err))
     }
     const array = data.map((data, index) => {
         return (
@@ -44,9 +44,27 @@ const VacancyAdmin = (props) => {
                 <td>{data.typeOfwork}</td>
                 <td>{data.deadline.slice(0, 10)}</td>
                 <td>{data.salary}</td>
-                <td><button onClick={() => Update(data.id)} className='btn text-white btn-info update'>Yenilə</button></td>
-                <td><button onClick={(e) => Delete(data.id,e)} className='btn btn-danger delete'>Sil</button></td>
+                <td><button onClick={() => Update(data.id)} data-bs-toggle="modal" data-bs-target="#staticBackdrop" className='btn text-white btn-info update'>Yenilə</button></td>
+                <td><button onClick={(e) => Delete(data.id, e)} className='btn btn-danger delete'>Sil</button></td>
 
+
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Yeniləmə</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input value={data.name} />
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
+                                <button type="button" class="btn btn-primary">Yadda Saxla</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </tr>
         )
     })
@@ -61,6 +79,7 @@ const VacancyAdmin = (props) => {
                                 <div className='row'>
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
                                         <h3>Vakansiyalar</h3>
+
                                         <a href='admin/vacancyadd' className='btn btn-success position-relative'>Vakansiya Əlavə Et</a>
                                     </div>
                                 </div>
