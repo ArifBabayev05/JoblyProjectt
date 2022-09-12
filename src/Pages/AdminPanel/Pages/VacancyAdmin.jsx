@@ -6,6 +6,7 @@ import '../Admin.css'
 import Sidebar from '../Sidebar/Sidebar'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom'
 
 const VacancyAdmin = (props) => {
     const [data, setData] = useState([])
@@ -44,7 +45,7 @@ const VacancyAdmin = (props) => {
                 <td>{data.typeOfwork}</td>
                 <td>{data.deadline.slice(0, 10)}</td>
                 <td>{data.salary}</td>
-                <td><button onClick={() => Update(data.id)} className='btn text-white btn-info update'>Yenilə</button></td>
+                <td><Link to={`/vacancyupdate/${data.id}`} onClick={() => Update(data.id)} className='btn text-white btn-info update'>Yenilə</Link></td>
                 <td><button onClick={(e) => Delete(data.id,e)} className='btn btn-danger delete'>Sil</button></td>
 
             </tr>
