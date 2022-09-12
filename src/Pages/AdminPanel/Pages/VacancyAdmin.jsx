@@ -6,9 +6,13 @@ import '../Admin.css'
 import Sidebar from '../Sidebar/Sidebar'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom'
 
 const VacancyAdmin = (props) => {
     const [data, setData] = useState([])
+    const [loading, setLoading] = useState(false)
+    const navigate = useNavigate();
+
     useEffect(() => {
         axios.get('http://localhost:53410/api/Vacancies/getall')
             .then(res => {
@@ -16,11 +20,49 @@ const VacancyAdmin = (props) => {
             }).catch(err => console.log(err))
     }, [])
 
-    function Update(id) {
-        console.log(id);
-        props.history.push("/vacancy" + id)
-        // navigate("/companyupdate")
+    const url = 'http://localhost:53410/api/Vacancies/add';
+    const [udata, setUData] = useState({
+        name: "",
+        cityId:"",
+        deadline:"",
+        typeOfwork:"",
+        vəzifəÖhdəlikləri:"",
+        tələblər:"",
+        salary:"",
+        categoryId:"",
+        companyId:"",
+        createdDate: ""
 
+    })
+    function submit(e) {
+        e.preventDefault();
+        setLoading(false);
+        axios.post(url, {
+            name: udata.name,
+            typeOfwork:udata.typeOfwork,
+            vəzifəÖhdəlikləri:udata.vəzifəÖhdəlikləri,
+            tələblər:udata.tələblər,
+            salary:udata.salary,
+            cityId: parseInt(udata.cityId),
+            categoryId: parseInt(udata.categoryId),
+            companyId: parseInt(udata.companyId),
+            deadline: udata.deadline,
+            createdDate: new Date().toJSON()
+        }).then(res => {
+            setLoading(false);
+            console.log(res);
+            toast.success("Uğurla yeniləndi");
+            navigate("/vacancyadmin")
+        }).catch(() => {
+            toast.error("Əməliyyat Uğursuzdur.");
+        })
+    }
+
+    function handle(e) {
+        setLoading(false);
+        const newData = { ...udata }
+        newData[e.target.id] = e.target.value;
+        setUData(newData);
     }
     const Delete = (id, e) => {
         const url = `http://localhost:53410/api/Vacancies/delete?id=${id}`
@@ -44,27 +86,29 @@ const VacancyAdmin = (props) => {
                 <td>{data.typeOfwork}</td>
                 <td>{data.deadline.slice(0, 10)}</td>
                 <td>{data.salary}</td>
-                <td><button onClick={() => Update(data.id)} data-bs-toggle="modal" data-bs-target="#staticBackdrop" className='btn text-white btn-info update'>Yenilə</button></td>
+                <td><button data-bs-toggle="modal" data-bs-target="#staticBackdrop" className='btn text-white btn-info update'>Yenilə</button></td>
                 <td><button onClick={(e) => Delete(data.id, e)} className='btn btn-danger delete'>Sil</button></td>
 
 
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Yeniləmə</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <input value={data.name} />
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
-                                <button type="button" class="btn btn-primary">Yadda Saxla</button>
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <form onSubmit={(e) => submit(e)}>
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Yeniləmə</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input  onChange={(e) => handle(e)} value={udata.value} type="name" required class="form-control" id="name" placeholder="Ad" />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
+                                    <button type="button" class="btn btn-primary">Yadda Saxla</button>
+                                </div>
                             </div>
                         </div>
+                </form>
                     </div>
-                </div>
             </tr>
         )
     })
