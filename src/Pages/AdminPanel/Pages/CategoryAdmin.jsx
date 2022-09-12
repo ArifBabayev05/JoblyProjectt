@@ -48,9 +48,6 @@ const CategoryAdmin = () => {
                                             <th>Adı</th>
                                             <th className='text-info'>Yəniləmək</th>
                                             <th className='text-danger'>Silmək</th>
-
-
-
                                         </tr>
                                         {array}
                                     </table>

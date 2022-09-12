@@ -81,7 +81,7 @@ function Index() {
 
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="/#">Salam {displayname}</a></li>
-                    <li><a class="dropdown-item" href="/#"> Tənzimləmələr</a></li>
+                    <li><a class="dropdown-item" href="/settings"> Tənzimləmələr</a></li>
                     <ShowOnAdmin>
                       <li><a class="dropdown-item" href="/admin"> Admin Panel</a></li>
                     </ShowOnAdmin>

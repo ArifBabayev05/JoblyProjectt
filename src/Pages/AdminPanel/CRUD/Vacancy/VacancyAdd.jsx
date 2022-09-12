@@ -1,7 +1,7 @@
-import Loader from '../../../Components/Jobs/Loader'
-import { ShowOnAdmin, ShowOnUser } from '../../../Layouts/HiddenLinks/Router'
+import Loader from '../../../../Components/Jobs/Loader'
+import { ShowOnAdmin, ShowOnUser } from '../../../../Layouts/HiddenLinks/Router'
 import React, { useState } from 'react'
-import Sidebar from '../Sidebar/Sidebar'
+import Sidebar from '../../Sidebar/Sidebar'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

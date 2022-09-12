@@ -32,6 +32,8 @@
     position: relative;
     background: #edf2f5;
     border-bottom: 1px solid #e6edf1;
+    /* border-bottom: 1px solid #c9aeffca; */
+
 }
 
 .content .contents .form-group label,

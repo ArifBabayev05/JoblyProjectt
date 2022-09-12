@@ -4,9 +4,13 @@ import { ShowOnAdmin, ShowOnUser } from '../../../Layouts/HiddenLinks/Router'
 import Loader from '../../../Components/Jobs/Loader'
 import axios from 'axios'
 import '../Admin.css'
+import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
-const CompanyAdmin = () => {
+const CompanyAdmin = (props) => {
+    const navigate = useNavigate();
     const [data, setData] = useState([])
     useEffect(() => {
         axios.get('http://localhost:53410/api/Company/getall')
@@ -14,6 +18,14 @@ const CompanyAdmin = () => {
                 setData(res.data)
             }).catch(err => console.log(err))
     }, [])
+
+    function Update(id) {
+        console.log(id);
+        props.history.push("/companyupdate"+id)
+        // navigate("/companyupdate")
+
+    }
+
     const array = data.map((data, index) => {
         return (
             <tr>
@@ -25,9 +37,10 @@ const CompanyAdmin = () => {
                 <td>{data.createdDate}</td>
 
 
-                <td><button className='btn text-white btn-info update'>Yenilə</button></td>
+                <td><button onClick={() => Update(data.id)} type='button' className='btn text-white btn-info update'>Yenilə</button></td>
                 <td><button className='btn btn-danger delete'>Sil</button></td>
-
+                
+                
             </tr>
         )
     })
@@ -42,7 +55,7 @@ const CompanyAdmin = () => {
                                 <div className='row'>
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
                                         <h3>Şirkətlər</h3>
-                                        <a href='admin/companyadd'  className='btn btn-success position-relative'>Şirkət Əlavə Et</a>
+                                        <a href='admin/companyadd' className='btn btn-success position-relative'>Şirkət Əlavə Et</a>
                                     </div>
                                 </div>
                                 <div style={{ 'overflow-x': 'auto' }}>
@@ -55,10 +68,8 @@ const CompanyAdmin = () => {
                                             <th>Yaradılma Tarixi</th>
                                             <th className='text-info'>Yəniləmək</th>
                                             <th className='text-danger'>Silmək</th>
-
-
-
                                         </tr>
+
                                         {array}
                                     </table>
                                 </div>

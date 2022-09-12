@@ -20,8 +20,11 @@ import CompanyAdmin from './Pages/AdminPanel/Pages/CompanyAdmin';
 import CategoryAdmin from './Pages/AdminPanel/Pages/CategoryAdmin';
 import CategoryAdd from './Pages/AdminPanel/CRUD/Category/CategoryAdd';
 import CompanyAdd from './Pages/AdminPanel/CRUD/Company/CompanyAdd';
-import VacancyAdd from './Pages/AdminPanel/CRUD/VacancyAdd';
-import Test from './Pages/AdminPanel/Test';
+import VacancyAdd from './Pages/AdminPanel/CRUD/Vacancy/VacancyAdd';
+import CompanyUpdate from './Pages/AdminPanel/CRUD/Company/CompanyUpdate';
+import VacancyUpdate from './Pages/AdminPanel/CRUD/Vacancy/VacancyUpdate';
+import UpdateProfile from './Pages/UserPanel/UpdateProfile';
+
 
 
 function App() {
@@ -42,6 +45,7 @@ function App() {
           <Route path='login' element={<Login />} />
           <Route path='register' element={<Register />} />
           <Route path='reset' element={<Reset />} />
+          <Route path='/settings' element={<UpdateProfile />} />
           <Route path='/*' element={<Error />} />
 
           {/* Admin Panel Pages */}
@@ -55,7 +59,11 @@ function App() {
           <Route path='admin/companyAdd' element={<CompanyAdd />} />
           <Route path='admin/vacancyAdd' element={<VacancyAdd />} />
           <Route path='admin/vacancyAdd' element={<VacancyAdd />} />
-          
+          <Route path='/companyupdate' element={<CompanyUpdate />} />
+          <Route path='/vacancyupdate/:id' element={<VacancyUpdate />} />
+
+
+
 
 
 
