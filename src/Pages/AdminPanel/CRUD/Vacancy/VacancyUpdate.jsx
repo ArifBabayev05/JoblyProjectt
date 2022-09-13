@@ -65,8 +65,8 @@ const VacancyUpdate = (props) => {
     loading: false,
     data: null,
     error: false,
-    
-    
+
+
   })
 
   let content = null
@@ -169,6 +169,19 @@ const VacancyUpdate = (props) => {
             <input defaultValue={product.data.companyId} onChange={(e) => handle(e)} value={data.value} type="text" required class="form-control" id="companyId" placeholder="companyId " />
           </div>
         </div>
+        <div class="row mb-3">
+          <label for="inputEmail" class="col-sm-2 col-form-label">companyId</label>
+          <div class="col-sm-10">
+            <input defaultValue={product.data.companyId} onChange={(e) => handle(e)} value={data.value} type="text" required class="form-control" id="companyId" placeholder="companyId " />
+            <select class="form-select">
+              <option>{product.data.company.id}</option>
+              <option>{product.data.company.name}</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+        </div>
+
 
         <div class="row">
           <div class="col-sm-10 offset-sm-2">
@@ -188,7 +201,7 @@ const VacancyUpdate = (props) => {
               <Sidebar />
               <div class="col py-3">
                 <h1 className="mb-4">Yeniləmək</h1>
-{content}
+                {content}
               </div>
             </div>
           </div>

@@ -4,16 +4,17 @@ import { ShowOnAdmin, ShowOnUser } from '../../../Layouts/HiddenLinks/Router'
 import Loader from '../../../Components/Jobs/Loader'
 import axios from 'axios'
 import '../Admin.css'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 const CompanyAdmin = (props) => {
-    const navigate = useNavigate();
     const [data, setData] = useState([])
     useEffect(() => {
         axios.get('http://localhost:53410/api/Company/getall')
+
             .then(res => {
                 setData(res.data)
             }).catch(err => console.log(err))
@@ -21,11 +22,21 @@ const CompanyAdmin = (props) => {
 
     function Update(id) {
         console.log(id);
-        props.history.push("/companyupdate"+id)
+        props.history.push("/company" + id)
         // navigate("/companyupdate")
 
     }
+    const Delete = (id, e) => {
+        const url = `http://localhost:53410/api/Company/delete?id=${id}`
+        console.log(id);
+        e.preventDefault();
 
+        axios.post(url)
+            .then(res => {
+                toast.success("Uğurla silindi")
+                console.log(res.data)
+            }).catch(err => toast.error(err))
+    }
     const array = data.map((data, index) => {
         return (
             <tr>
@@ -37,13 +48,15 @@ const CompanyAdmin = (props) => {
                 <td>{data.createdDate}</td>
 
 
-                <td><button onClick={() => Update(data.id)} type='button' className='btn text-white btn-info update'>Yenilə</button></td>
-                <td><button className='btn btn-danger delete'>Sil</button></td>
-                
-                
+                <td><Link to={`/companyupdate/${data.id}`} onClick={() => Update(data.id)} className='btn text-white btn-info update'>Yenilə</Link></td>
+                <td><button onClick={(e) => Delete(data.id,e)} className='btn btn-danger delete'>Sil</button></td>
+
+
             </tr>
         )
     })
+
+
     return (
         <div>
             <ShowOnAdmin>
