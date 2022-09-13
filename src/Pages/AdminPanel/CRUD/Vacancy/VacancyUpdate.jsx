@@ -12,9 +12,8 @@ import { Link } from 'react-router-dom'
 const VacancyUpdate = (props) => {
   const navigate = useNavigate();
   const { id } = useParams();
-
   const [data, setData] = useState({
-    id:"",
+    id: id,
     name: "",
     cityId: "",
     deadline: "",
@@ -27,17 +26,12 @@ const VacancyUpdate = (props) => {
     createdDate: ""
 
   })
-  function handle(e) {
-    
-    const newData = { ...data }
-    newData[e.target.id] = e.target.value;
-    setData(newData);
-  }
   function submit(e) {
     e.preventDefault();
-console.log(data);
+    console.log(data);
+    
     axios.post(`http://localhost:53410/api/Vacancies/update?id=${id}`, {
-      id:data.id,
+      id: data.id,
       name: data.name,
       typeOfwork: data.typeOfwork,
       vəzifəÖhdəlikləri: data.vəzifəÖhdəlikləri,
@@ -56,8 +50,18 @@ console.log(data);
       toast.error("Əməliyyat Uğursuzdur.");
     })
   }
+  
+  function handle(e) {
 
+    const newData = { ...data }
+    newData[e.target.id] = e.target.value;
+    // newData[e.target.name] = e.target.value;
 
+    setData(newData);
+  }
+
+  console.log(data);
+  
   return (
     <div>
       <ShowOnAdmin>
@@ -69,14 +73,11 @@ console.log(data);
                 <h1 className="mb-4">Yeniləmək</h1>
                 <form encType='multipart/formdata' onSubmit={(e) => submit(e)}>
                   {/* {loading && <Loader />} */}
-                 
 
-                  <div class="row mb-3">
-                    <label for="inputEmail" class="col-sm-2 col-form-label">Id</label>
-                    <div class="col-sm-10">
-                      <input defaultValue={data.id} onChange={(e) => handle(e)} value={data.value} type="name" required class="form-control" id="id" placeholder="Ad" />
-                    </div>
-                  </div>
+
+                 
+                <input defaultValue={data.id} onChange={(e) => handle(e)} value={data.value} style={{'display':'none'}} type="name" required class="form-control" id="id" placeholder="Ad" />
+                 
                   <div class="row mb-3">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Ad</label>
                     <div class="col-sm-10">
