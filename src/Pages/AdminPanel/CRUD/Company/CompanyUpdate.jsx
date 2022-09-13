@@ -33,7 +33,7 @@ const CompanyUpdate = (props) => {
     }).then(res => {
       console.log(res);
       toast.success("Uğurla Əlavə Olundu");
-      navigate("/vacancyAdmin")
+      navigate("/companyAdmin")
     }).catch(() => {
       toast.error("Əməliyyat Uğursuzdur.");
     })
