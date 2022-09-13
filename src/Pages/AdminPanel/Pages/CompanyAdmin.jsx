@@ -44,8 +44,8 @@ const CompanyAdmin = (props) => {
                 <td><img style={{ 'width': '35px', 'height': '35px', 'border-radius': '50%' }} className='me-3' src={data.image.name} /> {data.name}</td>
                 <td >+{data.telNumber}</td>
                 <td>{data.mail}</td>
-                {/* <td>{data.createdDate.slice(0, 10)}</td> */}
-                <td>{data.createdDate}</td>
+                <td>{data.createdDate.slice(0, 10)}</td>
+                {/* <td>{data.createdDate}</td> */}
 
 
                 <td><Link to={`/companyupdate/${data.id}`} onClick={() => Update(data.id)} className='btn text-white btn-info update'>Yenilə</Link></td>

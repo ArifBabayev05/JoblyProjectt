@@ -24,6 +24,7 @@ import VacancyAdd from './Pages/AdminPanel/CRUD/Vacancy/VacancyAdd';
 import CompanyUpdate from './Pages/AdminPanel/CRUD/Company/CompanyUpdate';
 import VacancyUpdate from './Pages/AdminPanel/CRUD/Vacancy/VacancyUpdate';
 import UpdateProfile from './Pages/UserPanel/UpdateProfile';
+import CategoryUpdate from './Pages/AdminPanel/CRUD/Category/CategoryUpdate';
 
 
 
@@ -62,6 +63,8 @@ function App() {
           <Route path='/companyupdate' element={<CompanyUpdate />} />
           <Route path='/vacancyupdate/:id' element={<VacancyUpdate />} />
           <Route path='/companyupdate/:id' element={<CompanyUpdate />} />
+          <Route path='/categoryupdate/:id' element={<CategoryUpdate />} />
+
 
 
         </Routes>

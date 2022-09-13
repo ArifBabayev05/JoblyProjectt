@@ -10,13 +10,10 @@ const CategoryAdd = () => {
     const navigate = useNavigate();
     console.log(new Date().toJSON());
     const [loading, setLoading] = useState(false)
-    const url = 'http://localhost:53410/api/Category/add';
+    const url = 'http://localhost:53410/api/Categories/add';
     const [data, setData] = useState({
         name: "",
-        mail: "",
-        telNumber: "",
-        imageId: "",
-        createdDate: ""
+        
         
     })
     function submit(e) {
@@ -24,15 +21,11 @@ const CategoryAdd = () => {
         setLoading(false);
         axios.post(url, {
             name: data.name,
-            mail: data.mail,
-            telNumber: data.telNumber,
-            imageId: parseInt(data.imageId),
-            createdDate : new Date().toJSON()
         }).then(res => {
             setLoading(false);
             console.log(res);
             toast.success("Uğurla Əlavə Olundu");
-            navigate("/companyadmin")
+            navigate("/categoryadmin")
         }).catch(() => {
             toast.error("Əməliyyat Uğursuzdur.");
         })

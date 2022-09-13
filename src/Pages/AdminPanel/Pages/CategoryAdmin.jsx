@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom'
 
 
-const CategoryAdmin = () => {
+const CategoryAdmin = (props) => {
     const [data, setData] = useState([])
     useEffect(() => {
         axios.get('http://localhost:53410/api/Categories/getall')
@@ -18,14 +18,31 @@ const CategoryAdmin = () => {
                 setData(res.data)
             }).catch(err => console.log(err))
     }, [])
+
+    function Update(id) {
+        console.log(id);
+        props.history.push("/vacancy" + id)
+        // navigate("/companyupdate")
+
+    }
+    const Delete=(id,e)=>{
+        const url = `http://localhost:53410/api/Categories/delete?id=${id}`
+        console.log(id);
+        e.preventDefault();
+
+        axios.post(url)
+        .then(res => {
+            toast.success("Uğurla silindi")
+            console.log(res.data)
+        }).catch(err => toast.error(err))
+    }
     const array = data.map((data, index) => {
         return (
             <tr>
                 <td>{data.id}</td>
-                <td> {data.name}</td>
-                {/* <img style={{ 'width': '35px', 'height': '35px', 'border-radius': '50%' }} className='me-3' src={data.image.name} /> */}
-                <td><button className='btn text-white btn-info update'>Yenilə</button></td>
-                <td><button className='btn btn-danger delete'>Sil</button></td>
+                <td>{data.name}</td>
+                <td><Link to={`/categoryupdate/${data.id}`} onClick={() => Update(data.id)} className='btn text-white btn-info update'>Yenilə</Link></td>
+                <td><button onClick={(e) => Delete(data.id,e)} className='btn btn-danger delete'>Sil</button></td>
 
             </tr>
         )
