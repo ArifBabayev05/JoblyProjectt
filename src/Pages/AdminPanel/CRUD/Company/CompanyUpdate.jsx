@@ -49,7 +49,7 @@ const CompanyUpdate = (props) => {
   }
 
 
-  const url = `http://localhost:53410/api/Vacancies/getbyid?id=${id}`
+  const url = `http://localhost:53410/api/Company/getbyid?id=${id}`
   const [product, setProduct] = useState({
     loading: false,
     data: null,

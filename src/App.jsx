@@ -61,17 +61,7 @@ function App() {
           <Route path='admin/vacancyAdd' element={<VacancyAdd />} />
           <Route path='/companyupdate' element={<CompanyUpdate />} />
           <Route path='/vacancyupdate/:id' element={<VacancyUpdate />} />
-
-
-
-
-
-
-
-
-
-
-
+          <Route path='/companyupdate/:id' element={<CompanyUpdate />} />
 
 
         </Routes>
