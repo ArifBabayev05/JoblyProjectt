@@ -4,7 +4,7 @@ import Loader from './Loader'
 import JobCard from './JobCard'
 import '../../Assets/Styles/Job/Job.css'
 // import search from '../../Assets/Images/Logo/search.svg'
-
+import src from '../../Assets/Images/Logo/src.png'
 
 
 //Full Jobs
@@ -98,7 +98,7 @@ function Jobs() {
     <form className='searchJob mb-5' style={{alignItems:'center',display:'flex',top:'20px'}}>
       <input  className='searchBar mt-2 p-2'  onChange={event =>console.log( setQuery(event.target.value))} type='text'></input>
       <button className='search__submit' type='submit'>
-                  <img src='https://www.citypng.com/public/uploads/small/116400840186bmo0mkghcdq8hn99wmpbh9wrgbytghidisi7e41vegbclccrb6kg9hrk0ebgqrpc5ezz2tjtkvsfsvk7yfbakowxbpvrzsakde3.png'   alt='some value'/>
+                  <img src={src}   alt='some value'/>
       </button>
     {/* <button onClick={()=>sorting("salary")}>Maaşa görə sırala</button> */}
     </form>

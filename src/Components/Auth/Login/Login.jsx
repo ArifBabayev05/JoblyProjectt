@@ -83,7 +83,7 @@ function Login() {
                                     <div class="d-flex mb-3 align-items-center">
 
                                         <Link to='/reset'>
-                                            Şifrəni Yenilə
+                                            Şifrəni Unutmusan?
                                         </Link>
                                     </div>
                                     <p className='mb-4'>

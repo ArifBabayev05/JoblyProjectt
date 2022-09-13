@@ -19,9 +19,9 @@ function Reset() {
     sendPasswordResetEmail(auth, email)
       .then(() => {
       setLoading(false)
-
-        toast.success("Email ünvanınıza yeni şifrə göndərildi.")
+      toast.success("Email ünvanınıza yeni şifrə göndərildi.")
       }).catch((error) => {
+      setLoading(false)
         toast.error("Bu email ünvanı ilə qeydiyyatdan keçilməyib.")
 
       });

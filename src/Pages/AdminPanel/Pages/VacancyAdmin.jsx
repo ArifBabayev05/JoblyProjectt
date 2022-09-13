@@ -86,6 +86,7 @@ const VacancyAdmin = (props) => {
                                         {array}
                                     </table>
                                 </div>
+                                <ToastContainer/>
                             </div>
                         </div>
                     </div>

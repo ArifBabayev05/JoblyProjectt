@@ -4,8 +4,8 @@ import { ShowOnAdmin, ShowOnUser } from '../../../Layouts/HiddenLinks/Router'
 import Loader from '../../../Components/Jobs/Loader'
 import axios from 'axios'
 import '../Admin.css'
-import { Link, useNavigate } from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'react-router-dom'
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -41,7 +41,7 @@ const CompanyAdmin = (props) => {
         return (
             <tr>
                 <td>{data.id}</td>
-                <td><img style={{ 'width': '35px', 'height': '35px', 'border-radius': '50%' }} className='me-3' src={data.image.name} /> {data.name}</td>
+                <td><img alt='value' style={{ 'width': '35px', 'height': '35px', 'border-radius': '50%' }} className='me-3' src={data.image.name} /> {data.name}</td>
                 <td >+{data.telNumber}</td>
                 <td>{data.mail}</td>
                 <td>{data.createdDate.slice(0, 10)}</td>

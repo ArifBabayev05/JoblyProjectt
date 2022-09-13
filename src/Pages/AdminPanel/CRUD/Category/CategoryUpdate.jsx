@@ -4,9 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Loader from '../../../../Components/Jobs/Loader'
 import Sidebar from '../../Sidebar/Sidebar'
 import { ShowOnAdmin, ShowOnUser } from '../../../../Layouts/HiddenLinks/Router'
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom'
 
 const CategoryUpdate = (props) => {
   const navigate = useNavigate();

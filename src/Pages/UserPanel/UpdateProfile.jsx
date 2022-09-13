@@ -2,32 +2,21 @@ import React from 'react'
 import { useEffect, useState, } from 'react'
 import '../../Assets/Styles/User/UserSettings.css'
 import { auth } from '../../Components/Auth/Firebase/config'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { Link, useNavigate } from "react-router-dom";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+// import { useNavigate } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from 'react-redux'
-import { ShowOnLogin, ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks'
+// import { ShowOnLogin, ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks'
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice';
-import { ShowOnAdmin } from '../../Layouts/HiddenLinks/Router';
+
 
 const UpdateProfile = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // const [menu, setMenu] = useState(false);
   const [displayname, setDisplayName] = useState("");
   const dispatch = useDispatch()
 
-  const logoutUser = () => {
-    signOut(auth).then(() => {
-      toast.success("Hesabdan çıxış uğurla tamamlandı!");
-      navigate('/')
-
-    }).catch((error) => {
-      toast.error(error.message)
-    });
-
-
-  }
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -61,19 +50,10 @@ const UpdateProfile = () => {
 
       <div class="card overflow-hidden" style={{'backgroundColor':"#c9aeffca" }}>
         <div class="row no-gutters row-bordered row-border-light">
-          <div class="col-md-3 pt-0" style={{'backgroundColor':"#c9aeffca" }}>
-            <div style={{'backgroundColor':"#c9aeffca" }} class="list-group  list-group-flush account-settings-links">
-   
-              <a style={{'backgroundColor':"#c9aeffca" }} class="list-group-item  text-white list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
-              <a style={{'backgroundColor':"#c9aeffca" }} class="list-group-item text-white  list-group-item-action" data-toggle="list" href="#account-info">Info</a>
-              <a style={{'backgroundColor':"#c9aeffca" }} class="list-group-item text-white  list-group-item-action" data-toggle="list" href="#account-social-links">Social links</a>
-              <a style={{'backgroundColor':"#c9aeffca" }} class="list-group-item text-white  list-group-item-action" data-toggle="list" href="#account-connections">Connections</a>
-              <a style={{'backgroundColor':"#c9aeffca" }} class="list-group-item text-white  list-group-item-action" data-toggle="list" href="#account-notifications">Notifications</a>
-            </div>
-          </div>
-          <div class="col-md-9">
-            <div class="tab-content">
-              <div class="tab-pane fade active show" id="account-general">
+          
+          <div class="col-md-12 justify-content-center">
+            <div class="tab-content justify-content-center">
+              <div class="text-center justify-content-center tab-pane fade active show" id="account-general">
 
                 <div class="card-body media align-items-center">
                   <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="d-block ui-w-80"/>
@@ -103,7 +83,7 @@ const UpdateProfile = () => {
                       <input type="text" class="form-control mb-1" value="nmaxwell@mail.com"/>
                         <div class="alert alert-warning mt-3">
                           Your email is not confirmed. Please check your inbox.<br/>
-                            <a href="javascript:void(0)">Resend confirmation</a>
+                            <a href="/#">Resend confirmation</a>
                         </div>
                     </div>
                     <div class="form-group">
@@ -154,8 +134,6 @@ const UpdateProfile = () => {
                       <option>France</option>
                     </select>
                   </div>
-
-
                 </div>
                 <hr class="border-light m-0"/>
                   <div class="card-body pb-2">
@@ -206,7 +184,7 @@ const UpdateProfile = () => {
                 <hr class="border-light m-0"/>
                   <div class="card-body">
                     <h5 class="mb-2">
-                      <a href="javascript:void(0)" class="float-right text-muted text-tiny"><i class="ion ion-md-close"></i> Remove</a>
+                      <a href="/#" class="float-right text-muted text-tiny"><i class="ion ion-md-close"></i> Remove</a>
                       <i class="ion ion-logo-google text-google"></i>
                       You are connected to Google:
                     </h5>
