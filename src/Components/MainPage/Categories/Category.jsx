@@ -1,15 +1,23 @@
+import axios from 'axios';
 import React from 'react'
+import { useParams } from 'react-router-dom';
 import img from '../../../Assets/Images/Hero/i-code.png'
 import '../../../Assets/Styles/MainPage/Category/CategoryCard.css'
 
 function Category(props) {
+  
+  // axios.get(`http://localhost:53410/api/Vacancies/getlistbycategory?categoryId=${props.product.id}`)
+  // .then(res=>{
+  //   console.log(res)
+  // });
+  
   return (
     <div className=''>
     <div className=' cardd '>
         <div className='category_card'>
             <div className='cb-header'>
                 <img src={img} alt='value'/>
-                {/* <span className='job_count'>123</span> */}
+                
             </div>
             <div className='cb-body'>
                     <h3>
