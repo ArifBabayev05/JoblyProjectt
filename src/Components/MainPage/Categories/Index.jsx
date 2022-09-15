@@ -16,7 +16,10 @@ function Index() {
     error: false
   })
   const [currentPage, setCurrentpage] = useState(1);
-
+const [postPerPage, setPostPerPage] = useState(4);
+const lastPostIndex = currentPage * postPerPage;
+const firstPostIndex = lastPostIndex - postPerPage;
+const currentPost = products.slice(firstPostIndex,lastPostIndex);
 
   useEffect(() => {
     setProducts({
