@@ -133,7 +133,7 @@ const CompanyUpdate = (props) => {
 
         <div class="row">
           <div class="col-sm-10 offset-sm-2">
-            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} class="btn btn-primary">Əlavə Et</button>
+            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} class="btn btn-primary">Yenilə</button>
           </div>
         </div>
       </form>

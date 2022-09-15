@@ -126,7 +126,7 @@ const Contact = (props) => {
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="form-group mt-2">
-                                                    <textarea class="form-control" name="message" rows="8" placeholder="Mesajınızı Daxil Edin."></textarea>
+                                                    <textarea class="form-control" required name="message" rows="8" placeholder="Mesajınızı Daxil Edin."></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
