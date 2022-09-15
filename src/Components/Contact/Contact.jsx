@@ -8,7 +8,9 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from 'react-redux'
 import { auth } from '../Auth/Firebase/config';
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice';
-import contactImage from '../../Assets/Images/Hero/contact.svg'
+import contactImage from '../../Assets/Images/Hero/contactt.svg'
+import tel from '../../Assets/Images/Hero/tel.png'
+
 const Result = () => {
     return (
         <p>Mesajınız Uğurla Göndərildi.</p>
@@ -93,7 +95,7 @@ const Contact = (props) => {
     }, 2000)
     return (
         <div>
-            <div class="contact3 py-5">
+            <div class="contact3 mt-5 py-5">
                 <div class="row no-gutters">
                     <div class="container">
                         <div class="row">
@@ -104,31 +106,27 @@ const Contact = (props) => {
                             </div>
                             <div class="col-lg-6">
                                 <div class="contact-box ml-3">
-                                    <h1 class="font-weight-light mt-2">Quick Contact</h1>
+                                    <h1 class="font-weight-light mt-2">Mesajı daxil edin</h1>
                                     <form class="mt-4" ref={form} onSubmit={sendEmail}>
                                         <div class="row">
                                             <div class="col-lg-12">
+                                               
                                                 <div class="form-group mt-2">
-                                                    <input class="form-control" type="text" value={displayname} name="user_name" placeholder="name" />
+                                                    <input style={{'display': 'none'}} class="form-control" type="text" value={displayname} name="user_name" placeholder="name" />
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="form-group mt-2">
-                                                    <input class="form-control" value={displaymail} name="user_email" type="email" placeholder="email address" />
+                                                    <input style={{'display': 'none'}} class="form-control" value={displaymail} name="user_email" type="email" placeholder="email address" />
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="form-group mt-2">
-                                                    <input class="form-control" type="text" placeholder="phone" />
+                                                    <textarea class="form-control" name="message" rows="8" placeholder="Mesajınızı Daxil Edin."></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
-                                                <div class="form-group mt-2">
-                                                    <textarea class="form-control" name="message" rows="3" placeholder="message"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <button type="submit" value="Send" class="btn btn-danger-gradiant mt-3 text-white border-0 px-3 py-2"><span> SUBMIT</span></button>
+                                                <button type="submit" value="Send" style={{backgroundColor:"#785BF4"}} class="btn mt-3 submitBut  border-0 px-3 py-2"><span> Göndər</span></button>
                                             </div>
                                         </div>
                                     </form>
@@ -137,47 +135,32 @@ const Contact = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
-                                <div class="card mt-4 border-0 mb-4">
+                            <div class="col-lg-12 mt-5">
+                                <div class="card mt-4  mb-4">
                                     <div class="row">
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="card-body d-flex align-items-center c-detail pl-0">
-                                                <div class="mr-3 align-self-center">
-                                                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon1.png" />
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="card-body d-flex justify-content-center text-center  align-items-center c-detail pl-0">
+                                                <div class="mr-3 justify-content-center text-center align-self-center">
                                                 </div>
                                                 <div class="">
-                                                    <h6 class="font-weight-medium">Address</h6>
-                                                    <p class="">601 Sherwood Ave.
-                                                        <br /> San Bernandino</p>
+                                                    <h4 class="font-weight-medium">Email Ünvanımız</h4>
+                                                    <p class="mail">
+                                                        jobly@info.az </p>
+                                                        
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="card-body d-flex align-items-center c-detail">
-                                                <div class="mr-3 align-self-center">
-                                                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon2.png" />
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="card-body d-flex justify-content-center text-center  align-items-center c-detail">
+                                                <div class="mr-3 justify-content-center text-center align-self-center">
                                                 </div>
                                                 <div class="">
-                                                    <h6 class="font-weight-medium">Phone</h6>
-                                                    <p class="">251 546 9442
-                                                        <br /> 630 446 8851</p>
+                                                    <h4 class="font-weight-medium">Telefon nömrəmiz</h4>
+                                                    <p type='tel' class="mail">+994774407050</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-md-4">
-                                            <div class="card-body d-flex align-items-center c-detail">
-                                                <div class="mr-3 align-self-center">
-                                                    <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/icon3.png" />
-                                                </div>
-                                                <div class="">
-                                                    <h6 class="font-weight-medium">Email</h6>
-                                                    <p class="">
-                                                        info@wrappixel.com
-                                                        <br /> 123@wrappixel.com
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -185,7 +168,7 @@ const Contact = (props) => {
                     </div>
                 </div>
             </div>
-           
+
 
         </div>
     )
