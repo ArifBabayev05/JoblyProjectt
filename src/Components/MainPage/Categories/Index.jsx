@@ -4,9 +4,10 @@ import Loader from '../../Jobs/Loader'
 import Category from './Category'
 import '../../../Assets/Styles/MainPage/Category/Category.css'
 import Pagination from './Pagination'
+import ReactPaginate from 'react-paginate';
 
 
-function Index() {
+function Index({ currentItems }) {
   const url = `http://localhost:53410/api/Vacancies/getall`
   // const [query, setQuery] = useState("")
 
@@ -54,24 +55,27 @@ function Index() {
     content = <p>Xəta baş verdi, yenidən yoxlayın.</p>
   }
 
-  
+
   const [coinsData, setCoinsData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(8);
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPosts = coinsData.slice(firstPostIndex, lastPostIndex);
+
+
+
   if (products.data) {
     content =
-      products.data.map((product) =>
+      products.data.slice(0,5).map((product) =>
         <div key={product.id}>
-          <Category product={(product)}/>
-          
+          <Category product={(product)} />
         </div>
-        
-      )
 
+      )
   }
+
+
   return (
     <div className='container category'>
       <h2 className='fade-up'>
