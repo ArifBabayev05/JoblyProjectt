@@ -3,6 +3,7 @@ import axios from 'axios'
 import Loader from '../../Jobs/Loader'
 import Category from './Category'
 import '../../../Assets/Styles/MainPage/Category/Category.css'
+import Pagination from './Pagination'
 
 
 function Index() {
@@ -15,12 +16,8 @@ function Index() {
     data: null,
     error: false
   })
-  const [currentPage, setCurrentpage] = useState(1);
-const [postPerPage, setPostPerPage] = useState(4);
-const lastPostIndex = currentPage * postPerPage;
-const firstPostIndex = lastPostIndex - postPerPage;
-const currentPost = products.slice(firstPostIndex,lastPostIndex);
 
+  const [productss, setProductss] = useState([])
   useEffect(() => {
     setProducts({
       loading: true,
@@ -57,12 +54,21 @@ const currentPost = products.slice(firstPostIndex,lastPostIndex);
     content = <p>Xəta baş verdi, yenidən yoxlayın.</p>
   }
 
+  
+  const [coinsData, setCoinsData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(8);
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPosts = coinsData.slice(firstPostIndex, lastPostIndex);
   if (products.data) {
     content =
       products.data.map((product) =>
         <div key={product.id}>
-          <Category product={product} />
+          <Category product={(product)}/>
+          
         </div>
+        
       )
 
   }
