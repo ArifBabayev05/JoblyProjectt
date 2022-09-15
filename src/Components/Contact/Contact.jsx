@@ -11,11 +11,11 @@ import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice
 import contactImage from '../../Assets/Images/Hero/contactt.svg'
 import tel from '../../Assets/Images/Hero/tel.png'
 
-const Result = () => {
-    return (
-        <p>Mesajınız Uğurla Göndərildi.</p>
-    )
-}
+// const Result = () => {
+//     return (
+//        toast.success("Mesajınız Uğurla Göndərildi")
+//     )
+// }
 
 
 const Contact = (props) => {
@@ -76,7 +76,7 @@ const Contact = (props) => {
     }, [dispatch, displayname]);
 
     const form = useRef();
-    const [result, setResult] = useState(false)
+    // const [result, setResult] = useState(false)
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -84,15 +84,19 @@ const Contact = (props) => {
         emailjs.sendForm('service_rp4rjam', 'template_s6wcke8', form.current, 'Lhg9k2LlEjFkq1WxD')
             .then((result) => {
                 console.log(result.text);
+                toast.success("Mesajınız Uğurla Göndərildi")
+                
+                
             }, (error) => {
+                toast.error("Xəta Baş Verdi! Daha sonra yenidən cəhd edin!")
                 console.log(error.text);
             });
         e.target.reset();
-        setResult(true);
+        // setResult(true);
     };
     setTimeout(() => {
-        setResult(false);
-    }, 2000)
+        // setResult(false);
+    }, 0)
     return (
         <div>
             <div class="contact3 mt-5 py-5">
@@ -127,11 +131,13 @@ const Contact = (props) => {
                                             </div>
                                             <div class="col-lg-12">
                                                 <button type="submit" value="Send" style={{backgroundColor:"#785BF4"}} class="btn mt-3 submitBut  border-0 px-3 py-2"><span> Göndər</span></button>
+                                                
                                             </div>
                                         </div>
                                     </form>
                                     <div className='row'>
-                                        {result ? <Result /> : null}
+                                        {/* {result ? <Result /> : null} */}
+                                        <ToastContainer/>
                                     </div>
                                 </div>
                             </div>
