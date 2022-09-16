@@ -23,7 +23,7 @@ function Category(props) {
                     {props.product.name}
                     </h3>
                     <p>
-                    Software Engineer, Web / Mobile Developer & More
+                    Jobly vasitəsilə kateqoriyaya uyğun  işi və ya <br/> işçini tap!
                     </p>
             </div>
             

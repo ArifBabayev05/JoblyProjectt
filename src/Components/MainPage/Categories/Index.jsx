@@ -8,7 +8,7 @@ import '../../../Assets/Styles/MainPage/Category/Category.css'
 
 
 function Index({ currentItems }) {
-  const url = `http://localhost:53410/api/Vacancies/getall`
+  const url = `http://localhost:53410/api/Categories/getall`
   // const [query, setQuery] = useState("")
 
 
