@@ -3,8 +3,8 @@ import axios from 'axios'
 import Loader from '../../Jobs/Loader'
 import Category from './Category'
 import '../../../Assets/Styles/MainPage/Category/Category.css'
-import Pagination from './Pagination'
-import ReactPaginate from 'react-paginate';
+// import Pagination from './Pagination'
+// import ReactPaginate from 'react-paginate';
 
 
 function Index({ currentItems }) {
@@ -18,7 +18,7 @@ function Index({ currentItems }) {
     error: false
   })
 
-  const [productss, setProductss] = useState([])
+  
   useEffect(() => {
     setProducts({
       loading: true,
@@ -56,20 +56,19 @@ function Index({ currentItems }) {
   }
 
 
-  const [coinsData, setCoinsData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(8);
-  const lastPostIndex = currentPage * postsPerPage;
-  const firstPostIndex = lastPostIndex - postsPerPage;
-  const currentPosts = coinsData.slice(firstPostIndex, lastPostIndex);
-
+  // const [coinsData, setCoinsData] = useState([]);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [postsPerPage, setPostsPerPage] = useState(8);
+  // const lastPostIndex = currentPage * postsPerPage;
+  // const firstPostIndex = lastPostIndex - postsPerPage;
+  // const currentPosts = coinsData.slice(firstPostIndex, lastPostIndex);
 
 
   if (products.data) {
     content =
       products.data.slice(0,5).map((product) =>
-        <div key={product.id}>
-          <Category product={(product)} />
+        <div  key={product.id}>
+          <Category   product={(product)} />
         </div>
 
       )

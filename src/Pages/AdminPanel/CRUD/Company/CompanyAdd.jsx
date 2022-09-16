@@ -93,6 +93,7 @@ const CompanyAdd = () => {
                                         </div>
                                     </div>
                                 </form>
+                                <ToastContainer/>
                             </div>
                         </div>
                     </div>

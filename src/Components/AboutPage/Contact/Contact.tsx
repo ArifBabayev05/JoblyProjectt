@@ -1,6 +1,5 @@
 import React from 'react'
 import '../../../Assets/Styles/AboutPage/Contact/Contact.css'
-import emailjs from 'emailjs-com'
 import ContactForm from '../../Contact/Contact'
 
 function Contact() {

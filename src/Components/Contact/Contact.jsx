@@ -3,13 +3,12 @@ import React, { useRef, useState, useEffect } from 'react'
 import emailjs from 'emailjs-com'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link, useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from 'react-redux'
 import { auth } from '../Auth/Firebase/config';
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice';
 import contactImage from '../../Assets/Images/Hero/contactt.svg'
-import tel from '../../Assets/Images/Hero/tel.png'
+
 
 // const Result = () => {
 //     return (
@@ -19,8 +18,7 @@ import tel from '../../Assets/Images/Hero/tel.png'
 
 
 const Contact = (props) => {
-    const navigate = useNavigate();
-    // const [menu, setMenu] = useState(false);
+    
     const [displayname, setDisplayName] = useState("");
     const [displaymail, setDisplayMail] = useState("");
 
@@ -99,38 +97,38 @@ const Contact = (props) => {
     }, 0)
     return (
         <div>
-            <div class="contact3 mt-5 py-5">
-                <div class="row no-gutters">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="card-shadow">
-                                    <img src={contactImage} class="img-fluid" />
+            <div className="contact3 mt-5 py-5">
+                <div className="row no-gutters">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <div className="card-shadow">
+                                    <img alt='value' src={contactImage} className="img-fluid" />
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="contact-box ml-3">
-                                    <h1 class="font-weight-light mt-2">Mesajı daxil edin</h1>
-                                    <form class="mt-4" ref={form} onSubmit={sendEmail}>
-                                        <div class="row">
-                                            <div class="col-lg-12">
+                            <div className="col-lg-6">
+                                <div className="contact-box ml-3">
+                                    <h1 className="font-weight-light mt-2">Mesajı daxil edin</h1>
+                                    <form className="mt-4" ref={form} onSubmit={sendEmail}>
+                                        <div className="row">
+                                            <div className="col-lg-12">
                                                
-                                                <div class="form-group mt-2">
-                                                    <input style={{'display': 'none'}} class="form-control" type="text" value={displayname} name="user_name" placeholder="name" />
+                                                <div className="form-group mt-2">
+                                                    <input style={{'display': 'none'}} className="form-control" type="text" value={displayname} name="user_name" placeholder="name" />
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12">
-                                                <div class="form-group mt-2">
-                                                    <input style={{'display': 'none'}} class="form-control" value={displaymail} name="user_email" type="email" placeholder="email address" />
+                                            <div className="col-lg-12">
+                                                <div className="form-group mt-2">
+                                                    <input style={{'display': 'none'}} className="form-control" value={displaymail} name="user_email" type="email" placeholder="email address" />
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12">
-                                                <div class="form-group mt-2">
-                                                    <textarea class="form-control" required name="message" rows="8" placeholder="Mesajınızı Daxil Edin."></textarea>
+                                            <div className="col-lg-12">
+                                                <div className="form-group mt-2">
+                                                    <textarea className="form-control" required name="message" rows="8" placeholder="Mesajınızı Daxil Edin."></textarea>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12">
-                                                <button type="submit" value="Send" style={{backgroundColor:"#785BF4"}} class="btn mt-3 submitBut  border-0 px-3 py-2"><span> Göndər</span></button>
+                                            <div className="col-lg-12">
+                                                <button type="submit" value="Send" style={{backgroundColor:"#785BF4"}} className="btn mt-3 submitBut  border-0 px-3 py-2"><span> Göndər</span></button>
                                                 
                                             </div>
                                         </div>
@@ -141,28 +139,28 @@ const Contact = (props) => {
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12 mt-5">
-                                <div class="card mt-4  mb-4">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="card-body d-flex justify-content-center text-center  align-items-center c-detail pl-0">
-                                                <div class="mr-3 justify-content-center text-center align-self-center">
+                            <div className="col-lg-12 mt-5">
+                                <div className="card mt-4  mb-4">
+                                    <div className="row">
+                                        <div className="col-lg-6 col-md-6">
+                                            <div className="card-body d-flex justify-content-center text-center  align-items-center c-detail pl-0">
+                                                <div className="mr-3 justify-content-center text-center align-self-center">
                                                 </div>
-                                                <div class="">
-                                                    <h4 class="font-weight-medium">Email Ünvanımız</h4>
-                                                    <p class="mail">
+                                                <div className="">
+                                                    <h4 className="font-weight-medium">Email Ünvanımız</h4>
+                                                    <p className="mail">
                                                         jobly@info.az </p>
                                                         
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="card-body d-flex justify-content-center text-center  align-items-center c-detail">
-                                                <div class="mr-3 justify-content-center text-center align-self-center">
+                                        <div className="col-lg-6 col-md-6">
+                                            <div className="card-body d-flex justify-content-center text-center  align-items-center c-detail">
+                                                <div className="mr-3 justify-content-center text-center align-self-center">
                                                 </div>
-                                                <div class="">
-                                                    <h4 class="font-weight-medium">Telefon nömrəmiz</h4>
-                                                    <p type='tel' class="mail">+994774407050</p>
+                                                <div className="">
+                                                    <h4 className="font-weight-medium">Telefon nömrəmiz</h4>
+                                                    <p type='tel' className="mail">+994774407050</p>
                                                 </div>
                                             </div>
                                         </div>

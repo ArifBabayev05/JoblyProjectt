@@ -1,6 +1,4 @@
-import axios from 'axios';
 import React from 'react'
-import { useParams } from 'react-router-dom';
 import img from '../../../Assets/Images/Hero/i-code.png'
 import '../../../Assets/Styles/MainPage/Category/CategoryCard.css'
 
@@ -11,10 +9,11 @@ function Category(props) {
   //   console.log(res)
   // });
   
+  
   return (
     <div className=''>
     <div className=' cardd '>
-        <div className='category_card'>
+        <div  className='category_card'>
             <div className='cb-header'>
                 <img src={img} alt='value'/>
                 
