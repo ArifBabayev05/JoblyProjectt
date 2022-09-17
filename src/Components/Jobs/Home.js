@@ -8,7 +8,9 @@ import { useDispatch } from 'react-redux'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../Auth/Firebase/config'
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice'
-
+import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 
 //Job Details
 function Home() {
@@ -112,19 +114,42 @@ function Home() {
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">{product.data.name} Vakansiyasına Müraciət</h5>
+                <h5 class="modal-title" style={{ "color": "#785BF4" }} id="staticBackdropLabel"><span className='fw-bold' style={{ "color": "#785BF4" }} >{product.data.name}</span> Vakansiyasına Müraciət</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 Dəyərli  <span className='fw-bold text-dark'> {displayname},  </span> {product.data.name} vakansiyasına maraq göstərdiyiniz üçün <span className='fw-bold text-dark'>{product.data.company.name}</span> adından sizə təşəkkür edirik.
 
-                <div>
-                  <input/>
+                <div class="my-3">
+                  <h5 style={{ "color": "#785BF4" }}>Müraciət Formu</h5>
+                </div>
+                <div class="my-2 d-flex">
+                  <label style={{ "align-items": "center", "display": "flex" }} className='me-2' for='username'>İstifadəçi Adı</label>
+                  <input name='username' required className='w-50 form-control' />
+                  <OverlayTrigger
+                    placement="bottom"
+                    overlay={<Tooltip id="button-tooltip-2">Check out this avatar</Tooltip>}
+                  >
+                    {({ ref, ...triggerHandler }) => (
+                      <Button
+                        variant="light"
+                        {...triggerHandler}
+                        className="d-inline-flex align-items-center"
+                      >
+                        <Image
+                          ref={ref}
+                          roundedCircle
+                          src="holder.js/20x20?text=J&bg=28a745&fg=FFF"
+                        />
+                        <span className="ms-1">Hover to see</span>
+                      </Button>
+                    )}
+                  </OverlayTrigger>
                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
-                <button type="button" class="btn btn-primary">Müraciəti Təsdiqlə</button>
+                <button type="button" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
               </div>
             </div>
           </div>
