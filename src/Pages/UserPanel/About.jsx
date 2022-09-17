@@ -10,7 +10,7 @@ function About() {
        <Hero/>
       <Image/>
       
-      <Contact/>
+      {/* <Contact/>  */}
     </div>
   )
 }
