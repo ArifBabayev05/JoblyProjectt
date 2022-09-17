@@ -26,6 +26,7 @@ import VacancyUpdate from './Pages/AdminPanel/CRUD/Vacancy/VacancyUpdate';
 import UpdateProfile from './Pages/UserPanel/UpdateProfile';
 import CategoryUpdate from './Pages/AdminPanel/CRUD/Category/CategoryUpdate';
 import Contact from './Components/AboutPage/Contact/Contact';
+import Appeals from './Pages/AdminPanel/Pages/Appeals';
 
 
 
@@ -56,6 +57,8 @@ function App() {
           <Route path='/companyAdmin' element={<CompanyAdmin />} />
           <Route path='/vacancyAdmin' element={<VacancyAdmin />} />
           <Route path='/categoryAdmin' element={<CategoryAdmin />} />
+          <Route path='/appeals' element={<Appeals />} />
+
 
           {/* Admin Panel CRUD Pages */}
           <Route path='admin/categoryAdd' element={<CategoryAdd />} />
