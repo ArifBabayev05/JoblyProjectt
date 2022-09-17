@@ -15,17 +15,20 @@ import info from '../../Assets/Images/Hero/info.png'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 //Job Details
 function Home() {
-  const [name, setName] = useState();
-  const [mail, setMail] = useState();
-  const [tel, setTel] = useState();
-  const [experience, setExperience] = useState();
-  const [skill, setSkill] = useState();
-  const [education, setEducation] = useState();
-  const [company, setCompany] = useState();
-  const [vacacny, setVacancy] = useState();
+  const [name, setName] = useState('');
+  const [mail, setMail] = useState('');
+  const [tel, setTel] = useState('');
+  const [experience, setExperience] = useState('');
+  const [skill, setSkill] = useState('');
+  const [education, setEducation] = useState('');
+  const [company, setCompany] = useState('');
+  const [vacacny, setVacancy] = useState('');
 
-  const OnSubmit = ()=>{
-
+  const onSubmit = ()=>{
+    console.log('test')
+    axios.post(`https://sheet.best/api/sheets/a8f66677-58df-4cea-82d6-02e7aaab0f3f`,{
+      name,mail,tel,experience,skill,education,company,vacacny
+    })
   }
 
 
@@ -353,7 +356,7 @@ function Home() {
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
-                <button type="button" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
+                <button type="submit" onClick={onSubmit} style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
               </div>
             </div>
           </div>
