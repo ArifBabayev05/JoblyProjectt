@@ -15,6 +15,16 @@ import info from '../../Assets/Images/Hero/info.png'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 //Job Details
 function Home() {
+  const [name, setName] = useState();
+  const [mail, setMail] = useState();
+  const [tel, setTel] = useState();
+  const [experience, setExperience] = useState();
+  const [skill, setSkill] = useState();
+  const [education, setEducation] = useState();
+  const [company, setCompany] = useState();
+  const [vacacny, setVacancy] = useState();
+
+
 
   const { id } = useParams()
   const url = `http://localhost:53410/api/Vacancies/getbyid?id=${id}`
@@ -151,8 +161,12 @@ function Home() {
 
                 {/* Istifaçi Adı */}
                 <div class="my-2 d-flex">
-                  <div className='col-md-4'> <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label> </div>
-                  <div className='col-md-6'> <input name='username' defaultValue={displayname} required className=' form-control' /> </div>
+                  <div className='col-md-4'>
+                    <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label>
+                  </div>
+                  <div className='col-md-6'>
+                    <input name='username' defaultValue={displayname} required className=' form-control' placeholder='İstifadəçi Adı' />
+                  </div>
                   <OverlayTrigger
                     placement="right"
                     overlay={<Tooltip id="button-tooltip-2">Müsahibəyə çağırıldığınız zaman, sizə necə müraciət olunmasına kömək edir</Tooltip>}
@@ -176,8 +190,12 @@ function Home() {
 
                 {/* Mail */}
                 <div class="my-2 d-flex">
-                  <div className='col-md-4'> <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Email Ünvanı:</label> </div>
-                  <div className='col-md-6'> <input name='username' defaultValue={displaymail} required className=' form-control' /></div>
+                  <div className='col-md-4'>
+                    <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Email Ünvanı:</label>
+                  </div>
+                  <div className='col-md-6'>
+                    <input name='username' defaultValue={displaymail} required className=' form-control' placeholder='Email ünvanı' />
+                  </div>
                   <OverlayTrigger
                     placement="right"
                     overlay={<Tooltip id="button-tooltip-2">Müsahibəyə çağırıldığınız təqdirdə bu email ünvanına mesaj gələcək.</Tooltip>}
@@ -202,8 +220,11 @@ function Home() {
                 {/* Telefon Nömrəsi */}
                 <div class="my-2 d-flex">
                   <div className='col-md-4'>
-                    <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Telefon Nömrəsi:</label> </div>
-                  <div className='col-md-6'> <input name='username' required className=' form-control' /> </div>
+                    <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Telefon Nömrəsi:</label>
+                  </div>
+                  <div className='col-md-6'>
+                    <input name='username' required className=' form-control' placeholder='Telefon Nömrəsi' />
+                  </div>
                   <OverlayTrigger
                     placement="right"
                     overlay={<Tooltip id="button-tooltip-2">Şirkətin sizinlə əlaqə saxlaması üçün lazımlıdır.</Tooltip>}
@@ -227,8 +248,12 @@ function Home() {
 
                 {/* İş Təcrübəsi */}
                 <div class="my-2 d-flex">
-                  <div className='col-md-4'><label style={{ "align-items": "center", "display": "flex" }} className='' for='username'>İş Təcrübəsi:</label></div>
-                  <div className='col-md-6'><input name='username' required className=' form-control' /></div>
+                  <div className='col-md-4'>
+                    <label style={{ "align-items": "center", "display": "flex" }} className='' for='username'>İş Təcrübəsi:</label>
+                  </div>
+                  <div className='col-md-6'>
+                    <input name='username' required className=' form-control' placeholder='İş Təcrübəsi' />
+                  </div>
                   <div className='col-md-2'>
                     <OverlayTrigger
                       placement="right"
@@ -254,9 +279,11 @@ function Home() {
                 {/* Bacarıqları */}
                 <div class="my-2 d-flex">
                   <div className='col-md-4'>
-                    <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Bacarıqlar:</label> </div>
+                    <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Bacarıqlar:</label>
+                  </div>
                   <div className='col-md-6'>
-                    <input name='username' defaultValue={displayname} required className=' form-control' /> </div>
+                    <input name='username' required className=' form-control' placeholder='Bacarıqlar' />
+                  </div>
                   <OverlayTrigger
                     placement="right"
                     overlay={<Tooltip id="button-tooltip-2">Vakansiyada tələb olunan iş bacarıqlarına uyğunluq üçün lazımlıdır.</Tooltip>}
@@ -281,77 +308,93 @@ function Home() {
                 {/* Təhsili */}
                 <div class="my-2 d-flex">
                   <div className='col-md-4'>
-                    <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Təhsil:</label> </div>
-                    <div className='col-md-6'>
-                      <input name='username' required className=' form-control' />  </div>
-                      <OverlayTrigger
-                        placement="right"
-                        overlay={<Tooltip id="button-tooltip-2">Vakansiyada tələb olunan təhsil kriteriyasına uyğunluq üçün lazımlıdır.</Tooltip>}
+                    <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Təhsil:</label>
+                  </div>
+                  <div className='col-md-6'>
+                    <input name='username' required className=' form-control' placeholder='Təhsil' />
+                  </div>
+                  <OverlayTrigger
+                    placement="right"
+                    overlay={<Tooltip id="button-tooltip-2">Vakansiyada tələb olunan təhsil kriteriyasına uyğunluq üçün lazımlıdır.</Tooltip>}
+                  >
+                    {({ ref, ...triggerHandler }) => (
+                      <Button
+                        variant=""
+                        {...triggerHandler}
+                        className="d-inline-flex ms-3 align-items-center"
                       >
-                        {({ ref, ...triggerHandler }) => (
-                          <Button
-                            variant=""
-                            {...triggerHandler}
-                            className="d-inline-flex ms-3 align-items-center"
-                          >
-                            <Image style={{ 'width': '20px' }}
-                              ref={ref}
-                              roundedCircle
-                              src={info}
-                            />
+                        <Image style={{ 'width': '20px' }}
+                          ref={ref}
+                          roundedCircle
+                          src={info}
+                        />
 
-                          </Button>
-                        )}
-                      </OverlayTrigger>
-                    </div>
+                      </Button>
+                    )}
+                  </OverlayTrigger>
+                </div>
+
+                <div class="my-2 d-flex" >
+                  {/* Vacancy Name Default */}
+                  <div className='col-md-6' style={{'display':'none'}}>
+                    <input name='username' value={product.data.name} required className=' form-control' placeholder='Təhsil' />
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
-                    <button type="button" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
+
+                </div>
+                <div class="my-2 d-flex" >
+                  {/* Vacancy Name Default */}
+                  <div className='col-md-6' style={{display:'none' }}>
+                    <input name='username' value={product.data.company.name} required className=' form-control' placeholder='Təhsil' />
                   </div>
                 </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
+                <button type="button" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
               </div>
             </div>
+          </div>
+        </div>
 
-            <div className='card-body'>
-              <div className='top_infos d-flex'>
-                <p className='me-2'>{product.data.city.name}</p>
-                <p>{product.data.company.name}</p>
+        <div className='card-body'>
+          <div className='top_infos d-flex'>
+            <p className='me-2'>{product.data.city.name}</p>
+            <p>{product.data.company.name}</p>
 
-              </div>
+          </div>
 
-              <div className='body_infos row'>
-                <div className='works col-lg-6 col-sm-12'>
-                  <h3 className='mb-3 ms-1'>Əsas Vəzifə Öhdəlikləri</h3>
-                  <p className='mt-4 ms-4'>{product.data.vəzifəÖhdəlikləri}</p>
-                </div>
-                <div className='skills  col-lg-6 col-sm-12'>
-                  <h3 className='mb-4 ms-1'>Lazım Olan Bacarıqlar</h3>
-                  <p className='ms-5'>{product.data.tələblər}</p>
-                </div>
-
-
-              </div>
-
+          <div className='body_infos row'>
+            <div className='works col-lg-6 col-sm-12'>
+              <h3 className='mb-3 ms-1'>Əsas Vəzifə Öhdəlikləri</h3>
+              <p className='mt-4 ms-4'>{product.data.vəzifəÖhdəlikləri}</p>
             </div>
-            <div className='d-flex justify-content-end card-footer'>
-              <h6> {product.data.city.name}</h6>
-              <h6>{product.data.deadline.slice(0, 10)}</h6>
+            <div className='skills  col-lg-6 col-sm-12'>
+              <h3 className='mb-4 ms-1'>Lazım Olan Bacarıqlar</h3>
+              <p className='ms-5'>{product.data.tələblər}</p>
             </div>
 
 
           </div>
+
+        </div>
+        <div className='d-flex justify-content-end card-footer'>
+          <h6> {product.data.city.name}</h6>
+          <h6>{product.data.deadline.slice(0, 10)}</h6>
+        </div>
+
+
+      </div>
 
   }
 
-          return (
-          <div className='container'>
+  return (
+    <div className='container'>
 
-            <div>{content}</div>
-          </div>
+      <div>{content}</div>
+    </div>
 
 
-          )
+  )
 }
 
-          export default Home
+export default Home
