@@ -122,31 +122,31 @@ const VacancyUpdate = (props) => {
         </div>
 
         <div class="row mb-3">
-          <label for="inputEmail" class="col-sm-2 col-form-label">typeOfwork</label>
+          <label for="inputEmail" class="col-sm-2 col-form-label">İşin Tipi</label>
           <div class="col-sm-10">
             <input defaultValue={product.data.typeOfwork} onChange={(e) => handle(e)} value={data.value} type="name" required class="form-control" id="typeOfwork" placeholder="typeOfwork" />
           </div>
         </div>
         <div class="row mb-3">
-          <label for="inputEmail" class="col-sm-2 col-form-label">vəzifəÖhdəlikləri</label>
+          <label for="inputEmail" class="col-sm-2 col-form-label">Vəzifə Öhdəlikləri</label>
           <div class="col-sm-10">
             <input defaultValue={product.data.vəzifəÖhdəlikləri} onChange={(e) => handle(e)} value={data.value} type="mail" required class="form-control" id="vəzifəÖhdəlikləri" placeholder="vəzifəÖhdəlikləri" />
           </div>
         </div>
         <div class="row mb-3">
-          <label for="inputEmail" class="col-sm-2 col-form-label">tələblər</label>
+          <label for="inputEmail" class="col-sm-2 col-form-label">Tələblər</label>
           <div class="col-sm-10">
             <input defaultValue={product.data.tələblər} onChange={(e) => handle(e)} value={data.value} type="mail" required class="form-control" id="tələblər" placeholder="vəzifəÖhdəlikləri" />
           </div>
         </div>
         <div class="row mb-3">
-          <label for="inputEmail" class="col-sm-2 col-form-label">salary</label>
+          <label for="inputEmail" class="col-sm-2 col-form-label">Əmək Haqqı</label>
           <div class="col-sm-10">
             <input defaultValue={product.data.salary} onChange={(e) => handle(e)} value={data.value} type="text" required class="form-control" id="salary" placeholder="salary" />
           </div>
         </div>
         <div class="row mb-3">
-          <label for="inputEmail" class="col-sm-2 col-form-label">deadline</label>
+          <label for="inputEmail" class="col-sm-2 col-form-label">Bitmə Tarixi</label>
           <div class="col-sm-10">
             <input defaultValue={product.data.deadline} onChange={(e) => handle(e)} value={data.value} type="date" required class="form-control" id="deadline" placeholder="deadline" />
           </div>
