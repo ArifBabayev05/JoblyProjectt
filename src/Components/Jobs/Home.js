@@ -24,6 +24,9 @@ function Home() {
   const [company, setCompany] = useState();
   const [vacacny, setVacancy] = useState();
 
+  const OnSubmit = ()=>{
+
+  }
 
 
   const { id } = useParams()
@@ -156,7 +159,7 @@ function Home() {
                 Dəyərli  <span className='fw-bold text-dark'> {displayname},  </span> {product.data.name} vakansiyasına maraq göstərdiyiniz üçün <span className='fw-bold text-dark'>{product.data.company.name}</span> adından sizə təşəkkür edirik.
 
                 <div class="my-3">
-                  <h5 style={{ "color": "#785BF4" }}>Müraciət Formu</h5>
+                  <h5 style={{ "color": "#785BF4",'text-decoration':'underline' }}>Müraciət Formu:</h5>
                 </div>
 
                 {/* Istifaçi Adı */}
@@ -165,7 +168,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' defaultValue={displayname} required className=' form-control' placeholder='İstifadəçi Adı' />
+                    <input name='username' defaultValue={displayname} onChange={(e)=>setName(e.target.value)}  required className=' form-control' placeholder='İstifadəçi Adı' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -194,7 +197,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Email Ünvanı:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' defaultValue={displaymail} required className=' form-control' placeholder='Email ünvanı' />
+                    <input name='username' defaultValue={displaymail} onChange={(e)=>setMail(e.target.value)} required className=' form-control' placeholder='Email ünvanı' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -223,7 +226,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Telefon Nömrəsi:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' required className=' form-control' placeholder='Telefon Nömrəsi' />
+                    <input name='username' required onChange={(e)=>setTel(e.target.value)} className=' form-control' placeholder='Telefon Nömrəsi' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -252,7 +255,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='' for='username'>İş Təcrübəsi:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' required className=' form-control' placeholder='İş Təcrübəsi' />
+                    <input name='username' required onChange={(e)=>setExperience(e.target.value)} className=' form-control' placeholder='İş Təcrübəsi' />
                   </div>
                   <div className='col-md-2'>
                     <OverlayTrigger
@@ -282,7 +285,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Bacarıqlar:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' required className=' form-control' placeholder='Bacarıqlar' />
+                    <input name='username' required onChange={(e)=>setSkill(e.target.value)} className=' form-control' placeholder='Bacarıqlar' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -311,7 +314,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Təhsil:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' required className=' form-control' placeholder='Təhsil' />
+                    <input name='username' required onChange={(e)=>setEducation(e.target.value)} className=' form-control' placeholder='Təhsil' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -337,14 +340,14 @@ function Home() {
                 <div class="my-2 d-flex" >
                   {/* Vacancy Name Default */}
                   <div className='col-md-6' style={{'display':'none'}}>
-                    <input name='username' value={product.data.name} required className=' form-control' placeholder='Təhsil' />
+                    <input name='username' value={product.data.name} onChange={(e)=>setVacancy(e.target.value)}  required className=' form-control' placeholder='Təhsil' />
                   </div>
 
                 </div>
                 <div class="my-2 d-flex" >
                   {/* Vacancy Name Default */}
                   <div className='col-md-6' style={{display:'none' }}>
-                    <input name='username' value={product.data.company.name} required className=' form-control' placeholder='Təhsil' />
+                    <input name='username' value={product.data.company.name} onChange={(e)=>setCompany(e.target.value)}  required className=' form-control' placeholder='Təhsil' />
                   </div>
                 </div>
               </div>
