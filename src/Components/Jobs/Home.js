@@ -1,14 +1,19 @@
-import React, { useState , useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 // import '../../Assets/Styles/Job/Job.css'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Loader from './Loader'
 import '../../Assets/Styles/Job/Home.css'
+import { useDispatch } from 'react-redux'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../Auth/Firebase/config'
+import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice'
 
 
 //Job Details
 function Home() {
-  const {id} = useParams()
+
+  const { id } = useParams()
   const url = `http://localhost:53410/api/Vacancies/getbyid?id=${id}`
   const [product, setProduct] = useState({
     loading: false,
@@ -18,100 +23,151 @@ function Home() {
 
   let content = null
 
-  useEffect(()=>{
+  useEffect(() => {
     setProduct({
-      loading:true,
+      loading: true,
       data: null,
       error: false
-      
+
     })
 
     axios.get(url)
-    .then(response =>{
+      .then(response => {
         setProduct({
-          loading:false,
+          loading: false,
           data: response.data,
           error: false
         })
 
-        .catch(() =>{
-          setProduct({
-            loading:false,
-            data: null,
-            error: true
+          .catch(() => {
+            setProduct({
+              loading: false,
+              data: null,
+              error: true
+            })
           })
-        })
-    })
+      })
   }, [url])
+  const navigate = useNavigate();
+  // const [menu, setMenu] = useState(false);
+  const [displayname, setDisplayName] = useState("");
+  const dispatch = useDispatch()
 
-  if(product.loading){
-    content = <Loader/>
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // const uid = user.uid;
+        if (user.displayName == null) {
+          const u1 = user.email.substring(0, user.email.indexOf("@"));
+          const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
+          // console.log(uName);
+          setDisplayName(uName);
+
+        } else {
+          setDisplayName(user.displayName)
+        }
+        dispatch(SET_ACTIVE_USER({
+          email: user.email,
+          userName: user.displayName ? user.displayName : displayname,
+          userId: user.uid,
+        }))
+      } else {
+        setDisplayName("")
+        dispatch(REMOVE_ACTIVE_USER())
+      };
+    })
+  }, [dispatch, displayname]);
+
+  if (product.loading) {
+    content = <Loader />
   }
 
-  if(product.error){
+  if (product.error) {
     content = <p>Xəta baş verdi, yenidən yoxlayın.</p>
   }
-  
-  if(product.data){
-   content =
-    <div className='card'>
-      <div className='card-header'>
-        <div className='d-flex'> 
-        <div className='headerImage me-4 mb-3'>
-          <img src= {product.data.company.image.name} alt='asf'/>
-        </div>
-          <h1>{product.data.name}</h1>
-        </div>
-      
-      <div className='salaryInfo'>
-        <p className='salary'>Maaş : {product.data.salary}</p>
-        <p className='salary'>Müraciətin Bitmə Tarixi : {product.data.deadline.slice(0, 10)}</p>
 
-      </div>
-      </div>
-    <div className='apply'>
-      <button className='btn h'>Müraciət Et</button>
-    </div>
+  if (product.data) {
+    content =
+      <div className='card'>
+        <div className='card-header'>
+          <div className='d-flex'>
+            <div className='headerImage me-4 mb-3'>
+              <img src={product.data.company.image.name} alt='asf' />
+            </div>
+            <h1>{product.data.name}</h1>
+          </div>
 
+          <div className='salaryInfo'>
+            <p className='salary'>Maaş : {product.data.salary}</p>
+            <p className='salary'>Müraciətin Bitmə Tarixi : {product.data.deadline.slice(0, 10)}</p>
 
-      <div className='card-body'>
-        <div className='top_infos d-flex'>
-          <p className='me-2'>{product.data.city.name}</p>
-          <p>{product.data.company.name}</p>
-
+          </div>
         </div>
 
-        <div className='body_infos row'>
-          <div className='works col-lg-6 col-sm-12'>
+        <div className='apply'>
+          <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" className='btn h'>Müraciət Et</button>
+        </div>
+
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">{product.data.name} Vakansiyasına Müraciət</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Dəyərli  <span className='fw-bold text-dark'> {displayname},  </span> {product.data.name} vakansiyasına maraq göstərdiyiniz üçün <span className='fw-bold text-dark'>{product.data.company.name}</span> adından sizə təşəkkür edirik.
+
+                <div>
+                  <input/>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
+                <button type="button" class="btn btn-primary">Müraciəti Təsdiqlə</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className='card-body'>
+          <div className='top_infos d-flex'>
+            <p className='me-2'>{product.data.city.name}</p>
+            <p>{product.data.company.name}</p>
+
+          </div>
+
+          <div className='body_infos row'>
+            <div className='works col-lg-6 col-sm-12'>
               <h3 className='mb-3 ms-1'>Əsas Vəzifə Öhdəlikləri</h3>
               <p className='mt-4 ms-4'>{product.data.vəzifəÖhdəlikləri}</p>
-          </div>
-          <div className='skills  col-lg-6 col-sm-12'>
-            <h3 className='mb-4 ms-1'>Lazım Olan Bacarıqlar</h3>
-            <p className='ms-5'>{product.data.tələblər}</p>
-          </div>
+            </div>
+            <div className='skills  col-lg-6 col-sm-12'>
+              <h3 className='mb-4 ms-1'>Lazım Olan Bacarıqlar</h3>
+              <p className='ms-5'>{product.data.tələblər}</p>
+            </div>
 
+
+          </div>
 
         </div>
+        <div className='d-flex justify-content-end card-footer'>
+          <h6> {product.data.city.name}</h6>
+          <h6>{product.data.deadline.slice(0, 10)}</h6>
+        </div>
+
 
       </div>
-    <div  className='d-flex justify-content-end card-footer'>
-     <h6> {product.data.city.name}</h6>
-      <h6>{product.data.deadline.slice(0, 10)}</h6>
-    </div>
-
-      
-    </div>
 
   }
-  
-    return (
-      <div className='container'>
-        
-        <div>{content}</div>
+
+  return (
+    <div className='container'>
+
+      <div>{content}</div>
     </div>
 
-    
+
   )
 }
 
