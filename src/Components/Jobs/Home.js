@@ -13,8 +13,12 @@ import Image from 'react-bootstrap/Image';
 import Tooltip from 'react-bootstrap/Tooltip';
 import info from '../../Assets/Images/Hero/info.png'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 //Job Details
 function Home() {
+  const navigate = useNavigate();
+
   const [name, setName] = useState('');
   const [mail, setMail] = useState('');
   const [tel, setTel] = useState('');
@@ -24,14 +28,6 @@ function Home() {
   const [company, setCompany] = useState('');
   const [vacacny, setVacancy] = useState('');
 
-  const onSubmit = ()=>{
-    console.log('test')
-    axios.post(`https://sheet.best/api/sheets/a8f66677-58df-4cea-82d6-02e7aaab0f3f`,{
-      name,mail,tel,experience,skill,education,company,vacacny
-    })
-  }
-
-
   const { id } = useParams()
   const url = `http://localhost:53410/api/Vacancies/getbyid?id=${id}`
   const [product, setProduct] = useState({
@@ -39,6 +35,14 @@ function Home() {
     data: null,
     error: false
   })
+  const onSubmit = (e)=>{
+    toast.success("Müraciətiniz uğurludur!")
+
+    axios.post(`https://sheet.best/api/sheets/a8f66677-58df-4cea-82d6-02e7aaab0f3f`,{
+      name,mail,tel,experience,skill,education,company,vacacny
+    }
+    )
+  }
 
   let content = null
 
@@ -67,7 +71,6 @@ function Home() {
           })
       })
   }, [url])
-  const navigate = useNavigate();
   // const [menu, setMenu] = useState(false);
   const dispatch = useDispatch()
   const [displayname, setDisplayName] = useState("");
@@ -171,7 +174,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' defaultValue={displayname} onChange={(e)=>setName(e.target.value)}  required className=' form-control' placeholder='İstifadəçi Adı' />
+                    <input name='username' defaultValue={displayname} onMouseEnter={(e)=>setName(e.target.value)}  required className=' form-control' placeholder='İstifadəçi Adı' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -200,7 +203,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Email Ünvanı:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' defaultValue={displaymail} onChange={(e)=>setMail(e.target.value)} required className=' form-control' placeholder='Email ünvanı' />
+                    <input name='username' type='mail' defaultValue={displaymail} onMouseEnter={(e)=>setMail(e.target.value)} required className=' form-control' placeholder='Email ünvanı' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -229,7 +232,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Telefon Nömrəsi:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' required onChange={(e)=>setTel(e.target.value)} className=' form-control' placeholder='Telefon Nömrəsi' />
+                    <input name='username' type='tel'  required onChange={(e)=>setTel(e.target.value)} className=' form-control' placeholder='Telefon Nömrəsi' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -258,7 +261,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='' for='username'>İş Təcrübəsi:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' required onChange={(e)=>setExperience(e.target.value)} className=' form-control' placeholder='İş Təcrübəsi' />
+                    <input name='username'  required onChange={(e)=>setExperience(e.target.value)} className=' form-control' placeholder='İş Təcrübəsi' />
                   </div>
                   <div className='col-md-2'>
                     <OverlayTrigger
@@ -340,23 +343,24 @@ function Home() {
                   </OverlayTrigger>
                 </div>
 
-                <div class="my-2 d-flex" >
+                <div class="my-2 container d-flex" >
                   {/* Vacancy Name Default */}
-                  <div className='col-md-6' style={{'display':'none'}}>
-                    <input name='username' value={product.data.name} onChange={(e)=>setVacancy(e.target.value)}  required className=' form-control' placeholder='Təhsil' />
+                  <div className='col-md-6 me-2' >
+                    <label>Vakansiya Adı</label>
+                    <input name='username' value={product.data.name} onMouseMove={(e)=>setVacancy(e.target.value)}   required className=' form-control'/>
+                  </div>
+                  <div className='col-md-5 ms-3'>
+                  <label>Şirkət Adı</label>
+                    <input name='username' value={product.data.company.name} onMouseMove={(e)=>setCompany(e.target.value)}  required className=' form-control' />
                   </div>
 
                 </div>
-                <div class="my-2 d-flex" >
-                  {/* Vacancy Name Default */}
-                  <div className='col-md-6' style={{display:'none' }}>
-                    <input name='username' value={product.data.company.name} onChange={(e)=>setCompany(e.target.value)}  required className=' form-control' placeholder='Təhsil' />
-                  </div>
-                </div>
+               
               </div>
               <div class="modal-footer">
+
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
-                <button type="submit" onClick={onSubmit} style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
+                <button type="submit" onClick={onSubmit} data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
               </div>
             </div>
           </div>
