@@ -1,0 +1,31 @@
+.searchBar {
+    position: relative;
+    font-size: inherit;
+    width: 250px;
+    height: 64px;
+    border-radius: 40px;
+    background-color: #EDF3FA;
+    border: none;
+    outline: none;
+    font-weight: 300;
+  }
+  .searchJob button {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background-color: #785BF4;
+    border: none;
+  }
+  .searchJob button img {
+    vertical-align: baseline;
+    width: 30px;
+    margin-top: 5px;
+  }
+
+  .searchJob {
+    border-radius: 10px;
+    position: relative;
+  }
