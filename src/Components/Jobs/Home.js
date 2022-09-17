@@ -13,7 +13,6 @@ import Image from 'react-bootstrap/Image';
 import Tooltip from 'react-bootstrap/Tooltip';
 import info from '../../Assets/Images/Hero/info.png'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-
 //Job Details
 function Home() {
 
@@ -54,8 +53,33 @@ function Home() {
   }, [url])
   const navigate = useNavigate();
   // const [menu, setMenu] = useState(false);
-  const [displayname, setDisplayName] = useState("");
   const dispatch = useDispatch()
+  const [displayname, setDisplayName] = useState("");
+  const [displaymail, setDisplayMail] = useState("");
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // const uid = user.uid;
+        if (user.email == null) {
+          const u2 = user.email.substring(0, user.email.indexOf("@"));
+          const u2Name = u2.charAt(0).toUpperCase() + u2.slice(1);
+          // console.log(uName);
+          setDisplayMail(u2Name);
+
+        } else {
+          setDisplayMail(user.email)
+        }
+        dispatch(SET_ACTIVE_USER({
+          email: user.email,
+          userName: user.displayName ? user.displayName : displayname,
+          userId: user.uid,
+        }))
+      } else {
+        setDisplayMail("")
+        dispatch(REMOVE_ACTIVE_USER())
+      };
+    })
+  }, [dispatch, displaymail]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -127,9 +151,9 @@ function Home() {
 
                 {/* Istifaçi Adı */}
                 <div class="my-2 d-flex">
-                  <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label>
-                  <input name='username' defaultValue={displayname} required className='w-50 form-control' />
-                  <OverlayTrigger 
+                  <div className='col-md-4'> <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label> </div>
+                  <div className='col-md-6'> <input name='username' defaultValue={displayname} required className=' form-control' /> </div>
+                  <OverlayTrigger
                     placement="right"
                     overlay={<Tooltip id="button-tooltip-2">Müsahibəyə çağırıldığınız zaman, sizə necə müraciət olunmasına kömək edir</Tooltip>}
                   >
@@ -139,24 +163,24 @@ function Home() {
                         {...triggerHandler}
                         className="d-inline-flex ms-3 align-items-center"
                       >
-                        <Image style={{'width':'20px'}}
+                        <Image style={{ 'width': '20px' }}
                           ref={ref}
                           roundedCircle
                           src={info}
                         />
-                        
+
                       </Button>
                     )}
                   </OverlayTrigger>
                 </div>
 
-                {/* Istifaçi Adı */}
+                {/* Mail */}
                 <div class="my-2 d-flex">
-                  <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label>
-                  <input name='username' defaultValue={displayname} required className='w-50 form-control' />
-                  <OverlayTrigger 
+                  <div className='col-md-4'> <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Email Ünvanı:</label> </div>
+                  <div className='col-md-6'> <input name='username' defaultValue={displaymail} required className=' form-control' /></div>
+                  <OverlayTrigger
                     placement="right"
-                    overlay={<Tooltip id="button-tooltip-2">Müsahibəyə çağırıldığınız zaman, sizə necə müraciət olunmasına kömək edir</Tooltip>}
+                    overlay={<Tooltip id="button-tooltip-2">Müsahibəyə çağırıldığınız təqdirdə bu email ünvanına mesaj gələcək.</Tooltip>}
                   >
                     {({ ref, ...triggerHandler }) => (
                       <Button
@@ -164,24 +188,25 @@ function Home() {
                         {...triggerHandler}
                         className="d-inline-flex ms-3 align-items-center"
                       >
-                        <Image style={{'width':'20px'}}
+                        <Image style={{ 'width': '20px' }}
                           ref={ref}
                           roundedCircle
                           src={info}
                         />
-                        
+
                       </Button>
                     )}
                   </OverlayTrigger>
                 </div>
 
-                {/* Istifaçi Adı */}
+                {/* Telefon Nömrəsi */}
                 <div class="my-2 d-flex">
-                  <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label>
-                  <input name='username' defaultValue={displayname} required className='w-50 form-control' />
-                  <OverlayTrigger 
+                  <div className='col-md-4'>
+                    <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Telefon Nömrəsi:</label> </div>
+                  <div className='col-md-6'> <input name='username' required className=' form-control' /> </div>
+                  <OverlayTrigger
                     placement="right"
-                    overlay={<Tooltip id="button-tooltip-2">Müsahibəyə çağırıldığınız zaman, sizə necə müraciət olunmasına kömək edir</Tooltip>}
+                    overlay={<Tooltip id="button-tooltip-2">Şirkətin sizinlə əlaqə saxlaması üçün lazımlıdır.</Tooltip>}
                   >
                     {({ ref, ...triggerHandler }) => (
                       <Button
@@ -189,24 +214,52 @@ function Home() {
                         {...triggerHandler}
                         className="d-inline-flex ms-3 align-items-center"
                       >
-                        <Image style={{'width':'20px'}}
+                        <Image style={{ 'width': '20px' }}
                           ref={ref}
                           roundedCircle
                           src={info}
                         />
-                        
+
                       </Button>
                     )}
                   </OverlayTrigger>
                 </div>
 
-                {/* Istifaçi Adı */}
+                {/* İş Təcrübəsi */}
                 <div class="my-2 d-flex">
-                  <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label>
-                  <input name='username' defaultValue={displayname} required className='w-50 form-control' />
-                  <OverlayTrigger 
+                  <div className='col-md-4'><label style={{ "align-items": "center", "display": "flex" }} className='' for='username'>İş Təcrübəsi:</label></div>
+                  <div className='col-md-6'><input name='username' required className=' form-control' /></div>
+                  <div className='col-md-2'>
+                    <OverlayTrigger
+                      placement="right"
+                      overlay={<Tooltip id="button-tooltip-2">Vakansiyada tələb olunan iş təcrübəsinə uyğunluq üçün lazımlıdır.</Tooltip>}
+                    >
+                      {({ ref, ...triggerHandler }) => (
+                        <Button
+                          variant=""
+                          {...triggerHandler}
+                          className="d-inline-flex ms-3 align-items-center"
+                        >
+                          <Image style={{ 'width': '20px' }}
+                            ref={ref}
+                            roundedCircle
+                            src={info}
+                          />
+
+                        </Button>
+                      )}
+                    </OverlayTrigger></div>
+                </div>
+
+                {/* Bacarıqları */}
+                <div class="my-2 d-flex">
+                  <div className='col-md-4'>
+                    <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Bacarıqlar:</label> </div>
+                  <div className='col-md-6'>
+                    <input name='username' defaultValue={displayname} required className=' form-control' /> </div>
+                  <OverlayTrigger
                     placement="right"
-                    overlay={<Tooltip id="button-tooltip-2">Müsahibəyə çağırıldığınız zaman, sizə necə müraciət olunmasına kömək edir</Tooltip>}
+                    overlay={<Tooltip id="button-tooltip-2">Vakansiyada tələb olunan iş bacarıqlarına uyğunluq üçün lazımlıdır.</Tooltip>}
                   >
                     {({ ref, ...triggerHandler }) => (
                       <Button
@@ -214,114 +267,91 @@ function Home() {
                         {...triggerHandler}
                         className="d-inline-flex ms-3 align-items-center"
                       >
-                        <Image style={{'width':'20px'}}
+                        <Image style={{ 'width': '20px' }}
                           ref={ref}
                           roundedCircle
                           src={info}
                         />
-                        
+
                       </Button>
                     )}
                   </OverlayTrigger>
                 </div>
 
-                {/* Istifaçi Adı */}
+                {/* Təhsili */}
                 <div class="my-2 d-flex">
-                  <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label>
-                  <input name='username' defaultValue={displayname} required className='w-50 form-control' />
-                  <OverlayTrigger 
-                    placement="right"
-                    overlay={<Tooltip id="button-tooltip-2">Müsahibəyə çağırıldığınız zaman, sizə necə müraciət olunmasına kömək edir</Tooltip>}
-                  >
-                    {({ ref, ...triggerHandler }) => (
-                      <Button
-                        variant=""
-                        {...triggerHandler}
-                        className="d-inline-flex ms-3 align-items-center"
+                  <div className='col-md-4'>
+                    <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Təhsil:</label> </div>
+                    <div className='col-md-6'>
+                      <input name='username' required className=' form-control' />  </div>
+                      <OverlayTrigger
+                        placement="right"
+                        overlay={<Tooltip id="button-tooltip-2">Vakansiyada tələb olunan təhsil kriteriyasına uyğunluq üçün lazımlıdır.</Tooltip>}
                       >
-                        <Image style={{'width':'20px'}}
-                          ref={ref}
-                          roundedCircle
-                          src={info}
-                        />
-                        
-                      </Button>
-                    )}
-                  </OverlayTrigger>
-                </div>
+                        {({ ref, ...triggerHandler }) => (
+                          <Button
+                            variant=""
+                            {...triggerHandler}
+                            className="d-inline-flex ms-3 align-items-center"
+                          >
+                            <Image style={{ 'width': '20px' }}
+                              ref={ref}
+                              roundedCircle
+                              src={info}
+                            />
 
-                {/* Istifaçi Adı */}
-                <div class="my-2 d-flex">
-                  <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label>
-                  <input name='username' defaultValue={displayname} required className='w-50 form-control' />
-                  <OverlayTrigger 
-                    placement="right"
-                    overlay={<Tooltip id="button-tooltip-2">Müsahibəyə çağırıldığınız zaman, sizə necə müraciət olunmasına kömək edir</Tooltip>}
-                  >
-                    {({ ref, ...triggerHandler }) => (
-                      <Button
-                        variant=""
-                        {...triggerHandler}
-                        className="d-inline-flex ms-3 align-items-center"
-                      >
-                        <Image style={{'width':'20px'}}
-                          ref={ref}
-                          roundedCircle
-                          src={info}
-                        />
-                        
-                      </Button>
-                    )}
-                  </OverlayTrigger>
+                          </Button>
+                        )}
+                      </OverlayTrigger>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
+                    <button type="button" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
+                  </div>
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
-                <button type="button" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
+            </div>
+
+            <div className='card-body'>
+              <div className='top_infos d-flex'>
+                <p className='me-2'>{product.data.city.name}</p>
+                <p>{product.data.company.name}</p>
+
               </div>
+
+              <div className='body_infos row'>
+                <div className='works col-lg-6 col-sm-12'>
+                  <h3 className='mb-3 ms-1'>Əsas Vəzifə Öhdəlikləri</h3>
+                  <p className='mt-4 ms-4'>{product.data.vəzifəÖhdəlikləri}</p>
+                </div>
+                <div className='skills  col-lg-6 col-sm-12'>
+                  <h3 className='mb-4 ms-1'>Lazım Olan Bacarıqlar</h3>
+                  <p className='ms-5'>{product.data.tələblər}</p>
+                </div>
+
+
+              </div>
+
             </div>
-          </div>
-        </div>
-
-        <div className='card-body'>
-          <div className='top_infos d-flex'>
-            <p className='me-2'>{product.data.city.name}</p>
-            <p>{product.data.company.name}</p>
-
-          </div>
-
-          <div className='body_infos row'>
-            <div className='works col-lg-6 col-sm-12'>
-              <h3 className='mb-3 ms-1'>Əsas Vəzifə Öhdəlikləri</h3>
-              <p className='mt-4 ms-4'>{product.data.vəzifəÖhdəlikləri}</p>
-            </div>
-            <div className='skills  col-lg-6 col-sm-12'>
-              <h3 className='mb-4 ms-1'>Lazım Olan Bacarıqlar</h3>
-              <p className='ms-5'>{product.data.tələblər}</p>
+            <div className='d-flex justify-content-end card-footer'>
+              <h6> {product.data.city.name}</h6>
+              <h6>{product.data.deadline.slice(0, 10)}</h6>
             </div>
 
 
           </div>
-
-        </div>
-        <div className='d-flex justify-content-end card-footer'>
-          <h6> {product.data.city.name}</h6>
-          <h6>{product.data.deadline.slice(0, 10)}</h6>
-        </div>
-
-
-      </div>
 
   }
 
-  return (
-    <div className='container'>
+          return (
+          <div className='container'>
 
-      <div>{content}</div>
-    </div>
+            <div>{content}</div>
+          </div>
 
 
-  )
+          )
 }
 
-export default Home
+          export default Home
