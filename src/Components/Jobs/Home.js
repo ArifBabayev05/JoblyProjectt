@@ -38,7 +38,7 @@ function Home() {
   const onSubmit = (e)=>{
     toast.success("Müraciətiniz uğurludur!")
 
-    axios.post(`https://sheet.best/api/sheets/61fae57c-602e-430c-9826-cfb6fa0cdcdb`,{
+    axios.post(`https://sheet.best/api/sheets/baf059c7-f740-4fb5-b9e7-a5899b4aeb41`,{
       name,mail,tel,experience,skill,education,company,vacacny
     }
     )

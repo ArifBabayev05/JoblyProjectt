@@ -1,0 +1,20 @@
+.viewMore{
+    background-color:#6e4efbf8;
+    border-radius: 7px;
+    display:inherit;
+}
+.viewMore:hover{
+    background-color:#6643ff;
+
+}
+.viewMoree{
+    color:#fff;
+    padding:10px;
+    
+    text-decoration: none;
+}
+.viewMoree:hover{
+    color:#fff;
+
+
+}

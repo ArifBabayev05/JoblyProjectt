@@ -20,7 +20,144 @@ const Appeals = (props) => {
             }).catch(err => console.log(err))
     }, [])
 
+    if (data) {
+        const array =
+            data.filter(data => {
+                if (query === "") {
 
+                    return data;
+                } else if (data.name.toLowerCase().includes(query.toLowerCase())) {
+
+                    return data;
+                }
+                else if (data.company.toLowerCase().includes(query.toLowerCase())) {
+
+                    return data;
+                }
+                else if (data.vacancy.toLowerCase().includes(query.toLowerCase())) {
+
+                    return data;
+                }
+            }).map((data, index) => {
+                return (
+                    <tr>
+                        <td>{data.name}</td>
+                        <td>{data.mail}</td>
+                        <td>{data.company}</td>
+                        <td>{data.vacacny}</td>
+                        <td>
+                            <div className='p-1 viewMore'>
+                                <a href='/' className='viewMoree' data-bs-toggle="modal" data-bs-target="#staticBackdrop">Daha Ətraflı</a>
+                            </div>
+
+
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" style={{ "color": "#785BF4" }} id="staticBackdropLabel"><span className='fw-bold' style={{ "color": "#785BF4" }} ></span> Vakansiyasına Müraciət</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+
+
+                                            <div class="my-3">
+                                                <h5 style={{ "color": "#785BF4", 'text-decoration': 'underline' }}>Məlumatlar:</h5>
+                                            </div>
+
+                                            {/* Istifaçi Adı */}
+                                            <div class="my-2 d-flex">
+                                                <div className='col-md-4'>
+                                                    <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>İstifadəçi Adı:</label>
+                                                </div>
+                                                <div className='col-md-8'>
+                                                    <p>{data.name}</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="my-2 d-flex">
+                                                <div className='col-md-4'>
+                                                    <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Email ünvanı:</label>
+                                                </div>
+                                                <div className='col-md-8'>
+                                                    <p>{data.mail}</p>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="my-2 d-flex">
+                                                <div className='col-md-4'>
+                                                    <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Bacarıqları:</label>
+                                                </div>
+                                                <div className='col-md-8'>
+                                                    <p>{data.skill}</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="my-2 d-flex">
+                                                <div className='col-md-4'>
+                                                    <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Təhsili:</label>
+                                                </div>
+                                                <div className='col-md-8'>
+                                                    <p>{data.education}</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="my-2 d-flex">
+                                                <div className='col-md-4'>
+                                                    <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Telefon Nömrəsi:</label>
+                                                </div>
+                                                <div className='col-md-8'>
+                                                    <p>+994{data.tel}</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="my-2 d-flex">
+                                                <div className='col-md-4'>
+                                                    <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>İş Təcrübəsi:</label>
+                                                </div>
+                                                <div className='col-md-8'>
+                                                    <p>{data.experience}</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="my-2 d-flex">
+                                                <div className='col-md-4'>
+                                                    <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Şirkət adı:</label>
+                                                </div>
+                                                <div className='col-md-8'>
+                                                    <p>{data.company}</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="my-2 d-flex">
+                                                <div className='col-md-4'>
+                                                    <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Vakansiya adı:</label>
+                                                </div>
+                                                <div className='col-md-8'>
+                                                    <p>{data.vacacny}</p>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+                                        <div class="modal-footer">
+
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
+                                            <button type="submit" data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+
+
+                    </tr>
+                )
+            });
+    }
     const array = data.map((data, index) => {
         return (
             <tr>
@@ -28,9 +165,113 @@ const Appeals = (props) => {
                 <td>{data.mail}</td>
                 <td>{data.company}</td>
                 <td>{data.vacacny}</td>
-            <td>
-            <a>Daha Ətraflı</a>
-            </td>
+                <td>
+                    <div className='p-1 viewMore'>
+                        <a href='/' className='viewMoree' data-bs-toggle="modal" data-bs-target="#staticBackdrop">Daha Ətraflı</a>
+                    </div>
+
+
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" style={{ "color": "#785BF4" }} id="staticBackdropLabel"><span className='fw-bold' style={{ "color": "#785BF4" }} ></span> Vakansiyasına Müraciət</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+
+                                    <div class="my-3">
+                                        <h5 style={{ "color": "#785BF4", 'text-decoration': 'underline' }}>Məlumatlar:</h5>
+                                    </div>
+
+                                    {/* Istifaçi Adı */}
+                                    <div class="my-2 d-flex">
+                                        <div className='col-md-4'>
+                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>İstifadəçi Adı:</label>
+                                        </div>
+                                        <div className='col-md-8'>
+                                            <p>{data.name}</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="my-2 d-flex">
+                                        <div className='col-md-4'>
+                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Email ünvanı:</label>
+                                        </div>
+                                        <div className='col-md-8'>
+                                            <p>{data.mail}</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="my-2 d-flex">
+                                        <div className='col-md-4'>
+                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Bacarıqları:</label>
+                                        </div>
+                                        <div className='col-md-8'>
+                                            <p>{data.skill}</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="my-2 d-flex">
+                                        <div className='col-md-4'>
+                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Təhsili:</label>
+                                        </div>
+                                        <div className='col-md-8'>
+                                            <p>{data.education}</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="my-2 d-flex">
+                                        <div className='col-md-4'>
+                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Telefon Nömrəsi:</label>
+                                        </div>
+                                        <div className='col-md-8'>
+                                            <p>+994{data.tel}</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="my-2 d-flex">
+                                        <div className='col-md-4'>
+                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>İş Təcrübəsi:</label>
+                                        </div>
+                                        <div className='col-md-8'>
+                                            <p>{data.experience}</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="my-2 d-flex">
+                                        <div className='col-md-4'>
+                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Şirkət adı:</label>
+                                        </div>
+                                        <div className='col-md-8'>
+                                            <p>{data.company}</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="my-2 d-flex">
+                                        <div className='col-md-4'>
+                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Vakansiya adı:</label>
+                                        </div>
+                                        <div className='col-md-8'>
+                                            <p>{data.vacacny}</p>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer">
+
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
+                                    <button type="submit" data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </td>
 
 
             </tr>
@@ -48,7 +289,7 @@ const Appeals = (props) => {
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
                                         <h1 className='text container ' style={{ color: 'var(--pink)', fontSize: '35px', alignItems: 'center', display: 'flex' }}>Bütün Müraciətlər</h1>
                                         <div className='searchJob mb-5' style={{ alignItems: 'center', display: 'flex', top: '20px' }}>
-                                            <input className='searchBar mt-2 p-2' onChange={event => console.log(setQuery(event.target.value))} type='text'></input>
+                                        <input  className='searchBar mt-2 p-2'  onChange={event =>console.log(setQuery(event.target.value))} type='text'></input>
                                             <button className='search__submit' type='submit'>
                                                 <img src={src} alt='some value' />
                                             </button>
