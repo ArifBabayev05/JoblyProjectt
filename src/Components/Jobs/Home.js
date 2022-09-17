@@ -10,6 +10,8 @@ import { auth } from '../Auth/Firebase/config'
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice'
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
+import Tooltip from 'react-bootstrap/Tooltip';
+import info from '../../Assets/Images/Hero/info.png'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 
 //Job Details
@@ -124,24 +126,24 @@ function Home() {
                   <h5 style={{ "color": "#785BF4" }}>Müraciət Formu</h5>
                 </div>
                 <div class="my-2 d-flex">
-                  <label style={{ "align-items": "center", "display": "flex" }} className='me-2' for='username'>İstifadəçi Adı</label>
+                  <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label>
                   <input name='username' required className='w-50 form-control' />
                   <OverlayTrigger
-                    placement="bottom"
+                    placement="right"
                     overlay={<Tooltip id="button-tooltip-2">Check out this avatar</Tooltip>}
                   >
                     {({ ref, ...triggerHandler }) => (
                       <Button
-                        variant="light"
+                        variant=""
                         {...triggerHandler}
-                        className="d-inline-flex align-items-center"
+                        className="d-inline-flex ms-3 align-items-center"
                       >
-                        <Image
+                        <Image style={{'width':'20px'}}
                           ref={ref}
                           roundedCircle
-                          src="holder.js/20x20?text=J&bg=28a745&fg=FFF"
+                          src={info}
                         />
-                        <span className="ms-1">Hover to see</span>
+                        
                       </Button>
                     )}
                   </OverlayTrigger>
