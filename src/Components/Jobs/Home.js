@@ -41,7 +41,7 @@ function Home() {
   const onSubmit = (e)=>{
     toast.success("Müraciətiniz uğurludur!")
 
-    axios.post(`https://sheet2api.com/v1/7Hp4qy9eQpGr/jobly`,{
+    axios.post(`https://sheet2api.com/v1/XdpCkD4RzeT7/jobly`,{
       name,mail,tel,experience,skill,education,company,vacacny,jobId
     }
     )
