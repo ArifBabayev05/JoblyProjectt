@@ -22,13 +22,11 @@ const Appeals = (props) => {
         },
     }
     useEffect(() => {
-        axios.get('https://sheet2api.com/v1/XdpCkD4RzeT7/jobly')
+        axios.get('https://sheetdb.io/api/v1/gpxwv62j8wgii')
             .then(res => {
                 setData(res.data)
             }).catch(err => console.log(err))
     }, [])
-
-
 
     const array = data.filter((value) => {
         if (query == "") {
@@ -152,7 +150,7 @@ const Appeals = (props) => {
                                 </div>
                                 <div class="modal-footer">
 
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Rədd Et</button>
                                     <button type="submit" data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
                                 </div>
                             </div>
