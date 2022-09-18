@@ -12,6 +12,7 @@ Haqqımızda səhifəsindən Jobly haqqında daha ətraflı məlumat almaq olar.
 
 Daha Ətraflı bölməsindən vakansiyaya müraciət edildikdə müvafiq məlumatlar Google Sheets üzrində list halında görmək olur.
 Sheets Linki:
+https://docs.google.com/spreadsheets/d/1aL3Ag4JY2FxHaQgKBdgYEb2tT5-tryiv-LeHJgqV6jQ/edit?usp=sharing
 
 Sayt üzərindən qeydiyyatdan keçmək, daxil olmaq, şifrəni unutduğunuz halda yeniləmək mümkündür.
 
