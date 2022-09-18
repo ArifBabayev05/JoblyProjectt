@@ -8,7 +8,7 @@ import { toast, ToastContainer } from 'react-toastify'
 import { Link } from 'react-router-dom'
 import '../Home/Home.css'
 
-const Appeals = () => {
+const Appeals = (props) => {
     const [data, setData] = useState([])
     const [query, setQuery] = useState("")
 
