@@ -5,13 +5,14 @@ import Loader from '../../../Components/Jobs/Loader'
 import { ShowOnAdmin, ShowOnUser } from '../../../Layouts/HiddenLinks/Router'
 import Sidebar from '../Sidebar/Sidebar'
 import { toast, ToastContainer } from 'react-toastify'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import '../Home/Home.css'
 
 const Appeals = (props) => {
     const [data, setData] = useState([])
     const [query, setQuery] = useState("")
-
+    // const [jobId, setJobId] = useState('')
+    const jobId = useParams()
 
     var api_headers = {
         method: 'GET',
@@ -27,6 +28,7 @@ const Appeals = (props) => {
                 setData(res.data)
             }).catch(err => console.log(err))
     }, [])
+
 
     const array = data.filter((value) => {
         if (query == "") {
@@ -45,6 +47,14 @@ const Appeals = (props) => {
 
         const datas = `#${data.jobId.replace(/[^a-zA-Z]/g, '')}`
         const data2 = `${data.jobId.replace(/[^a-zA-Z]/g, '')}`
+
+        const onDelete = (e) => {
+
+            axios.delete(`https://sheetdb.io/api/v1/gpxwv62j8wgii/jobId/${data.jobId}`)
+            toast.success("Müraciət silindi")
+
+        }
+
         return (
             <tr>
                 <td>{data.name}</td>
@@ -150,7 +160,7 @@ const Appeals = (props) => {
                                 </div>
                                 <div class="modal-footer">
 
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Rədd Et</button>
+                                    <button type="button" onClick={onDelete} class="btn btn-secondary" data-bs-dismiss="modal">Rədd Et</button>
                                     <button type="submit" data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
                                 </div>
                             </div>

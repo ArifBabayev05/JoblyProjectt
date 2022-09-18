@@ -38,14 +38,15 @@ function Home() {
     data: null,
     error: false
   })
-  const onSubmit = (e)=>{
+  const onSubmit = (e) => {
     toast.success("Müraciətiniz uğurludur!")
 
-    axios.post(`https://sheetdb.io/api/v1/gpxwv62j8wgii`,{
-      name,mail,tel,experience,skill,education,company,vacacny,jobId
+    axios.post(`https://sheetdb.io/api/v1/gpxwv62j8wgii`, {
+      name, mail, tel, experience, skill, education, company, vacacny, jobId
     }
     )
   }
+  
 
   let content = null
 
@@ -168,7 +169,7 @@ function Home() {
                 Dəyərli  <span className='fw-bold text-dark'> {displayname},  </span> {product.data.name} vakansiyasına maraq göstərdiyiniz üçün <span className='fw-bold text-dark'>{product.data.company.name}</span> adından sizə təşəkkür edirik.
 
                 <div class="my-3">
-                  <h5 style={{ "color": "#785BF4",'text-decoration':'underline' }}>Müraciət Formu:</h5>
+                  <h5 style={{ "color": "#785BF4", 'text-decoration': 'underline' }}>Müraciət Formu:</h5>
                 </div>
 
                 {/* Istifaçi Adı */}
@@ -177,7 +178,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' defaultValue={displayname} onMouseEnter={(e)=>setName(e.target.value)}  required className=' form-control' placeholder='İstifadəçi Adı' />
+                    <input name='username' defaultValue={displayname} onMouseEnter={(e) => setName(e.target.value)} required className=' form-control' placeholder='İstifadəçi Adı' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -206,7 +207,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Email Ünvanı:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' type='mail' defaultValue={displaymail} onMouseEnter={(e)=>setMail(e.target.value)} required className=' form-control' placeholder='Email ünvanı' />
+                    <input name='username' type='mail' defaultValue={displaymail} onMouseEnter={(e) => setMail(e.target.value)} required className=' form-control' placeholder='Email ünvanı' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -235,7 +236,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Telefon Nömrəsi:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' type='tel'  required onChange={(e)=>setTel(e.target.value)} className=' form-control' placeholder='Telefon Nömrəsi' />
+                    <input name='username' type='tel' required onChange={(e) => setTel(e.target.value)} className=' form-control' placeholder='Telefon Nömrəsi' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -264,7 +265,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='' for='username'>İş Təcrübəsi:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username'  required onChange={(e)=>setExperience(e.target.value)} className=' form-control' placeholder='İş Təcrübəsi' />
+                    <input name='username' required onChange={(e) => setExperience(e.target.value)} className=' form-control' placeholder='İş Təcrübəsi' />
                   </div>
                   <div className='col-md-2'>
                     <OverlayTrigger
@@ -294,7 +295,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Bacarıqlar:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' required onChange={(e)=>setSkill(e.target.value)} className=' form-control' placeholder='Bacarıqlar' />
+                    <input name='username' required onChange={(e) => setSkill(e.target.value)} className=' form-control' placeholder='Bacarıqlar' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -323,7 +324,7 @@ function Home() {
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Təhsil:</label>
                   </div>
                   <div className='col-md-6'>
-                    <input name='username' required onChange={(e)=>setEducation(e.target.value)} className=' form-control' placeholder='Təhsil' />
+                    <input name='username' required onChange={(e) => setEducation(e.target.value)} className=' form-control' placeholder='Təhsil' />
                   </div>
                   <OverlayTrigger
                     placement="right"
@@ -347,24 +348,24 @@ function Home() {
                 </div>
 
                 <div class="my-2 container d-flex" >
-                
+
                   {/* Vacancy Name Default */}
                   <div className='col-md-6 me-2' >
                     <label>Vakansiya Adı</label>
-                    <input name='username' value={product.data.name} onMouseMove={(e)=>setVacancy(e.target.value)}   required className=' form-control'/>
+                    <input name='username' value={product.data.name} onMouseMove={(e) => setVacancy(e.target.value)} required className=' form-control' />
                   </div>
                   <div className='col-md-5 ms-3'>
-                  <label>Şirkət Adı</label>
-                    <input name='username' value={product.data.company.name} onMouseMove={(e)=>setCompany(e.target.value)}  required className=' form-control' />
+                    <label>Şirkət Adı</label>
+                    <input name='username' value={product.data.company.name} onMouseMove={(e) => setCompany(e.target.value)} required className=' form-control' />
                   </div>
 
                 </div>
-               
+
               </div>
               <div class="modal-footer">
 
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
-                <button type="submit" onClick={onSubmit} onMouseEnter={(e)=>setJobId(e.target.value)} value={unique_id} data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
+                <button type="submit" onClick={onSubmit} onMouseEnter={(e) => setJobId(e.target.value)} value={unique_id} data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
               </div>
             </div>
           </div>
