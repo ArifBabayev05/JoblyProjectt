@@ -37,12 +37,7 @@ const Appeals = (props) => {
         else if (value.name.toLowerCase().includes(query.toLowerCase())) {
             return value;
         }
-        else if (value.vacacny.toLowerCase().includes(query.toLowerCase())) {
-            return value;
-        }
-        else if (value.company.toLowerCase().includes(query.toLowerCase())) {
-            return value;
-        }
+       
     }).map((data, index) => {
 
         const datas = `#${data.jobId.replace(/[^a-zA-Z]/g, '')}`
