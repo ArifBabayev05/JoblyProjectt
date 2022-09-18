@@ -28,8 +28,15 @@ const Appeals = (props) => {
             }).catch(err => console.log(err))
     }, [])
 
+ 
+
 
     const array = data.map((data, index) => {
+        const datas = `#${data.jobId.replace(/[^a-zA-Z]/g, '')}`
+        const data2 = `${data.jobId.replace(/[^a-zA-Z]/g, '')}`
+        
+
+        console.log(datas,data2);
         return (
             <tr>
                 <td>{data.name}</td>
@@ -38,11 +45,11 @@ const Appeals = (props) => {
                 <td>{data.vacacny}</td>
                 <td>
                     <div className='p-1 viewMore'>
-                        <a href='/' className='viewMoree' data-bs-toggle="modal" data-bs-target={"#"+data.jobId}>Daha Ətraflı</a>
+                        <a  className='viewMoree' data-bs-toggle="modal" data-bs-target={datas}>Daha Ətraflı</a>
                     </div>
 
 
-                    <div class="modal fade" id={data.jobId} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal fade" id={data2} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
