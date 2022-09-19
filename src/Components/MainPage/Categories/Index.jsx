@@ -9,8 +9,6 @@ import '../../../Assets/Styles/MainPage/Category/Category.css'
 
 function Index({ currentItems }) {
   const url = `http://localhost:53410/api/Categories/getall`
-  // const [query, setQuery] = useState("")
-
 
   const [products, setProducts] = useState({
     loading: false,
@@ -35,13 +33,13 @@ function Index({ currentItems }) {
           error: false
         })
 
-          .catch(() => {
-            setProducts({
-              loading: false,
-              data: null,
-              error: true
-            })
-          })
+      })
+      .catch((err) => {
+        setProducts({
+          loading: false,
+          data: null,
+          error: true
+        })
       })
   }, [url])
 
@@ -67,13 +65,12 @@ function Index({ currentItems }) {
   if (products.data) {
     content =
       products.data.slice(0,5).map((product) =>
-        <div  key={product.id}>
-          <Category   product={(product)} />
+        <div key={product.id}>
+          <Category product={(product)} />
         </div>
 
       )
   }
-
 
   return (
     <div className='container category'>

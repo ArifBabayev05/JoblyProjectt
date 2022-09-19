@@ -5,23 +5,22 @@ import Loader from '../../../Components/Jobs/Loader'
 import { ShowOnAdmin, ShowOnUser } from '../../../Layouts/HiddenLinks/Router'
 import Sidebar from '../Sidebar/Sidebar'
 import { toast, ToastContainer } from 'react-toastify'
-import { Link, useParams } from 'react-router-dom'
 import '../Home/Home.css'
 
 const Appeals = (props) => {
     const [data, setData] = useState([])
     const [query, setQuery] = useState("")
     // const [jobId, setJobId] = useState('')
-    const jobId = useParams()
+    // const jobId = useParams()
 
-    var api_headers = {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer gpgiTH9gCpglLMplHY2ioOTRuVIgfmlSHMt0o0bgSQ18OxXK7EZEHIZC`,
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": true
-        },
-    }
+    // var api_headers = {
+    //     method: 'GET',
+    //     headers: {
+    //         'Authorization': `Bearer gpgiTH9gCpglLMplHY2ioOTRuVIgfmlSHMt0o0bgSQ18OxXK7EZEHIZC`,
+    //         "Access-Control-Allow-Origin": "*",
+    //         "Access-Control-Allow-Credentials": true
+    //     },
+    // }
     useEffect(() => {
         axios.get('https://sheetdb.io/api/v1/gpxwv62j8wgii')
             .then(res => {
@@ -31,7 +30,7 @@ const Appeals = (props) => {
 
 
     const array = data.filter((value) => {
-        if (query == "") {
+        if (query === "") {
             return value;
         }
         else if (value.name.toLowerCase().includes(query.toLowerCase())) {
@@ -67,22 +66,22 @@ const Appeals = (props) => {
                     </div>
 
 
-                    <div class="modal fade" id={data2} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" style={{ "color": "#785BF4" }} id="staticBackdropLabel"><span className='fw-bold' style={{ "color": "#785BF4" }} ></span> Vakansiyasına Müraciət</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div className="modal fade" id={data2} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div className="modal-dialog">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" style={{ "color": "#785BF4" }} id="staticBackdropLabel"><span className='fw-bold' style={{ "color": "#785BF4" }} ></span> Vakansiyasına Müraciət</h5>
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
+                                <div className="modal-body">
 
 
-                                    <div class="my-3">
+                                    <div className="my-3">
                                         <h5 style={{ "color": "#785BF4", 'text-decoration': 'underline' }}>Məlumatlar:</h5>
                                     </div>
 
                                     {/* Istifaçi Adı */}
-                                    <div class="my-2 d-flex">
+                                    <div className="my-2 d-flex">
                                         <div className='col-md-4'>
                                             <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>İstifadəçi Adı:</label>
                                         </div>
@@ -91,7 +90,7 @@ const Appeals = (props) => {
                                         </div>
 
                                     </div>
-                                    <div class="my-2 d-flex">
+                                    <div className="my-2 d-flex">
                                         <div className='col-md-4'>
                                             <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Email ünvanı:</label>
                                         </div>
@@ -101,7 +100,7 @@ const Appeals = (props) => {
 
                                     </div>
 
-                                    <div class="my-2 d-flex">
+                                    <div className="my-2 d-flex">
                                         <div className='col-md-4'>
                                             <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Bacarıqları:</label>
                                         </div>
@@ -110,7 +109,7 @@ const Appeals = (props) => {
                                         </div>
 
                                     </div>
-                                    <div class="my-2 d-flex">
+                                    <div className="my-2 d-flex">
                                         <div className='col-md-4'>
                                             <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Təhsili:</label>
                                         </div>
@@ -119,7 +118,7 @@ const Appeals = (props) => {
                                         </div>
 
                                     </div>
-                                    <div class="my-2 d-flex">
+                                    <div className="my-2 d-flex">
                                         <div className='col-md-4'>
                                             <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Telefon Nömrəsi:</label>
                                         </div>
@@ -128,7 +127,7 @@ const Appeals = (props) => {
                                         </div>
 
                                     </div>
-                                    <div class="my-2 d-flex">
+                                    <div className="my-2 d-flex">
                                         <div className='col-md-4'>
                                             <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>İş Təcrübəsi:</label>
                                         </div>
@@ -137,7 +136,7 @@ const Appeals = (props) => {
                                         </div>
 
                                     </div>
-                                    <div class="my-2 d-flex">
+                                    <div className="my-2 d-flex">
                                         <div className='col-md-4'>
                                             <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Şirkət adı:</label>
                                         </div>
@@ -146,7 +145,7 @@ const Appeals = (props) => {
                                         </div>
 
                                     </div>
-                                    <div class="my-2 d-flex">
+                                    <div className="my-2 d-flex">
                                         <div className='col-md-4'>
                                             <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Vakansiya adı:</label>
                                         </div>
@@ -158,10 +157,9 @@ const Appeals = (props) => {
 
 
                                 </div>
-                                <div class="modal-footer">
-
-                                    <button type="button" onClick={onDelete} class="btn btn-secondary" data-bs-dismiss="modal">Rədd Et</button>
-                                    <button type="submit" data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
+                                <div className="modal-footer">
+                                    <button type="button" onClick={onDelete} className="btn btn-danger" data-bs-dismiss="modal">Rədd Et</button>
+                                    <button type="submit" data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} className="btn btn-primary">Müraciəti Təsdiqlə</button>
                                 </div>
                             </div>
                         </div>
@@ -178,10 +176,10 @@ const Appeals = (props) => {
         <div>
             <ShowOnAdmin>
                 <div>
-                    <div class="container-fluid">
-                        <div class="row flex-nowrap">
+                    <div className="container-fluid">
+                        <div className="row flex-nowrap">
                             <Sidebar />
-                            <div class="col py-3">
+                            <div className="col py-3">
                                 <div className='row'>
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
                                         <h1 className='text container ' style={{ color: 'var(--pink)', fontSize: '35px', alignItems: 'center', display: 'flex' }}>Bütün Müraciətlər</h1>

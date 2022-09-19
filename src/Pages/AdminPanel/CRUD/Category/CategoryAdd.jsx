@@ -41,21 +41,21 @@ const CategoryAdd = () => {
         <div>
             <ShowOnAdmin>
                 <div>
-                    <div class="container-fluid">
-                        <div class="row flex-nowrap">
+                    <div className="container-fluid">
+                        <div className="row flex-nowrap">
                             <Sidebar />
-                            <div class="col py-3">
+                            <div className="col py-3">
                                 <form encType='multipart/formdata' onSubmit={(e) => submit(e)}>
                                     {loading && <Loader />}
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">Ad</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="name" required class="form-control" id="name" placeholder="Ad" />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">Ad</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="name" placeholder="Ad" />
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-10 offset-sm-2">
-                                            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} class="btn btn-primary">Əlavə Et</button>
+                                    <div className="row">
+                                        <div className="col-sm-10 offset-sm-2">
+                                            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
                                         </div>
                                     </div>
                                 </form>

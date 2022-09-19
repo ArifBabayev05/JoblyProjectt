@@ -55,10 +55,10 @@ const VacancyAdmin = (props) => {
         <div>
             <ShowOnAdmin>
                 <div>
-                    <div class="container-fluid">
-                        <div class="row flex-nowrap">
+                    <div className="container-fluid">
+                        <div className="row flex-nowrap">
                             <Sidebar />
-                            <div class="col py-3">
+                            <div className="col py-3">
                                 <div className='row'>
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
                                         <h3>Vakansiyalar</h3>

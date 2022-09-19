@@ -12,10 +12,10 @@ function Admin() {
         <div>
             <ShowOnAdmin>
                 <div>
-                    <div class="container-fluid">
-                        <div class="row flex-nowrap">
+                    <div className="container-fluid">
+                        <div className="row flex-nowrap">
                             <Sidebar />
-                            <div class="col py-3">
+                            <div className="col py-3">
                                 <Home/>
                             </div>
                         </div>

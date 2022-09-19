@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 // import '../../Assets/Styles/Job/Job.css'
-import { useNavigate, useParams } from 'react-router-dom'
+import {  useParams } from 'react-router-dom'
 import Loader from './Loader'
 import '../../Assets/Styles/Job/Home.css'
 import { useDispatch } from 'react-redux'
@@ -13,12 +13,11 @@ import Image from 'react-bootstrap/Image';
 import Tooltip from 'react-bootstrap/Tooltip';
 import info from '../../Assets/Images/Hero/info.png'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { v4 as uuid } from 'uuid';
 //Job Details
 function Home() {
-  const navigate = useNavigate();
 
   const unique_id = uuid();
   const [jobId, setJobId] = useState('')
@@ -158,22 +157,22 @@ function Home() {
           <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" className='btn h'>Müraciət Et</button>
         </div>
 
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" style={{ "color": "#785BF4" }} id="staticBackdropLabel"><span className='fw-bold' style={{ "color": "#785BF4" }} >{product.data.name}</span> Vakansiyasına Müraciət</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" style={{ "color": "#785BF4" }} id="staticBackdropLabel"><span className='fw-bold' style={{ "color": "#785BF4" }} >{product.data.name}</span> Vakansiyasına Müraciət</h5>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body">
+              <div className="modal-body">
                 Dəyərli  <span className='fw-bold text-dark'> {displayname},  </span> {product.data.name} vakansiyasına maraq göstərdiyiniz üçün <span className='fw-bold text-dark'>{product.data.company.name}</span> adından sizə təşəkkür edirik.
 
-                <div class="my-3">
+                <div className="my-3">
                   <h5 style={{ "color": "#785BF4", 'text-decoration': 'underline' }}>Müraciət Formu:</h5>
                 </div>
 
                 {/* Istifaçi Adı */}
-                <div class="my-2 d-flex">
+                <div className="my-2 d-flex">
                   <div className='col-md-4'>
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>İstifadəçi Adı:</label>
                   </div>
@@ -202,7 +201,7 @@ function Home() {
                 </div>
 
                 {/* Mail */}
-                <div class="my-2 d-flex">
+                <div className="my-2 d-flex">
                   <div className='col-md-4'>
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Email Ünvanı:</label>
                   </div>
@@ -231,7 +230,7 @@ function Home() {
                 </div>
 
                 {/* Telefon Nömrəsi */}
-                <div class="my-2 d-flex">
+                <div className="my-2 d-flex">
                   <div className='col-md-4'>
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Telefon Nömrəsi:</label>
                   </div>
@@ -260,7 +259,7 @@ function Home() {
                 </div>
 
                 {/* İş Təcrübəsi */}
-                <div class="my-2 d-flex">
+                <div className="my-2 d-flex">
                   <div className='col-md-4'>
                     <label style={{ "align-items": "center", "display": "flex" }} className='' for='username'>İş Təcrübəsi:</label>
                   </div>
@@ -290,7 +289,7 @@ function Home() {
                 </div>
 
                 {/* Bacarıqları */}
-                <div class="my-2 d-flex">
+                <div className="my-2 d-flex">
                   <div className='col-md-4'>
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Bacarıqlar:</label>
                   </div>
@@ -319,7 +318,7 @@ function Home() {
                 </div>
 
                 {/* Təhsili */}
-                <div class="my-2 d-flex">
+                <div className="my-2 d-flex">
                   <div className='col-md-4'>
                     <label style={{ "align-items": "center", "display": "flex" }} className='me-3' for='username'>Təhsil:</label>
                   </div>
@@ -347,25 +346,11 @@ function Home() {
                   </OverlayTrigger>
                 </div>
 
-                <div class="my-2 container d-flex" >
-
-                  {/* Vacancy Name Default */}
-                  <div className='col-md-6 me-2' >
-                    <label>Vakansiya Adı</label>
-                    <input name='username' value={product.data.name} onMouseMove={(e) => setVacancy(e.target.value)} required className=' form-control' />
-                  </div>
-                  <div className='col-md-5 ms-3'>
-                    <label>Şirkət Adı</label>
-                    <input name='username' value={product.data.company.name} onMouseMove={(e) => setCompany(e.target.value)} required className=' form-control' />
-                  </div>
-
-                </div>
-
               </div>
-              <div class="modal-footer">
 
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
-                <button type="submit" onClick={onSubmit} onMouseEnter={(e) => setJobId(e.target.value)} value={unique_id} data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} class="btn btn-primary">Müraciəti Təsdiqlə</button>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
+                <button type="submit" onClick={onSubmit} onMouseMove={(e) => setVacancy(e.target.value)} onMouseDown={(e) => setCompany(e.target.value)} onMouseEnter={(e) => setJobId(e.target.value)} value={unique_id} data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} className="btn btn-primary">Müraciəti Təsdiqlə</button>
               </div>
             </div>
           </div>

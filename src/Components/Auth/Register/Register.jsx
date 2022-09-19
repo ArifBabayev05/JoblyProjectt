@@ -45,30 +45,30 @@ function Register() {
 
   return (
 
-    <div class="content">
-      <div class="container">
-        <div class="row">
+    <div className="content">
+      <div className="container">
+        <div className="row">
           
-          <div class="col-md-6 contents">
-            <div class="row justify-content-center">
-              <div class="col-md-8">
-                <div class="mb-4">
+          <div className="col-md-6 contents">
+            <div className="row justify-content-center">
+              <div className="col-md-8">
+                <div className="mb-4">
                   <h3>Qeydiyyat</h3>
-                  <p class="mb-4 text-secondary">Qeydiyyatdan keçərək bizimlə iş dünyasına daha da yaxınlaşın</p>
+                  <p className="mb-4 text-secondary">Qeydiyyatdan keçərək bizimlə iş dünyasına daha da yaxınlaşın</p>
                 </div>
                 <form action="#" onSubmit={registerUser} >
-                  <div class="form-group a first">
+                  <div className="form-group a first">
 
                     <input type='text' className='m-2 form-control a' placeholder='Emaili daxil edin.'
                       required value={email} onChange={(e) => setEmail(e.target.value)} />
                     
                   </div>
-                  <div class="form-group ">
+                  <div className="form-group ">
 
                   <input type='password' className='m-2 a form-control' placeholder='Şifrəni daxil edin.' required value={password} onChange={(e) => setPassword(e.target.value)} />
 
                   </div>
-                  <div class="form-group last mb-4">
+                  <div className="form-group last mb-4">
                   <input type='password' className='m-2 a form-control' placeholder='Şifrəni yenidən daxil edin.' required value={cPassword} onChange={(e) => setCPassword(e.target.value)} />
 
                   </div>
@@ -81,9 +81,9 @@ function Register() {
                     <Link style={{ 'textDecoration': 'none' }} to='/login'>&nbsp; &nbsp;Daxil Olun</Link>
                   </p>
                   {loading && <p>Yüklənir...</p>}
-                  <input type="submit" value="Daxil Olun" class="login " />
+                  <input type="submit" value="Daxil Olun" className="login " />
 
-                  <span class="d-block text-left my-4 text-muted"> </span>
+                  <span className="d-block text-left my-4 text-muted"> </span>
 
 
                 </form>
@@ -93,8 +93,8 @@ function Register() {
 
           </div>
 
-          <div class="col-md-6 d-flex justify-content-center mb-5">
-            <img src={image} alt="Imagsdae" class="img-fluid" />
+          <div className="col-md-6 d-flex justify-content-center mb-5">
+            <img src={image} alt="Imagsdae" className="img-fluid" />
           </div>
 
         </div>

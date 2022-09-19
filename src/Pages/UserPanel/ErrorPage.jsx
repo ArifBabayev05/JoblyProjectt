@@ -4,8 +4,8 @@ import '../../Assets/Styles/Layout/Error.css'
 function ErrorPage() {
   return (
     <div id="notfound">
-		<div class="notfound">
-			<div class="notfound-404">
+		<div className="notfound">
+			<div className="notfound-404">
 				<h1>Oops!</h1>
 			</div>
 			<h2>404 - Səhifə Tapılmadı!</h2>

@@ -55,32 +55,32 @@ function Login() {
     }
 
     return (
-        <div class="content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center mb-5">
-                        <img src={image} alt="Imasdage" class="img-fluid" />
+        <div className="content">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6 d-flex justify-content-center mb-5">
+                        <img src={image} alt="Imasdage" className="img-fluid" />
                     </div>
-                    <div class="col-md-6 contents">
-                        <div class="row justify-content-center">
-                            <div class="col-md-8">
-                                <div class="mb-4">
+                    <div className="col-md-6 contents">
+                        <div className="row justify-content-center">
+                            <div className="col-md-8">
+                                <div className="mb-4">
                                     <h3>Daxil Ol</h3>
-                                    <p class="mb-4 text-secondary">Daxil olaraq iş elanlarına müraciət edin və xəyalınızdakı işi tapın!</p>
+                                    <p className="mb-4 text-secondary">Daxil olaraq iş elanlarına müraciət edin və xəyalınızdakı işi tapın!</p>
                                 </div>
                                 <form action="#" onSubmit={loginUser} >
-                                    <div class="form-group a first">
+                                    <div className="form-group a first">
 
-                                        <input type="text" class="form-control a" id="username" placeholder='Email' required value={email} onChange={(e) => setEmail(e.target.value)} />
-
-                                    </div>
-                                    <div class="form-group last mb-4">
-
-                                        <input type="password" class="color-white a form-control" placeholder='Şifrə' id="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                                        <input type="text" className="form-control a" id="username" placeholder='Email' required value={email} onChange={(e) => setEmail(e.target.value)} />
 
                                     </div>
+                                    <div className="form-group last mb-4">
 
-                                    <div class="d-flex mb-3 align-items-center">
+                                        <input type="password" className="color-white a form-control" placeholder='Şifrə' id="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+
+                                    </div>
+
+                                    <div className="d-flex mb-3 align-items-center">
 
                                         <Link to='/reset'>
                                             Şifrəni Unutmusan?
@@ -91,20 +91,20 @@ function Login() {
                                         <Link style={{ 'textDecoration': 'none' }} to='/register'>&nbsp; &nbsp;Qeydiyyatdan Keçin</Link>
                                     </p>
                                     {loading && <p>Yüklənir...</p>}
-                                    <input type="submit" value="Daxil Olun" class="login " />
+                                    <input type="submit" value="Daxil Olun" className="login " />
 
-                                    <span class="d-block text-left my-4 text-muted">&mdash; &mdash; və ya &mdash; &mdash; </span>
+                                    <span className="d-block text-left my-4 text-muted">&mdash; &mdash; və ya &mdash; &mdash; </span>
 
-                                    <div class="social-login mb-5">
+                                    <div className="social-login mb-5">
 
 
-                                        <div class="google-btn">
+                                        <div className="google-btn">
 
-                                            <div class="google-icon-wrapper">
-                                                <img class="google-icon" alt='valur' src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                                            <div className="google-icon-wrapper">
+                                                <img className="google-icon" alt='valur' src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                                             </div>
 
-                                            <p type='submit' onClick={signInWithGoogle} class="btn-text"><b>Google ilə daxil olun</b></p>
+                                            <p type='submit' onClick={signInWithGoogle} className="btn-text"><b>Google ilə daxil olun</b></p>
                                         </div>
                                     </div>
                                 </form>

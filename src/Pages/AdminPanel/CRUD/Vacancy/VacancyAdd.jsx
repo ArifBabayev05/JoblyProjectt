@@ -59,72 +59,72 @@ const VacancyAdd = () => {
         <div>
             <ShowOnAdmin>
                 <div>
-                    <div class="container-fluid">
-                        <div class="row flex-nowrap">
+                    <div className="container-fluid">
+                        <div className="row flex-nowrap">
                             <Sidebar />
-                            <div class="col py-3">
+                            <div className="col py-3">
                                 <form encType='multipart/formdata' onSubmit={(e) => submit(e)}>
                                     {loading && <Loader />}
 
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">Ad</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="name" required class="form-control" id="name" placeholder="Ad" />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">Ad</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="name" placeholder="Ad" />
                                         </div>
                                     </div>
                                     
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">typeOfwork</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="name" required class="form-control" id="typeOfwork" placeholder="typeOfwork" />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">typeOfwork</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="typeOfwork" placeholder="typeOfwork" />
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">vəzifəÖhdəlikləri</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="mail" required class="form-control" id="vəzifəÖhdəlikləri" placeholder="vəzifəÖhdəlikləri" />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">vəzifəÖhdəlikləri</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="vəzifəÖhdəlikləri" placeholder="vəzifəÖhdəlikləri" />
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">tələblər</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="mail" required class="form-control" id="tələblər" placeholder="vəzifəÖhdəlikləri" />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">tələblər</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="tələblər" placeholder="vəzifəÖhdəlikləri" />
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">salary</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required class="form-control" id="salary" placeholder="salary" />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">salary</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="salary" placeholder="salary" />
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">deadline</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="date" required class="form-control" id="deadline" placeholder="deadline" />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">deadline</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} type="date" required className="form-control" id="deadline" placeholder="deadline" />
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">City İd</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required class="form-control" id="cityId" placeholder="City İd " />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">City İd</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="cityId" placeholder="City İd " />
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">categoryId</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required class="form-control" id="categoryId" placeholder=" categoryId " />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">categoryId</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="categoryId" placeholder=" categoryId " />
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">companyId</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required class="form-control" id="companyId" placeholder="companyId " />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">companyId</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="companyId" placeholder="companyId " />
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-sm-10 offset-sm-2">
-                                            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} class="btn btn-primary">Əlavə Et</button>
+                                    <div className="row">
+                                        <div className="col-sm-10 offset-sm-2">
+                                            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
                                         </div>
                                     </div>
                                 </form>

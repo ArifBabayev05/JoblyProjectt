@@ -50,46 +50,46 @@ const CompanyAdd = () => {
         <div>
             <ShowOnAdmin>
                 <div>
-                    <div class="container-fluid">
-                        <div class="row flex-nowrap">
+                    <div className="container-fluid">
+                        <div className="row flex-nowrap">
                             <Sidebar />
-                            <div class="col py-3">
+                            <div className="col py-3">
                                 <form encType='multipart/formdata' onSubmit={(e) => submit(e)}>
                                     {loading && <Loader />}
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">Ad</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} required type="name" class="form-control" id="name" placeholder="Ad" />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">Ad</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} required type="name" className="form-control" id="name" placeholder="Ad" />
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} required type="mail" class="form-control" id="mail" placeholder="Email" />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">Email</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} required type="mail" className="form-control" id="mail" placeholder="Email" />
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">Telefon Nömrəsi</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} required type="tel" class="form-control" id="telNumber" placeholder="Telefon Nömrəsi" />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">Telefon Nömrəsi</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} required type="tel" className="form-control" id="telNumber" placeholder="Telefon Nömrəsi" />
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">İmage İd</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} required type="text" class="form-control" id="imageId" placeholder="İmage İd " />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">İmage İd</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} required type="text" className="form-control" id="imageId" placeholder="İmage İd " />
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="inputEmail" class="col-sm-2 col-form-label">İmage upload</label>
-                                        <div class="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} accept='image/*' type="file" class="form-control" id="image" placeholder="İmage İd " />
+                                    <div className="row mb-3">
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">İmage upload</label>
+                                        <div className="col-sm-10">
+                                            <input onChange={(e) => handle(e)} value={data.value} accept='image/*' type="file" className="form-control" id="image" placeholder="İmage İd " />
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-sm-10 offset-sm-2">
-                                            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} class="btn btn-primary">Əlavə Et</button>
+                                    <div className="row">
+                                        <div className="col-sm-10 offset-sm-2">
+                                            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
                                         </div>
                                     </div>
                                 </form>

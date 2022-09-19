@@ -22,7 +22,7 @@ function Index() {
                         <div >
                             <h3>İş Axtarıram</h3>
                             <p>CV'ni paylaş və sevdiyin işi tap!</p>
-                            <i class="fas fa-long-arrow-alt-right"></i>
+                            <i className="fas fa-long-arrow-alt-right"></i>
                         </div>
                     </a>
 
@@ -38,7 +38,7 @@ function Index() {
                         <div>
                             <h3>İşçi Axtarıram</h3>
                             <p>Vakansiyanı paylaş,  <br/> sizə uyğun mütəxəssisi tap!</p>
-                            <i class="fas fa-long-arrow-alt-right"></i>
+                            <i className="fas fa-long-arrow-alt-right"></i>
                         </div>
                     </a>
 

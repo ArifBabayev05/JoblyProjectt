@@ -74,18 +74,18 @@ function Index() {
             <div className='d-flex search mx-2'>
               <ShowOnLogin>
 
-                <div class="dropdown ms-3">
-                  <a style={{ 'cursor': 'pointer' }} class="dropdown-toggle" href='/#' id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <div className="dropdown ms-3">
+                  <a style={{ 'cursor': 'pointer' }} className="dropdown-toggle" href='/#' id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     Profilim
                   </a>
 
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="/#">Salam {displayname}</a></li>
-                    <li><a class="dropdown-item" href="/settings"> Tənzimləmələr</a></li>
+                  <ul className="dropdown-menu dropdown-menu-end dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
+                    <li><a className="dropdown-item" href="/#">Salam {displayname}</a></li>
+                    <li><a className="dropdown-item" href="/settings"> Tənzimləmələr</a></li>
                     <ShowOnAdmin>
-                      <li><a class="dropdown-item" href="/admin"> Admin Panel</a></li>
+                      <li><a className="dropdown-item" href="/admin"> Admin Panel</a></li>
                     </ShowOnAdmin>
-                    <li><a class="dropdown-item" href="/#" onClick={logoutUser} >Çıxış</a></li>
+                    <li><a className="dropdown-item" href="/#" onClick={logoutUser} >Çıxış</a></li>
                   </ul>
                 </div>
 
