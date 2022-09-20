@@ -68,6 +68,9 @@
     }
 }
 
+.li{
+    font-size: 13px;
+}
 .cyan {
     border-top: 3px solid var(--cyan);
 }
