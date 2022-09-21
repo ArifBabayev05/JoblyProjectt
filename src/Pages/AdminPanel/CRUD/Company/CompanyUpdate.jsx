@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Loader from '../../../../Components/Jobs/Loader'
 import Sidebar from '../../Sidebar/Sidebar'
 import { ShowOnAdmin, ShowOnUser } from '../../../../Layouts/HiddenLinks/Router'
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -20,6 +20,9 @@ const CompanyUpdate = (props) => {
     createdDate: ""
 
   })
+
+
+
   function submit(e) {
     e.preventDefault();
     console.log(data);
@@ -27,7 +30,7 @@ const CompanyUpdate = (props) => {
       id: data.id,
       name: data.name,
       mail: data.mail,
-      telNumber:data.telNumber,
+      telNumber: data.telNumber,
       imageId: parseInt(data.imageId),
       createdDate: new Date().toJSON()
     }).then(res => {
@@ -128,7 +131,7 @@ const CompanyUpdate = (props) => {
             <input defaultValue={product.data.imageId} onChange={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="imageId" placeholder="İmage" />
           </div>
         </div> */}
-        
+
 
 
         <div className="row">

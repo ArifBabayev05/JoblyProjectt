@@ -60,13 +60,12 @@ const VacancyUpdate = (props) => {
   }
 
 
+  const companyUrl = `http://localhost:53410/api/Company/getall`  
   const url = `http://localhost:53410/api/Vacancies/getbyid?id=${id}`
   const [product, setProduct] = useState({
     loading: false,
     data: null,
     error: false,
-
-
   })
 
   let content = null
