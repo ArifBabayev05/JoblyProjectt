@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { auth } from '../../../Components/Auth/Firebase/config';
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../../Redux/Slice/authSlice';
-import Clock from 'react-clock';
+import Clock from './Clock';
+
 
 const Home = () => {
 
@@ -56,15 +57,8 @@ const Home = () => {
 
           <div class="box orange">
             <div className='row'>
-              <div className='col-lg-9'>
-                <h2>Xoş Gəldin!</h2>
-                <p>Salam {displayname}!</p>
-                <p>Işlərində bol səbr və uğurlar!</p>
-
-              </div>
-              <div className='col-lg-3 d-flex align-items-center'>
-
-                <img className='imgss' src="https://assets.codepen.io/2301174/icon-karma.svg" alt="" />
+              <div className='col-lg-12'>
+                <Clock/>
               </div>
             </div>
           </div>
