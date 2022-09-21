@@ -4,8 +4,9 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Loader from '../../../../Components/Jobs/Loader'
 import Sidebar from '../../Sidebar/Sidebar'
 import { ShowOnAdmin, ShowOnUser } from '../../../../Layouts/HiddenLinks/Router'
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CompanyOption from './CompanyOption'
 // import { Link } from 'react-router-dom'
 
 
@@ -55,12 +56,14 @@ const VacancyUpdate = (props) => {
     const newData = { ...data }
     newData[e.target.id] = e.target.value;
     // newData[e.target.name] = e.target.value;
-
     setData(newData);
   }
 
 
-  const companyUrl = `http://localhost:53410/api/Company/getall`  
+
+
+
+
   const url = `http://localhost:53410/api/Vacancies/getbyid?id=${id}`
   const [product, setProduct] = useState({
     loading: false,
@@ -162,22 +165,18 @@ const VacancyUpdate = (props) => {
             <input defaultValue={product.data.categoryId} onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="categoryId" placeholder=" categoryId " />
           </div>
         </div>
-        <div className="row mb-3">
+        {/* <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">companyId</label>
           <div className="col-sm-10">
             <input defaultValue={product.data.companyId} onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="companyId" placeholder="companyId " />
           </div>
-        </div>
+        </div> */}
+
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">companyId</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.companyId} onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="companyId" placeholder="companyId " />
-            <select className="form-select">
-              <option>{product.data.company.id}</option>
-              <option>{product.data.company.name}</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
+            {/* <input onChange={(e) => handle(e)} value={product.data.companyId} type="text" required className="form-control" id="companyId" placeholder="companyId " /> */}
+            <CompanyOption  onChange={(e)=>console.log(e.target.value)} value={product.data.companyId} id="companyId" />
           </div>
         </div>
 
