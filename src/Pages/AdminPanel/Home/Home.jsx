@@ -53,6 +53,21 @@ const Home = () => {
               </div>
             </div>
           </div>
+
+          <div class="box orange">
+            <div className='row'>
+              <div className='col-lg-9'>
+                <h2>Xoş Gəldin!</h2>
+                <p>Salam {displayname}!</p>
+                <p>Işlərində bol səbr və uğurlar!</p>
+
+              </div>
+              <div className='col-lg-3 d-flex align-items-center'>
+
+                <img className='imgss' src="https://assets.codepen.io/2301174/icon-karma.svg" alt="" />
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-sm-5">
           <div class="box orange">
@@ -65,11 +80,6 @@ const Home = () => {
                 <li className='li'>Vakansiya Yaratmaq,Yeniləmək,Silmək</li>
                 <li className='li'>Kateqoriya Yaratmaq,Yeniləmək,Silmək</li>
                 <li className='li'>Müraciətləri görmək və idarə etmək</li>
-
-
-
-                
-                
 
 
               </div>
