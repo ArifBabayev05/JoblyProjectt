@@ -35,7 +35,7 @@ const Home = () => {
     })
   }, [dispatch, displayname]);
 
-  
+
   return (
     <div>
       <div class="row">
@@ -54,16 +54,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-
-          <div class="box orange">
-            <div className='row'>
-              <div className='col-lg-12'>
-                <Clock/>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-5">
+          
           <div class="box orange">
             <div className='row'>
 
@@ -78,17 +69,22 @@ const Home = () => {
 
               </div>
               <div className='col-lg-3 d-flex align-items-center'>
-                <img className='imgss' style={{"width":'90px'}} src="https://cdn3d.iconscout.com/3d/premium/thumb/transaction-4721271-3927984.png" alt="" />
+                <img className='imgss' style={{ "width": '90px' }} src="https://cdn3d.iconscout.com/3d/premium/thumb/transaction-4721271-3927984.png" alt="" />
               </div>
             </div>
           </div>
-
         </div>
-      </div>
-      <div class="row2-container d-flex">
+        <div class="col-sm-5">
+          
+        <div class="box orange">
+            <div className='row'>
+              <div className='col-lg-12'>
+                <Clock />
 
-
-
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
 
