@@ -39,12 +39,13 @@ const VacancyUpdate = (props) => {
       salary: data.salary,
       cityId: parseInt(data.cityId),
       categoryId: parseInt(data.categoryId),
-      companyId: parseInt(data.companyId),
+      // companyId: parseInt(data.companyId),
+      companyId:data.companyId,
       deadline: data.deadline,
       createdDate: new Date().toJSON()
     }).then(res => {
       console.log(res);
-      toast.success("Uğurla Əlavə Olundu");
+      toast.success("Uğurla Yeniləndi");
       navigate("/vacancyAdmin")
     }).catch(() => {
       toast.error("Əməliyyat Uğursuzdur.");
@@ -176,7 +177,7 @@ const VacancyUpdate = (props) => {
           <label for="inputEmail" className="col-sm-2 col-form-label">companyId</label>
           <div className="col-sm-10">
             {/* <input onChange={(e) => handle(e)} value={product.data.companyId} type="text" required className="form-control" id="companyId" placeholder="companyId " /> */}
-            <CompanyOption  onChange={(e)=>console.log(e.target.value)} value={product.data.companyId} id="companyId" />
+            <CompanyOption defaultValue={product.data.companyId} onChange={(e)=>console.log(e.target.value)} value={data.value} id="companyId" />
           </div>
         </div>
 
