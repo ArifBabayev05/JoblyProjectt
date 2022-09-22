@@ -1,39 +1,47 @@
+import React, { Component } from 'react'
+import Select from 'react-select'
+import axios from 'axios'
 
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+export default class CompanyOption extends Component {
 
-const CompanyOption = () => {
+  constructor(props){
+    super(props)
+    this.state = {
+      selectOptions : [],
+      id: "",
+      name: ''
+    }
+  }
 
-    const [data, setData] = useState([])
-    useEffect(() => {
-        axios.get('http://localhost:53410/api/Company/getall')
-            .then(res => {
-                setData(res.data)
-            }).catch(err => console.log(err))
-    }, []);
-    function handle(e) {
+ async getOptions(){
+    const res = await axios.get('https://jsonplaceholder.typicode.com/users')
+    const data = res.data
 
-        const newData = { ...data }
-        newData[e.target.id] = e.target.value;
-        // newData[e.target.name] = e.target.value;
-        setData(newData);
-      }
-    console.log(data)
-    const companyOption = data.map((data, index) => {
-        return (
-            
-            <option key={data.id} onChange={(e)=>handle(e)} value={data.value} id="companyId">{data.name}</option>
-        
-        )
-    })
+    const options = data.map(d => ({
+      "value" : d.id,
+      "label" : d.name
 
+    }))
 
+    this.setState({selectOptions: options})
 
+  }
+
+  handleChange(e){
+   this.setState({id:e.value, name:e.label})
+  }
+
+  componentDidMount(){
+      this.getOptions()
+  }
+
+  render() {
+    console.log(this.state.selectOptions)
     return (
-        <select>
-            {companyOption } 
-        </select>
+      <div>
+        <Select options={this.state.selectOptions} onChange={this.handleChange.bind(this)} />
+    <p>You have selected <strong>{this.state.name}</strong> whose id is <strong>{this.state.id}</strong></p>
+      </div>
     )
+  }
 }
-
-export default CompanyOption

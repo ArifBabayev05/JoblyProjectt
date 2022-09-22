@@ -11,6 +11,7 @@ import CompanyOption from './CompanyOption'
 
 
 const VacancyUpdate = (props) => {
+  
   const navigate = useNavigate();
   const { id } = useParams();
   const [data, setData] = useState({
@@ -39,8 +40,8 @@ const VacancyUpdate = (props) => {
       salary: data.salary,
       cityId: parseInt(data.cityId),
       categoryId: parseInt(data.categoryId),
-      // companyId: parseInt(data.companyId),
-      companyId:data.companyId,
+      companyId: parseInt(data.companyId),
+      // companyId:data.companyId,
       deadline: data.deadline,
       createdDate: new Date().toJSON()
     }).then(res => {
@@ -59,11 +60,6 @@ const VacancyUpdate = (props) => {
     // newData[e.target.name] = e.target.value;
     setData(newData);
   }
-
-
-
-
-
 
   const url = `http://localhost:53410/api/Vacancies/getbyid?id=${id}`
   const [product, setProduct] = useState({
@@ -108,6 +104,7 @@ const VacancyUpdate = (props) => {
     content = <p>Xəta baş verdi, yenidən yoxlayın.</p>
   }
 
+  
   if (product.data) {
     content =
       <form encType='multipart/formdata' onSubmit={(e) => submit(e)}>
@@ -176,8 +173,10 @@ const VacancyUpdate = (props) => {
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">companyId</label>
           <div className="col-sm-10">
+
             {/* <input onChange={(e) => handle(e)} value={product.data.companyId} type="text" required className="form-control" id="companyId" placeholder="companyId " /> */}
-            <CompanyOption defaultValue={product.data.companyId} onChange={(e)=>console.log(e.target.value)} value={data.value} id="companyId" />
+            <CompanyOption defaultValue={product.data.companyId} onChange={(e) => handle(e)} value={data.value} id="companyId" />
+            
           </div>
         </div>
 
