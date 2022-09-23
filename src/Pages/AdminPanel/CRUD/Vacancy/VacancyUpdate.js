@@ -202,7 +202,7 @@ const VacancyUpdate = (props) => {
         </div>
         <div className="row mb-3">
 
-          <label for="inputEmail" className="col-sm-2 col-form-label">City İd</label>
+          <label for="inputEmail" className="col-sm-2 col-form-label">Şəhər</label>
           <div className="col-sm-10">
             <select onChange={(e) => handle(e)} value={data.value} required className="form-control" id="cityId">
               {cityOption}

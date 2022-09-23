@@ -1,9 +1,9 @@
 import Loader from '../../../../Components/Jobs/Loader'
 import { ShowOnAdmin, ShowOnUser } from '../../../../Layouts/HiddenLinks/Router'
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Sidebar from '../../Sidebar/Sidebar'
 import axios from 'axios'
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
 
@@ -14,14 +14,14 @@ const VacancyAdd = () => {
     const url = 'http://localhost:53410/api/Vacancies/add';
     const [data, setData] = useState({
         name: "",
-        cityId:"",
-        deadline:"",
-        typeOfwork:"",
-        vəzifəÖhdəlikləri:"",
-        tələblər:"",
-        salary:"",
-        categoryId:"",
-        companyId:"",
+        cityId: "",
+        deadline: "",
+        typeOfwork: "",
+        vəzifəÖhdəlikləri: "",
+        tələblər: "",
+        salary: "",
+        categoryId: "",
+        companyId: "",
         createdDate: ""
 
     })
@@ -30,10 +30,10 @@ const VacancyAdd = () => {
         setLoading(false);
         axios.post(url, {
             name: data.name,
-            typeOfwork:data.typeOfwork,
-            vəzifəÖhdəlikləri:data.vəzifəÖhdəlikləri,
-            tələblər:data.tələblər,
-            salary:data.salary,
+            typeOfwork: data.typeOfwork,
+            vəzifəÖhdəlikləri: data.vəzifəÖhdəlikləri,
+            tələblər: data.tələblər,
+            salary: data.salary,
             cityId: parseInt(data.cityId),
             categoryId: parseInt(data.categoryId),
             companyId: parseInt(data.companyId),
@@ -49,12 +49,64 @@ const VacancyAdd = () => {
         })
     }
 
+    //Category Option
+    const [categoryDatas, setCategoryDatas] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:53410/api/categories/getall')
+            .then(res => {
+                setCategoryDatas(res.data)
+            }).catch(err => console.log(err))
+    }, []);
+    const categoryOption = categoryDatas.map((categoryDatas, index) => {
+        return (
+            <option key={categoryDatas.id} onClick={(e) => handles(e)} value={categoryDatas.id} id={categoryDatas.id}>{categoryDatas.name}</option>
+        )
+    })
+
+    //City Option
+    const [cityDatas, setCityDatas] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:53410/api/city/getall')
+            .then(res => {
+                setCityDatas(res.data)
+            }).catch(err => console.log(err))
+    }, []);
+    const cityOption = cityDatas.map((cityDatas, index) => {
+        return (
+            <option key={cityDatas.id} onClick={(e) => handles(e)} value={cityDatas.id} id={cityDatas.id}>{cityDatas.name}</option>
+        )
+    })
+
+    //Company Option
+    const [datas, setDatas] = useState([])
+    useEffect(() => {
+        axios.get('http://localhost:53410/api/Company/getall')
+            .then(res => {
+                setDatas(res.data)
+            }).catch(err => console.log(err))
+    }, []);
+    function handles(e) {
+        const newData = { ...datas }
+        console.log(e.taget.value)
+        newData[e.target.selected] = e.target.value;
+        setDatas(newData);
+    }
     function handle(e) {
-        setLoading(false);
+
         const newData = { ...data }
         newData[e.target.id] = e.target.value;
         setData(newData);
-    }
+      }
+    
+
+    const companyOption = datas.map((datas, index) => {
+        return (
+
+            <option key={datas.id} selected onClick={(e) => handles(e)} value={datas.id} id={datas.id}>{datas.name}</option>
+
+        )
+    })
+
     return (
         <div>
             <ShowOnAdmin>
@@ -72,7 +124,7 @@ const VacancyAdd = () => {
                                             <input onChange={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="name" placeholder="Ad" />
                                         </div>
                                     </div>
-                                    
+
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">typeOfwork</label>
                                         <div className="col-sm-10">
@@ -103,22 +155,34 @@ const VacancyAdd = () => {
                                             <input onChange={(e) => handle(e)} value={data.value} type="date" required className="form-control" id="deadline" placeholder="deadline" />
                                         </div>
                                     </div>
+
                                     <div className="row mb-3">
-                                        <label for="inputEmail" className="col-sm-2 col-form-label">City İd</label>
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">Şəhər</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="cityId" placeholder="City İd " />
+                                            <select onChange={(e) => handle(e)} value={data.value} required className="form-control" id="cityId">
+                                                {cityOption}
+                                            </select>
                                         </div>
                                     </div>
                                     <div className="row mb-3">
-                                        <label for="inputEmail" className="col-sm-2 col-form-label">categoryId</label>
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">Kateqoriya</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="categoryId" placeholder=" categoryId " />
+
+                                            <select onChange={(e) => handle(e)} value={data.value} required className="form-control" id="categoryId">
+                                                {categoryOption}
+                                            </select>
+
                                         </div>
                                     </div>
+
                                     <div className="row mb-3">
-                                        <label for="inputEmail" className="col-sm-2 col-form-label">companyId</label>
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">Şirkət</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="companyId" placeholder="companyId " />
+
+                                            <select onChange={(e) => handle(e)} value={data.value} required className="form-control" id="companyId">
+                                                {companyOption}
+                                            </select>
+
                                         </div>
                                     </div>
 
