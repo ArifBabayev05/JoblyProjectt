@@ -6,9 +6,8 @@ import Sidebar from '../../Sidebar/Sidebar'
 import { ShowOnAdmin, ShowOnUser } from '../../../../Layouts/HiddenLinks/Router'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import CompanyOption from './CompanyOption'
-// import { Link } from 'react-router-dom'
-import Select from 'react-select'
+
+
 
 
 const VacancyUpdate = (props) => {
@@ -107,7 +106,7 @@ const VacancyUpdate = (props) => {
   }
 
   //Category Option
-  const [categoryDatas,setCategoryDatas] = useState([])
+  const [categoryDatas, setCategoryDatas] = useState([])
   useEffect(() => {
     axios.get('http://localhost:53410/api/categories/getall')
       .then(res => {
@@ -117,6 +116,20 @@ const VacancyUpdate = (props) => {
   const categoryOption = categoryDatas.map((categoryDatas, index) => {
     return (
       <option key={categoryDatas.id} onClick={(e) => handles(e)} value={categoryDatas.id} id={categoryDatas.id}>{categoryDatas.name}</option>
+    )
+  })
+
+  //City Option
+  const [cityDatas, setCityDatas] = useState([])
+  useEffect(() => {
+    axios.get('http://localhost:53410/api/city/getall')
+      .then(res => {
+        setCityDatas(res.data)
+      }).catch(err => console.log(err))
+  }, []);
+  const cityOption = cityDatas.map((cityDatas, index) => {
+    return (
+      <option key={cityDatas.id} onClick={(e) => handles(e)} value={cityDatas.id} id={cityDatas.id}>{cityDatas.name}</option>
     )
   })
 
@@ -135,13 +148,16 @@ const VacancyUpdate = (props) => {
     // newData[e.target.name] = e.target.value;
     setDatas(newData);
   }
+  
   const companyOption = datas.map((datas, index) => {
     return (
 
-      <option key={datas.id} onClick={(e) => handles(e)} value={datas.id} id={datas.id}>{datas.name}</option>
+      <option key={datas.id} selected onClick={(e) => handles(e)} value={datas.id} id={datas.id}>{datas.name}</option>
 
     )
   })
+
+  
   if (product.data) {
     content =
       <form encType='multipart/formdata' onSubmit={(e) => submit(e)}>
@@ -188,9 +204,12 @@ const VacancyUpdate = (props) => {
           </div>
         </div>
         <div className="row mb-3">
+
           <label for="inputEmail" className="col-sm-2 col-form-label">City İd</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.cityId} onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="cityId" placeholder="City İd " />
+            <select onChange={(e) => handle(e)} value={data.value} required className="form-control" id="cityId">
+              {cityOption}
+            </select>
           </div>
         </div>
         <div className="row mb-3">
@@ -200,7 +219,7 @@ const VacancyUpdate = (props) => {
             <select onChange={(e) => handle(e)} value={data.value} required className="form-control" id="categoryId">
               {categoryOption}
             </select>
-            
+
           </div>
         </div>
 
