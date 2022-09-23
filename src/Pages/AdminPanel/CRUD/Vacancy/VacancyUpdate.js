@@ -8,10 +8,11 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CompanyOption from './CompanyOption'
 // import { Link } from 'react-router-dom'
+import Select from 'react-select'
 
 
 const VacancyUpdate = (props) => {
-  
+
   const navigate = useNavigate();
   const { id } = useParams();
   const [data, setData] = useState({
@@ -96,23 +97,75 @@ const VacancyUpdate = (props) => {
       })
   }, [url])
 
+  function getOptions() {
+    this.state = {
+      selectOptions: [],
+      id: "",
+      name: ''
+    }
+    const res = axios.get('http://localhost:53410/api/Company/getall')
+    const data = res.data
+
+    const options = data.map(d => ({
+      "value": d.id,
+      "label": d.name
+
+    }))
+
+    this.setState({ selectOptions: options })
+
+  }
+
+  function handleChange(e) {
+    this.setState({ id: e.value, name: e.label })
+  }
+
+  function componentDidMount() {
+    this.getOptions()
+  }
+
+
   if (product.loading) {
     content = <Loader />
   }
+
 
   if (product.error) {
     content = <p>Xəta baş verdi, yenidən yoxlayın.</p>
   }
 
-  
+  const [datas, setDatas] = useState([])
+  useEffect(() => {
+    axios.get('http://localhost:53410/api/Company/getall')
+      .then(res => {
+        setDatas(res.data)
+      }).catch(err => console.log(err))
+  }, []);
+  function handles(e) {
+
+    const newData = { ...datas }
+    console.log(e.taget.value)
+    newData[e.target.selected] = e.target.value;
+    // newData[e.target.name] = e.target.value;
+    setDatas(newData);
+  }
+
+
+  console.log(datas)
+  const companyOption = datas.map((datas, index) => {
+    return (
+
+      <option key={datas.id} onClick={(e) => handles(e)} value={datas.id} id={datas.id}>{datas.name}</option>
+
+    )
+  })
   if (product.data) {
     content =
       <form encType='multipart/formdata' onSubmit={(e) => submit(e)}>
         {/* {loading && <Loader />} */}
 
 
-
-        <input defaultValue={data.id} onChange={(e) => handle(e)} value={data.value} style={{ 'display': 'none' }} type="name" required className="form-control" id="id" placeholder="Ad" />
+        <input defaultValue={data.id} onSelect={(e) => handle(e)} value={data.value} style={{ 'display': 'none' }} type="name" required className="form-control" id="id" placeholder="Ad" />
 
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Ad</label>
@@ -175,8 +228,13 @@ const VacancyUpdate = (props) => {
           <div className="col-sm-10">
 
             {/* <input onChange={(e) => handle(e)} value={product.data.companyId} type="text" required className="form-control" id="companyId" placeholder="companyId " /> */}
-            <CompanyOption defaultValue={product.data.companyId} onChange={(e) => handle(e)} value={data.value} id="companyId" />
-            
+            {/* <CompanyOption onChange={(e) => handle(e)} id="companyId" /> */}
+            <select onChange={(e) => handle(e)} value={data.value} required className="form-control" id="companyId">
+              {companyOption}
+            </select>
+          
+
+
           </div>
         </div>
 
