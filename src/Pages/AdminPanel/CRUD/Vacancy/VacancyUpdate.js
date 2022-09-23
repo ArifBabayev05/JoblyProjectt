@@ -128,9 +128,18 @@ const VacancyUpdate = (props) => {
         setDatas(res.data)
       }).catch(err => console.log(err))
   }, []);
+  function handles(e) {
+    const newData = { ...datas }
+    console.log(e.taget.value)
+    newData[e.target.selected] = e.target.value;
+    // newData[e.target.name] = e.target.value;
+    setDatas(newData);
+  }
   const companyOption = datas.map((datas, index) => {
     return (
+
       <option key={datas.id} onClick={(e) => handles(e)} value={datas.id} id={datas.id}>{datas.name}</option>
+
     )
   })
   if (product.data) {
