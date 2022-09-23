@@ -134,15 +134,20 @@ const VacancyUpdate = (props) => {
     content = <p>Xəta baş verdi, yenidən yoxlayın.</p>
   }
 
-  const [datas, setDatas] = useState([])
   useEffect(() => {
     axios.get('http://localhost:53410/api/Company/getall')
       .then(res => {
         setDatas(res.data)
       }).catch(err => console.log(err))
   }, []);
+  useEffect(() => {
+    axios.get('http://localhost:53410/api/Category/getall')
+      .then(res => {
+        setDatas(res.data)
+      }).catch(err => console.log(err))
+  }, []);
+  const [datas, setDatas] = useState([])
   function handles(e) {
-
     const newData = { ...datas }
     console.log(e.taget.value)
     newData[e.target.selected] = e.target.value;
@@ -224,7 +229,7 @@ const VacancyUpdate = (props) => {
         </div> */}
 
         <div className="row mb-3">
-          <label for="inputEmail" className="col-sm-2 col-form-label">companyId</label>
+          <label for="inputEmail" className="col-sm-2 col-form-label">Şirkət</label>
           <div className="col-sm-10">
 
             {/* <input onChange={(e) => handle(e)} value={product.data.companyId} type="text" required className="form-control" id="companyId" placeholder="companyId " /> */}
