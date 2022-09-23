@@ -41,7 +41,6 @@ const VacancyUpdate = (props) => {
       cityId: parseInt(data.cityId),
       categoryId: parseInt(data.categoryId),
       companyId: parseInt(data.companyId),
-      // companyId:data.companyId,
       deadline: data.deadline,
       createdDate: new Date().toJSON()
     }).then(res => {
@@ -57,7 +56,6 @@ const VacancyUpdate = (props) => {
 
     const newData = { ...data }
     newData[e.target.id] = e.target.value;
-    // newData[e.target.name] = e.target.value;
     setData(newData);
   }
 
@@ -145,7 +143,6 @@ const VacancyUpdate = (props) => {
     const newData = { ...datas }
     console.log(e.taget.value)
     newData[e.target.selected] = e.target.value;
-    // newData[e.target.name] = e.target.value;
     setDatas(newData);
   }
   
