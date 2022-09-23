@@ -97,34 +97,6 @@ const VacancyUpdate = (props) => {
       })
   }, [url])
 
-  function getOptions() {
-    this.state = {
-      selectOptions: [],
-      id: "",
-      name: ''
-    }
-    const res = axios.get('http://localhost:53410/api/Company/getall')
-    const data = res.data
-
-    const options = data.map(d => ({
-      "value": d.id,
-      "label": d.name
-
-    }))
-
-    this.setState({ selectOptions: options })
-
-  }
-
-  function handleChange(e) {
-    this.setState({ id: e.value, name: e.label })
-  }
-
-  function componentDidMount() {
-    this.getOptions()
-  }
-
-
   if (product.loading) {
     content = <Loader />
   }
@@ -134,19 +106,37 @@ const VacancyUpdate = (props) => {
     content = <p>Xəta baş verdi, yenidən yoxlayın.</p>
   }
 
+  //Category Option
+  const [categoryDatas,setCategoryDatas] = useState([])
+  useEffect(() => {
+    axios.get('http://localhost:53410/api/Category/getall')
+      .then(res => {
+        setCategoryDatas(res.data)
+      }).catch(err => console.log(err))
+  }, []);
+  function chandles(e) {
+    const newData = { ...datas }
+    console.log(e.taget.value)
+    newData[e.target.selected] = e.target.value;
+    // newData[e.target.name] = e.target.value;
+    setCategoryDatas(newData);
+  }
+  const categoryOption = categoryDatas.map((categoryDatas, index) => {
+    return (
+
+      <option key={categoryDatas.id} onClick={(e) => handles(e)} value={categoryDatas.id} id={categoryDatas.id}>{categoryDatas.name}</option>
+
+    )
+  })
+
+  //Company Option
+  const [datas, setDatas] = useState([])
   useEffect(() => {
     axios.get('http://localhost:53410/api/Company/getall')
       .then(res => {
         setDatas(res.data)
       }).catch(err => console.log(err))
   }, []);
-  useEffect(() => {
-    axios.get('http://localhost:53410/api/Category/getall')
-      .then(res => {
-        setDatas(res.data)
-      }).catch(err => console.log(err))
-  }, []);
-  const [datas, setDatas] = useState([])
   function handles(e) {
     const newData = { ...datas }
     console.log(e.taget.value)
@@ -154,9 +144,6 @@ const VacancyUpdate = (props) => {
     // newData[e.target.name] = e.target.value;
     setDatas(newData);
   }
-
-
-  console.log(datas)
   const companyOption = datas.map((datas, index) => {
     return (
 
@@ -216,29 +203,23 @@ const VacancyUpdate = (props) => {
           </div>
         </div>
         <div className="row mb-3">
-          <label for="inputEmail" className="col-sm-2 col-form-label">categoryId</label>
+          <label for="inputEmail" className="col-sm-2 col-form-label">Kateqoriya</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.categoryId} onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="categoryId" placeholder=" categoryId " />
+
+            <select onChange={(e) => handle(e)} value={data.value} required className="form-control" id="categoryId">
+              {categoryOption}
+            </select>
+            
           </div>
         </div>
-        {/* <div className="row mb-3">
-          <label for="inputEmail" className="col-sm-2 col-form-label">companyId</label>
-          <div className="col-sm-10">
-            <input defaultValue={product.data.companyId} onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="companyId" placeholder="companyId " />
-          </div>
-        </div> */}
 
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Şirkət</label>
           <div className="col-sm-10">
 
-            {/* <input onChange={(e) => handle(e)} value={product.data.companyId} type="text" required className="form-control" id="companyId" placeholder="companyId " /> */}
-            {/* <CompanyOption onChange={(e) => handle(e)} id="companyId" /> */}
             <select onChange={(e) => handle(e)} value={data.value} required className="form-control" id="companyId">
               {companyOption}
             </select>
-          
-
 
           </div>
         </div>
