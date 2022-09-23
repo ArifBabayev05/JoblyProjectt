@@ -109,7 +109,7 @@ const VacancyUpdate = (props) => {
   //Category Option
   const [categoryDatas,setCategoryDatas] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:53410/api/Category/getall')
+    axios.get('http://localhost:53410/api/categories/getall')
       .then(res => {
         setCategoryDatas(res.data)
       }).catch(err => console.log(err))
@@ -123,9 +123,7 @@ const VacancyUpdate = (props) => {
   }
   const categoryOption = categoryDatas.map((categoryDatas, index) => {
     return (
-
       <option key={categoryDatas.id} onClick={(e) => handles(e)} value={categoryDatas.id} id={categoryDatas.id}>{categoryDatas.name}</option>
-
     )
   })
 
