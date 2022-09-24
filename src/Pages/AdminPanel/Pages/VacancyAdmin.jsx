@@ -48,7 +48,10 @@ const VacancyAdmin = (props) => {
         else if (value.category.name.toLowerCase().includes(query.toLowerCase())) {
             return value;
         }
-      
+        else if (value.city.name.toLowerCase().includes(query.toLowerCase())) {
+            return value;
+        } 
+       
     }).map((data, index) => {
         return (
             <tr>
