@@ -5,7 +5,7 @@ import { auth } from '../../Components/Auth/Firebase/config'
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 // import { useNavigate } from "react-router-dom";
-import { getAuth, onAuthStateChanged, updateEmail, updateProfile } from "firebase/auth";
+import { getAuth, onAuthStateChanged, updateEmail, updatePhoneNumber, updateProfile } from "firebase/auth";
 import { useDispatch } from 'react-redux'
 // import { ShowOnLogin, ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks'
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice';
@@ -15,6 +15,7 @@ import { toast } from 'react-toastify';
 const UpdateProfile = () => {
   const dispatch = useDispatch()
   const [email, setEmail] = useState("")
+  const [tel, setTel] = useState("")
   const [password, setPassword] = useState("")
   const [displayName, setDisplayName] = useState("");
   const [displayname, setDisplayNames] = useState("");
@@ -23,7 +24,7 @@ const UpdateProfile = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // const uid = user.uid;
+        
         if (user.email == null) {
           const u2 = user.email.substring(0, user.email.indexOf("@"));
           const u2Name = u2.charAt(0).toUpperCase() + u2.slice(1);
@@ -84,11 +85,15 @@ const UpdateProfile = () => {
       toast.error("Xəta baş verdi")
 
     });
-
     updateEmail(auth.currentUser, email).then(() => {
       // console.log(auth)
     }).catch((error) => {
       // console.log(auth)
+    });
+    updatePhoneNumber(auth,"+99477440705").then(() => {
+      console.log(auth)
+    }).catch((error) => {
+      console.log(auth)
     });
   }
 
@@ -99,7 +104,7 @@ const UpdateProfile = () => {
 
         <form className='updateForm' onSubmit={update}>
           <div class="form-icon">
-            <span><i class="icon icon-user"></i></span>
+            <span><i class="fas fa-user"></i></span>
           </div>
           <div class="form-group">
             <label className='mb-1'>İstifadəçi Adı:</label>
@@ -115,7 +120,7 @@ const UpdateProfile = () => {
           </div>
           <div class="form-group">
             <label className='mb-1'>Telefon nömrəsi:</label>
-            <input type="text" class="form-control item" id="phone-number" placeholder="Phone Number" />
+            <input type="text" class="form-control item" id="phone-number" defaultValue={tel} onChange={(e) => setTel(e.target.value)} placeholder="Phone Number" />
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-block create-account">Yenilə</button>
