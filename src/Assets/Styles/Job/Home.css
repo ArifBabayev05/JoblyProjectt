@@ -46,7 +46,7 @@
   position: relative;
   margin-right: 60px;
 }
-.card .apply button {
+.card .apply a, .card .apply button {
   background-color: rgb(93, 56, 255);
   border: 1.5px solid #F8F8F9;
   color: white;

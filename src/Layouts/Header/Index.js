@@ -65,11 +65,16 @@ function Index() {
 
           <form className="d-flex">
 
-            <div className='d-flex search'>
+            <div className='d-flex search me-3'>
 
               <i className="fa-solid mt-1 me-2 fa-magnifying-glass"></i>
               <a href='/job' className='fw-600'>İş Axtarın</a>
             </div>
+            
+            <a href='/about' className='me-3'> Haqqımızda</a>
+
+            <a href='/contact'>Əlaqə</a>
+
 
             <div className='d-flex search mx-2'>
               <ShowOnLogin>

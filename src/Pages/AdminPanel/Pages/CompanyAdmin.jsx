@@ -45,6 +45,7 @@ const CompanyAdmin = (props) => {
         else if (value.name.toLowerCase().includes(query.toLowerCase())) {
             return value;
         }
+      
     }).map((data, index) => {
         return (
             <tr>
@@ -76,7 +77,7 @@ const CompanyAdmin = (props) => {
                                 <div className='row'>
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
                                         <h3>Şirkətlər</h3>
-                                        <form class="search-box " style={{ 'margin-right': "60px" }}>
+                                        <form class="search-box newSearchInputForm" style={{ 'margin-right': "60px" }}>
                                             <input onChange={(event) => setQuery(event.target.value)} type="text" placeholder="Axtarış hissəsi" />
                                             <button type="reset"></button>
                                         </form>

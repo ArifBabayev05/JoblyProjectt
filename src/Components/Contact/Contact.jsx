@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux'
 import { auth } from '../Auth/Firebase/config';
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice';
 import contactImage from '../../Assets/Images/Hero/contactt.svg'
+import { ShowOnLogin, ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks';
 
 
 // const Result = () => {
@@ -126,10 +127,19 @@ const Contact = (props) => {
                                                     <textarea className="form-control" required name="message" rows="8" placeholder="Mesajınızı Daxil Edin."></textarea>
                                                 </div>
                                             </div>
+                                            <ShowOnLogin>
+
                                             <div className="col-lg-12">
                                                 <button type="submit" value="Send" style={{backgroundColor:"#785BF4"}} className="btn mt-3 submitBut  border-0 px-3 py-2"><span> Göndər</span></button>
                                                 
                                             </div>
+                                            </ShowOnLogin>
+                                            <ShowOnLogout>
+
+                                            <div className="col-lg-12">
+                                                <a href='/login' value="Daxil Olun" style={{backgroundColor:"#785BF4"}} className="btn mt-3 submitBut  border-0 px-3 py-2"><span> Daxil Olun</span></a>
+                                            </div>
+                                            </ShowOnLogout>
                                         </div>
                                     </form>
                                     <div className='row'>

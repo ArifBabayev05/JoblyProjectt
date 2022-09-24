@@ -16,6 +16,7 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { v4 as uuid } from 'uuid';
+import { ShowOnLogin,ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks'
 //Job Details
 function Home() {
 
@@ -154,7 +155,14 @@ function Home() {
         </div>
 
         <div className='apply'>
+          <ShowOnLogin>
           <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" className='btn h'>Müraciət Et</button>
+
+          </ShowOnLogin>
+          <ShowOnLogout>
+          <a href='/login' className='btn h'>Daxil Olun</a>
+
+          </ShowOnLogout>
         </div>
 
         <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

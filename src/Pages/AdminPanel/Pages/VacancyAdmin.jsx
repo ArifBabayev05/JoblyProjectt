@@ -83,7 +83,7 @@ const VacancyAdmin = (props) => {
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
                                         <h3>Vakansiyalar</h3>
 
-                                        <form class="search-box " style={{ 'margin-right': "60px" }}>
+                                        <form class="search-box newSearchInputForm" style={{ 'margin-right': "60px" }}>
                                             <input onChange={(event) => setQuery(event.target.value)} type="text" placeholder="Axtarış hissəsi" />
                                             <button type="reset"></button>
                                         </form>

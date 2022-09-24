@@ -70,7 +70,7 @@ const CategoryAdmin = (props) => {
                                     {/* new Search */}
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex justify-content-between'>
                                         <h3>Kateqoriyalar</h3>
-                                        <form class="search-box " style={{ 'margin-right': "60px" }}>
+                                        <form class="search-box newSearchInputForm">
                                             <input onChange={(event) => setQuery(event.target.value)} type="text" placeholder="Axtarış hissəsi" />
                                             <button type="reset"></button>
                                         </form>
