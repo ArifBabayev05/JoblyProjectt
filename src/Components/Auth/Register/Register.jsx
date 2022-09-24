@@ -7,7 +7,6 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../Firebase/config'
 // import Loader from '../../Jobs/Loader'
 import image from '../../../Assets/Images/Hero/lq.svg'
-import useForm from "react-hook-form";
 
 
 function Register() {
@@ -17,6 +16,7 @@ function Register() {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false);
   // setLoading(true);
+  console.log(password, cPassword)
   const registerUser = (e) => {
     e.preventDefault();
     if (password !== cPassword) {
@@ -27,7 +27,8 @@ function Register() {
     //   toast.success("Qeydiyyat Uğurludur!")
     // }
 
-    createUserWithEmailAndPassword(auth, email, password)
+    if(password==cPassword){
+      createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         toast.success("Qeydiyyat Uğurludur!")
         ////////////////////////////////////////////////////////////////////////////////
@@ -42,6 +43,7 @@ function Register() {
         toast.error(error.message)
         setLoading(false);
       });
+    }
   }
 
 
@@ -84,7 +86,7 @@ function Register() {
                     <Link style={{ 'textDecoration': 'none' }} to='/login'>&nbsp; &nbsp;Daxil Olun</Link>
                   </p>
                   {loading && <p>Yüklənir...</p>}
-                  <button type="submit" value="Daxil Olun" disabled={false} className="login ">Daxil Olun</button>
+                  <button type="submit" value="Daxil Olun"  className="login ">Daxil Olun</button>
                   
 
                   <span className="d-block text-left my-4 text-muted"> </span>
