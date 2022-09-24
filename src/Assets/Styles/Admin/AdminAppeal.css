@@ -4,3 +4,9 @@
     cursor:pointer;
     caret-color: transparent;
 }
+.appealInput:focus{
+    border:none;
+    border-bottom:1px solid var(--pink);
+    caret-color: transparent;
+    outline:none;
+}

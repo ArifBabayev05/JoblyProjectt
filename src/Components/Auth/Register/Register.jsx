@@ -7,6 +7,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../Firebase/config'
 // import Loader from '../../Jobs/Loader'
 import image from '../../../Assets/Images/Hero/lq.svg'
+import useForm from "react-hook-form";
 
 
 function Register() {
@@ -42,6 +43,8 @@ function Register() {
         setLoading(false);
       });
   }
+
+
 
   return (
 
@@ -81,7 +84,8 @@ function Register() {
                     <Link style={{ 'textDecoration': 'none' }} to='/login'>&nbsp; &nbsp;Daxil Olun</Link>
                   </p>
                   {loading && <p>Yüklənir...</p>}
-                  <input type="submit" value="Daxil Olun" className="login " />
+                  <button type="submit" value="Daxil Olun" disabled={false} className="login ">Daxil Olun</button>
+                  
 
                   <span className="d-block text-left my-4 text-muted"> </span>
 
