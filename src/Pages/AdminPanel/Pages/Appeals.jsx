@@ -11,7 +11,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../../Redux/Slice/authSlice'
 import { auth } from '../../../Components/Auth/Firebase/config'
 import emailjs from 'emailjs-com'
-
+import '../../../Assets/Styles/Admin/AdminAppeal.css'
 const Appeals = (props) => {
     const [data, setData] = useState([])
     const [query, setQuery] = useState("")
@@ -159,7 +159,6 @@ const Appeals = (props) => {
                                             <div className='col-md-8'>
                                                 <input className='appealInput' name='user_name' value={data.name}/>
                                             </div>
-
                                         </div>
                                         <div className="my-2 d-flex">
                                             <div className='col-md-4'>
@@ -168,7 +167,6 @@ const Appeals = (props) => {
                                             <div className='col-md-8'>
                                             <input className='appealInput' name='email' value={data.mail}/>
                                             </div>
-
                                         </div>
 
                                         <div className="my-2 d-flex">
@@ -178,7 +176,6 @@ const Appeals = (props) => {
                                             <div className='col-md-8'>
                                             <input className='appealInput' value={data.skill}/>
                                             </div>
-
                                         </div>
                                         <div className="my-2 d-flex">
                                             <div className='col-md-4'>
@@ -187,7 +184,6 @@ const Appeals = (props) => {
                                             <div className='col-md-8'>
                                             <input className='appealInput' value={data.education}/>
                                             </div>
-
                                         </div>
                                         <div className="my-2 d-flex">
                                             <div className='col-md-4'>
@@ -196,7 +192,6 @@ const Appeals = (props) => {
                                             <div className='col-md-8'>
                                             <input className='appealInput' value={+994 + data.tel}/>
                                             </div>
-
                                         </div>
                                         <div className="my-2 d-flex">
                                             <div className='col-md-4'>
@@ -205,7 +200,6 @@ const Appeals = (props) => {
                                             <div className='col-md-8'>
                                             <input className='appealInput' value={data.experience}/>
                                             </div>
-
                                         </div>
                                         <div className="my-2 d-flex">
                                             <div className='col-md-4'>
@@ -214,7 +208,6 @@ const Appeals = (props) => {
                                             <div className='col-md-8'>
                                             <input className='appealInput' name='company'  value={data.company}/>
                                             </div>
-
                                         </div>
                                         <div className="my-2 d-flex">
                                             <div className='col-md-4'>
@@ -223,7 +216,6 @@ const Appeals = (props) => {
                                             <div className='col-md-8'>
                                             <input className='appealInput' name='vacancy' value={data.vacacny}/>
                                             </div>
-
                                         </div>
 
                                     </div>

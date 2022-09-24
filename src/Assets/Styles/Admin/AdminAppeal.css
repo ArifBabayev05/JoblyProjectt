@@ -1,0 +1,6 @@
+.appealInput{
+    border:none;
+    border-bottom:1px solid var(--pink);
+    cursor:pointer;
+    caret-color: transparent;
+}
