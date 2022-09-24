@@ -42,6 +42,9 @@ const VacancyAdmin = (props) => {
         else if (value.name.toLowerCase().includes(query.toLowerCase())) {
             return value;
         }
+        else if (value.company.name.toLowerCase().includes(query.toLowerCase())) {
+            return value;
+        }
        
     }).map((data, index) => {
         return (
