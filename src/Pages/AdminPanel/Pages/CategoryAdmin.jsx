@@ -8,7 +8,6 @@ import '../Admin.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom'
-import src from '../../../Assets/Images/Logo/src.png'
 import '../../../Assets/Styles/Admin/AdminSearch.css'
 
 const CategoryAdmin = (props) => {

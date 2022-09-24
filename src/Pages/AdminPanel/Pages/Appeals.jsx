@@ -75,7 +75,7 @@ const Appeals = (props) => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_rp4rjam', 'template_s6wcke8', form.current, 'Lhg9k2LlEjFkq1WxD')
+        emailjs.sendForm('service_evmbmoc', 'template_8xh3bdq', form.current, 'Lhg9k2LlEjFkq1WxD')
             .then((result) => {
                 console.log(result.text);
                 toast.success("Mesajınız Uğurla Göndərildi")
@@ -139,7 +139,7 @@ const Appeals = (props) => {
                     <div className="modal fade" id={data2} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div className="modal-dialog">
                             <div className="modal-content">
-                                <form>
+                                <form ref={form} onSubmit={sendEmail}>
                                     <div className="modal-header">
                                         <h5 className="modal-title" style={{ "color": "#785BF4" }} id="staticBackdropLabel"><span className='fw-bold' style={{ "color": "#785BF4" }} ></span> Vakansiyasına Müraciət</h5>
                                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -154,19 +154,19 @@ const Appeals = (props) => {
                                         {/* Istifaçi Adı */}
                                         <div className="my-2 d-flex">
                                             <div className='col-md-4'>
-                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>İstifadəçi Adı:</label>
+                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' name="user_name" for='username'>İstifadəçi Adı:</label>
                                             </div>
                                             <div className='col-md-8'>
-                                                <p>{data.name}</p>
+                                                <input className='appealInput' name='user_name' value={data.name}/>
                                             </div>
 
                                         </div>
                                         <div className="my-2 d-flex">
                                             <div className='col-md-4'>
-                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Email ünvanı:</label>
+                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' name='email' for='username'>Email ünvanı:</label>
                                             </div>
                                             <div className='col-md-8'>
-                                                <p>{data.mail}</p>
+                                            <input className='appealInput' name='email' value={data.mail}/>
                                             </div>
 
                                         </div>
@@ -176,7 +176,7 @@ const Appeals = (props) => {
                                                 <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Bacarıqları:</label>
                                             </div>
                                             <div className='col-md-8'>
-                                                <p>{data.skill}</p>
+                                            <input className='appealInput' value={data.skill}/>
                                             </div>
 
                                         </div>
@@ -185,7 +185,7 @@ const Appeals = (props) => {
                                                 <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Təhsili:</label>
                                             </div>
                                             <div className='col-md-8'>
-                                                <p>{data.education}</p>
+                                            <input className='appealInput' value={data.education}/>
                                             </div>
 
                                         </div>
@@ -194,7 +194,7 @@ const Appeals = (props) => {
                                                 <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Telefon Nömrəsi:</label>
                                             </div>
                                             <div className='col-md-8'>
-                                                <p>+994{data.tel}</p>
+                                            <input className='appealInput' value={+994 + data.tel}/>
                                             </div>
 
                                         </div>
@@ -203,35 +203,35 @@ const Appeals = (props) => {
                                                 <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>İş Təcrübəsi:</label>
                                             </div>
                                             <div className='col-md-8'>
-                                                <p>{data.experience}</p>
+                                            <input className='appealInput' value={data.experience}/>
                                             </div>
 
                                         </div>
                                         <div className="my-2 d-flex">
                                             <div className='col-md-4'>
-                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Şirkət adı:</label>
+                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' name='company' for='username'>Şirkət adı:</label>
                                             </div>
                                             <div className='col-md-8'>
-                                                <p>{data.company}</p>
+                                            <input className='appealInput' name='company'  value={data.company}/>
                                             </div>
 
                                         </div>
                                         <div className="my-2 d-flex">
                                             <div className='col-md-4'>
-                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Vakansiya adı:</label>
+                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' name='vacancy' for='username'>Vakansiya adı:</label>
                                             </div>
                                             <div className='col-md-8'>
-                                                <p>{data.vacacny}</p>
+                                            <input className='appealInput' name='vacancy' value={data.vacacny}/>
                                             </div>
 
                                         </div>
 
                                     </div>
+                                    <div className="modal-footer">
+                                        <button type="button" onClick={onDelete} className="btn btn-danger" data-bs-dismiss="modal">Qəbul Etmə</button>
+                                        <button type="submit" data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} className="btn btn-primary">Müraciəti Təsdiqlə</button>
+                                    </div>
                                 </form>
-                                <div className="modal-footer">
-                                    <button type="button" onClick={onDelete} className="btn btn-danger" data-bs-dismiss="modal">Qəbul Etmə</button>
-                                    <button type="submit" data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} className="btn btn-primary">Müraciəti Təsdiqlə</button>
-                                </div>
                             </div>
                         </div>
                     </div>
