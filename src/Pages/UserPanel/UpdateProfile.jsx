@@ -107,7 +107,7 @@ const UpdateProfile = () => {
           </div>
           <div class="form-group">
             <label className='mb-1'>Email:</label>
-            <input type="text" class="form-control item" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+            <input type="text" class="form-control item" id="email" defaultValue={displaymail} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
           </div>
           <div class="form-group">
             <label className='mb-1'>Şifrə:</label>
