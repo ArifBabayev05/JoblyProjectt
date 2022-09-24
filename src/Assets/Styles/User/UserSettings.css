@@ -94,19 +94,19 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     border-color: rgba(24,28,33,0.03) !important;
 }
 
-body{
-    background-color:rgb(247, 234, 255);
-}
+
 
 .registration-form{
 	padding: 50px 0;
 }
 
 .registration-form form{
-    background-color: #fff;
+    background-color: rgba(103, 33, 255, 0.209);
     max-width: 600px;
     margin: auto;
     padding: 50px 70px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
@@ -141,6 +141,16 @@ body{
     color: white;
     margin-top: 20px;
 }
+.registration-form .create-account:hover{
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--pink);
+    border: none;
+    color: white;
+    margin-top: 20px;
+}
 
 .registration-form .social-media{
     max-width: 600px;
@@ -150,6 +160,8 @@ body{
     text-align: center;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     color: #9fadca;
     border-top: 1px solid #dee9ff;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);

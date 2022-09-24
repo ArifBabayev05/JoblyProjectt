@@ -24,42 +24,40 @@ const UpdateProfile = () => {
     updateProfile(auth.currentUser, {
       displayName
     }).then(() => {
-
+// console.log(auth)
       toast.success("Uğurla Yeniləndi!")
     }).catch((error) => {
-
+      // console.log(auth)
       toast.error("Xəta baş verdi")
 
     });
 
     updateEmail(auth.currentUser, email).then(() => {
-
+// console.log(auth)
     }).catch((error) => {
-
+      // console.log(auth)
     });
   }
 
 
   return (
     <div className="container light-style flex-grow-1 container-p-y">
-
-      <h4 className="font-weight-bold py-3 mb-4">
-        Profil Məlumatları
-      </h4>
-
       <div class="registration-form">
 
-        <form onSubmit={update}>
+        <form className='updateForm' onSubmit={update}>
           <div class="form-icon">
             <span><i class="icon icon-user"></i></span>
           </div>
           <div class="form-group">
+            <label className='mb-1'>İstifadəçi Adı:</label>
             <input type="text" class="form-control item" id="username" defaultValue={displayName} onChange={(e) => setDisplayName(e.target.value)} placeholder="Username" />
           </div>
           <div class="form-group">
+          <label className='mb-1'>Email:</label>
             <input type="text" class="form-control item" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
           </div>
           <div class="form-group">
+          <label className='mb-1'>Şifrə:</label>
             <input type="password" class="form-control item"  value={password} onChange={(e) => setPassword(e.target.value)}  id="password" placeholder="Password" />
           </div>
           <div class="form-group">
