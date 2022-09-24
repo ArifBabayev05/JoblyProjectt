@@ -16,7 +16,7 @@ function Register() {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false);
   // setLoading(true);
-  console.log(password, cPassword)
+  // console.log(password, cPassword)
   const registerUser = (e) => {
     e.preventDefault();
     if (password !== cPassword) {

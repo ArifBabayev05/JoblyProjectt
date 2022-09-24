@@ -246,8 +246,8 @@ const Appeals = (props) => {
                                 <div className='row'>
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
                                         <h1 className='text container ' style={{ color: 'var(--pink)', fontSize: '35px', alignItems: 'center', display: 'flex' }}>Bütün Müraciətlər</h1>
-                                        <div className='searchJob mb-5' style={{ alignItems: 'center', display: 'flex', top: '20px' }}>
-                                            <input className='searchBar mt-2 p-2' onChange={(event) => setQuery(event.target.value)} type='text'></input>
+                                        <div className='searchJob mb-5 newSearchInputFormm' style={{ alignItems: 'center', display: 'flex', top: '20px' }}>
+                                            <input className='searchBar mt-2 p-2 ' onChange={(event) => setQuery(event.target.value)} type='text'></input>
                                             <button className='search__submit' type='submit'>
                                                 <img src={src} alt='some value' />
                                             </button>
