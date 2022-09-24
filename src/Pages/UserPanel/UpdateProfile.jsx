@@ -51,7 +51,7 @@ const UpdateProfile = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
 
-      if (user.phoneNumber == null) {
+      if (user.email == null) {
         const u3 = user.email.substring(0, user.email.indexOf("@"));
         const u3Name = u3.charAt(0).toUpperCase() + u3.slice(1);
         // console.log(uName);
@@ -59,13 +59,13 @@ const UpdateProfile = () => {
 
       }
        else {
-        setDisplayTel(user.phoneNumber)
+        setDisplayTel(user.email)
       }
       dispatch(SET_ACTIVE_USER({
         email: user.email,
+        phoneNumber : user.phoneNumber,
         userName: user.displayName ? user.displayName : displayname,
         userId: user.uid,
-        phoneNumber : user.phoneNumber,
       }))
     } else {
       setDisplayTel("")
@@ -135,24 +135,19 @@ return (
         <div class="form-icon">
           <span><i class="fas fa-user"></i></span>
         </div>
-        <div class="form-group">
+        <div class="form-group row">
           <label className='mb-1'>İstifadəçi Adı:</label>
           <input type="text" class="form-control item" id="username" defaultValue={displayname} onChange={(e) => setDisplayName(e.target.value)} placeholder="Username" />
         </div>
-        <div class="form-group">
+        <div class="form-group row">
           <label className='mb-1'>Email:</label>
           <input type="text" class="form-control item" id="email" defaultValue={displaymail} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
         </div>
-        <div class="form-group">
-          <label className='mb-1'>Şifrə:</label>
-          <input type="password" class="form-control item" value={password} onChange={(e) => setPassword(e.target.value)} id="password" placeholder="Password" />
-        </div>
-        <div class="form-group">
-          <label className='mb-1'>Telefon nömrəsi:</label>
-          <input type="text" class="form-control item" id="phone-number" defaultValue={displayTel} onChange={(e) => setDisplayTel(e.target.value)} placeholder="Phone Number" />
-        </div>
-        <div class="form-group">
+        
+        <div class="form-group row">
+          <a href='/reset' type="submit" class="btn btn-block create-account">Şifrəni Yenilə</a>
           <button type="submit" class="btn btn-block create-account">Yenilə</button>
+
         </div>
       </form>
     </div>
@@ -170,15 +165,15 @@ return (
                 <hr className="border-light m-0" />
 
                 <div className="card-body">
-                  <div className="form-group">
+                  <div className="form-group row">
                     <label className="form-label">Istifadəçi adı</label>
                     <input type="text" className="form-control mb-1" defaultValue={displayName} onChange={(e) => setDisplayName(e.target.value)} />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group row">
                     <label className="form-label">E-mail</label>
                     <input type="text" className="form-control mb-1" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group row">
                     <label className="form-label">New password</label>
                     <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
                   </div>
