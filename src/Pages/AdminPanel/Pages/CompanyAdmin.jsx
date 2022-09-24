@@ -45,7 +45,10 @@ const CompanyAdmin = (props) => {
         else if (value.name.toLowerCase().includes(query.toLowerCase())) {
             return value;
         }
-      
+        else if (value.telNumber.toLowerCase().includes(query.toLowerCase())) {
+            return value;
+        }
+       
     }).map((data, index) => {
         return (
             <tr>
