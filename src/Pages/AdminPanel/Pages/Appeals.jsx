@@ -1,26 +1,96 @@
 import axios from 'axios'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import src from '../../../Assets/Images/Logo/src.png'
 import Loader from '../../../Components/Jobs/Loader'
 import { ShowOnAdmin, ShowOnUser } from '../../../Layouts/HiddenLinks/Router'
 import Sidebar from '../Sidebar/Sidebar'
 import { toast, ToastContainer } from 'react-toastify'
 import '../Home/Home.css'
+import { useDispatch } from 'react-redux'
+import { onAuthStateChanged } from 'firebase/auth'
+import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../../Redux/Slice/authSlice'
+import { auth } from '../../../Components/Auth/Firebase/config'
+import emailjs from 'emailjs-com'
 
 const Appeals = (props) => {
     const [data, setData] = useState([])
     const [query, setQuery] = useState("")
-    // const [jobId, setJobId] = useState('')
-    // const jobId = useParams()
+    const [displayname, setDisplayName] = useState("");
+    const [displaymail, setDisplayMail] = useState("");
 
-    // var api_headers = {
-    //     method: 'GET',
-    //     headers: {
-    //         'Authorization': `Bearer gpgiTH9gCpglLMplHY2ioOTRuVIgfmlSHMt0o0bgSQ18OxXK7EZEHIZC`,
-    //         "Access-Control-Allow-Origin": "*",
-    //         "Access-Control-Allow-Credentials": true
-    //     },
-    // }
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // const uid = user.uid;
+                if (user.email == null) {
+                    const u2 = user.email.substring(0, user.email.indexOf("@"));
+                    const u2Name = u2.charAt(0).toUpperCase() + u2.slice(1);
+                    // console.log(uName);
+                    setDisplayMail(u2Name);
+
+                } else {
+                    setDisplayMail(user.email)
+                }
+                dispatch(SET_ACTIVE_USER({
+                    email: user.email,
+                    userName: user.displayName ? user.displayName : displayname,
+                    userId: user.uid,
+                }))
+            } else {
+                setDisplayMail("")
+                dispatch(REMOVE_ACTIVE_USER())
+            };
+        })
+    }, [dispatch, displaymail]);
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // const uid = user.uid;
+                if (user.displayName == null) {
+                    const u1 = user.email.substring(0, user.email.indexOf("@"));
+                    const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
+                    // console.log(uName);
+                    setDisplayName(uName);
+
+                } else {
+                    setDisplayName(user.displayName)
+                }
+                dispatch(SET_ACTIVE_USER({
+                    email: user.email,
+                    userName: user.displayName ? user.displayName : displayname,
+                    userId: user.uid,
+                }))
+            } else {
+                setDisplayName("")
+                dispatch(REMOVE_ACTIVE_USER())
+            };
+        })
+    }, [dispatch, displayname]);
+
+    const form = useRef();
+    // const [result, setResult] = useState(false)
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_rp4rjam', 'template_s6wcke8', form.current, 'Lhg9k2LlEjFkq1WxD')
+            .then((result) => {
+                console.log(result.text);
+                toast.success("Mesajınız Uğurla Göndərildi")
+
+
+            }, (error) => {
+                toast.error("Xəta Baş Verdi! Daha sonra yenidən cəhd edin!")
+                console.log(error.text);
+            });
+        e.target.reset();
+        // setResult(true);
+    };
+    setTimeout(() => {
+        // setResult(false);
+    }, 0)
     useEffect(() => {
         axios.get('https://sheetdb.io/api/v1/gpxwv62j8wgii')
             .then(res => {
@@ -69,96 +139,97 @@ const Appeals = (props) => {
                     <div className="modal fade" id={data2} data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div className="modal-dialog">
                             <div className="modal-content">
-                                <div className="modal-header">
-                                    <h5 className="modal-title" style={{ "color": "#785BF4" }} id="staticBackdropLabel"><span className='fw-bold' style={{ "color": "#785BF4" }} ></span> Vakansiyasına Müraciət</h5>
-                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div className="modal-body">
-
-
-                                    <div className="my-3">
-                                        <h5 style={{ "color": "#785BF4", 'text-decoration': 'underline' }}>Məlumatlar:</h5>
+                                <form>
+                                    <div className="modal-header">
+                                        <h5 className="modal-title" style={{ "color": "#785BF4" }} id="staticBackdropLabel"><span className='fw-bold' style={{ "color": "#785BF4" }} ></span> Vakansiyasına Müraciət</h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
+                                    <div className="modal-body">
 
-                                    {/* Istifaçi Adı */}
-                                    <div className="my-2 d-flex">
-                                        <div className='col-md-4'>
-                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>İstifadəçi Adı:</label>
+
+                                        <div className="my-3">
+                                            <h5 style={{ "color": "#785BF4", 'text-decoration': 'underline' }}>Məlumatlar:</h5>
                                         </div>
-                                        <div className='col-md-8'>
-                                            <p>{data.name}</p>
+
+                                        {/* Istifaçi Adı */}
+                                        <div className="my-2 d-flex">
+                                            <div className='col-md-4'>
+                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>İstifadəçi Adı:</label>
+                                            </div>
+                                            <div className='col-md-8'>
+                                                <p>{data.name}</p>
+                                            </div>
+
+                                        </div>
+                                        <div className="my-2 d-flex">
+                                            <div className='col-md-4'>
+                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Email ünvanı:</label>
+                                            </div>
+                                            <div className='col-md-8'>
+                                                <p>{data.mail}</p>
+                                            </div>
+
+                                        </div>
+
+                                        <div className="my-2 d-flex">
+                                            <div className='col-md-4'>
+                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Bacarıqları:</label>
+                                            </div>
+                                            <div className='col-md-8'>
+                                                <p>{data.skill}</p>
+                                            </div>
+
+                                        </div>
+                                        <div className="my-2 d-flex">
+                                            <div className='col-md-4'>
+                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Təhsili:</label>
+                                            </div>
+                                            <div className='col-md-8'>
+                                                <p>{data.education}</p>
+                                            </div>
+
+                                        </div>
+                                        <div className="my-2 d-flex">
+                                            <div className='col-md-4'>
+                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Telefon Nömrəsi:</label>
+                                            </div>
+                                            <div className='col-md-8'>
+                                                <p>+994{data.tel}</p>
+                                            </div>
+
+                                        </div>
+                                        <div className="my-2 d-flex">
+                                            <div className='col-md-4'>
+                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>İş Təcrübəsi:</label>
+                                            </div>
+                                            <div className='col-md-8'>
+                                                <p>{data.experience}</p>
+                                            </div>
+
+                                        </div>
+                                        <div className="my-2 d-flex">
+                                            <div className='col-md-4'>
+                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Şirkət adı:</label>
+                                            </div>
+                                            <div className='col-md-8'>
+                                                <p>{data.company}</p>
+                                            </div>
+
+                                        </div>
+                                        <div className="my-2 d-flex">
+                                            <div className='col-md-4'>
+                                                <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Vakansiya adı:</label>
+                                            </div>
+                                            <div className='col-md-8'>
+                                                <p>{data.vacacny}</p>
+                                            </div>
+
                                         </div>
 
                                     </div>
-                                    <div className="my-2 d-flex">
-                                        <div className='col-md-4'>
-                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Email ünvanı:</label>
-                                        </div>
-                                        <div className='col-md-8'>
-                                            <p>{data.mail}</p>
-                                        </div>
-
-                                    </div>
-
-                                    <div className="my-2 d-flex">
-                                        <div className='col-md-4'>
-                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Bacarıqları:</label>
-                                        </div>
-                                        <div className='col-md-8'>
-                                            <p>{data.skill}</p>
-                                        </div>
-
-                                    </div>
-                                    <div className="my-2 d-flex">
-                                        <div className='col-md-4'>
-                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Təhsili:</label>
-                                        </div>
-                                        <div className='col-md-8'>
-                                            <p>{data.education}</p>
-                                        </div>
-
-                                    </div>
-                                    <div className="my-2 d-flex">
-                                        <div className='col-md-4'>
-                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Telefon Nömrəsi:</label>
-                                        </div>
-                                        <div className='col-md-8'>
-                                            <p>+994{data.tel}</p>
-                                        </div>
-
-                                    </div>
-                                    <div className="my-2 d-flex">
-                                        <div className='col-md-4'>
-                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>İş Təcrübəsi:</label>
-                                        </div>
-                                        <div className='col-md-8'>
-                                            <p>{data.experience}</p>
-                                        </div>
-
-                                    </div>
-                                    <div className="my-2 d-flex">
-                                        <div className='col-md-4'>
-                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Şirkət adı:</label>
-                                        </div>
-                                        <div className='col-md-8'>
-                                            <p>{data.company}</p>
-                                        </div>
-
-                                    </div>
-                                    <div className="my-2 d-flex">
-                                        <div className='col-md-4'>
-                                            <label style={{ "align-items": "center", "display": "flex" }} className='me-1' for='username'>Vakansiya adı:</label>
-                                        </div>
-                                        <div className='col-md-8'>
-                                            <p>{data.vacacny}</p>
-                                        </div>
-
-                                    </div>
-
-
-                                </div>
+                                </form>
                                 <div className="modal-footer">
-                                    <button type="button" onClick={onDelete} className="btn btn-danger" data-bs-dismiss="modal">Rədd Et</button>
+                                    <button type="button" onClick={onDelete} className="btn btn-danger" data-bs-dismiss="modal">Qəbul Etmə</button>
                                     <button type="submit" data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} className="btn btn-primary">Müraciəti Təsdiqlə</button>
                                 </div>
                             </div>
@@ -168,7 +239,7 @@ const Appeals = (props) => {
                 </td>
 
 
-            </tr>
+            </tr >
         )
     })
 

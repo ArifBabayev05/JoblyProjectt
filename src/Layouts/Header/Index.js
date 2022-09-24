@@ -68,7 +68,7 @@ function Index() {
             <div className='d-flex search me-3'>
 
               <i className="fa-solid mt-1 me-2 fa-magnifying-glass"></i>
-              <a href='/job' className='fw-600'>İş Axtarın</a>
+              <a href='/job' className='fw-600'>İş Elanları</a>
             </div>
             
             <a href='/about' className='me-3'> Haqqımızda</a>

@@ -353,12 +353,24 @@ function Home() {
                     )}
                   </OverlayTrigger>
                 </div>
-
+                {/* Təhsili */}
+                <div className="my-2 d-flex">
+                <div className='col-md-5 me-3 ms-3'>
+                  <label>Vakansiya Adı:</label>
+                    <input name='username' required  value={product.data.name} onMouseMove={(e) => setVacancy(e.target.value)} className=' form-control' />
+                  </div>
+                  <div className='col-md-5'>
+                  <label>Şirkət Adı:</label>
+                    <input name='username' required value={product.data.company.name} onMouseMove={(e) => setCompany(e.target.value)} className=' form-control' />
+                  </div>
+                
+                </div>
               </div>
+              
 
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
-                <button type="submit" onClick={onSubmit} onMouseMove={(e) => setVacancy(e.target.value)} onMouseDown={(e) => setCompany(e.target.value)} onMouseEnter={(e) => setJobId(e.target.value)} value={unique_id} data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} className="btn btn-primary">Müraciəti Təsdiqlə</button>
+                <button type="submit" onClick={onSubmit}  onMouseEnter={(e) => setJobId(e.target.value)} value={unique_id} data-bs-dismiss="modal" style={{ border: 'none', backgroundColor: "#785BF4" }} className="btn btn-primary">Müraciəti Təsdiqlə</button>
               </div>
             </div>
           </div>
