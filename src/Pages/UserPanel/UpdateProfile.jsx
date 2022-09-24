@@ -24,18 +24,18 @@ const UpdateProfile = () => {
     updateProfile(auth.currentUser, {
       displayName
     }).then(() => {
-      console.log(auth)
+
       toast.success("Uğurla Yeniləndi!")
     }).catch((error) => {
-      console.log(auth)
+
       toast.error("Xəta baş verdi")
 
     });
 
     updateEmail(auth.currentUser, email).then(() => {
-     
+
     }).catch((error) => {
-     
+
     });
   }
 
@@ -47,7 +47,34 @@ const UpdateProfile = () => {
         Profil Məlumatları
       </h4>
 
-      <div className="card overflow-hidden" style={{ 'backgroundColor': "#c9aeffca" }}>
+      <div class="registration-form">
+
+        <form onSubmit={update}>
+          <div class="form-icon">
+            <span><i class="icon icon-user"></i></span>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control item" id="username" defaultValue={displayName} onChange={(e) => setDisplayName(e.target.value)} placeholder="Username" />
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control item" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control item"  value={password} onChange={(e) => setPassword(e.target.value)}  id="password" placeholder="Password" />
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control item" id="phone-number" placeholder="Phone Number" />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-block create-account">Yenilə</button>
+          </div>
+        </form>
+      </div>
+
+
+
+
+      {/* <div className="card overflow-hidden" style={{ 'backgroundColor': "#c9aeffca" }}>
         <div className="row no-gutters row-bordered row-border-light">
 
           <div className="col-md-12 justify-content-center">
@@ -79,7 +106,7 @@ const UpdateProfile = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
 
     </div>
