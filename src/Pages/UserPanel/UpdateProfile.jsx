@@ -10,9 +10,11 @@ import { useDispatch } from 'react-redux'
 // import { ShowOnLogin, ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks'
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 const UpdateProfile = () => {
+  const nav = useNavigate();
   const dispatch = useDispatch()
   const [email, setEmail] = useState("")
   const [tel, setTel] = useState("")
@@ -103,6 +105,7 @@ useEffect(() => {
 
 const update = (e) => {
   e.preventDefault();
+  nav('/')
   const auth = getAuth();
   updateProfile(auth.currentUser, {
     displayName
