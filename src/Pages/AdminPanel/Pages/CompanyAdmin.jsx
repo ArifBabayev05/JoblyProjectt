@@ -5,12 +5,13 @@ import Loader from '../../../Components/Jobs/Loader'
 import axios from 'axios'
 import '../Admin.css'
 import { Link } from 'react-router-dom'
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
 const CompanyAdmin = (props) => {
+    const [query, setQuery] = useState("")
     const [data, setData] = useState([])
     useEffect(() => {
         axios.get('http://localhost:53410/api/Company/getall')
@@ -37,7 +38,14 @@ const CompanyAdmin = (props) => {
                 console.log(res.data)
             }).catch(err => toast.error(err))
     }
-    const array = data.map((data, index) => {
+    const array = data.filter((value) => {
+        if (query === "") {
+            return value;
+        }
+        else if (value.name.toLowerCase().includes(query.toLowerCase())) {
+            return value;
+        }
+    }).map((data, index) => {
         return (
             <tr>
                 <td>{data.id}</td>
@@ -49,7 +57,7 @@ const CompanyAdmin = (props) => {
 
 
                 <td><Link to={`/companyupdate/${data.id}`} onClick={() => Update(data.id)} className='btn text-white btn-info update'>Yenilə</Link></td>
-                <td><button onClick={(e) => Delete(data.id,e)} className='btn btn-danger delete'>Sil</button></td>
+                <td><button onClick={(e) => Delete(data.id, e)} className='btn btn-danger delete'>Sil</button></td>
 
 
             </tr>
@@ -68,7 +76,14 @@ const CompanyAdmin = (props) => {
                                 <div className='row'>
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex mb-3 justify-content-between'>
                                         <h3>Şirkətlər</h3>
-                                        <a href='admin/companyadd' className='btn btn-success position-relative'>Şirkət Əlavə Et</a>
+                                        <form class="search-box " style={{ 'margin-right': "60px" }}>
+                                            <input onChange={(event) => setQuery(event.target.value)} type="text" placeholder="Axtarış hissəsi" />
+                                            <button type="reset"></button>
+                                        </form>
+                                    </div>
+
+                                    <div className='d-flex mb-4 mt-2'>
+                                        <a href='admin/companyadd' className='btn btn-success position-relative'>Kateqoriya Əlavə Et</a>
                                     </div>
                                 </div>
                                 <div style={{ 'overflow-x': 'auto' }}>
