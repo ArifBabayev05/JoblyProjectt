@@ -13,10 +13,63 @@ import { toast } from 'react-toastify';
 
 
 const UpdateProfile = () => {
+  const dispatch = useDispatch()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [displayName, setDisplayName] = useState("");
-  const dispatch = useDispatch()
+  const [displayname, setDisplayNames] = useState("");
+  const [displaymail, setDisplayMail] = useState("");
+  
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // const uid = user.uid;
+        if (user.email == null) {
+          const u2 = user.email.substring(0, user.email.indexOf("@"));
+          const u2Name = u2.charAt(0).toUpperCase() + u2.slice(1);
+          // console.log(uName);
+          setDisplayMail(u2Name);
+
+        } else {
+          setDisplayMail(user.email)
+        }
+        dispatch(SET_ACTIVE_USER({
+          email: user.email,
+          userName: user.displayName ? user.displayName : displayname,
+          userId: user.uid,
+        }))
+      } else {
+        setDisplayMail("")
+        dispatch(REMOVE_ACTIVE_USER())
+      };
+    })
+  }, [dispatch, displaymail]);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // const uid = user.uid;
+        if (user.displayName == null) {
+          const u1 = user.email.substring(0, user.email.indexOf("@"));
+          const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
+          // console.log(uName);
+          setDisplayNames(uName);
+
+        } else {
+          setDisplayNames(user.displayName)
+        }
+        dispatch(SET_ACTIVE_USER({
+          email: user.email,
+          userName: user.displayName ? user.displayName : displayname,
+          userId: user.uid,
+        }))
+      } else {
+        setDisplayNames("")
+        dispatch(REMOVE_ACTIVE_USER())
+      };
+    })
+  }, [dispatch, displayname]);
+
 
   const update = (e) => {
     e.preventDefault();
@@ -24,7 +77,7 @@ const UpdateProfile = () => {
     updateProfile(auth.currentUser, {
       displayName
     }).then(() => {
-// console.log(auth)
+      // console.log(auth)
       toast.success("Uğurla Yeniləndi!")
     }).catch((error) => {
       // console.log(auth)
@@ -33,7 +86,7 @@ const UpdateProfile = () => {
     });
 
     updateEmail(auth.currentUser, email).then(() => {
-// console.log(auth)
+      // console.log(auth)
     }).catch((error) => {
       // console.log(auth)
     });
@@ -50,17 +103,18 @@ const UpdateProfile = () => {
           </div>
           <div class="form-group">
             <label className='mb-1'>İstifadəçi Adı:</label>
-            <input type="text" class="form-control item" id="username" defaultValue={displayName} onChange={(e) => setDisplayName(e.target.value)} placeholder="Username" />
+            <input type="text" class="form-control item" id="username" defaultValue={displayname} onChange={(e) => setDisplayName(e.target.value)} placeholder="Username" />
           </div>
           <div class="form-group">
-          <label className='mb-1'>Email:</label>
+            <label className='mb-1'>Email:</label>
             <input type="text" class="form-control item" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
           </div>
           <div class="form-group">
-          <label className='mb-1'>Şifrə:</label>
-            <input type="password" class="form-control item"  value={password} onChange={(e) => setPassword(e.target.value)}  id="password" placeholder="Password" />
+            <label className='mb-1'>Şifrə:</label>
+            <input type="password" class="form-control item" value={password} onChange={(e) => setPassword(e.target.value)} id="password" placeholder="Password" />
           </div>
           <div class="form-group">
+            <label className='mb-1'>Telefon nömrəsi:</label>
             <input type="text" class="form-control item" id="phone-number" placeholder="Phone Number" />
           </div>
           <div class="form-group">
