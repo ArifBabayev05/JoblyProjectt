@@ -90,7 +90,7 @@ const UpdateProfile = () => {
     }).catch((error) => {
       // console.log(auth)
     });
-    updatePhoneNumber(auth,"+99477440705").then(() => {
+    updatePhoneNumber(auth.currentUser,tel).then(() => {
       console.log(auth)
     }).catch((error) => {
       console.log(auth)
