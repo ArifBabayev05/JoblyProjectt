@@ -6,11 +6,12 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
+import CompanyImage from './CompanyImage'
 // import { error } from 'console'
-
 const CompanyAdd = () => {
     const navigate = useNavigate();
     console.log(new Date().toJSON());
+    const [selectedFile, setSelectedFile] = useState('')
     const [loading, setLoading] = useState(false)
     const url = 'http://localhost:53410/api/Company/add';
     const [data, setData] = useState({
@@ -22,6 +23,25 @@ const CompanyAdd = () => {
         createdDate: ""
 
     })
+    const handleInputChange =(e)=>{
+        setSelectedFile(e.target.value);
+        setLoading(false);
+        const newData = { ...data }
+        newData[e.target.id] = e.target.value;
+        setData(newData);
+    }
+    function submits(){
+        const data = new FormData()
+        data.append('file', selectedFile)
+        console.warn(selectedFile);
+        axios.post("http://localhost:53410/api/Company/fileUpload", data, { // receive two parameter endpoint url ,form data 
+        })
+            .then(res => { // then print response status
+                console.warn(res);
+            })
+
+        
+    }
     function submit(e) {
         e.preventDefault();
         setLoading(false);
@@ -109,7 +129,9 @@ const CompanyAdd = () => {
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">İmage upload</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} accept='image/*' type="file" className="form-control" id="path" placeholder="Path" />
+                                            <input onChange={(e) => handleInputChange(e)} value={data.value} accept='image/*' type="file" className="form-control" id="path" placeholder="Path" />
+                                            <button type="submit" className="btn btn-dark" onClick={() => submits()}>Əlavə Et</button>
+
                                         </div>
                                     </div>
 
