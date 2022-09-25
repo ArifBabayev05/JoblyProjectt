@@ -110,17 +110,17 @@ const update = (e) => {
   updateProfile(auth.currentUser, {
     displayName
   }).then(() => {
-    // console.log(auth)
+    
     toast.success("Uğurla Yeniləndi!")
   }).catch((error) => {
-    // console.log(auth)
+    
     toast.error("Xəta baş verdi")
 
   });
   updateEmail(auth.currentUser, email).then(() => {
-    // console.log(auth)
+    
   }).catch((error) => {
-    // console.log(auth)
+    
   });
   updatePhoneNumber(auth.currentUser, tel).then(() => {
     console.log(auth)
