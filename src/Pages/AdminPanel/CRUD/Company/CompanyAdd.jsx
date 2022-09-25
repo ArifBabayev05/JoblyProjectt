@@ -1,6 +1,6 @@
 import Loader from '../../../../Components/Jobs/Loader'
 import { ShowOnAdmin, ShowOnUser } from '../../../../Layouts/HiddenLinks/Router'
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Sidebar from '../../Sidebar/Sidebar'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
@@ -17,7 +17,8 @@ const CompanyAdd = () => {
         name: "",
         mail: "",
         telNumber: "",
-        imageId: "",
+        imageId: 1,
+        path: "",
         createdDate: ""
         
     })
@@ -28,7 +29,11 @@ const CompanyAdd = () => {
             name: data.name,
             mail: data.mail,
             telNumber: data.telNumber,
-            imageId: parseInt(data.imageId),
+            // imageId: parseInt(data.imageId),
+            imageId: data.imageId,
+            path: data.path,
+
+
             createdDate : new Date().toJSON()
         }).then(res => {
             setLoading(false);
@@ -46,6 +51,23 @@ const CompanyAdd = () => {
         newData[e.target.id] = e.target.value;
         setData(newData);
     }
+
+     //Category Option
+     const [categoryDatas, setCategoryDatas] = useState([])
+     useEffect(() => {
+        axios.post('http://localhost:53410/api/Company/fileUpload')
+            .then(res => {
+                setCategoryDatas(res.data)
+            }).catch(err => console.log(err))
+    }, []);
+     function handles(e) {
+         const newData = { ...categoryDatas }
+         console.log(e.taget.value)
+         newData[e.target.selected] = e.target.value;
+         setCategoryDatas(newData);
+     }
+     
+
     return (
         <div>
             <ShowOnAdmin>
@@ -74,22 +96,22 @@ const CompanyAdd = () => {
                                             <input onChange={(e) => handle(e)} value={data.value} required type="tel" className="form-control" id="telNumber" placeholder="Telefon Nömrəsi" />
                                         </div>
                                     </div>
-                                    <div className="row mb-3">
+                                    {/* <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">İmage İd</label>
                                         <div className="col-sm-10">
                                             <input onChange={(e) => handle(e)} value={data.value} required type="text" className="form-control" id="imageId" placeholder="İmage İd " />
                                         </div>
-                                    </div>
+                                    </div> */}
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">İmage upload</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} accept='image/*' type="file" className="form-control" id="image" placeholder="İmage İd " />
+                                            <input onChange={(e) => handles(e)} value={data.value} accept='image/*' type="file" className="form-control" id="path" placeholder="Path" />
                                         </div>
                                     </div>
 
                                     <div className="row">
                                         <div className="col-sm-10 offset-sm-2">
-                                            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
+                                            <button type="submit" onMouseEnter={(e) => handles(e)} value={data.value} id='imageId' style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
                                         </div>
                                     </div>
                                 </form>

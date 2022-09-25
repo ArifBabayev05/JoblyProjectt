@@ -90,7 +90,7 @@ const VacancyAdmin = (props) => {
                                     </div>
 
                                     <div className='d-flex mb-4 mt-2'>
-                                        <a href='admin/vacacncyadd' className='btn btn-success position-relative'>Kateqoriya Əlavə Et</a>
+                                        <a href='admin/vacacncyadd' className='btn btn-success position-relative'>Vakansiya Əlavə Et</a>
                                     </div>
                                 </div>
                                 <div style={{ 'overflow-x': 'auto' }}>

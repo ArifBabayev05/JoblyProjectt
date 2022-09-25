@@ -55,7 +55,7 @@ const CompanyAdmin = (props) => {
         return (
             <tr>
                 <td>{data.id}</td>
-                <td><img alt='value' style={{ 'width': '35px', 'height': '35px', 'border-radius': '50%' }} className='me-3' src={data.image.name} /> {data.name}</td>
+                <td><img alt='value' style={{ 'width': '35px', 'height': '35px', 'border-radius': '50%' }} className='me-3' src={data.path} /> {data.name}</td>
                 <td >+{data.telNumber}</td>
                 <td>{data.mail}</td>
                 <td>{data.createdDate.slice(0, 10)}</td>
@@ -89,7 +89,7 @@ const CompanyAdmin = (props) => {
                                     </div>
 
                                     <div className='d-flex mb-4 mt-2'>
-                                        <a href='admin/companyadd' className='btn btn-success position-relative'>Kateqoriya Əlavə Et</a>
+                                        <a href='admin/companyadd' className='btn btn-success position-relative'>Şirkət Əlavə Et</a>
                                     </div>
                                 </div>
                                 <div style={{ 'overflow-x': 'auto' }}>
