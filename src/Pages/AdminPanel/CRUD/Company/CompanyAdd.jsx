@@ -1,6 +1,6 @@
 import Loader from '../../../../Components/Jobs/Loader'
 import { ShowOnAdmin, ShowOnUser } from '../../../../Layouts/HiddenLinks/Router'
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Sidebar from '../../Sidebar/Sidebar'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
@@ -20,7 +20,7 @@ const CompanyAdd = () => {
         imageId: 1,
         path: "",
         createdDate: ""
-        
+
     })
     function submit(e) {
         e.preventDefault();
@@ -34,7 +34,7 @@ const CompanyAdd = () => {
             path: data.path,
 
 
-            createdDate : new Date().toJSON()
+            createdDate: new Date().toJSON()
         }).then(res => {
             setLoading(false);
             console.log(res);
@@ -44,7 +44,7 @@ const CompanyAdd = () => {
             toast.error("Əməliyyat Uğursuzdur.");
         })
     }
-    
+
     function handle(e) {
         setLoading(false);
         const newData = { ...data }
@@ -52,21 +52,25 @@ const CompanyAdd = () => {
         setData(newData);
     }
 
-     //Category Option
-     const [categoryDatas, setCategoryDatas] = useState([])
-     useEffect(() => {
-        axios.post('http://localhost:53410/api/Company/fileUpload')
+    //Category Option
+    const [categoryDatas, setCategoryDatas] = useState([])
+    const formData = new FormData(); formData.append("file", categoryDatas[0] );
+    const config = {
+        headers: { 'content-type': 'multipart/form-data' }
+       }
+    useEffect(() => {
+        axios.post('http://localhost:53410/api/Company/fileUpload/',config)
             .then(res => {
                 setCategoryDatas(res.data)
             }).catch(err => console.log(err))
     }, []);
-     function handles(e) {
-         const newData = { ...categoryDatas }
-         console.log(e.taget.value)
-         newData[e.target.selected] = e.target.value;
-         setCategoryDatas(newData);
-     }
-     
+    function handles(e) {
+        const newData = { ...categoryDatas }
+        console.log(e.taget.value)
+        newData[e.target.selected] = e.target.value;
+        setCategoryDatas(newData);
+    }
+
 
     return (
         <div>
@@ -76,7 +80,7 @@ const CompanyAdd = () => {
                         <div className="row flex-nowrap">
                             <Sidebar />
                             <div className="col py-3">
-                                <form encType='multipart/formdata' onSubmit={(e) => submit(e)}>
+                                <form enctype="multipart/form-data" method="post" onSubmit={(e) => submit(e)}>
                                     {loading && <Loader />}
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Ad</label>
@@ -105,7 +109,7 @@ const CompanyAdd = () => {
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">İmage upload</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handles(e)} value={data.value} accept='image/*' type="file" className="form-control" id="path" placeholder="Path" />
+                                            <input onChange={(e) => handle(e)} value={data.value} accept='image/*' type="file" className="form-control" id="path" placeholder="Path" />
                                         </div>
                                     </div>
 
@@ -115,7 +119,7 @@ const CompanyAdd = () => {
                                         </div>
                                     </div>
                                 </form>
-                                <ToastContainer/>
+                                <ToastContainer />
                             </div>
                         </div>
                     </div>
