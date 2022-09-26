@@ -27,7 +27,7 @@ const CompanyAdd = () => {
         setSelectedFile(e.target.value);
         setLoading(false);
         const newData = { ...data }
-        newData[e.target.id] = e.target.value;
+        newData[e.target.files[0]] = e.target.value;
         setData(newData);
     }
     function submits(){
