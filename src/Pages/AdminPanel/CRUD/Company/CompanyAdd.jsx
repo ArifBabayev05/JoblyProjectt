@@ -18,7 +18,7 @@ import { storage } from '../../../../Components/Auth/Firebase/config'
 
 const CompanyAdd = () => {
     const navigate = useNavigate();
-    console.log(new Date().toJSON());
+    // console.log(new Date().toJSON());
     const [selectedFile, setSelectedFile] = useState('')
     const [loading, setLoading] = useState(false)
     const url = 'http://localhost:53410/api/Company/add';
@@ -26,42 +26,26 @@ const CompanyAdd = () => {
         name: "",
         mail: "",
         telNumber: "",
-        imageId: 1,
-        path: "",
+        imageId: "",
+        ImageFile: "",
         createdDate: ""
 
     })
-    const handleInputChange = (e) => {
-        setSelectedFile(e.target.value);
-        setLoading(false);
-        const newData = { ...data }
-        newData[e.target.files[0]] = e.target.value;
-        setData(newData);
-    }
-    function submits() {
-        const data = new FormData()
-        data.append('file', selectedFile)
-        console.warn(selectedFile);
-        axios.post("http://localhost:53410/api/Company/fileUpload", data, { // receive two parameter endpoint url ,form data 
-        })
-            .then(res => { // then print response status
-                console.warn(res);
-            })
-
-
+    const config = {
+        headers: {
+            'content-type': 'multipart/form-data'
+        }
     }
     function submit(e) {
         e.preventDefault();
         setLoading(false);
-        axios.post(url, {
+        axios.post(url,config, {
             name: data.name,
             mail: data.mail,
             telNumber: data.telNumber,
-            // imageId: parseInt(data.imageId),
-            imageId: data.imageId,
-            path: data.path,
-
-
+            imageId: parseInt(data.imageId),
+            ImageFile: data.ImageFile,
+            // imageId: data.imageId,
             createdDate: new Date().toJSON()
         }).then(res => {
             setLoading(false);
@@ -79,46 +63,11 @@ const CompanyAdd = () => {
         newData[e.target.id] = e.target.value;
         setData(newData);
     }
-    // const [imageUpload, setImageUpload] = useState(null);
-    // const [imageUrls, setImageUrls] = useState([]);
-
-    // const imagesListRef = ref(storage, "images/");
-    // const uploadFile = () => {
-    //     if (imageUpload == null) return;
-    //     const imageRef = ref(storage, `images/${data.createdDate}`);
-    //     uploadBytes(imageRef, imageUpload).then((snapshot) => {
-    //         getDownloadURL(snapshot.ref).then((url) => {
-    //             setImageUrls((prev) => [...prev, url]);
-    //         });
-    //     });
-    // };
-
-    // useEffect(() => {
-    //     listAll(imagesListRef).then((response) => {
-    //         response.items.forEach((item) => {
-    //             getDownloadURL(item).then((url) => {
-    //                 setImageUrls((prev) => [...prev, url]);
-    //             });
-    //         });
-    //     });
-    // }, []);
-    //Category Option
-    const [categoryDatas, setCategoryDatas] = useState([])
-    const formData = new FormData(); formData.append("file", categoryDatas[0]);
-    const config = {
-        headers: { 'content-type': 'multipart/form-data' }
-    }
-    useEffect(() => {
-        axios.post('http://localhost:53410/api/Company/fileUpload/', config)
-            .then(res => {
-                setCategoryDatas(res.data)
-            }).catch(err => console.log(err))
-    }, []);
     function handles(e) {
-        const newData = { ...categoryDatas }
-        console.log(e.taget.value)
-        newData[e.target.selected] = e.target.value;
-        setCategoryDatas(newData);
+        setLoading(false);
+        const newData = { ...data }
+        newData[e.target.id] = e.target.files;
+        setData(newData);
     }
 
 
@@ -160,15 +109,13 @@ const CompanyAdd = () => {
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">İmage upload</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handleInputChange(e)} value={data.value} accept='image/*' type="file" className="form-control" id="path" placeholder="Path" />
-                                            <button type="submit" className="btn btn-dark" onClick={() => submits()}>Əlavə Et</button>
-
+                                            <input onChange={(e) => handle(e)} value={data.value}  accept='image/*' type="file" className="form-control" id="ImageFile" placeholder="Path" />
                                         </div>
                                     </div>
 
                                     <div className="row">
                                         <div className="col-sm-10 offset-sm-2">
-                                            <button type="submit" onMouseEnter={(e) => handles(e)} value={data.value} id='imageId' style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
+                                            <button type="submit" onMouseEnter={(e) => handle(e)} value={data.value} id='imageId' style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
                                         </div>
                                     </div>
                                 </form>
