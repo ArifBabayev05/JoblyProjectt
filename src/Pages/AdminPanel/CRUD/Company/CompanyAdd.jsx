@@ -6,8 +6,16 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
-// import CompanyImage from './CompanyImage'
-// import { error } from 'console'
+import {
+    ref,
+    uploadBytes,
+    getDownloadURL,
+    listAll,
+    list,
+} from "firebase/storage";
+import { v4 } from "uuid";
+import { storage } from '../../../../Components/Auth/Firebase/config'
+
 const CompanyAdd = () => {
     const navigate = useNavigate();
     console.log(new Date().toJSON());
@@ -23,14 +31,14 @@ const CompanyAdd = () => {
         createdDate: ""
 
     })
-    const handleInputChange =(e)=>{
+    const handleInputChange = (e) => {
         setSelectedFile(e.target.value);
         setLoading(false);
         const newData = { ...data }
         newData[e.target.files[0]] = e.target.value;
         setData(newData);
     }
-    function submits(){
+    function submits() {
         const data = new FormData()
         data.append('file', selectedFile)
         console.warn(selectedFile);
@@ -40,7 +48,7 @@ const CompanyAdd = () => {
                 console.warn(res);
             })
 
-        
+
     }
     function submit(e) {
         e.preventDefault();
@@ -71,15 +79,37 @@ const CompanyAdd = () => {
         newData[e.target.id] = e.target.value;
         setData(newData);
     }
+    // const [imageUpload, setImageUpload] = useState(null);
+    // const [imageUrls, setImageUrls] = useState([]);
 
+    // const imagesListRef = ref(storage, "images/");
+    // const uploadFile = () => {
+    //     if (imageUpload == null) return;
+    //     const imageRef = ref(storage, `images/${data.createdDate}`);
+    //     uploadBytes(imageRef, imageUpload).then((snapshot) => {
+    //         getDownloadURL(snapshot.ref).then((url) => {
+    //             setImageUrls((prev) => [...prev, url]);
+    //         });
+    //     });
+    // };
+
+    // useEffect(() => {
+    //     listAll(imagesListRef).then((response) => {
+    //         response.items.forEach((item) => {
+    //             getDownloadURL(item).then((url) => {
+    //                 setImageUrls((prev) => [...prev, url]);
+    //             });
+    //         });
+    //     });
+    // }, []);
     //Category Option
     const [categoryDatas, setCategoryDatas] = useState([])
-    const formData = new FormData(); formData.append("file", categoryDatas[0] );
+    const formData = new FormData(); formData.append("file", categoryDatas[0]);
     const config = {
         headers: { 'content-type': 'multipart/form-data' }
-       }
+    }
     useEffect(() => {
-        axios.post('http://localhost:53410/api/Company/fileUpload/',config)
+        axios.post('http://localhost:53410/api/Company/fileUpload/', config)
             .then(res => {
                 setCategoryDatas(res.data)
             }).catch(err => console.log(err))
@@ -100,6 +130,7 @@ const CompanyAdd = () => {
                         <div className="row flex-nowrap">
                             <Sidebar />
                             <div className="col py-3">
+
                                 <form enctype="multipart/form-data" method="post" onSubmit={(e) => submit(e)}>
                                     {loading && <Loader />}
                                     <div className="row mb-3">

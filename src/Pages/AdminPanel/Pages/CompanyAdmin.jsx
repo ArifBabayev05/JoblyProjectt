@@ -7,10 +7,11 @@ import '../Admin.css'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+// import soruce from '../../../../../../Jobly/BackendJobly/BackendJobly/BackendJobly/wwwroot/assets/'
 
 
 const CompanyAdmin = (props) => {
+    
     const [query, setQuery] = useState("")
     const [data, setData] = useState([])
     useEffect(() => {
@@ -38,6 +39,7 @@ const CompanyAdmin = (props) => {
                 console.log(res.data)
             }).catch(err => toast.error(err))
     }
+    
     const array = data.filter((value) => {
         if (query === "") {
             return value;
@@ -55,12 +57,11 @@ const CompanyAdmin = (props) => {
         return (
             <tr>
                 <td>{data.id}</td>
-                <td><img alt='value' style={{ 'width': '35px', 'height': '35px', 'border-radius': '50%' }} className='me-3' src={data.path} /> {data.name}</td>
+                <td><img alt='value' style={{ 'width': '35px', 'height': '35px', 'border-radius': '50%' }} className='me-3' src={"http://localhost:53410/img/"+data.image.name} /> {data.name}</td>
                 <td >+{data.telNumber}</td>
                 <td>{data.mail}</td>
-                <td>{data.createdDate.slice(0, 10)}</td>
-                {/* <td>{data.createdDate}</td> */}
-
+                {/* <td>{data.createdDate.slice(0, 10)}</td> */}
+                <td>{data.createdDate}</td>
 
                 <td><Link to={`/companyupdate/${data.id}`} onClick={() => Update(data.id)} className='btn text-white btn-info update'>Yenilə</Link></td>
                 <td><button onClick={(e) => Delete(data.id, e)} className='btn btn-danger delete'>Sil</button></td>
