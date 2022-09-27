@@ -20,14 +20,18 @@ function Register() {
   const registerUser = (e) => {
     e.preventDefault();
     if (password !== cPassword) {
-      toast.error("Şifrədə yanlışlıq var!")
+      setPassword("");
+      setCPassword("");
+
+      
+      toast.error("Şifrədə yanlışlıq var. Yenidən daxil edin!")
     }
     setLoading(true);
     // else{
     //   toast.success("Qeydiyyat Uğurludur!")
     // }
 
-    if(password==cPassword){
+    if(password===cPassword){
       createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         toast.success("Qeydiyyat Uğurludur!")

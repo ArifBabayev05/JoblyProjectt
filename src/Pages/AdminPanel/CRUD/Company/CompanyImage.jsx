@@ -19,7 +19,7 @@ export default function CompanyAdd() {
         <>
         <h1>sa</h1>
             <input type='file' multiple accept='image/*' onChange={onImageChange} />
-            { imageURLs.map(imageSrc => <img src={imageSrc} />) }
+            { imageURLs.map(imageSrc => <img alt='value' src={imageSrc} />) }
         </>
     )
 }

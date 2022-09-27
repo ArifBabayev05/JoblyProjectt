@@ -5,7 +5,7 @@ import { auth } from '../../Components/Auth/Firebase/config'
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 // import { useNavigate } from "react-router-dom";
-import { getAuth, onAuthStateChanged, updateEmail, updatePhoneNumber, updateProfile } from "firebase/auth";
+import { getAuth, onAuthStateChanged, updateEmail, updateProfile } from "firebase/auth";
 import { useDispatch } from 'react-redux'
 // import { ShowOnLogin, ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks'
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice';
@@ -17,8 +17,8 @@ const UpdateProfile = () => {
   const nav = useNavigate();
   const dispatch = useDispatch()
   const [email, setEmail] = useState("")
-  const [tel, setTel] = useState("")
-  const [password, setPassword] = useState("")
+  // const [tel, setTel] = useState("")
+  // const [password, setPassword] = useState("")
   const [displayName, setDisplayName] = useState("");
   const [displayTel, setDisplayTel] = useState("");
   const [displayname, setDisplayNames] = useState("");
@@ -122,11 +122,11 @@ const update = (e) => {
   }).catch((error) => {
     
   });
-  updatePhoneNumber(auth.currentUser, tel).then(() => {
-    console.log(auth)
-  }).catch((error) => {
-    console.log(auth)
-  });
+  // updatePhoneNumber(auth.currentUser, tel).then(() => {
+  //   console.log(auth)
+  // }).catch((error) => {
+  //   console.log(auth)
+  // });
 }
 
 

@@ -35,6 +35,8 @@
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
     background: url('https://colorlib.com/etc/404/colorlib-error-404-10/img/bg.jpg') no-repeat;
+    
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: cover;

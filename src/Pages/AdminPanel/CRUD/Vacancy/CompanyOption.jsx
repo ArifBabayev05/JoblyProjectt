@@ -11,21 +11,7 @@ const CompanyOption = () => {
                 setData(res.data)
             }).catch(err => console.log(err))
     }, []);
-    function handle(e) {
-
-        const newData = { ...data }
-        console.log(e.taget.value)
-        newData[e.target.selected] = e.target.value;
-        // newData[e.target.name] = e.target.value;
-        setData(newData);
-      }
-      function handles(e) {
     
-        const newData = { ...data }
-        newData[e.target.selected] = e.target.value;
-        // newData[e.target.name] = e.target.value;
-        setData(newData);
-      }
     
     console.log(data)
     const companyOption = data.map((data, index) => {
