@@ -8,10 +8,10 @@ import info3 from '../../../Assets/Images/Hero/s-info3.png'
 function index() {
   return (
     <div className='container'>
-      <h2 className='fw-bold my-5'>Biz kimik?</h2>
+      <h2 className=' fw-bold my-5'>Biz kimik?</h2>
 
-      <div className='row mt-5 '>
-        <div className='info col col-lg-4'>
+      <div className='row mt-5'>
+        <div className='info col col-lg-4 '>
           <img src={info3}  alt='some value'/>
 
           <h3 className='mt-5 mb-4 fw-bold'>Daxil olun</h3>
@@ -24,9 +24,8 @@ function index() {
         <div className='info col-lg-4'>
           <img src={info2}  alt='some value'/>
 
-          <h3 className='mt-5 mb-4 fw-bold'>Cv yerləşdirin</h3>
-          <p className=''>Öz şəxsi CV-ni məlumatlar hissəsinə yerləşdirərək 
-    daha çox iş imkanları əldə et.</p>
+          <h3 className='mt-5 mb-4 fw-bold'>Müraciət Edin</h3>
+          <p className=''>Uyğun olduğunuz vəzifələr üçün müraciət edin və yeni şanslar <br/> əldə edin!</p>
 
           <a href='/job' className='mt-5 '>Daha çox</a>    
         </div>

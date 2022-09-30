@@ -136,7 +136,7 @@ const CompanyUpdate = (props) => {
 
         <div className="row">
           <div className="col-sm-10 offset-sm-2">
-            <button type="submit" onMouseEnter={(e) => handle(e)} style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Yenilə</button>
+            <button type="submit" onMouseEnter={(e) => handle(e)} id="imageId" value={data.value} style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Yenilə</button>
           </div>
         </div>
       </form>

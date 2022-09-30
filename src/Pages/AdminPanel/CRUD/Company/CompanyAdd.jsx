@@ -1,17 +1,16 @@
 import Loader from '../../../../Components/Jobs/Loader'
 import { ShowOnAdmin, ShowOnUser } from '../../../../Layouts/HiddenLinks/Router'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Sidebar from '../../Sidebar/Sidebar'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
-import CompanyImage from './CompanyImage'
 
 const CompanyAdd = () => {
     const navigate = useNavigate();
     
-    const [selectedFile, setSelectedFile] = useState('')
+    
     const [loading, setLoading] = useState(false)
     const url = 'http://localhost:53410/api/Company/add';
     const [data, setData] = useState({
@@ -23,11 +22,11 @@ const CompanyAdd = () => {
         createdDate: ""
 
     })
-    const config = {
-        headers: {
-            'content-type': 'multipart/form-data'
-        }
-    }
+    // const config = {
+    //     headers: {
+    //         'content-type': 'multipart/form-data'
+    //     }
+    // }
     function submit(e) {
         let file = data.ImageFile;
         let jname = data.name;

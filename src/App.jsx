@@ -28,7 +28,6 @@ import CategoryUpdate from './Pages/AdminPanel/CRUD/Category/CategoryUpdate';
 import Contact from './Components/AboutPage/Contact/Contact';
 import Appeals from './Pages/AdminPanel/Pages/Appeals';
 import Test from './Pages/AdminPanel/CRUD/Vacancy/Test.jsx'
-import FileUpload from './Pages/AdminPanel/CRUD/Company/CompanyImage';
 
 
 
@@ -52,10 +51,6 @@ function App() {
           <Route path='reset' element={<Reset />} />
           <Route path='/settings' element={<UpdateProfile />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/test' element={<Test />} />
-          <Route path='/file' element={<FileUpload/>} />
-
-          
 
           <Route path='/*' element={<Error />} />
 

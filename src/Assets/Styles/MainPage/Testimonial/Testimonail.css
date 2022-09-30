@@ -16,3 +16,18 @@
 .info a:hover {
   color: var(--pink);
 }/*# sourceMappingURL=Testimonail.css.map */
+
+@media(max-width:768px){
+  .info{
+    text-align: center;
+    
+  }
+  .info p {
+    color: var(--gray);
+    width: 100%;
+  }
+  .info a {
+  margin-top: 20px !important;
+    
+  }
+}

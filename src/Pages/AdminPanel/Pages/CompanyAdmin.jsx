@@ -53,6 +53,7 @@ const CompanyAdmin = (props) => {
         else if (value.mail.toLowerCase().includes(query.toLowerCase())) {
             return value;
         }
+        
     }).map((data, index) => {
         return (
             <tr>
