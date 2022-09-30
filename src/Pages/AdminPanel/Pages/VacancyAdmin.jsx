@@ -63,7 +63,7 @@ const VacancyAdmin = (props) => {
                 <td >{data.category.name}</td>
                 <td >{data.city.name}</td>
                 <td>{data.typeOfwork}</td>
-                <td>{data.deadline.slice(0, 10)}</td>
+                <td style={{'font-size':'14px'}}>{data.deadline.slice(0, 10)}</td>
                 <td>{data.salary}</td>
                 <td><Link to={`/vacancyupdate/${data.id}`} onClick={() => Update(data.id)} className='btn text-white btn-info update'>Yenilə</Link></td>
                 <td><button onClick={(e) => Delete(data.id, e)} className='btn btn-danger delete'>Sil</button></td>
@@ -90,7 +90,7 @@ const VacancyAdmin = (props) => {
                                     </div>
 
                                     <div className='d-flex mb-4 mt-2'>
-                                        <a href='admin/vacacncyadd' className='btn btn-success position-relative'>Vakansiya Əlavə Et</a>
+                                        <a href='admin/vacancyadd' className='btn btn-success position-relative'>Vakansiya Əlavə Et</a>
                                     </div>
                                 </div>
                                 <div style={{ 'overflow-x': 'auto' }}>

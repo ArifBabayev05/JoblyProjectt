@@ -121,38 +121,38 @@ const VacancyAdd = () => {
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Ad</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)}  value={data.value} type="name" required className="form-control" id="name" placeholder="Ad" />
+                                            <input onChange={(e) => handle(e)}  value={data.value} type="name" required className="form-control" id="name" placeholder="İşin Adı" />
                                         </div>
                                     </div>
 
                                     <div className="row mb-3">
-                                        <label for="inputEmail" className="col-sm-2 col-form-label">typeOfwork</label>
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">İş Tipi</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="typeOfwork" placeholder="typeOfwork" />
+                                            <input onChange={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="typeOfwork" placeholder="İşin tipi" />
                                         </div>
                                     </div>
                                     <div className="row mb-3">
-                                        <label for="inputEmail" className="col-sm-2 col-form-label">vəzifəÖhdəlikləri</label>
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">Vəzifə Öhdəlikləri</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="vəzifəÖhdəlikləri" placeholder="vəzifəÖhdəlikləri" />
+                                            <input onChange={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="vəzifəÖhdəlikləri" placeholder="Vəzifə Öhdəlikləri" />
                                         </div>
                                     </div>
                                     <div className="row mb-3">
-                                        <label for="inputEmail" className="col-sm-2 col-form-label">tələblər</label>
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">Tələblər</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="tələblər" placeholder="vəzifəÖhdəlikləri" />
+                                            <input onChange={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="tələblər" placeholder="Tələblər" />
                                         </div>
                                     </div>
                                     <div className="row mb-3">
-                                        <label for="inputEmail" className="col-sm-2 col-form-label">salary</label>
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">Maaş</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="salary" placeholder="salary" />
+                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="salary" placeholder="Maaş" />
                                         </div>
                                     </div>
                                     <div className="row mb-3">
-                                        <label for="inputEmail" className="col-sm-2 col-form-label">deadline</label>
+                                        <label for="inputEmail" className="col-sm-2 col-form-label">Son Tarix</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="date" required className="form-control" id="deadline" placeholder="deadline" />
+                                            <input onChange={(e) => handle(e)} value={data.value} type="date" required className="form-control"  id="deadline" placeholder="Son Tarix" />
                                         </div>
                                     </div>
 
