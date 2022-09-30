@@ -114,12 +114,7 @@ const CompanyAdd = () => {
                                         </div>
                                     </div>
 
-                                    <div className="row mb-3">
-                                        <label for="inputEmail" className="col-sm-2 col-form-label">İmage İd</label>
-                                        <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} required type="text" className="form-control" id="imageId" placeholder="İmage İd " />
-                                        </div>
-                                    </div>
+    
                                     
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">İmage upload</label>

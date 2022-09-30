@@ -16,6 +16,7 @@ const CompanyUpdate = (props) => {
     name: "",
     mail: "",
     telNumber: "",
+    ImageFile: "",
     imageId: "",
     createdDate: ""
 
@@ -24,15 +25,34 @@ const CompanyUpdate = (props) => {
 
 
   function submit(e) {
+    let jid = data.id;
+    let file = data.ImageFile;
+    let jname = data.name;
+    let jmail = data.mail;
+    let jtel = data.telNumber;
+    let jdate = new Date().toJSON();
+
+    let formData = new FormData();
+    formData.append('id', jid);
+    formData.append('imageFile', file);
+    formData.append('name', jname);
+    formData.append('mail', jmail);
+    formData.append('telNumber', jtel);
+    formData.append('createdDate', jdate);
+
     e.preventDefault();
     console.log(data);
-    axios.post(`http://localhost:53410/api/Company/update?id=${id}`, {
+    axios.post(`http://localhost:53410/api/Company/update?id=${id}`,formData, {
       id: data.id,
       name: data.name,
       mail: data.mail,
       telNumber: data.telNumber,
+      ImageFile: data.ImageFile,
       imageId: parseInt(data.imageId),
-      createdDate: new Date().toJSON()
+      createdDate: new Date().toJSON(),
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
     }).then(res => {
       console.log(res);
       toast.success("Uğurla Əlavə Olundu");
@@ -47,10 +67,14 @@ const CompanyUpdate = (props) => {
     const newData = { ...data }
     newData[e.target.id] = e.target.value;
     // newData[e.target.name] = e.target.value;
+    setData(newData);
+  }
+  function handles(e) {
+    const newData = { ...data }
+    newData[e.target.id] = e.target.files[0];
 
     setData(newData);
   }
-
 
   const url = `http://localhost:53410/api/Company/getbyid?id=${id}`
   const [product, setProduct] = useState({
@@ -104,27 +128,32 @@ const CompanyUpdate = (props) => {
 
 
 
-        <input defaultValue={data.id} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} style={{ 'display': 'none' }} type="name" required className="form-control" id="id" placeholder="Ad" />
+        <input defaultValue={data.id} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} style={{ 'display': 'none' }} type="name" required className="form-control" id="id" placeholder="Ad" />
 
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Ad</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.name} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="name" placeholder="Ad" />
+            <input defaultValue={product.data.name} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="name" placeholder="Ad" />
           </div>
         </div>
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Mail</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.mail} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="mail" placeholder="Mail" />
+            <input defaultValue={product.data.mail} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="mail" placeholder="Mail" />
           </div>
         </div>
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Telefon Nömrəsi</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.telNumber} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="telNumber" placeholder="Tel" />
+            <input defaultValue={product.data.telNumber} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="telNumber" placeholder="Tel" />
           </div>
         </div>
-
+        <div className="row mb-3">
+          <label for="inputEmail" className="col-sm-2 col-form-label">Şəkil</label>
+          <div className="col-sm-10">
+            <input onChange={(e) => handles(e)} onMouseEnter={(e) => handle(e)} value={data.value} accept='image/*' type="file" className="form-control" id="ImageFile" placeholder="Path" />
+          </div>
+        </div>
         {/* <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">İmage İd</label>
           <div className="col-sm-10">
