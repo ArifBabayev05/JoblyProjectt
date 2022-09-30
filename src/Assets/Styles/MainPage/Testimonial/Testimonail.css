@@ -28,6 +28,7 @@
   }
   .info a {
   margin-top: 20px !important;
+    justify-content: center;
     
   }
 }
