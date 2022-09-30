@@ -30,7 +30,7 @@ const CompanyAdd = () => {
     }
     function submit(e) {
         let file = data.ImageFile;
-        console.log(file)
+        // console.log(file)
         let formData = new FormData();
         formData.append('imageFile', file);
         // console.log(formData.get("imageFile"));
