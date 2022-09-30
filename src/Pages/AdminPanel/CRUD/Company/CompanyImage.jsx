@@ -3,20 +3,21 @@ import React, { Component } from 'react'
 
 class CompanyImage extends Component {
 
+    
     state = {
-        file: null
+        data: ""
     }
     handleFile(e) {
         let file = e.target.files
         this.setState({
-            file: file
+            file: file,
         })
     }
     handleUpload(e) {
         let file = this.state.file[0];
         let formData = new FormData();
         formData.append('imageFile', file);
-        formData.append('name', "Arif");
+        formData.append('name', "file");
         axios.post(`http://localhost:53410/api/Company/add`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'

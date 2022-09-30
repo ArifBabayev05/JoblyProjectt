@@ -6,20 +6,13 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
-import {
-    ref,
-    uploadBytes,
-    getDownloadURL,
-    listAll,
-    list,
-} from "firebase/storage";
-import { v4 } from "uuid";
-import { storage } from '../../../../Components/Auth/Firebase/config'
+import CompanyImage from './CompanyImage'
 
 const CompanyAdd = () => {
     const navigate = useNavigate();
-    const [loading, setLoading] = useState(false);
-
+    // console.log(new Date().toJSON());
+    const [selectedFile, setSelectedFile] = useState('')
+    const [loading, setLoading] = useState(false)
     const url = 'http://localhost:53410/api/Company/add';
     const [data, setData] = useState({
         name: "",
@@ -30,15 +23,20 @@ const CompanyAdd = () => {
         createdDate: ""
 
     })
+    const config = {
+        headers: {
+            'content-type': 'multipart/form-data'
+        }
+    }
     function submit(e) {
-        e.preventDefault();
-        setLoading(false);
-
         let file = data.ImageFile;
+        console.log(file)
         let formData = new FormData();
         formData.append('imageFile', file);
-
-        axios.post(url, formData, {
+        // console.log(formData.get("imageFile"));
+        e.preventDefault();
+        setLoading(false);
+        axios.post(url,formData, {
             name: data.name,
             mail: data.mail,
             telNumber: data.telNumber,
@@ -58,22 +56,21 @@ const CompanyAdd = () => {
         })
     }
 
-    function fileHandle(e) {
-        let file = e.target.files
-        setData({
-            ImageFile: file,
-        })
-        setLoading(false);
-        const newData = { ...data }
-        newData[e.target.files] = e.target.value;
-        setData(newData);
-    }
     function handle(e) {
         setLoading(false);
         const newData = { ...data }
         newData[e.target.id] = e.target.value;
         setData(newData);
     }
+
+    function handles(e) {
+        setLoading(false);
+        const newData = { ...data }
+        newData[e.target.id] = e.target.files[0];
+        console.log(newData);
+        setData(newData);
+    }
+
 
     return (
         <div>
@@ -111,16 +108,17 @@ const CompanyAdd = () => {
                                             <input onChange={(e) => handle(e)} value={data.value} required type="text" className="form-control" id="imageId" placeholder="İmage İd " />
                                         </div>
                                     </div>
+                                    
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">İmage upload</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => fileHandle(e)} value={data.value} accept='image/*' type="file" className="form-control" id="ImageFile" placeholder="Path" />
+                                            <input onChange={(e) => handles(e)} value={data.value}  accept='image/*' type="file" className="form-control" id="ImageFile" placeholder="Path" />
                                         </div>
                                     </div>
 
                                     <div className="row">
                                         <div className="col-sm-10 offset-sm-2">
-                                            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
+                                            <button type="submit"  style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
                                         </div>
                                     </div>
                                 </form>
