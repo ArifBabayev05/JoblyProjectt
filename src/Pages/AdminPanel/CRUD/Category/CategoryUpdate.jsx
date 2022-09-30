@@ -26,7 +26,7 @@ const CategoryUpdate = (props) => {
       createdDate: new Date().toJSON()
     }).then(res => {
       console.log(res);
-      toast.success("Uğurla Əlavə Olundu");
+      toast.success("Uğurla Yeniləndi");
       navigate("/categoryAdmin")
     }).catch(() => {
       toast.error("Əməliyyat Uğursuzdur.");

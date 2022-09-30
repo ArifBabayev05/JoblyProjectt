@@ -35,7 +35,7 @@ const CompanyUpdate = (props) => {
       createdDate: new Date().toJSON()
     }).then(res => {
       console.log(res);
-      toast.success("Uğurla Əlavə Olundu");
+      toast.success("Uğurla Yeniləndi");
       navigate("/companyAdmin")
     }).catch(() => {
       toast.error("Əməliyyat Uğursuzdur.");
