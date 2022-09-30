@@ -18,35 +18,36 @@ import { storage } from '../../../../Components/Auth/Firebase/config'
 
 const CompanyAdd = () => {
     const navigate = useNavigate();
-    // console.log(new Date().toJSON());
-    const [selectedFile, setSelectedFile] = useState('')
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+
     const url = 'http://localhost:53410/api/Company/add';
     const [data, setData] = useState({
         name: "",
         mail: "",
         telNumber: "",
-        imageId: "",
         ImageFile: "",
+        imageId: "",
         createdDate: ""
 
     })
-    const config = {
-        headers: {
-            'content-type': 'multipart/form-data'
-        }
-    }
     function submit(e) {
         e.preventDefault();
         setLoading(false);
-        axios.post(url,config, {
+
+        let file = data.ImageFile;
+        let formData = new FormData();
+        formData.append('imageFile', file);
+
+        axios.post(url, formData, {
             name: data.name,
             mail: data.mail,
             telNumber: data.telNumber,
-            imageId: parseInt(data.imageId),
             ImageFile: data.ImageFile,
-            // imageId: data.imageId,
-            createdDate: new Date().toJSON()
+            imageId: parseInt(data.imageId),
+            createdDate: new Date().toJSON(),
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
         }).then(res => {
             setLoading(false);
             console.log(res);
@@ -57,19 +58,22 @@ const CompanyAdd = () => {
         })
     }
 
+    function fileHandle(e) {
+        let file = e.target.files
+        setData({
+            ImageFile: file,
+        })
+        setLoading(false);
+        const newData = { ...data }
+        newData[e.target.files] = e.target.value;
+        setData(newData);
+    }
     function handle(e) {
         setLoading(false);
         const newData = { ...data }
         newData[e.target.id] = e.target.value;
         setData(newData);
     }
-    function handles(e) {
-        setLoading(false);
-        const newData = { ...data }
-        newData[e.target.id] = e.target.files;
-        setData(newData);
-    }
-
 
     return (
         <div>
@@ -100,22 +104,23 @@ const CompanyAdd = () => {
                                             <input onChange={(e) => handle(e)} value={data.value} required type="tel" className="form-control" id="telNumber" placeholder="Telefon Nömrəsi" />
                                         </div>
                                     </div>
-                                    {/* <div className="row mb-3">
+
+                                    <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">İmage İd</label>
                                         <div className="col-sm-10">
                                             <input onChange={(e) => handle(e)} value={data.value} required type="text" className="form-control" id="imageId" placeholder="İmage İd " />
                                         </div>
-                                    </div> */}
+                                    </div>
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">İmage upload</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value}  accept='image/*' type="file" className="form-control" id="ImageFile" placeholder="Path" />
+                                            <input onChange={(e) => fileHandle(e)} value={data.value} accept='image/*' type="file" className="form-control" id="ImageFile" placeholder="Path" />
                                         </div>
                                     </div>
 
                                     <div className="row">
                                         <div className="col-sm-10 offset-sm-2">
-                                            <button type="submit" onMouseEnter={(e) => handle(e)} value={data.value} id='imageId' style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
+                                            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
                                         </div>
                                     </div>
                                 </form>

@@ -1,53 +1,47 @@
-import React from 'react'
-import axios from 'axios';
+import axios from 'axios'
+import React, { Component } from 'react'
 
-class CompanyImage extends React.Component {
+class CompanyImage extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-            selectedFile: '',
-        }
-
-        this.handleInputChange = this.handleInputChange.bind(this);
+    state = {
+        file: null
     }
-
-    handleInputChange(event) {
+    handleFile(e) {
+        let file = e.target.files
         this.setState({
-            selectedFile: event.target.files[0],
+            file: file
         })
     }
-
-    submit() {
-        const data = new FormData()
-        data.append('file', this.state.selectedFile)
-        console.warn(this.state.selectedFile);
-        let url = "http://localhost:53410/api/Company/add";
-
-        axios.post(url, data, { // receive two parameter endpoint url ,form data 
+    handleUpload(e) {
+        let file = this.state.file[0];
+        let formData = new FormData();
+        formData.append('imageFile', file);
+        formData.append('name', "Arif");
+        axios.post(`http://localhost:53410/api/Company/add`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
         })
-            .then(res => { // then print response status
-                console.warn(res);
-            })
+
 
     }
-
     render() {
         return (
             <div>
-                <div className="row">
-                    <div className="">
-
-                        <input type="file" className="form-control" name="ImageFile" onChange={this.handleInputChange} />
-
-                        <button type="submit" className="btn btn-dark" onClick={() => this.submit()}>Save</button>
-
-
+                <h1>Form</h1>
+                <form>
+                    <div>
+                        <label>Select File</label>
+                        <input type='file' onChange={(e) => this.handleFile(e)} />
+                        <button type='button' onClick={(e) => this.handleUpload(e)}>Upload</button>
                     </div>
-                </div>
-            </div >
+                </form>
+            </div>
         )
     }
+
+
+
 }
 
 export default CompanyImage;
