@@ -10,7 +10,7 @@ import CompanyImage from './CompanyImage'
 
 const CompanyAdd = () => {
     const navigate = useNavigate();
-    // console.log(new Date().toJSON());
+    
     const [selectedFile, setSelectedFile] = useState('')
     const [loading, setLoading] = useState(false)
     const url = 'http://localhost:53410/api/Company/add';
@@ -35,8 +35,6 @@ const CompanyAdd = () => {
         let jtel = data.telNumber;
         let jdate = new Date().toJSON();
 
-
-        // console.log(file)
         let formData = new FormData();
         formData.append('imageFile', file);
         formData.append('name', jname);
@@ -46,7 +44,7 @@ const CompanyAdd = () => {
 
 
 
-        // console.log(formData.get("imageFile"));
+        
         e.preventDefault();
         setLoading(false);
         axios.post(url,formData, {
@@ -61,7 +59,7 @@ const CompanyAdd = () => {
             }
         }).then(res => {
             setLoading(false);
-            console.log(res);
+            
             toast.success("Uğurla Əlavə Olundu");
             navigate("/companyadmin")
         }).catch(() => {
@@ -81,7 +79,7 @@ const CompanyAdd = () => {
         setLoading(false);
         const newData = { ...data }
         newData[e.target.id] = e.target.files[0];
-        // console.log(newData);
+        
         setData(newData);
     }
 
