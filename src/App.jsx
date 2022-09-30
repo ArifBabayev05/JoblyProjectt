@@ -28,6 +28,9 @@ import CategoryUpdate from './Pages/AdminPanel/CRUD/Category/CategoryUpdate';
 import Contact from './Components/AboutPage/Contact/Contact';
 import Appeals from './Pages/AdminPanel/Pages/Appeals';
 import Test from './Pages/AdminPanel/CRUD/Vacancy/Test.jsx'
+import CityAdmin from './Pages/AdminPanel/Pages/CityAdmin';
+import CityAdd from './Pages/AdminPanel/CRUD/City/CityAdd';
+import CityUpdate from './Pages/AdminPanel/CRUD/City/CityUpdate';
 
 
 
@@ -59,6 +62,8 @@ function App() {
           <Route path='/companyAdmin' element={<CompanyAdmin />} />
           <Route path='/vacancyAdmin' element={<VacancyAdmin />} />
           <Route path='/categoryAdmin' element={<CategoryAdmin />} />
+          <Route path='/cityAdmin' element={<CityAdmin />} />
+
           <Route path='/appeals' element={<Appeals />} />
 
 
@@ -66,11 +71,13 @@ function App() {
           <Route path='admin/categoryAdd' element={<CategoryAdd />} />
           <Route path='admin/companyAdd' element={<CompanyAdd />} />
           <Route path='admin/vacancyAdd' element={<VacancyAdd />} />
-          <Route path='admin/vacancyAdd' element={<VacancyAdd />} />
+          <Route path='admin/cityAdd' element={<CityAdd />} />
           <Route path='/companyupdate' element={<CompanyUpdate />} />
           <Route path='/vacancyupdate/:id' element={<VacancyUpdate />} />
           <Route path='/companyupdate/:id' element={<CompanyUpdate />} />
           <Route path='/categoryupdate/:id' element={<CategoryUpdate />} />
+          <Route path='/cityupdate/:id' element={<CityUpdate />} />
+
 
           
 
