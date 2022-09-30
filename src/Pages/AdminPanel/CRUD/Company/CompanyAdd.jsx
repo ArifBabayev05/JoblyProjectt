@@ -31,8 +31,10 @@ const CompanyAdd = () => {
     function submit(e) {
         let file = data.ImageFile;
         let jname = data.name;
-        let jmail = data.name;
-        let jtel = data.name;
+        let jmail = data.mail;
+        let jtel = data.tel;
+        let jdate = new Date().toJSON();
+
 
         // console.log(file)
         let formData = new FormData();
@@ -40,6 +42,8 @@ const CompanyAdd = () => {
         formData.append('name', jname);
         formData.append('mail', jmail);
         formData.append('telNumber', jtel);
+        formData.append('createdDate', jdate);
+
 
 
         // console.log(formData.get("imageFile"));
