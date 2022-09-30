@@ -30,9 +30,18 @@ const CompanyAdd = () => {
     }
     function submit(e) {
         let file = data.ImageFile;
+        let jname = data.name;
+        let jmail = data.name;
+        let jtel = data.name;
+
         // console.log(file)
         let formData = new FormData();
         formData.append('imageFile', file);
+        formData.append('name', jname);
+        formData.append('mail', jmail);
+        formData.append('telNumber', jtel);
+
+
         // console.log(formData.get("imageFile"));
         e.preventDefault();
         setLoading(false);
@@ -60,6 +69,7 @@ const CompanyAdd = () => {
         setLoading(false);
         const newData = { ...data }
         newData[e.target.id] = e.target.value;
+
         setData(newData);
     }
 
