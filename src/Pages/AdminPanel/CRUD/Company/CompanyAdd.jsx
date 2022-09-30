@@ -71,7 +71,6 @@ const CompanyAdd = () => {
         setLoading(false);
         const newData = { ...data }
         newData[e.target.id] = e.target.value;
-
         setData(newData);
     }
 
@@ -79,7 +78,6 @@ const CompanyAdd = () => {
         setLoading(false);
         const newData = { ...data }
         newData[e.target.id] = e.target.files[0];
-        
         setData(newData);
     }
 
