@@ -32,7 +32,7 @@ const CompanyAdd = () => {
         let file = data.ImageFile;
         let jname = data.name;
         let jmail = data.mail;
-        let jtel = data.tel;
+        let jtel = data.telNumber;
         let jdate = new Date().toJSON();
 
 
