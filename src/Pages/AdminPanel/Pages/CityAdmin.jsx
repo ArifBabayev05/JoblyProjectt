@@ -66,7 +66,7 @@ const CityAdmin = (props) => {
                             <div className="col py-3">
                                 <div className='row'>
 
-                                    {/* new Search */}
+                                    
                                     <div className='col-md-9 col-sm-6 col-lg-12 d-flex justify-content-between'>
                                         <h3>Şəhərlər</h3>
                                         <form class="search-box newSearchInputForm">
@@ -76,7 +76,7 @@ const CityAdmin = (props) => {
                                     </div>
 
                                     <div className='d-flex mb-4 mt-2'>
-                                        <a href='admin/CategoryAdd' className='btn btn-success position-relative'>Şəhər Əlavə Et</a>
+                                        <a href='admin/cityAdd' className='btn btn-success position-relative'>Şəhər Əlavə Et</a>
 
                                     </div>
                                 </div>
