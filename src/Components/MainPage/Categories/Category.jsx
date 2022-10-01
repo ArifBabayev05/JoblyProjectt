@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../../../Assets/Images/Hero/i-code.png'
+import img from '../../../Assets/Images/Hero/icodes.png'
 import '../../../Assets/Styles/MainPage/Category/CategoryCard.css'
 
 function Category(props) {
@@ -9,7 +9,8 @@ function Category(props) {
     <div className=' cardd '>
         <div className='category_card'>
             <div className='cb-header'>
-                <img href='/#'   src={img} alt='value'/>
+            {/* <i style={{}} className=" fa-solid fa-briefcase"></i> */}
+                <img href='/#' style={{'width':'100px'}}  src={img} alt='value'/>
                 
             </div>
             <div className='cb-body'>
