@@ -104,12 +104,12 @@ useEffect(() => {
 
 
 const update = (e) => {
-  e.preventDefault();
-  nav('/')
+  
   const auth = getAuth();
   updateProfile(auth.currentUser, {
     displayName
   }).then(() => {
+    nav('/settings')
     
     toast.success("Uğurla Yeniləndi!")
   }).catch((error) => {
