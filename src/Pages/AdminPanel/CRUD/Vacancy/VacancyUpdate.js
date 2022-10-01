@@ -173,19 +173,19 @@ const VacancyUpdate = (props) => {
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">İşin Tipi</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.typeOfwork} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="typeOfwork" placeholder="typeOfwork" />
+            <input defaultValue={product.data.typeOfwork} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="typeOfwork" placeholder="İşin Tipi" />
           </div>
         </div>
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Vəzifə Öhdəlikləri</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.vəzifəÖhdəlikləri} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="vəzifəÖhdəlikləri" placeholder="vəzifəÖhdəlikləri" />
+            <input defaultValue={product.data.vəzifəÖhdəlikləri} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="vəzifəÖhdəlikləri" placeholder="Vəzifə Öhdəlikləri" />
           </div>
         </div>
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Tələblər</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.tələblər} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="tələblər" placeholder="vəzifəÖhdəlikləri" />
+            <input defaultValue={product.data.tələblər} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="tələblər" placeholder="Tələblər" />
           </div>
         </div>
         <div className="row mb-3">
