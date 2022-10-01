@@ -150,6 +150,7 @@ function Home() {
 
           <div className='salaryInfo'>
             <p className='salary'>Maaş : {product.data.salary}</p>
+            <p className='salary'>İşin Tipi : {product.data.typeOfwork}</p>
             <p className='salary'>Müraciətin Bitmə Tarixi : {product.data.deadline.slice(0, 10)}</p>
 
           </div>

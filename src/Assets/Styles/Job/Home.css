@@ -68,10 +68,12 @@
 .card .card-body .body_infos .works p {
   display: list-item;
   color: #525252;
+  width: 75%;
 }
 .card .card-body .body_infos .skills p {
   display: list-item;
   margin-left: 20px;
+  width: 75%;
 }
 .card .card-footer {
   background-color: #F8F8F9;
