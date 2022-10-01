@@ -142,7 +142,8 @@ function Home() {
         <div className='card-header'>
           <div className='d-flex'>
             <div className='headerImage me-4 mb-3'>
-              <img src={product.data.company.image.name} alt='asf' />
+              <img src={"http://localhost:53410/img/"+product.data.company.image.name} alt='asf' />
+              {/* src={"http://localhost:53410/img/"+props.product.company.image.name} */}
             </div>
             <h1>{product.data.name}</h1>
           </div>
