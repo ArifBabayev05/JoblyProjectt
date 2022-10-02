@@ -77,10 +77,10 @@ function CompanyHome() {
                         <img src={"http://localhost:53410/img/" + data.company.image.name }   style={{ 'objectFit': 'cover','width':'60px','border-radius':'50px' }} alt='caie'/>
                       </div>
                       <div class="ms-2 c-details">
-                        <h6 className=' ms-3 text-dark'>{data.name}</h6> <span className=' ms-3 d-flex'>{data.deadline.slice(0,10)}</span>
+                        <h6 className=' ms-3 text-white'>{data.name}</h6> <span className=' ms-3 d-flex'>{data.deadline.slice(0,10)}</span>
                       </div>
                     </div>
-                    <div className="text-dark badge"> <span >Design</span> </div>
+                    <div className="text-dark badge"> <span >Daha Ətraflı</span> </div>
                   </div>
                 </div>
               </div>
@@ -105,9 +105,9 @@ function CompanyHome() {
           <div class="card"> <img class="card-img-top" style={{ 'objectFit': 'cover' }} src={bg} alt="Card image cap" />
             <div class="card-body little-profile text-center">
               <div class="pro-img"><img src={"http://localhost:53410/img/" + product.data.image.name} alt="user" /></div>
-              <h3 class="m-b-0">{product.data.name}</h3>
+              <h3 class="m-b-0 ">{product.data.name}</h3>
               <p>{product.data.mail}</p>
-              <p>{ldata} Vakansiya</p>
+              <p><span className='fw-bold text-dark'>{ldata}</span> Vakansiya</p>
               <a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Bütün Vakansiyalar</a>
               <div class="row text-center m-t-20">
                 <div class=" m-t-20">

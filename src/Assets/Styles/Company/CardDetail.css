@@ -1,5 +1,5 @@
 .jobCards {
-    background-color: #a5a5a5;
+    background-color: #7f65ff;
 }
 
 .card-img-top {
@@ -22,6 +22,10 @@
     font-size: 39px
 }
 
+.badge{
+    display:flex;
+    align-items: center;
+}
 .badge span {
     background-color: #fffbec;
     width: 60px;
@@ -29,9 +33,10 @@
     padding-bottom: 3px;
     border-radius: 5px;
     display: flex;
-    color: #fed85d;
+    color:var(--pink);
     justify-content: center;
     align-items: center
+    
 }
 
 .progress {
