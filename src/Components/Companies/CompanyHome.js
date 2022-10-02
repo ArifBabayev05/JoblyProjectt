@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import Loader from '../Jobs/Loader'
 import { ShowOnLogin, ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks'
 import '../../Assets/Styles/Company/CardDetail.css';
-
+import bg from '../../Assets/Images/Logo/bglogos.png'
 //Job Details
 function CompanyHome() {
   const { id } = useParams()
@@ -18,7 +18,7 @@ function CompanyHome() {
       }).catch(err => console.log(err))
   }, [])
 
-  const array = data.map((data, index) => {
+  const VacanciesList = data.map((data, index) => {
     return (
       <div>
         {data.name}
@@ -71,13 +71,13 @@ function CompanyHome() {
   }
   if (product.data) {
     content =
-      <div class="padding justify-content-center">
+      <div class="padding justify-content-center d-flex">
         <div class="col-md-8">
-          <div class="card"> <img class="card-img-top" src="https://i.imgur.com/K7A78We.jpg" alt="Card image cap" />
+          <div class="card"> <img class="card-img-top" style={{'objectFit':'cover'}} src={bg} alt="Card image cap" />
             <div class="card-body little-profile text-center">
-              <div class="pro-img"><img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" /></div>
-              <h3 class="m-b-0">Brad Macullam</h3>
-              <p>Web Designer &amp; Developer</p> <a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Follow</a>
+              <div class="pro-img"><img src={"http://localhost:53410/img/"+product.data.image.name} alt="user" /></div>
+              <h3 class="m-b-0">{product.data.name}</h3>
+              <p>{product.data.mail}</p> <a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Follow</a>
               <div class="row text-center m-t-20">
                 <div class="col-lg-4 col-md-4 m-t-20">
                   <h3 class="m-b-0 font-light">10434</h3><small>Articles</small>
@@ -89,7 +89,7 @@ function CompanyHome() {
                   <h3 class="m-b-0 font-light">5454</h3><small>Following</small>
                 </div>
                 <div>
-                  {array}
+                  {VacanciesList}
                 </div>
               </div>
             </div>
