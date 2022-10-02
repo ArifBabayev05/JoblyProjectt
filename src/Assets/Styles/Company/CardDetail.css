@@ -78,7 +78,7 @@
 .little-profile .pro-img img {
     width: 128px;
     height: 128px;
-    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     background-color: var(--pink);
     padding: 2px;
     border-radius: 100%

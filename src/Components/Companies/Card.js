@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import '../../Assets/Styles/Company/CompanyCard.css';
 
 function CompanyCard(props) {
-    const [query, setQuery] = useState("")
     const [data, setData] = useState([])
     useEffect(() => {
         axios.get(`http://localhost:53410/api/Vacancies/getlistbycompany?companyId=${props.product.id}`)
@@ -12,15 +11,6 @@ function CompanyCard(props) {
                 setData(res.data.length)
             }).catch(err => console.log(err))
     }, [])
-
-    // const array = data.map((data, index) => {
-    //     return (
-    //         <tr>
-    //             <td>{data}</td>
-
-    //         </tr>
-    //     )
-    // })
 
     return (
         <div className="col ">
@@ -48,7 +38,7 @@ function CompanyCard(props) {
                                     <li className="widget-49-meeting-item"><span className='text-dark '>Telefon Nömrəsi: +{props.product.telNumber}</span></li>
                                 </ul>
                                 <div className="widget-49-meeting-action">
-                                    <a href="#" className="btn btn-sm btn-flash-border-primary">Daha ətraflı</a>
+                                    <a href="/#" className="btn btn-sm btn-flash-border-primary">Daha ətraflı</a>
                                 </div>
                             </div>
                         </div>

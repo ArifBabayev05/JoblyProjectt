@@ -28,7 +28,6 @@ import UpdateProfile from './Pages/UserPanel/UpdateProfile';
 import CategoryUpdate from './Pages/AdminPanel/CRUD/Category/CategoryUpdate';
 import Contact from './Components/AboutPage/Contact/Contact';
 import Appeals from './Pages/AdminPanel/Pages/Appeals';
-import Test from './Pages/AdminPanel/CRUD/Vacancy/Test.jsx'
 import CityAdmin from './Pages/AdminPanel/Pages/CityAdmin';
 import CityAdd from './Pages/AdminPanel/CRUD/City/CityAdd';
 import CityUpdate from './Pages/AdminPanel/CRUD/City/CityUpdate';

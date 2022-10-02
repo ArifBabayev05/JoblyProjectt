@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import Loader from '../Jobs/Loader'
-import { ShowOnLogin, ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks'
 import '../../Assets/Styles/Company/CardDetail.css';
 import bg from '../../Assets/Images/Logo/bglogos.png'
 
@@ -65,7 +64,6 @@ function CompanyHome() {
   const VacanciesList = data.map((data, index) => {
     return (
       <div>
-
         <Link id='cards' to={`/job/${data.id}`} style={{ textDecoration: 'none' }}>
           <div className="container">
             <div className="row">
@@ -74,7 +72,7 @@ function CompanyHome() {
                   <div className="d-flex justify-content-between">
                     <div className="d-flex flex-row align-items-center">
                       <div className="icon">
-                        <img src={"http://localhost:53410/img/" + data.company.image.name }   style={{ 'objectFit': 'cover','width':'60px','border-radius':'50px' }} alt='caie'/>
+                        <img src={"http://localhost:53410/img/" + data.company.image.name }   style={{ 'objectFit': 'cover','width':'60px','border-radius':'50px' }} alt='value'/>
                       </div>
                       <div className="ms-2 c-details">
                         <h6 className=' ms-3 text-white'>{data.name}</h6> <span className=' ms-3 d-flex'>{data.deadline.slice(0,10)}</span>
@@ -102,9 +100,9 @@ function CompanyHome() {
     content =
       <div className="padding justify-content-center d-flex">
         <div className="col-md-8">
-          <div className="card"> <img className="card-img-top" style={{ 'objectFit': 'cover' }} src={bg} alt="Card image cap" />
+          <div className="card"> <img className="card-img-top" style={{ 'objectFit': 'cover' }} alt='value' src={bg}  />
             <div className="card-body little-profile text-center">
-              <div className="pro-img"><img src={"http://localhost:53410/img/" + product.data.image.name} alt="user" /></div>
+              <div className="pro-img"><img src={"http://localhost:53410/img/" + product.data.image.name} alt="value" /></div>
               <h3 className="m-b-0 ">{product.data.name}</h3>
               <p>{product.data.mail}</p>
               <p><span className='fw-bold text-dark'>{ldata}</span> Vakansiya</p>
@@ -114,7 +112,6 @@ function CompanyHome() {
                 </div>
                 <div>
                   {VacanciesList}
-
                 </div>
               </div>
             </div>
