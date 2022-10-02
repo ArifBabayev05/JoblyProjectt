@@ -67,16 +67,16 @@ function CompanyHome() {
       <div>
 
         <Link id='cards' to={`/job/${data.id}`} style={{ textDecoration: 'none' }}>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="card jobCards p-3 mb-2">
-                  <div class="d-flex justify-content-between">
-                    <div class="d-flex flex-row align-items-center">
-                      <div class="icon">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <div className="card jobCards p-3 mb-2">
+                  <div className="d-flex justify-content-between">
+                    <div className="d-flex flex-row align-items-center">
+                      <div className="icon">
                         <img src={"http://localhost:53410/img/" + data.company.image.name }   style={{ 'objectFit': 'cover','width':'60px','border-radius':'50px' }} alt='caie'/>
                       </div>
-                      <div class="ms-2 c-details">
+                      <div className="ms-2 c-details">
                         <h6 className=' ms-3 text-white'>{data.name}</h6> <span className=' ms-3 d-flex'>{data.deadline.slice(0,10)}</span>
                       </div>
                     </div>
@@ -100,17 +100,17 @@ function CompanyHome() {
   }
   if (product.data) {
     content =
-      <div class="padding justify-content-center d-flex">
-        <div class="col-md-8">
-          <div class="card"> <img class="card-img-top" style={{ 'objectFit': 'cover' }} src={bg} alt="Card image cap" />
-            <div class="card-body little-profile text-center">
-              <div class="pro-img"><img src={"http://localhost:53410/img/" + product.data.image.name} alt="user" /></div>
-              <h3 class="m-b-0 ">{product.data.name}</h3>
+      <div className="padding justify-content-center d-flex">
+        <div className="col-md-8">
+          <div className="card"> <img className="card-img-top" style={{ 'objectFit': 'cover' }} src={bg} alt="Card image cap" />
+            <div className="card-body little-profile text-center">
+              <div className="pro-img"><img src={"http://localhost:53410/img/" + product.data.image.name} alt="user" /></div>
+              <h3 className="m-b-0 ">{product.data.name}</h3>
               <p>{product.data.mail}</p>
               <p><span className='fw-bold text-dark'>{ldata}</span> Vakansiya</p>
-              <a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Bütün Vakansiyalar</a>
-              <div class="row text-center m-t-20">
-                <div class=" m-t-20">
+              <a href="/#" className="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Bütün Vakansiyalar</a>
+              <div className="row text-center m-t-20">
+                <div className=" m-t-20">
                 </div>
                 <div>
                   {VacanciesList}

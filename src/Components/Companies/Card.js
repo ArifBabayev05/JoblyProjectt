@@ -23,32 +23,32 @@ function CompanyCard(props) {
     // })
 
     return (
-        <div class="col ">
+        <div className="col ">
             <div className='border-2 aa rounded container'>
-                <div class="card  card-margin">
+                <div className="card  card-margin">
 
                     <Link id='cards' to={`/company/${props.product.id}`} style={{ textDecoration: 'none' }}>
 
-                        <div class="card-body bodyy pt-0 mt-4">
+                        <div className="card-body bodyy pt-0 mt-4">
 
-                            <div class="widget-49">
-                                <div class="widget-49-title-wrapper">
-                                    <div class="widget-49-date-primary">
+                            <div className="widget-49">
+                                <div className="widget-49-title-wrapper">
+                                    <div className="widget-49-date-primary">
                                         <img style={{ 'width': '60px', 'border-radius': "50px" }} src={"http://localhost:53410/img/" + props.product.image.name} alt='aaa' />
                                     </div>
-                                    <div class="widget-49-meeting-info">
-                                        <span class="widget-49-pro-title fw-bolder fs-5">{props.product.name}</span>
+                                    <div className="widget-49-meeting-info">
+                                        <span className="widget-49-pro-title fw-bolder fs-5">{props.product.name}</span>
                                     </div>
                                 </div>
-                                <ul class="widget-49-meeting-points">
-                                    <li class="widget-49-meeting-item"><span className='text-dark '>Email Ünvanı: {props.product.mail}</span></li>
-                                    <li class="widget-49-meeting-item"><span className='text-dark '>Vakansiya Sayı: {data}</span></li>
+                                <ul className="widget-49-meeting-points">
+                                    <li className="widget-49-meeting-item"><span className='text-dark '>Email Ünvanı: {props.product.mail}</span></li>
+                                    <li className="widget-49-meeting-item"><span className='text-dark '>Vakansiya Sayı: {data}</span></li>
 
 
-                                    <li class="widget-49-meeting-item"><span className='text-dark '>Telefon Nömrəsi: +{props.product.telNumber}</span></li>
+                                    <li className="widget-49-meeting-item"><span className='text-dark '>Telefon Nömrəsi: +{props.product.telNumber}</span></li>
                                 </ul>
-                                <div class="widget-49-meeting-action">
-                                    <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
+                                <div className="widget-49-meeting-action">
+                                    <a href="#" className="btn btn-sm btn-flash-border-primary">View All</a>
                                 </div>
                             </div>
                         </div>
