@@ -9,18 +9,18 @@ function CompanyCard(props) {
     useEffect(() => {
         axios.get(`http://localhost:53410/api/Vacancies/getlistbycompany?companyId=${props.product.id}`)
             .then(res => {
-                setData(res.data)
+                setData(res.data.length)
             }).catch(err => console.log(err))
     }, [])
 
-    const array = data.map((data, index) => {
-        return (
-            <tr>
-                <td>{data.name}</td>
+    // const array = data.map((data, index) => {
+    //     return (
+    //         <tr>
+    //             <td>{data}</td>
 
-            </tr>
-        )
-    })
+    //         </tr>
+    //     )
+    // })
 
     return (
         <div class="col ">
@@ -39,14 +39,16 @@ function CompanyCard(props) {
 
                                     </div>
                                     <div class="widget-49-meeting-info">
-                                        <span class="widget-49-pro-title">{props.product.name}</span>
-                                        <span class="widget-49-meeting-time">{props.product.mail}</span>
+                                        <span class="widget-49-pro-title fw-bolder fs-5">{props.product.name}</span>
                                     </div>
                                 </div>
-                                <ol class="widget-49-meeting-points">
-                                    {array}
+                                <ul class="widget-49-meeting-points">
+                                    <li class="widget-49-meeting-item"><span className='text-dark '>Email Ünvanı: {props.product.mail}</span></li>
+                                    <li class="widget-49-meeting-item"><span className='text-dark '>Vakansiya Sayı: {data}</span></li>
+
+
                                     <li class="widget-49-meeting-item"><span className='text-dark '>Telefon Nömrəsi: +{props.product.telNumber}</span></li>
-                                </ol>
+                                </ul>
                                 <div class="widget-49-meeting-action">
                                     <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
                                 </div>
