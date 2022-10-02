@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import {  useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Loader from '../Jobs/Loader'
-import { ShowOnLogin,ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks'
+import { ShowOnLogin, ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks'
+import '../../Assets/Styles/Company/CardDetail.css';
+
 //Job Details
 function CompanyHome() {
 
@@ -13,7 +15,7 @@ function CompanyHome() {
     data: null,
     error: false
   })
- 
+
   let content = null
 
   useEffect(() => {
@@ -52,61 +54,27 @@ function CompanyHome() {
   }
   if (product.data) {
     content =
-      <div className='card'>
-        <div className='card-header'>
-          <div className='d-flex'>
-            <div className='headerImage me-4 mb-3'>
-              <img src={"http://localhost:53410/img/"+product.data.image.name} alt='asf' />
-              {/* src={"http://localhost:53410/img/"+props.product.company.image.name} */}
+      <div class="padding justify-content-center">
+        <div class="col-md-8">
+          <div class="card"> <img class="card-img-top" src="https://i.imgur.com/K7A78We.jpg" alt="Card image cap" />
+            <div class="card-body little-profile text-center">
+              <div class="pro-img"><img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" /></div>
+              <h3 class="m-b-0">Brad Macullam</h3>
+              <p>Web Designer &amp; Developer</p> <a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Follow</a>
+              <div class="row text-center m-t-20">
+                <div class="col-lg-4 col-md-4 m-t-20">
+                  <h3 class="m-b-0 font-light">10434</h3><small>Articles</small>
+                </div>
+                <div class="col-lg-4 col-md-4 m-t-20">
+                  <h3 class="m-b-0 font-light">434K</h3><small>Followers</small>
+                </div>
+                <div class="col-lg-4 col-md-4 m-t-20">
+                  <h3 class="m-b-0 font-light">5454</h3><small>Following</small>
+                </div>
+              </div>
             </div>
-            <h1>{product.data.name}</h1>
-          </div>
-
-          <div className='salaryInfo'>
-
           </div>
         </div>
-
-        <div className='apply'>
-          <ShowOnLogin>
-          <button className='btn h'>Müraciət Et</button>
-
-          </ShowOnLogin>
-          <ShowOnLogout>
-          <a href='/login' className='btn h'>Daxil Olun</a>
-
-          </ShowOnLogout>
-        </div>
-
-     
-
-        <div className='card-body'>
-          <div className='top_infos d-flex'>
-            <p className='me-2'>{product.data.name}</p>
-            <p>{product.data.name}</p>
-
-          </div>
-
-          <div className='body_infos row'>
-            <div className='works col-lg-6 col-sm-12'>
-              <h3 className='mb-3 ms-1'>Əsas Vəzifə Öhdəlikləri</h3>
-              {/* <p className='mt-4 ms-4'>{product.data.vəzifəÖhdəlikləri}</p> */}
-            </div>
-            <div className='skills  col-lg-6 col-sm-12'>
-              <h3 className='mb-4 ms-1'>Lazım Olan Bacarıqlar</h3>
-              {/* <p className='ms-5'>{product.data.tələblər}</p> */}
-            </div>
-
-
-          </div>
-
-        </div>
-        <div className='d-flex justify-content-end card-footer'>
-          <h6> {product.data.name}</h6>
-         
-        </div>
-
-
       </div>
 
   }
