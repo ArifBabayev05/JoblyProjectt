@@ -4,9 +4,17 @@ import '../../Assets/Styles/Company/CompanyCard.css';
 
 
 function CompanyCard(props) {
+    const [company, setCompany] = useState('');
+
+
+    //data.at(-1) last element of array
+    useEffect(() => {
+      axios.get("http://localhost:53410/api/Company/getall")
+        .then(res => setCompany(res.data.length))
+  
+    })
     // const background = props.product.companyImage;
     return (
-
         <div class="col ">
             <div className='border-2 aa rounded container'>
                 <div class="card  card-margin">
@@ -28,9 +36,9 @@ function CompanyCard(props) {
                                     </div>
                                 </div>
                                 <ol class="widget-49-meeting-points">
-                                    <li class="widget-49-meeting-item"><span>Expand module is removed</span></li>
-                                    <li class="widget-49-meeting-item"><span>Data migration is in scope</span></li>
-                                    <li class="widget-49-meeting-item"><span>Session timeout increase to 30 minutes</span></li>
+                                    <li class="widget-49-meeting-item"><span className='text-dark '>{company}</span></li>
+                                    <li class="widget-49-meeting-item"><span className='text-dark '>Data migration is in scope</span></li>
+                                    <li class="widget-49-meeting-item"><span className='text-dark '>Telefon Nömrəsi: +{props.product.telNumber}</span></li>
                                 </ol>
                                 <div class="widget-49-meeting-action">
                                     <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>

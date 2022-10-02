@@ -1,5 +1,5 @@
 .bodyy{
-  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background: linear-gradient(to top, #cfd9dfae 0%, #e2ebf0aa 100%);
 }
 .widget-49 .widget-49-title-wrapper {
 display: flex;
@@ -18,14 +18,14 @@ border-radius: 50%;
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-day {
-
+color: var(--pink);
 font-weight: 500;
 font-size: 1.5rem;
 line-height: 1;
 }
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-month {
-color: #4e73e5;
+color: var(--pink);
 line-height: 1;
 font-size: 1rem;
 text-transform: uppercase;
