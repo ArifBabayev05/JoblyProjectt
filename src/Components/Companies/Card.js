@@ -35,8 +35,6 @@ function CompanyCard(props) {
                                 <div class="widget-49-title-wrapper">
                                     <div class="widget-49-date-primary">
                                         <img style={{ 'width': '60px', 'border-radius': "50px" }} src={"http://localhost:53410/img/" + props.product.image.name} alt='aaa' />
-
-
                                     </div>
                                     <div class="widget-49-meeting-info">
                                         <span class="widget-49-pro-title fw-bolder fs-5">{props.product.name}</span>

@@ -7,8 +7,25 @@ import '../../Assets/Styles/Company/CardDetail.css';
 
 //Job Details
 function CompanyHome() {
-
   const { id } = useParams()
+
+  const [query, setQuery] = useState("")
+  const [data, setData] = useState([])
+  useEffect(() => {
+    axios.get(`http://localhost:53410/api/Vacancies/getlistbycompany?companyId=${id}`)
+      .then(res => {
+        setData(res.data)
+      }).catch(err => console.log(err))
+  }, [])
+
+  const array = data.map((data, index) => {
+    return (
+      <div>
+        {data.name}
+      </div>
+    )
+  })
+
   const url = `http://localhost:53410/api/Company/getbyid?id=${id}`
   const [product, setProduct] = useState({
     loading: false,
@@ -70,6 +87,9 @@ function CompanyHome() {
                 </div>
                 <div class="col-lg-4 col-md-4 m-t-20">
                   <h3 class="m-b-0 font-light">5454</h3><small>Following</small>
+                </div>
+                <div>
+                  {array}
                 </div>
               </div>
             </div>
