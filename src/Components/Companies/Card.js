@@ -48,7 +48,7 @@ function CompanyCard(props) {
                                     <li className="widget-49-meeting-item"><span className='text-dark '>Telefon Nömrəsi: +{props.product.telNumber}</span></li>
                                 </ul>
                                 <div className="widget-49-meeting-action">
-                                    <a href="#" className="btn btn-sm btn-flash-border-primary">View All</a>
+                                    <a href="#" className="btn btn-sm btn-flash-border-primary">Daha ətraflı</a>
                                 </div>
                             </div>
                         </div>
