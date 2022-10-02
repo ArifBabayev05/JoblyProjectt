@@ -108,7 +108,7 @@ function CompanyHome() {
               <h3 className="m-b-0 ">{product.data.name}</h3>
               <p>{product.data.mail}</p>
               <p><span className='fw-bold text-dark'>{ldata}</span> Vakansiya</p>
-              <a href="/#" className="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Bütün Vakansiyalar</a>
+              <a href="/job" className="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Bütün Vakansiyalar</a>
               <div className="row text-center m-t-20">
                 <div className=" m-t-20">
                 </div>
