@@ -67,10 +67,23 @@ function Index() {
 
             <div className='d-flex search me-3'>
 
-              <i className="fa-solid mt-1 me-2 fa-magnifying-glass"></i>
-              <a href='/job' className='fw-600'>İş Elanları</a>
+              <div className="dropdown ms-3">
+                <i className="fa-solid mt-1 me-2 fa-magnifying-glass"></i>
+                <a style={{ 'cursor': 'pointer' }} className="dropdown-toggle" href='/#' id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  İş Elanları
+                </a>
+
+                <ul className="dropdown-menu dropdown-menu-end dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
+                  <li><a className="dropdown-item" href="/job">Vakansiyalar</a></li>
+                  <li><a className="dropdown-item" href="/company">Şirkətlər</a></li>
+
+                  
+                  
+                  
+                </ul>
+              </div> 
             </div>
-            
+
             <a href='/about' className='me-3'> Haqqımızda</a>
 
             <a href='/contact'>Əlaqə</a>

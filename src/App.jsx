@@ -4,6 +4,7 @@ import Home from './Pages/UserPanel/Home'
 import About from './Pages/UserPanel/About'
 import Job from "./Pages/UserPanel/Jobs";
 import JobList from './Pages/UserPanel/JobList'
+
 import Post from './Pages/UserPanel/PostJob'
 import Login from './Pages/UserPanel/Login'
 import Register from './Pages/UserPanel/Register'
@@ -31,6 +32,10 @@ import Test from './Pages/AdminPanel/CRUD/Vacancy/Test.jsx'
 import CityAdmin from './Pages/AdminPanel/Pages/CityAdmin';
 import CityAdd from './Pages/AdminPanel/CRUD/City/CityAdd';
 import CityUpdate from './Pages/AdminPanel/CRUD/City/CityUpdate';
+import Companies from './Pages/UserPanel/Companies';
+import CompaniesList from './Pages/UserPanel/CompaniesList';
+
+
 
 
 
@@ -48,6 +53,8 @@ function App() {
           <Route path='about' element={<About />} />
           <Route path='job/:id' element={<Job />} />
           <Route path='job' element={<JobList />} />
+          <Route path='company/:id' element={<Companies />} />
+          <Route path='company' element={<CompaniesList />} />
           <Route path='postjob' element={<Post />} />
           <Route path='login' element={<Login />} />
           <Route path='register' element={<Register />} />

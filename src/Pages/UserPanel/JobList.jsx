@@ -6,7 +6,8 @@ import Jobs from '../../Components/Jobs/Jobs'
 function JobList() {
   return (
     <div>
-      <Jobs/></div>
+      <Jobs />
+    </div>
   )
 }
 
