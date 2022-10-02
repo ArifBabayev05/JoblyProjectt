@@ -67,27 +67,20 @@ function CompanyHome() {
       <div>
 
         <Link id='cards' to={`/job/${data.id}`} style={{ textDecoration: 'none' }}>
-          <div class="container mt-5 mb-3">
+          <div class="container">
             <div class="row">
               <div class="col-md-12">
                 <div class="card jobCards p-3 mb-2">
                   <div class="d-flex justify-content-between">
                     <div class="d-flex flex-row align-items-center">
-                      <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
+                      <div class="icon">
+                        <img src={"http://localhost:53410/img/" + data.company.image.name }   style={{ 'objectFit': 'cover','width':'60px','border-radius':'50px' }} alt='caie'/>
+                      </div>
                       <div class="ms-2 c-details">
-                        <h6 class="mb-0">Mailchimp</h6> <span>1 days ago</span>
+                        <h6 className=' ms-3 text-dark'>{data.name}</h6> <span className=' ms-3 d-flex'>{data.deadline.slice(0,10)}</span>
                       </div>
                     </div>
-                    <div class="badge"> <span>Design</span> </div>
-                  </div>
-                  <div class="mt-5">
-                    <h3 class="heading">Senior Product<br/>Designer-Singapore</h3>
-                    <div class="mt-5">
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" style={{"width": "50%", "aria-valuenow":"50", "aria-valuemin":"0" ,"aria-valuemax":"100"}}></div>
-                      </div>
-                      <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50 capacity</span></span> </div>
-                    </div>
+                    <div className="text-dark badge"> <span >Design</span> </div>
                   </div>
                 </div>
               </div>

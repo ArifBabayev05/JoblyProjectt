@@ -1,9 +1,9 @@
-
-.jobCards{
-    background-color:#a5a5a5;
+.jobCards {
+    background-color: #a5a5a5;
 }
-.card-img-top{
-    height:300px;
+
+.card-img-top {
+    height: 300px;
 }
 
 .c-details span {
@@ -73,7 +73,7 @@
     height: 128px;
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     background-color: var(--pink);
-    padding:2px;
+    padding: 2px;
     border-radius: 100%
 }
 
@@ -99,4 +99,3 @@
 .m-t-20 {
     margin-top: 20px
 }
-
