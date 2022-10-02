@@ -1,19 +1,27 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import '../../Assets/Styles/Company/CompanyCard.css';
 
-
 function CompanyCard(props) {
-    const [company, setCompany] = useState('');
-
-
-    //data.at(-1) last element of array
+    const [query, setQuery] = useState("")
+    const [data, setData] = useState([])
     useEffect(() => {
-      axios.get("http://localhost:53410/api/Company/getall")
-        .then(res => setCompany(res.data.length))
-  
+        axios.get(`http://localhost:53410/api/Vacancies/getlistbycompany?companyId=${props.product.id}`)
+            .then(res => {
+                setData(res.data)
+            }).catch(err => console.log(err))
+    }, [])
+
+    const array = data.map((data, index) => {
+        return (
+            <tr>
+                <td>{data.name}</td>
+
+            </tr>
+        )
     })
-    // const background = props.product.companyImage;
+
     return (
         <div class="col ">
             <div className='border-2 aa rounded container'>
@@ -36,8 +44,7 @@ function CompanyCard(props) {
                                     </div>
                                 </div>
                                 <ol class="widget-49-meeting-points">
-                                    <li class="widget-49-meeting-item"><span className='text-dark '>{company}</span></li>
-                                    <li class="widget-49-meeting-item"><span className='text-dark '>Data migration is in scope</span></li>
+                                    {array}
                                     <li class="widget-49-meeting-item"><span className='text-dark '>Telefon Nömrəsi: +{props.product.telNumber}</span></li>
                                 </ol>
                                 <div class="widget-49-meeting-action">
