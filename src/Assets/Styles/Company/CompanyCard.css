@@ -16,6 +16,17 @@ width: 4rem;
 height: 4rem;
 border-radius: 50%;
 }
+.widget-49 .widget-49-title-wrapper .widget-49-date-primaryy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  }
+  
 
 .widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-day {
 color: var(--pink);

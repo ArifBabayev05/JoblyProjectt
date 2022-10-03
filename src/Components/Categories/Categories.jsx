@@ -1,7 +1,12 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import JobCard from './Card'
+import Loader from '../Jobs/Loader'
+import src from '../../Assets/Images/Logo/src.png'
+
 
 const Categories = () => {
-    const url = `http://localhost:53410/api/Company/getall`
+    const url = `http://localhost:53410/api/Categories/getall`
     const [query, setQuery] = useState("")
 
 
@@ -94,7 +99,7 @@ const Categories = () => {
                 </form>
             </div>
 
-            <div className='row row-cols-1 row-cols-md-3 g-4 mx-5'>
+            <div className='row row-cols-1 row-cols-md-2 g-8 mx-5'>
                 {content}
             </div>
         </div>
