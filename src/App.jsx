@@ -33,6 +33,9 @@ import CityAdd from './Pages/AdminPanel/CRUD/City/CityAdd';
 import CityUpdate from './Pages/AdminPanel/CRUD/City/CityUpdate';
 import Companies from './Pages/UserPanel/Companies';
 import CompaniesList from './Pages/UserPanel/CompaniesList';
+import Categories from './Pages/UserPanel/Categories';
+import CategoriesList from './Pages/UserPanel/CategoriesList';
+
 
 
 
@@ -54,6 +57,8 @@ function App() {
           <Route path='job' element={<JobList />} />
           <Route path='company/:id' element={<Companies />} />
           <Route path='company' element={<CompaniesList />} />
+          <Route path='category/:id' element={<Categories />} />
+          <Route path='category' element={<CategoriesList />} />
           <Route path='postjob' element={<Post />} />
           <Route path='login' element={<Login />} />
           <Route path='register' element={<Register />} />
