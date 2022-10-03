@@ -90,8 +90,8 @@
     font-size: 16px
 }
 
-.btn-primary,
-.btn-primary.disabled {
+.btn-primaryy{
+    color: white;
     background: #7460ee;
     border: 1px solid #7460ee;
     -webkit-box-shadow: 0 2px 2px 0 rgba(116, 96, 238, 0.14), 0 3px 1px -2px rgba(116, 96, 238, 0.2), 0 1px 5px 0 rgba(116, 96, 238, 0.12);
@@ -100,6 +100,18 @@
     -o-transition: 0.2s ease-in;
     transition: 0.2s ease-in
 }
+.btn-primaryy:hover{
+    color: white !important;
+    background: #7360eee3 !important;
+    border: 1px solid #7460ee;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(116, 96, 238, 0.14), 0 3px 1px -2px rgba(116, 96, 238, 0.2), 0 1px 5px 0 rgba(116, 96, 238, 0.12);
+    box-shadow: 0 2px 2px 0 rgba(116, 96, 238, 0.14), 0 3px 1px -2px rgba(116, 96, 238, 0.2), 0 1px 5px 0 rgba(116, 96, 238, 0.12);
+    -webkit-transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    transition: 0.2s ease-in
+}
+
+
 
 
 
