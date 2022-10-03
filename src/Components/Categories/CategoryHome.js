@@ -23,7 +23,7 @@ const CategoryHome = () => {
 
 
 
-    const url = `http://localhost:53410/api/Category/getbyid?id=${id}`
+    const url = `http://localhost:53410/api/Categories/getbyid?id=${id}`
     const [product, setProduct] = useState({
         loading: false,
         data: null,
