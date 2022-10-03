@@ -99,9 +99,7 @@ const CategoryHome = () => {
                 <div className="col-md-8">
                     <div className="card">
                         <div className="card-body little-profile text-center">
-                            {/* <div className="pro-img"><img src={"http://localhost:53410/img/" + product.data.image.name} alt="value" /></div> */}
                             <h3 className="m-b-0  mt-5">{product.data.name}</h3>
-                            {/* <p>{product.data.mail}</p> */}
                             <p><span className='fw-bold text-dark'>{ldata}</span> Vakansiya</p>
                             <a href="/job" className="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Bütün Vakansiyalar</a>
                             <div className="row text-center m-t-20">
