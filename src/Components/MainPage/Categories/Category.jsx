@@ -6,7 +6,7 @@ import '../../../Assets/Styles/MainPage/Category/CategoryCard.css'
 function Category(props) {
 
   return (
-    <Link id='cards' to={`/category/${props.product.id}`} style={{ textDecoration: 'none' }}>
+    <Link id='cards' to={`/category/${props.product.id}`} style={{ textDecoration: 'none','color':'black' }}>
       <div className=''>
         <div className=' cardd '>
           <div className='category_card'>
@@ -16,7 +16,7 @@ function Category(props) {
 
             </div>
             <div className='cb-body'>
-              <h3>
+              <h3 className='color-dark'>
                 {props.product.name}
               </h3>
               <p>

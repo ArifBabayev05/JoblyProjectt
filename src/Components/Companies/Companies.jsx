@@ -104,7 +104,7 @@ function Companies() {
         </form>
       </div>
 
-      <div className='row row-cols-1 row-cols-md-3 g-4 mx-5'>
+      <div className='row row-cols-1 row-cols-md-2 g-4 mx-5'>
             {content}
         </div>
     </div>

@@ -289,3 +289,9 @@ text-transform: uppercase;
   color: var(--pink);
   
   }
+
+  @media (max-width=1020) {
+    .bodyy{
+      background-color: red;
+    }
+  }
