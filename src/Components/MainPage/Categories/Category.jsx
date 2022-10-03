@@ -1,30 +1,33 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import img from '../../../Assets/Images/Hero/icodes.png'
 import '../../../Assets/Styles/MainPage/Category/CategoryCard.css'
 
 function Category(props) {
-  
+
   return (
-    <div className=''>
-    <div className=' cardd '>
-        <div className='category_card'>
+    <Link id='cards' to={`/category/${props.product.id}`} style={{ textDecoration: 'none' }}>
+      <div className=''>
+        <div className=' cardd '>
+          <div className='category_card'>
             <div className='cb-header'>
-            {/* <i style={{}} className=" fa-solid fa-briefcase"></i> */}
-                <img href='/#' style={{'width':'100px'}}  src={img} alt='value'/>
-                
+              {/* <i style={{}} className=" fa-solid fa-briefcase"></i> */}
+              <img href='/#' style={{ 'width': '100px' }} src={img} alt='value' />
+
             </div>
             <div className='cb-body'>
-                    <h3>
-                    {props.product.name}
-                    </h3>
-                    <p>
-                    Jobly vasitəsilə kateqoriyaya uyğun  işi və ya <br/> işçini tap!
-                    </p>
+              <h3>
+                {props.product.name}
+              </h3>
+              <p>
+                Jobly vasitəsilə kateqoriyaya uyğun  işi və ya <br /> işçini tap!
+              </p>
             </div>
-            
+
+          </div>
         </div>
-    </div>
-    </div>
+      </div>
+    </Link>
   )
 }
 
