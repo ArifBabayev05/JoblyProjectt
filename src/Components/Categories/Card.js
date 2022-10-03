@@ -30,7 +30,7 @@ const Card = (props) => {
                                     </div>
                                     <div className="widget-49-meeting-info">
                                         <span className="widget-49-pro-title fw-bolder fs-5">{props.product.name}</span>
-                                        <span className="widget-49-pro-title"><span className='widget-49-pro-title fw-bold'>{data}</span> Vakansiya</span>
+                                        <span className="widget-49-pro-title" ><span className='widget-49-pro-title fw-bold'>{data}</span> Vakansiya</span>
 
                                     </div>
                                 </div>
