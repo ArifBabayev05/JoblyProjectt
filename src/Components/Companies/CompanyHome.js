@@ -75,7 +75,7 @@ function CompanyHome() {
                         <img src={"http://localhost:53410/img/" + data.company.image.name }   style={{ 'objectFit': 'cover','width':'60px','border-radius':'50px' }} alt='value'/>
                       </div>
                       <div className="ms-2 c-details">
-                        <h6 className=' ms-3 text-white'>{data.name}</h6> <span className=' ms-3 d-flex'>{data.deadline.slice(0,10)}</span>
+                        <h6 className=' ms-3 text-white' style={{'text-align':'left'}}>{data.name}</h6> <span className=' ms-3 d-flex'> Son Tarix: {data.deadline.slice(0,10)} </span>
                       </div>
                     </div>
                     <div className="text-dark badge"> <span >Daha Ətraflı</span> </div>
