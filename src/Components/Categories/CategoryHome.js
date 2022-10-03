@@ -61,7 +61,7 @@ const CategoryHome = () => {
     const VacanciesList = data.map((data, index) => {
         return (
             <div>
-                <Link id='cards' to={`/category/${data.id}`} style={{ textDecoration: 'none' }}>
+                <Link id='cards' to={`/job/${data.id}`} style={{ textDecoration: 'none' }}>
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
@@ -69,10 +69,10 @@ const CategoryHome = () => {
                                     <div className="d-flex justify-content-between">
                                         <div className="d-flex flex-row align-items-center">
                                             <div className="icon">
-                                                {/* <img src={"http://localhost:53410/img/" + data.company.image.name} style={{ 'objectFit': 'cover', 'width': '60px', 'border-radius': '50px' }} alt='value' /> */}
+                                                <img src={"http://localhost:53410/img/" + data.company.image.name} style={{ 'objectFit': 'cover', 'width': '60px', 'border-radius': '50px' }} alt='value' />
                                             </div>
                                             <div className="ms-2 c-details">
-                                                <h6 className=' ms-3 text-white'>{data.name}</h6> <span className=' ms-3 d-flex'>{data.deadline.slice(0, 10)}</span>
+                                                <h6 className=' ms-3 text-white'>{data.name}</h6> <span className=' ms-3 d-flex'>{data.company.name}</span>
                                             </div>
                                         </div>
                                         <div className="text-dark badge"> <span >Daha Ətraflı</span> </div>
@@ -120,7 +120,6 @@ const CategoryHome = () => {
 
     return (
         <div className='container'>
-            <h1>as</h1>
             <div>{content}</div>
         </div>
 
