@@ -100,7 +100,6 @@ function Companies() {
           <button className='search__submit' type='submit'>
             <img src={src} alt='some value' />
           </button>
-          {/* <button onClick={()=>sorting("salary")}>Maaşa görə sırala</button> */}
         </form>
       </div>
 

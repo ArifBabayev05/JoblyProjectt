@@ -4,9 +4,6 @@ import logo from '../../Assets/Images/Logo/1.png'
 import instagram from '../../Assets/Images/Logo/instagram.png'
 import linkedin from '../../Assets/Images/Logo/linkedin.png'
 
-
-
-
 export const Footer = () => {
     return (
         <div>
@@ -16,10 +13,7 @@ export const Footer = () => {
                         <a href='/#'>
                             <img alt='Value' src={logo} />
                         </a>
-
-
                     </div>
-
                     <nav className='nav'>
                         <ul>
                             <a href='/about' alt='footer'>Haqqımızda</a>
