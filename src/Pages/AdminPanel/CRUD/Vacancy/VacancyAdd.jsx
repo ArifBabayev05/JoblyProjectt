@@ -146,7 +146,7 @@ const VacancyAdd = () => {
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Maaş</label>
                                         <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="salary" placeholder="Maaş" />
+                                            <input onChange={(e) => handle(e)} value={data.value} type="number" min="250" required className="form-control" id="salary" placeholder="Maaş" />
                                         </div>
                                     </div>
                                     <div className="row mb-3">
