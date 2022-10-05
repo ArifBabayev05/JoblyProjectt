@@ -125,15 +125,6 @@ const CompanyUpdate = (props) => {
           </div>
         </div>
 
-        {/* <div className="row mb-3">
-          <label for="inputEmail" className="col-sm-2 col-form-label">İmage İd</label>
-          <div className="col-sm-10">
-            <input defaultValue={product.data.imageId} onChange={(e) => handle(e)} value={product.data.imageId} type="name" required className="form-control" id="imageId" placeholder="İmage" />
-          </div>
-        </div> */}
-
-
-
         <div className="row">
           <div className="col-sm-10 offset-sm-2">
             <button type="submit" onMouseEnter={(e) => handle(e)} value={product.data.imageId} id="imageId" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Yenilə</button>
