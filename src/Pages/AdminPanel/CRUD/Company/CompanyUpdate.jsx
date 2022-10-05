@@ -104,24 +104,24 @@ const CompanyUpdate = (props) => {
 
 
 
-        <input defaultValue={data.id} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} style={{ 'display': 'none' }} type="name" required className="form-control" id="id" placeholder="Ad" />
+        <input defaultValue={data.id} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} style={{ 'display': 'none' }} type="name" required className="form-control" id="id" placeholder="Ad" />
 
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Ad</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.name} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="name" placeholder="Ad" />
+            <input defaultValue={product.data.name} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="name" placeholder="Ad" />
           </div>
         </div>
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Mail</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.mail} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="mail" placeholder="Mail" />
+            <input defaultValue={product.data.mail} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="mail" placeholder="Mail" />
           </div>
         </div>
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Telefon Nömrəsi</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.telNumber} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="telNumber" placeholder="Tel" />
+            <input defaultValue={product.data.telNumber} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="telNumber" placeholder="Tel" />
           </div>
         </div>
 

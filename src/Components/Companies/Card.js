@@ -10,6 +10,7 @@ function CompanyCard(props) {
             .then(res => {
                 setData(res.data.length)
             }).catch(err => console.log(err))
+
     }, [])
 
     return (
