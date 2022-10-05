@@ -21,7 +21,7 @@ export const Footer = () => {
 
                         </ul>
                         <ul>
-                            <a href='/profile' alt='footer'>Profil</a>
+                            <a href='/company' alt='footer'>Şirkətlər</a>
                             <a href='/contact' alt='footer'>Əlaqə</a>
 
                         </ul>
