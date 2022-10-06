@@ -17,7 +17,7 @@ const Home = () => {
         if (user.displayName == null) {
           const u1 = user.email.substring(0, user.email.indexOf("@"));
           const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
-          // console.log(uName);
+          
           setDisplayName(uName);
 
         } else {

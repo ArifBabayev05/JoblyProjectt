@@ -25,7 +25,7 @@ const CompanyUpdate = (props) => {
 
   function submit(e) {
     e.preventDefault();
-    console.log(data);
+    
     axios.post(`http://localhost:53410/api/Company/update?id=${id}`, {
       id: data.id,
       name: data.name,
@@ -34,7 +34,7 @@ const CompanyUpdate = (props) => {
       imageId: parseInt(data.imageId),
       createdDate: new Date().toJSON()
     }).then(res => {
-      console.log(res);
+      
       toast.success("Uğurla Yeniləndi");
       navigate("/companyAdmin")
     }).catch(() => {

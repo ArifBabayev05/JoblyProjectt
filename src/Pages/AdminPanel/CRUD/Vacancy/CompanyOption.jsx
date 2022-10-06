@@ -13,7 +13,7 @@ const CompanyOption = () => {
     }, []);
     
     
-    console.log(data)
+    
     const companyOption = data.map((data, index) => {
         return (
             

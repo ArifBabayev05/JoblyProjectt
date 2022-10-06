@@ -31,7 +31,7 @@ const UpdateProfile = () => {
         if (user.email == null) {
           const u2 = user.email.substring(0, user.email.indexOf("@"));
           const u2Name = u2.charAt(0).toUpperCase() + u2.slice(1);
-          // console.log(uName);
+          
           setDisplayMail(u2Name);
 
         } else {
@@ -56,7 +56,7 @@ const UpdateProfile = () => {
       if (user.email == null) {
         const u3 = user.email.substring(0, user.email.indexOf("@"));
         const u3Name = u3.charAt(0).toUpperCase() + u3.slice(1);
-        // console.log(uName);
+        
         setDisplayTel(u3Name);
 
       }
@@ -84,7 +84,7 @@ useEffect(() => {
       if (user.displayName == null) {
         const u1 = user.email.substring(0, user.email.indexOf("@"));
         const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
-        // console.log(uName);
+        
         setDisplayNames(uName);
 
       } else {
@@ -123,9 +123,9 @@ const update = (e) => {
     
   });
   // updatePhoneNumber(auth.currentUser, tel).then(() => {
-  //   console.log(auth)
+  
   // }).catch((error) => {
-  //   console.log(auth)
+  
   // });
 }
 

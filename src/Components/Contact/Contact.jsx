@@ -31,7 +31,7 @@ const Contact = (props) => {
                 if (user.email == null) {
                     const u2 = user.email.substring(0, user.email.indexOf("@"));
                     const u2Name = u2.charAt(0).toUpperCase() + u2.slice(1);
-                    // console.log(uName);
+                    
                     setDisplayMail(u2Name);
 
                 } else {
@@ -51,11 +51,11 @@ const Contact = (props) => {
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                // const uid = user.uid;
+               
                 if (user.displayName == null) {
                     const u1 = user.email.substring(0, user.email.indexOf("@"));
                     const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
-                    // console.log(uName);
+                    
                     setDisplayName(uName);
 
                 } else {
@@ -81,19 +81,18 @@ const Contact = (props) => {
 
         emailjs.sendForm('service_rp4rjam', 'template_s6wcke8', form.current, 'Lhg9k2LlEjFkq1WxD')
             .then((result) => {
-                console.log(result.text);
+                
                 toast.success("Mesajınız Uğurla Göndərildi")
                 
                 
             }, (error) => {
                 toast.error("Xəta Baş Verdi! Daha sonra yenidən cəhd edin!")
-                console.log(error.text);
+                
             });
         e.target.reset();
-        // setResult(true);
+        
     };
     setTimeout(() => {
-        // setResult(false);
     }, 0)
     return (
         <div>

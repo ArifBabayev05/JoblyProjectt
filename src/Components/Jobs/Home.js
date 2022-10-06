@@ -82,11 +82,10 @@ function Home() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // const uid = user.uid;
         if (user.email == null) {
           const u2 = user.email.substring(0, user.email.indexOf("@"));
           const u2Name = u2.charAt(0).toUpperCase() + u2.slice(1);
-          // console.log(uName);
+          
           setDisplayMail(u2Name);
 
         } else {
@@ -111,7 +110,7 @@ function Home() {
         if (user.displayName == null) {
           const u1 = user.email.substring(0, user.email.indexOf("@"));
           const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
-          // console.log(uName);
+          
           setDisplayName(uName);
 
         } else {

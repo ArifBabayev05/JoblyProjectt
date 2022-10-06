@@ -19,20 +19,20 @@ const VacancyAdmin = (props) => {
     }, [])
 
     function Update(id) {
-        console.log(id);
+        
         props.history.push("/vacancy" + id)
         // navigate("/companyupdate")
 
     }
     const Delete = (id, e) => {
         const url = `http://localhost:53410/api/Vacancies/delete?id=${id}`
-        console.log(id);
+        
         e.preventDefault();
 
         axios.post(url)
             .then(res => {
                 toast.success("Uğurla silindi")
-                console.log(res.data)
+                
             }).catch(err => toast.error(err))
     }
     const array = data.filter((value) => {

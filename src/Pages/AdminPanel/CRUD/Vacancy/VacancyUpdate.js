@@ -30,7 +30,7 @@ const VacancyUpdate = (props) => {
   })
   function submit(e) {
     e.preventDefault();
-    console.log(data);
+    
     axios.post(`http://localhost:53410/api/Vacancies/update?id=${id}`, {
       id: data.id,
       name: data.name,

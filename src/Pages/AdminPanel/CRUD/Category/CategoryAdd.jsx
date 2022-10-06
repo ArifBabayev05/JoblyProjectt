@@ -23,7 +23,7 @@ const CategoryAdd = () => {
             name: data.name,
         }).then(res => {
             setLoading(false);
-            console.log(res);
+            
             toast.success("Uğurla Əlavə Olundu");
             navigate("/categoryadmin")
         }).catch(() => {

@@ -18,14 +18,14 @@ const CategoryUpdate = (props) => {
   })
   function submit(e) {
     e.preventDefault();
-    console.log(data);
+    
     axios.post(`http://localhost:53410/api/Categories/update?id=${id}`, {
       id: data.id,
       name: data.name,
      
       createdDate: new Date().toJSON()
     }).then(res => {
-      console.log(res);
+      
       toast.success("Uğurla Yeniləndi");
       navigate("/categoryAdmin")
     }).catch(() => {

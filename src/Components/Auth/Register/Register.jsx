@@ -15,8 +15,7 @@ function Register() {
   const [cPassword, setCPassword] = useState("")
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false);
-  // setLoading(true);
-  // console.log(password, cPassword)
+  
   const registerUser = (e) => {
     e.preventDefault();
     if (password !== cPassword) {
@@ -27,9 +26,7 @@ function Register() {
       toast.error("Şifrədə yanlışlıq var. Yenidən daxil edin!")
     }
     setLoading(true);
-    // else{
-    //   toast.success("Qeydiyyat Uğurludur!")
-    // }
+    
 
     if(password===cPassword){
       createUserWithEmailAndPassword(auth, email, password)
