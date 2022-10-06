@@ -2,12 +2,8 @@ import React from 'react'
 import { useEffect, useState, } from 'react'
 import '../../Assets/Styles/User/UserSettings.css'
 import { auth } from '../../Components/Auth/Firebase/config'
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-// import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged, updateEmail, updateProfile } from "firebase/auth";
 import { useDispatch } from 'react-redux'
-// import { ShowOnLogin, ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks'
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
@@ -17,8 +13,6 @@ const UpdateProfile = () => {
   const nav = useNavigate();
   const dispatch = useDispatch()
   const [email, setEmail] = useState("")
-  // const [tel, setTel] = useState("")
-  // const [password, setPassword] = useState("")
   const [displayName, setDisplayName] = useState("");
   const [displayTel, setDisplayTel] = useState("");
   const [displayname, setDisplayNames] = useState("");
