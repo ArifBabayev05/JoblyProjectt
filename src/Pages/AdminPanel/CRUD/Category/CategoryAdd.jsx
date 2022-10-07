@@ -6,6 +6,8 @@ import axios from 'axios'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
+
+
 const CategoryAdd = () => {
     const navigate = useNavigate();
     console.log(new Date().toJSON());
@@ -13,8 +15,6 @@ const CategoryAdd = () => {
     const url = 'http://localhost:53410/api/Categories/add';
     const [data, setData] = useState({
         name: "",
-        
-        
     })
     function submit(e) {
         e.preventDefault();
