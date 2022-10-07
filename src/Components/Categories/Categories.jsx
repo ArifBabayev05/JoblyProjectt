@@ -76,10 +76,7 @@ const Categories = () => {
 
                     return product;
                 }
-                // else if (product.company.name.toLowerCase().includes(query.toLowerCase())) {
-
-                //   return product;
-                // }
+                
             }).map((product) =>
                 <div key={product.id}>
                     <JobCard product={product} />

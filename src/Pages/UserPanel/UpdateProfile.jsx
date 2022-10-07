@@ -150,43 +150,6 @@ return (
     </div>
 
 
-
-
-    {/* <div className="card overflow-hidden" style={{ 'backgroundColor': "#c9aeffca" }}>
-        <div className="row no-gutters row-bordered row-border-light">
-
-          <div className="col-md-12 justify-content-center">
-            <div className="tab-content justify-content-center">
-              <form onSubmit={update} className="text-center justify-content-center tab-pane fade active show" id="account-general">
-
-                <hr className="border-light m-0" />
-
-                <div className="card-body">
-                  <div className="form-group row">
-                    <label className="form-label">Istifadəçi adı</label>
-                    <input type="text" className="form-control mb-1" defaultValue={displayName} onChange={(e) => setDisplayName(e.target.value)} />
-                  </div>
-                  <div className="form-group row">
-                    <label className="form-label">E-mail</label>
-                    <input type="text" className="form-control mb-1" value={email} onChange={(e) => setEmail(e.target.value)} />
-                  </div>
-                  <div className="form-group row">
-                    <label className="form-label">New password</label>
-                    <input type="password" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
-                  </div>
-                </div>
-                <div className="text-right mt-3">
-                  <button type='submit' className="btn btn-primary">Save changes</button>&nbsp;
-                  <button type="button" className="btn btn-default">Cancel</button>
-                </div>
-
-              </form>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-
   </div>
 )
 }

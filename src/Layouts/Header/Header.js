@@ -13,8 +13,7 @@ import Loader from '../../Components/Jobs/Loader'
 
 function Header() {
   const navigate = useNavigate();
-  // const [menu, setMenu] = useState(false);
-  // const [name, setName] = useState("");
+  
 
   const [loading, setLoading] = useState(false);
 
@@ -22,26 +21,13 @@ function Header() {
   const logoutUser = (e) => {
     e.preventDefault();
     signOut(auth).then(() => {
-      // toast.success("Hesabdan çıxış uğurla tamamlandı!");
+  
       
     }).catch((error) => {
       toast.error(error.message)
     });
 
   }
-
-  // useEffect( () => {
-  //   onAuthStateChanged(auth, (user) => {
-  //     if (user) {
-  //       const uid = user.uid;
-  //       setName(user.displayName)
-
-  //     } else {
-  //       setName("")
-  //     };
-  //   })
-  // },[]);
-  
     return (
       <div className=''>
         <nav className="navbar navbar-light ">

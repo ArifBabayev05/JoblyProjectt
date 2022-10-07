@@ -5,7 +5,6 @@ import Loader from '../Jobs/Loader'
 import '../../Assets/Styles/Company/CardDetail.css';
 import bg from '../../Assets/Images/Logo/bglogos.png'
 
-//Job Details
 function CompanyHome() {
   const { id } = useParams()
 

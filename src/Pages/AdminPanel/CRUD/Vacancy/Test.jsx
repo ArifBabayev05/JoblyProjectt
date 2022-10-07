@@ -47,7 +47,7 @@ function Country() {
                     <div className="row mb-3">
                         <div className="form-group col-md-4">
                             <label className="mb-2">Country</label>
-                            <select name="country" className="form-control" onClick={console.log()} onChange={(e) => handlecountry(e)}>
+                            <select name="country" className="form-control" onChange={(e) => handlecountry(e)}>
                                 <option>--Select Country--</option>
                                 {
                                     country.map((getcon) => (

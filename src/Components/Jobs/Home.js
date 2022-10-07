@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-// import '../../Assets/Styles/Job/Job.css'
 import {  useParams } from 'react-router-dom'
 import Loader from './Loader'
 import '../../Assets/Styles/Job/Home.css'

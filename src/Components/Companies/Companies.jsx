@@ -7,9 +7,6 @@ import Loader from '../Jobs/Loader'
 import '../../Assets/Styles/Company/CompanyCard.css';
 
 
-//Full Jobs
-
-//CORS policy Error with Another URL!!!
 function Companies() {
   const url = `http://localhost:53410/api/Company/getall`
   const [query, setQuery] = useState("")
@@ -80,10 +77,7 @@ function Companies() {
 
           return product;
         }
-        // else if (product.company.name.toLowerCase().includes(query.toLowerCase())) {
-
-        //   return product;
-        // }
+        
       }).map((product) =>
         <div key={product.id}>
           <JobCard product={product} />

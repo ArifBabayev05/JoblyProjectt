@@ -1,6 +1,5 @@
 import {useSelector} from 'react-redux' 
-// import { Route } from 'react-router-dom'
-// import Admin from '../../Pages/AdminPanel/Admin'
+
 import { selectEmail } from '../../Redux/Slice/authSlice'
 
 export const ShowOnAdmin = ({children}) => {
@@ -17,7 +16,5 @@ export const ShowOnUser = ({children}) => {
     if(!(isLoggedIn === 'admin@gmail.com')){
         return children;
     }
-    
-        // return null;
 }
 

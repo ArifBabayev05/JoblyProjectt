@@ -3,8 +3,7 @@ import axios from 'axios'
 import Loader from '../../Jobs/Loader'
 import Category from './Category'
 import '../../../Assets/Styles/MainPage/Category/Category.css'
-// import Pagination from './Pagination'
-// import ReactPaginate from 'react-paginate';
+
 
 
 function Index({ currentItems }) {
@@ -52,14 +51,6 @@ function Index({ currentItems }) {
   if (products.error) {
     content = <p>Xəta baş verdi, yenidən yoxlayın.</p>
   }
-
-
-  // const [coinsData, setCoinsData] = useState([]);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [postsPerPage, setPostsPerPage] = useState(8);
-  // const lastPostIndex = currentPage * postsPerPage;
-  // const firstPostIndex = lastPostIndex - postsPerPage;
-  // const currentPosts = coinsData.slice(firstPostIndex, lastPostIndex);
 
 
   if (products.data) {

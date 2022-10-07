@@ -37,7 +37,7 @@ const CityUpdate = (props) => {
 
     const newData = { ...data }
     newData[e.target.id] = e.target.value;
-    // newData[e.target.name] = e.target.value;
+    
 
     setData(newData);
   }

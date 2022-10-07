@@ -3,14 +3,12 @@ import axios from 'axios'
 import Loader from './Loader'
 import JobCard from './JobCard'
 import '../../Assets/Styles/Job/Job.css'
-// import search from '../../Assets/Images/Logo/search.svg'
+
 import src from '../../Assets/Images/Logo/src.png'
 
 
 
-//Full Jobs
 
-//CORS policy Error with Another URL!!!
 function Jobs() {
   const url = `http://localhost:53410/api/Vacancies/getall`
   const [query, setQuery] = useState("")

@@ -23,11 +23,10 @@ const Appeals = (props) => {
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                // const uid = user.uid;
                 if (user.email == null) {
                     const u2 = user.email.substring(0, user.email.indexOf("@"));
                     const u2Name = u2.charAt(0).toUpperCase() + u2.slice(1);
-                    // console.log(uName);
+                    
                     setDisplayMail(u2Name);
 
                 } else {
@@ -47,7 +46,6 @@ const Appeals = (props) => {
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                // const uid = user.uid;
                 if (user.displayName == null) {
                     const u1 = user.email.substring(0, user.email.indexOf("@"));
                     const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
@@ -70,7 +68,7 @@ const Appeals = (props) => {
     }, [dispatch, displayname]);
 
     const form = useRef();
-    // const [result, setResult] = useState(false)
+    
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -86,10 +84,10 @@ const Appeals = (props) => {
                 console.log(error.text);
             });
         e.target.reset();
-        // setResult(true);
+        
     };
     setTimeout(() => {
-        // setResult(false);
+        
     }, 0)
     useEffect(() => {
         axios.get('https://sheetdb.io/api/v1/gpxwv62j8wgii')

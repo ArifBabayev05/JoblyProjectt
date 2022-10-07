@@ -22,11 +22,7 @@ const CompanyAdd = () => {
         createdDate: ""
 
     })
-    // const config = {
-    //     headers: {
-    //         'content-type': 'multipart/form-data'
-    //     }
-    // }
+
     function submit(e) {
         let file = data.ImageFile;
         let jname = data.name;

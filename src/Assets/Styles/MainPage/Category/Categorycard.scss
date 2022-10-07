@@ -22,7 +22,7 @@
                 background: rgba(0, 0, 0, 0.08);
                 padding: 5px 8px;
                 border-radius: 4px;
-                // color: #333;
+                
 
             }
         }
@@ -35,7 +35,7 @@
                 font-weight: 600;
                 text-align: center;
                 margin-top: 20px;
-                // color: #372354;
+                
             }
             p {
                 margin-top: 0;
@@ -44,7 +44,7 @@
         }
 
     }:hover{
-        // transition: 0.2s all;
+        
         background-color: var(--pinkBG);
         color: white;
     }

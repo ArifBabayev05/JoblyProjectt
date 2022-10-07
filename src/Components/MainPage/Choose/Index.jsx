@@ -1,10 +1,7 @@
 import React from 'react'
 import '../../../Assets/Styles/MainPage/Choose/Choose.css'
 import user1 from '../../../Assets/Images/Hero/u1.png'
-// import user1Add from '../../../Assets/Images/Hero/u1a.png'
-
 import user2 from '../../../Assets/Images/Hero/u2.png'
-// import user2Add from '../../../Assets/Images/Hero/u2a.png'
 
 
 

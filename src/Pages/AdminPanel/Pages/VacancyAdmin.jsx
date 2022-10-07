@@ -21,7 +21,6 @@ const VacancyAdmin = (props) => {
     function Update(id) {
         
         props.history.push("/vacancy" + id)
-        // navigate("/companyupdate")
 
     }
     const Delete = (id, e) => {

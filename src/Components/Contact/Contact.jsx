@@ -10,12 +10,6 @@ import contactImage from '../../Assets/Images/Hero/contactt.svg'
 import { ShowOnLogin, ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks';
 
 
-// const Result = () => {
-//     return (
-//        toast.success("Mesajınız Uğurla Göndərildi")
-//     )
-// }
-
 
 const Contact = (props) => {
     
@@ -74,7 +68,7 @@ const Contact = (props) => {
     }, [dispatch, displayname]);
 
     const form = useRef();
-    // const [result, setResult] = useState(false)
+    
 
     const sendEmail = (e) => {
         e.preventDefault();
