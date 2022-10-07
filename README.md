@@ -2,15 +2,28 @@
 
 Code Academydə hazırladığım final lahiyə vakansiyalar üçün nəzərdə tutulmuşdur.
 
-Əsas olaraq Lahiyə - Vakansiya, Şirkətlər, kateqoriyalar və istifadəçilər üzərinə qurulmuşdur.
+Əsas olaraq Lahiyə - Vakansiya, Şirkətlər, Kateqoriyalar və Istifadəçilər üzərinə qurulmuşdur.
 
 Əsas səhifədə nümunə kateqoriyalar, bəzi datalara aid statistikalar yer alır.
 
 Haqqımızda səhifəsindən Jobly haqqında daha ətraflı məlumat almaq olar.
 
-İş axtarın hissəsindən paylaşılan bütün vakansiyaları və onlar haqqında daha ətraflı məlumatları almaq mümkündür. Eyni zamanda üst hissədən Vakansiyanın Adı və ya Şirkət adına uyğun real-time-searching mövcuddur.
+Əlaqə Səhifəsindən Admin'ə Gmail vasitəsilə mesaj göndərmək mümkündür. Gmail sistemi "EmailJS" platformasının köməyi ilə yaradılıb.
 
-Daha Ətraflı bölməsindən vakansiyaya müraciət edildikdə müvafiq məlumatlar Google Sheets üzrində list halında görmək olur.
+İş axtarın hissəsinə gəliyimizdə 3 səhifə ilə qarşılaşırıq
+-Vakansiyalar
+-Şirkətlər
+-Kateqoriyalar
+
+Şirkətlər hissəsində Sistemdə var olan şirkətləri, onların məlumatlarını, və həmin şirkətin bütün vakansiyalarını görmək mümkündür.
+
+Kateqoriyalar hissəsində var olan kateqoriyaları və uyğun olaraq həmin kateqoriyadakı bütün vakansiyaları görmək mümkündür.
+
+Vakansiyalar səhifəsində paylaşılan bütün vakansiyaları və onlar haqqında daha ətraflı məlumatları almaq mümkündür.
+
+Eyni zamanda hər səhifənin üst hissəsindən məlumatlara uyğun real-time-searching mövcuddur.
+
+Daha Ətraflı bölməsindən vakansiyaya müraciət edildikdə müvafiq məlumatlar Google Sheets üzərindən list halında görmək olur.
 Sheets Linki:
 https://docs.google.com/spreadsheets/d/1aL3Ag4JY2FxHaQgKBdgYEb2tT5-tryiv-LeHJgqV6jQ/edit?usp=sharing
 
@@ -30,5 +43,3 @@ Vakansiyaların "Əlavə Et","Yenilə","Sil" əməliyyatlarını yerinə yetirm�
 -Css(Sass)
 -C#
 -Asp.Net(Api)
-
-Ardı var......
