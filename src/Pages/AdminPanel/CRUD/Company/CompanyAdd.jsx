@@ -90,19 +90,19 @@ const CompanyAdd = () => {
                                     {loading && <Loader />}
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Ad</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
                                             <input onChange={(e) => handle(e)} value={data.value} required type="name" className="form-control" id="name" placeholder="Ad" />
                                         </div>
                                     </div>
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Email</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
                                             <input onChange={(e) => handle(e)} value={data.value} required type="mail" className="form-control" id="mail" placeholder="Email" />
                                         </div>
                                     </div>
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Telefon Nömrəsi</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
                                             <input onChange={(e) => handle(e)} value={data.value} required type="tel" className="form-control" id="telNumber" placeholder="Telefon Nömrəsi" />
                                         </div>
                                     </div>
@@ -111,13 +111,13 @@ const CompanyAdd = () => {
                                     
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">İmage upload</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
                                             <input onChange={(e) => handles(e)} value={data.value}  accept='image/*' type="file" className="form-control" id="ImageFile" placeholder="Path" />
                                         </div>
                                     </div>
 
                                     <div className="row">
-                                        <div className="col-sm-10 offset-sm-2">
+                                        <div className="col-sm-7 offset-sm-2">
                                             <button type="submit"  style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
                                         </div>
                                     </div>

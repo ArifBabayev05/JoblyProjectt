@@ -120,45 +120,45 @@ const VacancyAdd = () => {
 
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Ad</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
                                             <input onChange={(e) => handle(e)}  value={data.value} type="name" required className="form-control" id="name" placeholder="İşin Adı" />
                                         </div>
                                     </div>
 
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">İş Tipi</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
                                             <input onChange={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="typeOfwork" placeholder="İşin tipi" />
                                         </div>
                                     </div>
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Vəzifə Öhdəlikləri</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
                                             <input onChange={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="vəzifəÖhdəlikləri" placeholder="Vəzifə Öhdəlikləri" />
                                         </div>
                                     </div>
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Tələblər</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
                                             <input onChange={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="tələblər" placeholder="Tələblər" />
                                         </div>
                                     </div>
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Maaş</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
                                             <input onChange={(e) => handle(e)} value={data.value} type="number" min="250" required className="form-control" id="salary" placeholder="Maaş" />
                                         </div>
                                     </div>
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Son Tarix</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
                                             <input onChange={(e) => handle(e)} value={data.value} type="date" required className="form-control"  id="deadline" placeholder="Son Tarix" />
                                         </div>
                                     </div>
 
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Şəhər</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
                                             <select onChange={(e) => handle(e)} value={data.value} required className="form-control" id="cityId">
                                                 {cityOption}
                                             </select>
@@ -166,7 +166,7 @@ const VacancyAdd = () => {
                                     </div>
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Kateqoriya</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
 
                                             <select onChange={(e) => handle(e)} value={data.value} required className="form-control" id="categoryId">
                                                 {categoryOption}
@@ -177,7 +177,7 @@ const VacancyAdd = () => {
 
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Şirkət</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-7">
 
                                             <select onChange={(e) => handle(e)} value={data.value} required className="form-control" id="companyId">
                                                 {companyOption}
@@ -187,7 +187,7 @@ const VacancyAdd = () => {
                                     </div>
 
                                     <div className="row">
-                                        <div className="col-sm-10 offset-sm-2">
+                                        <div className="col-sm-7 offset-sm-2">
                                             <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
                                         </div>
                                     </div>

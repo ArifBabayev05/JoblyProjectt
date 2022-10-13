@@ -49,8 +49,8 @@ const CategoryAdd = () => {
                                     {loading && <Loader />}
                                     <div className="row mb-3">
                                         <label for="inputEmail" className="col-sm-2 col-form-label">Ad</label>
-                                        <div className="col-sm-10">
-                                            <input onChange={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="name" placeholder="Ad" />
+                                        <div className="col-sm-5">
+                                            <input onChange={(e) => handle(e)} value={data.value} type="name"  required className="form-control" id="name" placeholder="Ad" />
                                         </div>
                                     </div>
                                     <div className="row">

@@ -99,7 +99,7 @@ const CityUpdate = (props) => {
 
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Ad</label>
-          <div className="col-sm-10">
+          <div className="col-sm-6">
             <input defaultValue={product.data.name} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="name" placeholder="Ad" />
           </div>
         </div>

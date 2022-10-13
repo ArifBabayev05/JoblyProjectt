@@ -30,7 +30,6 @@ const VacancyUpdate = (props) => {
   })
   function submit(e) {
     e.preventDefault();
-    
     axios.post(`http://localhost:53410/api/Vacancies/update?id=${id}`, {
       id: data.id,
       name: data.name,
@@ -44,7 +43,6 @@ const VacancyUpdate = (props) => {
       deadline: data.deadline,
       createdDate: new Date().toJSON()
     }).then(res => {
-      console.log(res);
       toast.success("Uğurla Yeniləndi");
       navigate("/vacancyAdmin")
     }).catch(() => {
@@ -116,7 +114,6 @@ const VacancyUpdate = (props) => {
       <option key={categoryDatas.id} onClick={(e) => handles(e)} value={categoryDatas.id} id={categoryDatas.id}>{categoryDatas.name}</option>
     )
   })
-
   //City Option
   const [cityDatas, setCityDatas] = useState([])
   useEffect(() => {

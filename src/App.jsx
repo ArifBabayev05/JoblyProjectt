@@ -52,6 +52,7 @@ function App() {
         <Routes>
           {/* User Panel Pages */}
           <Route path='/' element={<Home />} />
+          <Route path='/JoblyReactProject' element={<Home />} />
           <Route path='about' element={<About />} />
           <Route path='job/:id' element={<Job />} />
           <Route path='job' element={<JobList />} />
