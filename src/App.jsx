@@ -41,6 +41,8 @@ import CategoriesList from './Pages/UserPanel/CategoriesList';
 
 
 
+
+
 function App() {
 
   return (
@@ -89,6 +91,8 @@ function App() {
           <Route path='/companyupdate/:id' element={<CompanyUpdate />} />
           <Route path='/categoryupdate/:id' element={<CategoryUpdate />} />
           <Route path='/cityupdate/:id' element={<CityUpdate />} />
+
+
 
 
           

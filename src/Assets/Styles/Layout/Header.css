@@ -18,4 +18,8 @@
   text-decoration: none;
   font-weight: 500;
   color: rgb(38, 38, 38);
+}
+.navbar .container .dropdown ul li a:active {
+  color: white;
+  background-color: var(--pink);
 }/*# sourceMappingURL=Header.css.map */

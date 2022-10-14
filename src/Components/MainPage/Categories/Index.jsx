@@ -51,6 +51,7 @@ function Index({ currentItems }) {
   if (products.error) {
     content = <p>Xəta baş verdi, yenidən yoxlayın.</p>
   }
+  
 
 
   if (products.data) {

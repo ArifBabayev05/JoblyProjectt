@@ -15,7 +15,9 @@
 
         form {
             .search {
+                
 
+                
                 a {
                     text-decoration: none;
                     font-weight: 500;
@@ -31,5 +33,23 @@
                 color: rgb(38, 38, 38);
             }
         }
+        .dropdown{
+         
+            ul{
+              
+
+                li{
+                    a:active{
+                        color: white;
+                        background-color: var(--pink);
+
+                    }
+              
+                }
+            }
+            
+            
+        }
     }
+
 }

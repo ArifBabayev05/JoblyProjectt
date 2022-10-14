@@ -3,7 +3,9 @@ import Home from '../../Components/Categories/CategoryHome';
 
 const Categories = () => {
   return (
-    <div><Home/></div>
+    <div>
+      <Home />
+    </div>
   )
 }
 

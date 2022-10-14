@@ -36,6 +36,7 @@ const Sidebar = () => {
                         <a href="/appeals" className="nav-link px-0 align-middle">
                             <i className="fs-4 bi-people"></i> <span className="ms-1 d-none d-sm-inline">Bütün Müraciətlər</span> </a>
                     </li>
+                    
                 </ul>
 
             </div>
