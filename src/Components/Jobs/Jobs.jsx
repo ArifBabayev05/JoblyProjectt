@@ -4,6 +4,7 @@ import Loader from './Loader'
 import JobCard from './JobCard'
 import '../../Assets/Styles/Job/Job.css'
 
+
 import src from '../../Assets/Images/Logo/src.png'
 
 
@@ -68,13 +69,15 @@ function Jobs() {
 
   }
 
+
   if (products.data) {
+
     content =
       products.data.filter(product => {
         if (query === "") {
 
           return product;
-        
+
         } else if (product.name.toLowerCase().includes(query.toLowerCase())) {
 
           return product;
