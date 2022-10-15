@@ -3,10 +3,12 @@ import '../../Assets/Styles/Layout/Footer.css'
 import logo from '../../Assets/Images/Logo/1.png'
 import instagram from '../../Assets/Images/Logo/instagram.png'
 import linkedin from '../../Assets/Images/Logo/linkedin.png'
+import ChatBotElement from '../../Components/ChatBot/ChatBot';
 
 export const Footer = () => {
     return (
         <div>
+            <ChatBotElement>
             <footer>
                 <div className='footer__container container'>
                     <div className='footer__logo'>
