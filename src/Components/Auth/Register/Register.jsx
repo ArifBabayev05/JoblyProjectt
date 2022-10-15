@@ -91,7 +91,6 @@ function Register() {
 
 
                 </form>
-                <ToastContainer/>
               </div>
             </div>
 

@@ -64,7 +64,6 @@ function Reset() {
 
 
                 </form>
-                <ToastContainer/>
               </div>
             </div>
 

@@ -136,8 +136,7 @@ const Contact = (props) => {
                                         </div>
                                     </form>
                                     <div className='row'>
-                                        {/* {result ? <Result /> : null} */}
-                                        <ToastContainer/>
+
                                     </div>
                                 </div>
                             </div>
