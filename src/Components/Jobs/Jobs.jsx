@@ -83,6 +83,7 @@ function Jobs() {
 
           return product;
         }
+        return "";
       }).map((product) =>
         <div key={product.id}>
           <JobCard product={product} />
