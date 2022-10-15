@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 const BotRedirect = ({ url, message }) => {
   return (
     <div>
-      <a href={url} target="_blank">
+      <a style={{'color':'#785BF4'}} href={url} target="_blank">
         {message}
       </a>
     </div>
@@ -39,30 +39,53 @@ const ChatBotElement = () => {
     {
       id: "3",
       options: [
-        { value: 1, label: "Show ChatBot example", trigger: "4" },
-        { value: 2, label: "Show ChatBot API", trigger: "5" }
+        { value: 1, label: "Vakansiyaları göstər", trigger: "4" },
+        { value: 2, label: "Şirkətləri göstər", trigger: "5" },
+        { value: 3, label: "Kateqoriyaları göstər", trigger: "6" },
+        // { value: 4, label: "Adminlə Əlaqə", trigger: "7" }
+
       ]
     },
     {
       id: "4",
       component: (
         <BotRedirect
-          message="See all examples in this page"
-          url="https://lucasbassetti.com.br/react-simple-chatbot/#/docs/previous-value"
+          message="Bütün Vakansiyaları Göstər"
+          url="http://localhost:3000/job"
         />
       ),
       trigger: "2"
     },
     {
-      id: "5",
-      component: (
-        <BotRedirect
-          message="See chatbot API here"
-          url="https://lucasbassetti.com.br/react-simple-chatbot/#/docs/chatbot"
-        />
-      ),
-      trigger: "2"
-    }
+        id: "5",
+        component: (
+          <BotRedirect
+            message="Bütün Şirkətləri Göstər"
+            url="http://localhost:3000/company"
+          />
+        ),
+        trigger: "2"
+      },
+      {
+        id: "6",
+        component: (
+          <BotRedirect
+            message="Bütün Kateqoriyaları Göstər"
+            url="http://localhost:3000/category"
+          />
+        ),
+        trigger: "2"
+      }
+    // {
+    //   id: "7",
+    //   component: (
+    //     <BotRedirect
+    //       message="See chatbot API here"
+    //       url="https://lucasbassetti.com.br/react-simple-chatbot/#/docs/chatbot"
+    //     />
+    //   ),
+    //   trigger: "2"
+    // }
   ];
 
   return (
