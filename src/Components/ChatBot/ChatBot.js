@@ -28,12 +28,12 @@ const ChatBotElement = () => {
   const steps = [
     {
       id: "1",
-      message: "Hello!",
+      message: "Salam!",
       trigger: "2"
     },
     {
       id: "2",
-      message: "How can I help you?",
+      message: "Sizə necə kömək edə bilərik?",
       trigger: "3"
     },
     {
