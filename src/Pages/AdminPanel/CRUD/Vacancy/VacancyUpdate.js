@@ -30,6 +30,7 @@ const VacancyUpdate = (props) => {
   })
   function submit(e) {
     e.preventDefault();
+
     axios.post(`http://localhost:53410/api/Vacancies/update?id=${id}`, {
       id: data.id,
       name: data.name,
@@ -65,7 +66,7 @@ const VacancyUpdate = (props) => {
   })
 
   let content = null
-
+  
   useEffect(() => {
     setProduct({
       loading: true,
@@ -142,7 +143,7 @@ const VacancyUpdate = (props) => {
     newData[e.target.selected] = e.target.value;
     setDatas(newData);
   }
-  
+
   const companyOption = datas.map((datas, index) => {
     return (
 
@@ -151,7 +152,7 @@ const VacancyUpdate = (props) => {
     )
   })
 
-  
+
   if (product.data) {
     content =
       <form encType='multipart/formdata' onSubmit={(e) => submit(e)}>
@@ -170,38 +171,38 @@ const VacancyUpdate = (props) => {
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">İşin Tipi</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.typeOfwork} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="typeOfwork" placeholder="İşin Tipi" />
+            <input defaultValue={product.data.typeOfwork} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} type="name" required className="form-control" id="typeOfwork" placeholder="İşin Tipi" />
           </div>
         </div>
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Vəzifə Öhdəlikləri</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.vəzifəÖhdəlikləri} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="vəzifəÖhdəlikləri" placeholder="Vəzifə Öhdəlikləri" />
+            <input defaultValue={product.data.vəzifəÖhdəlikləri} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="vəzifəÖhdəlikləri" placeholder="Vəzifə Öhdəlikləri" />
           </div>
         </div>
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Tələblər</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.tələblər} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="tələblər" placeholder="Tələblər" />
+            <input defaultValue={product.data.tələblər} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} type="mail" required className="form-control" id="tələblər" placeholder="Tələblər" />
           </div>
         </div>
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Əmək Haqqı</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.salary} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="salary" placeholder="salary" />
+            <input defaultValue={product.data.salary} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} type="text" required className="form-control" id="salary" placeholder="salary" />
           </div>
         </div>
         <div className="row mb-3">
           <label for="inputEmail" className="col-sm-2 col-form-label">Bitmə Tarixi</label>
           <div className="col-sm-10">
-            <input defaultValue={product.data.deadline} onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} type="date" required className="form-control" id="deadline" placeholder="deadline" />
+            <input defaultValue={product.data.deadline} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} type="date" required className="form-control" id="deadline" placeholder="deadline" />
           </div>
         </div>
         <div className="row mb-3">
 
           <label for="inputEmail" className="col-sm-2 col-form-label">Şəhər</label>
           <div className="col-sm-10">
-            <select onChange={(e) => handle(e)}  onMouseEnter={(e) => handle(e)} value={data.value} required className="form-control" id="cityId">
+            <select onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} required className="form-control" id="cityId">
               {cityOption}
             </select>
           </div>
