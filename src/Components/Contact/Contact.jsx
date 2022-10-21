@@ -16,7 +16,7 @@ const Contact = (props) => {
     
     const [displayname, setDisplayName] = useState("");
     const [displaymail, setDisplayMail] = useState("");
-    const [loading,
+    const [loading, setLoading] = useState(false)
 
     const dispatch = useDispatch()
 
