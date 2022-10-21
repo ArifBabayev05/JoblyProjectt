@@ -76,15 +76,12 @@ function Index() {
                 <ul className="dropdown-menu dropdown-menu-end dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
                   <li><a className="dropdown-item" href="/job">Vakansiyalar</a></li>
                   <li><a className="dropdown-item" href="/company">Şirkətlər</a></li>
-                  <li><a className="dropdown-item" href="/category">Kateqoriyalar</a></li>
-
-
-                  
-                  
-                  
+                  <li><a className="dropdown-item" href="/category">Kateqoriyalar</a></li>  
                 </ul>
               </div> 
             </div>
+
+
 
             <a href='/about' className='me-3'> Haqqımızda</a>
 
