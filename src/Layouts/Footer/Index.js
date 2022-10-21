@@ -8,7 +8,8 @@ import ChatBotElement from '../../Components/ChatBot/ChatBot';
 export const Footer = () => {
     return (
         <div>
-            <ChatBotElement/>
+            <ChatBotElement />
+          
             <footer>
                 <div className='footer__container container'>
                     <div className='footer__logo'>

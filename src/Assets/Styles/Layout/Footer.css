@@ -48,7 +48,6 @@ footer .footer__container .nav ul a {
 footer .footer__container .footer__lang .social__button {
   display: flex;
   justify-content: flex-end;
-  width: 260px;
 }
 footer .footer__container .footer__lang .social__button .social {
   display: flex;
