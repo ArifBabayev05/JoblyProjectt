@@ -22,7 +22,6 @@ const Card = (props) => {
                     <Link id='cards' to={`/category/${props.product.id}`} style={{ textDecoration: 'none' }}>
 
                         <div className="card-body bodyy pt-0 mt-4">
-
                             <div className="widget-49">
                                 <div className="widget-49-title-wrapper">
                                     <div className="widget-49-date-primaryy">
@@ -31,7 +30,6 @@ const Card = (props) => {
                                     <div className="widget-49-meeting-info">
                                         <span className="widget-49-pro-title fw-bolder fs-5">{props.product.name}</span>
                                         <span className="widget-49-pro-title" ><span className='widget-49-pro-title fw-bold'>{data}</span> Vakansiya</span>
-
                                     </div>
                                 </div>
                                 <ul className="widget-49-meeting-points">

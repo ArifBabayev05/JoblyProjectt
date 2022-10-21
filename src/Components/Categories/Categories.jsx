@@ -16,9 +16,6 @@ const Categories = () => {
         error: false
     })
 
-
-
-
     useEffect(() => {
         setProducts({
             loading: true,
@@ -62,7 +59,6 @@ const Categories = () => {
                     <JobCard product={product} />
                 </div>
             )
-
     }
 
     if (products.data) {

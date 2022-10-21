@@ -50,6 +50,8 @@ function Jobs() {
   }, [url])
 
   let content = null
+  
+
 
   if (products.loading) {
     content = <Loader />
@@ -71,7 +73,7 @@ function Jobs() {
 
 
   if (products.data) {
-
+    
     content =
       products.data.filter(product => {
         if (query === "") {
@@ -86,6 +88,7 @@ function Jobs() {
 
           return product;
         }
+        
         return "";
       }).map((product) =>
         <div key={product.id}>

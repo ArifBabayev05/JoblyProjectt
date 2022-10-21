@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <div>
       <div class="row">
-        <div class="col-md-12 col-sm-12 col-lg-5">
+        <div class="col-md-11 col-sm-12 col-lg-5">
           <div class="box orange">
             <div className='row'>
               <div className='col-lg-9'>
@@ -74,7 +74,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div class="col-md-12 col-sm-12  col-lg-5">
+        <div class="col-md-11 col-sm-12  col-lg-5">
         <div class="box orange">
             <div className='row'>
               <div className='col-lg-12'>

@@ -8,6 +8,7 @@ import { auth } from '../Auth/Firebase/config';
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/Slice/authSlice';
 import contactImage from '../../Assets/Images/Hero/contactt.svg'
 import { ShowOnLogin, ShowOnLogout } from '../../Layouts/HiddenLinks/HiddenLinks';
+import Loader from '../Jobs/Loader';
 
 
 
@@ -15,6 +16,7 @@ const Contact = (props) => {
     
     const [displayname, setDisplayName] = useState("");
     const [displaymail, setDisplayMail] = useState("");
+    
 
     const dispatch = useDispatch()
 
@@ -72,14 +74,14 @@ const Contact = (props) => {
 
     const sendEmail = (e) => {
         e.preventDefault();
+        setLoading(true);
 
         emailjs.sendForm('service_rp4rjam', 'template_s6wcke8', form.current, 'Lhg9k2LlEjFkq1WxD')
             .then((result) => {
-                
+                setLoading(false)
                 toast.success("Mesajınız Uğurla Göndərildi")
-                
-                
             }, (error) => {
+                setLoading(false)
                 toast.error("Xəta Baş Verdi! Daha sonra yenidən cəhd edin!")
                 
             });
@@ -120,6 +122,8 @@ const Contact = (props) => {
                                                     <textarea className="form-control" required name="message" rows="8" placeholder="Mesajınızı Daxil Edin."></textarea>
                                                 </div>
                                             </div>
+                                            {loading && <Loader />}
+
                                             <ShowOnLogin>
 
                                             <div className="col-lg-12">

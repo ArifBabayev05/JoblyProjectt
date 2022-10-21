@@ -23,6 +23,16 @@ function CompanyHome() {
       }).catch(err => console.log(err))
   }, [])
 
+  let emptyValue = null;
+  if (ldata === 0) {
+    emptyValue =
+      <div className='my-4'>
+        <h3>Təssüf ki, bu şirkətə aid <br /> heçbir vakansiya mövcud deyil.</h3>
+      </div>
+
+  }
+
+
 
 
   const url = `http://localhost:53410/api/Company/getbyid?id=${id}`
@@ -71,10 +81,10 @@ function CompanyHome() {
                   <div className="d-flex justify-content-between">
                     <div className="d-flex flex-row align-items-center">
                       <div className="icon">
-                        <img src={"http://localhost:53410/img/" + data.company.image.name }   style={{ 'objectFit': 'cover','width':'60px','border-radius':'50px' }} alt='value'/>
+                        <img src={"http://localhost:53410/img/" + data.company.image.name} style={{ 'objectFit': 'cover', 'width': '60px', 'border-radius': '50px' }} alt='value' />
                       </div>
                       <div className="ms-2 c-details">
-                        <h6 className=' ms-3 text-white' style={{'text-align':'left'}}>{data.name}</h6> <span className=' ms-3 d-flex'> Son Tarix: {data.deadline.slice(0,10)} </span>
+                        <h6 className=' ms-3 text-white' style={{ 'text-align': 'left' }}>{data.name}</h6> <span className=' ms-3 d-flex'> Son Tarix: {data.deadline.slice(0, 10)} </span>
                       </div>
                     </div>
                     <div className="text-dark badge"> <span >Daha Ətraflı</span> </div>
@@ -99,16 +109,18 @@ function CompanyHome() {
     content =
       <div className="padding justify-content-center d-flex">
         <div className="col-md-8">
-          <div className="card"> <img className="card-img-top" style={{ 'objectFit': 'cover' }} alt='value' src={bg}  />
+          <div className="card"> <img className="card-img-top" style={{ 'objectFit': 'cover' }} alt='value' src={bg} />
             <div className="card-body little-profile text-center">
               <div className="pro-img"><img src={"http://localhost:53410/img/" + product.data.image.name} alt="value" /></div>
               <h3 className="m-b-0 ">{product.data.name}</h3>
               <p>{product.data.mail}</p>
               <p><span className='fw-bold text-dark'>{ldata}</span> Vakansiya</p>
+              {emptyValue}
               <a href="/job" className="m-t-10 waves-effect waves-dark btn btn-primaryy btn-md btn-rounded" data-abc="true">Bütün Vakansiyalar</a>
               <div className="row text-center m-t-20">
                 <div className=" m-t-20">
                 </div>
+
                 <div>
                   {VacanciesList}
                 </div>
@@ -123,7 +135,8 @@ function CompanyHome() {
   return (
     <div className='container'>
 
-      <div>{content}</div>
+      <div>{content}
+      </div>
     </div>
 
 

@@ -125,10 +125,9 @@ const VacancyUpdate = (props) => {
   }, []);
   const cityOption = cityDatas.map((cityDatas, index) => {
     return (
-      <option key={cityDatas.id} onClick={(e) => handles(e)} value={cityDatas.id} id={cityDatas.id}>{cityDatas.name}</option>
+      <option key={cityDatas.id}  selected onClick={(e) => handles(e)} value={cityDatas.id} id={cityDatas.id}>{cityDatas.name}</option>
     )
   })
-
   //Company Option
   const [datas, setDatas] = useState([])
   useEffect(() => {
@@ -202,7 +201,7 @@ const VacancyUpdate = (props) => {
 
           <label for="inputEmail" className="col-sm-2 col-form-label">Şəhər</label>
           <div className="col-sm-10">
-            <select onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} required className="form-control" id="cityId">
+            <select defaultValue={product.data.city.name} onChange={(e) => handle(e)} onMouseEnter={(e) => handle(e)} value={data.value} selected={data.value} required className="form-control" id="cityId">
               {cityOption}
             </select>
           </div>
