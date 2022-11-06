@@ -85,6 +85,11 @@ const VacancyAdd = () => {
                 setDatas(res.data)
             }).catch(err => console.log(err))
     }, []);
+    const companyOption = datas.map((datas, index) => {
+        return (
+            <option key={datas.id} selected onClick={(e) => handles(e)} value={datas.id} id={datas.id}>{datas.name}</option>
+        )
+    })
     function handles(e) {
         const newData = { ...datas }
         console.log(e.taget.value)
@@ -99,13 +104,6 @@ const VacancyAdd = () => {
       }
     
 
-    const companyOption = datas.map((datas, index) => {
-        return (
-
-            <option key={datas.id} selected onClick={(e) => handles(e)} value={datas.id} id={datas.id}>{datas.name}</option>
-
-        )
-    })
 
     return (
         <div>

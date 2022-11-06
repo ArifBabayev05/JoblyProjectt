@@ -7,7 +7,6 @@ export const ShowOnAdmin = ({children}) => {
 
     if(isLoggedIn === 'admin@gmail.com'){
         return children;
-
     }
 }
 export const ShowOnUser = ({children}) => {

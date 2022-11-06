@@ -123,6 +123,7 @@ const Appeals = (props) => {
         }
 
         return (
+            
             <tr>
                 <td>{data.name}</td>
                 <td>{data.mail}</td>
@@ -130,7 +131,7 @@ const Appeals = (props) => {
                 <td>{data.vacacny}</td>
                 <td>
                     <div className='p-1 viewMore'>
-                        <a href='/#' className='viewMoree' data-bs-toggle="modal" data-bs-target={datas}>Daha Ətraflı</a>
+                        <a href='/#' className='viewMoree' data-bs-toggle="modal"  data-bs-target={datas}>Daha Ətraflı</a>
                     </div>
 
 

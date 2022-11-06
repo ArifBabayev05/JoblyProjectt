@@ -81,8 +81,6 @@ function Index() {
               </div> 
             </div>
 
-
-
             <a href='/about' className='me-3'> Haqqımızda</a>
 
             <a href='/contact'>Əlaqə</a>

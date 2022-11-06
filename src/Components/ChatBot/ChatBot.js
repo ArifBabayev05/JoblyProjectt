@@ -15,14 +15,15 @@ const BotRedirect = ({ url, message }) => {
 const CHATBOT_THEME = {
     background: "#FFFEFC",
     fontFamily: "Roboto",
-    headerBgColor: "#FFBFB5",
+    headerBgColor: "#785BF4",
     headerFontColor: "#fff",
     headerFontSize: "15px",
-    botBubbleColor: "#C8D7C2",
+    botBubbleColor: "#7474749d",
     botFontColor: "#fff",
-    userBubbleColor: "#FFBFB5",
+    userBubbleColor: "#785BF4",
     userFontColor: "#fff"
 };
+
 
 const ChatBotElement = () => {
     const steps = [
