@@ -19,6 +19,12 @@
   font-weight: 500;
   color: rgb(38, 38, 38);
 }
+.navbar .container form .notificationButton {
+  background-color: var(--pink);
+  padding: 8px 10px;
+  border-radius: 50%;
+  color: white;
+}
 .navbar .container .dropdown ul li a:active {
   color: white;
   background-color: var(--pink);

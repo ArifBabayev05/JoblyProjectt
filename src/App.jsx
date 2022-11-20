@@ -40,9 +40,6 @@ import CategoriesList from './Pages/UserPanel/CategoriesList';
 
 
 
-
-
-
 function App() {
 
   return (
@@ -77,9 +74,7 @@ function App() {
           <Route path='/vacancyAdmin' element={<VacancyAdmin />} />
           <Route path='/categoryAdmin' element={<CategoryAdmin />} />
           <Route path='/cityAdmin' element={<CityAdmin />} />
-
           <Route path='/appeals' element={<Appeals />} />
-
 
           {/* Admin Panel CRUD Pages */}
           <Route path='admin/categoryAdd' element={<CategoryAdd />} />
@@ -91,6 +86,7 @@ function App() {
           <Route path='/companyupdate/:id' element={<CompanyUpdate />} />
           <Route path='/categoryupdate/:id' element={<CategoryUpdate />} />
           <Route path='/cityupdate/:id' element={<CityUpdate />} />
+
 
 
 

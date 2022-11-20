@@ -82,7 +82,7 @@ const CityAdmin = (props) => {
                                     <table>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Adı</th>
+                                            <th className='col-lg-7'>Adı</th>
                                             <th className='text-info'>Yəniləmək</th>
                                             <th className='text-danger'>Silmək</th>
                                         </tr>

@@ -53,6 +53,7 @@ const VacancyAdmin = (props) => {
         else if (value.typeOfwork.toLowerCase().includes(query.toLowerCase())) {
             return value;
         }
+        return ""
     }).map((data, index) => {
         return (
             <tr>
@@ -102,7 +103,7 @@ const VacancyAdmin = (props) => {
                                             <th>Ünvanı</th>
 
                                             <th>İşçi növü</th>
-                                            <th>Son Tarix</th>
+                                            <th style={{'width':'107px'}}>Son Tarix</th>
                                             <th> Maaş</th>
 
                                             <th className='text-info'>Yəniləmək</th>

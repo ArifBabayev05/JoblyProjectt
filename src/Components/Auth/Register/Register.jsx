@@ -15,32 +15,33 @@ function Register() {
   const [cPassword, setCPassword] = useState("")
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false);
-  
+
   const registerUser = (e) => {
     e.preventDefault();
     if (password !== cPassword) {
       setPassword("");
       setCPassword("");
 
-      
+      setLoading(false);
+
       toast.error("Şifrədə yanlışlıq var. Yenidən daxil edin!")
     }
     setLoading(true);
-    
 
-    if(password===cPassword){
+
+    if (password === cPassword) {
       createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        toast.success("Qeydiyyat Uğurludur!")
-        setLoading(false);
-        
-        navigate('/')
+        .then((userCredential) => {
+          toast.success("Qeydiyyat Uğurludur!")
+          setLoading(false);
 
-      })
-      .catch((error) => {
-        toast.error(error.message)
-        setLoading(false);
-      });
+          navigate('/')
+
+        })
+        .catch((error) => {
+          toast.error(error.message)
+          setLoading(false);
+        });
     }
   }
 
@@ -51,7 +52,7 @@ function Register() {
     <div className="content">
       <div className="container">
         <div className="row">
-          
+
           <div className="col-md-6 contents">
             <div className="row justify-content-center">
               <div className="col-md-8">
@@ -64,19 +65,19 @@ function Register() {
 
                     <input type='text' className='m-2 form-control a' placeholder='Emaili daxil edin.'
                       required value={email} onChange={(e) => setEmail(e.target.value)} />
-                    
+
                   </div>
                   <div className="form-group ">
 
-                  <input type='password' className='m-2 a form-control' placeholder='Şifrəni daxil edin.' required value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type='password' className='m-2 a form-control' placeholder='Şifrəni daxil edin.' required value={password} onChange={(e) => setPassword(e.target.value)} />
 
                   </div>
                   <div className="form-group last mb-4">
-                  <input type='password' className='m-2 a form-control' placeholder='Şifrəni yenidən daxil edin.' required value={cPassword} onChange={(e) => setCPassword(e.target.value)} />
+                    <input type='password' className='m-2 a form-control' placeholder='Şifrəni yenidən daxil edin.' required value={cPassword} onChange={(e) => setCPassword(e.target.value)} />
 
                   </div>
 
-                  
+
 
 
                   <p className='mb-4'>
@@ -84,8 +85,8 @@ function Register() {
                     <Link style={{ 'textDecoration': 'none' }} to='/login'>&nbsp; &nbsp;Daxil Olun</Link>
                   </p>
                   {loading && <p>Yüklənir...</p>}
-                  <button type="submit" value="Daxil Olun"  className="login ">Daxil Olun</button>
-                  
+                  <button type="submit" value="Daxil Olun" className="login ">Daxil Olun</button>
+
 
                   <span className="d-block text-left my-4 text-muted"> </span>
 

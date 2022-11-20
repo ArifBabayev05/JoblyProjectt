@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/JoblyReactProject/static/css/main.5bb76e5d.css",
-    "main.js": "/JoblyReactProject/static/js/main.c6ed5559.js",
+    "main.css": "/JoblyReactProject/static/css/main.155dde59.css",
+    "main.js": "/JoblyReactProject/static/js/main.aa6c378b.js",
     "static/js/787.28cb0dcd.chunk.js": "/JoblyReactProject/static/js/787.28cb0dcd.chunk.js",
     "static/media/about.png": "/JoblyReactProject/static/media/about.edca9a8b8a11ed1b7d96.png",
     "static/media/img.png": "/JoblyReactProject/static/media/img.6adcd2803f035fdf8ab9.png",
@@ -22,12 +22,12 @@
     "static/media/lr.svg": "/JoblyReactProject/static/media/lr.aafe7ed4923d6a018f72ddc7c936415c.svg",
     "static/media/lq.svg": "/JoblyReactProject/static/media/lq.ac3bb1381b42989f59ddecd544e0f506.svg",
     "index.html": "/JoblyReactProject/index.html",
-    "main.5bb76e5d.css.map": "/JoblyReactProject/static/css/main.5bb76e5d.css.map",
-    "main.c6ed5559.js.map": "/JoblyReactProject/static/js/main.c6ed5559.js.map",
+    "main.155dde59.css.map": "/JoblyReactProject/static/css/main.155dde59.css.map",
+    "main.aa6c378b.js.map": "/JoblyReactProject/static/js/main.aa6c378b.js.map",
     "787.28cb0dcd.chunk.js.map": "/JoblyReactProject/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5bb76e5d.css",
-    "static/js/main.c6ed5559.js"
+    "static/css/main.155dde59.css",
+    "static/js/main.aa6c378b.js"
   ]
 }

@@ -32,6 +32,13 @@
                 font-weight: 500;
                 color: rgb(38, 38, 38);
             }
+
+            .notificationButton{
+                background-color: (var(--pink));
+                padding: 8px 10px;
+                border-radius: 50%;
+                color:white;
+            }
         }
         .dropdown{
          

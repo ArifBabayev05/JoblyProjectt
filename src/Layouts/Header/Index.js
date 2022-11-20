@@ -14,7 +14,7 @@ import { ShowOnAdmin } from '../HiddenLinks/Router';
 
 function Index() {
   const navigate = useNavigate();
-  
+
   const [displayname, setDisplayName] = useState("");
   const dispatch = useDispatch()
 
@@ -32,11 +32,11 @@ function Index() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        
+
         if (user.displayName == null) {
           const u1 = user.email.substring(0, user.email.indexOf("@"));
           const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
-          
+
           setDisplayName(uName);
 
         } else {
@@ -76,14 +76,18 @@ function Index() {
                 <ul className="dropdown-menu dropdown-menu-end dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
                   <li><a className="dropdown-item" href="/job">Vakansiyalar</a></li>
                   <li><a className="dropdown-item" href="/company">Şirkətlər</a></li>
-                  <li><a className="dropdown-item" href="/category">Kateqoriyalar</a></li>  
+                  <li><a className="dropdown-item" href="/category">Kateqoriyalar</a></li>
                 </ul>
-              </div> 
+              </div>
             </div>
 
             <a href='/about' className='me-3'> Haqqımızda</a>
 
             <a href='/contact'>Əlaqə</a>
+
+
+
+
 
 
             <div className='d-flex search mx-2'>
@@ -108,6 +112,7 @@ function Index() {
             </div>
 
 
+            
 
 
             <div>

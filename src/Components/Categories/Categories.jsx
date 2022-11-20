@@ -83,7 +83,7 @@ const Categories = () => {
     return (
         <div>
             <div className='d-flex container'>
-                <h1 className='text container ' style={{ color: 'var(--pink)', fontWeight: 'normal', fontSize: '35px', alignItems: 'center', display: 'flex' }}>Şirkətlər</h1>
+                <h1 className='text container ' style={{ color: 'var(--pink)', fontWeight: 'normal', fontSize: '35px', alignItems: 'center', display: 'flex' }}>Kateqoriyalar</h1>
                 <form className='searchJob mb-5' style={{ alignItems: 'center', display: 'flex', top: '20px' }}>
                     <input className='searchBar mt-2 p-2' onChange={event => setQuery(event.target.value)} type='text'></input>
                     <button className='search__submit' type='submit'>

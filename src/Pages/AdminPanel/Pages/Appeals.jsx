@@ -121,7 +121,7 @@ const Appeals = (props) => {
             toast.success("Müraciət silindi")
 
         }
-
+// console.log(data)
         return (
             
             <tr>
@@ -232,7 +232,7 @@ const Appeals = (props) => {
 
             </tr >
         )
-    })
+    }).reverse();
 
     return (
         <div>

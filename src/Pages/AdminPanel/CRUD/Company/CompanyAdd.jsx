@@ -6,11 +6,12 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
+import '../../../../Assets/Styles/Admin/UploadFile.css'
 
 const CompanyAdd = () => {
     const navigate = useNavigate();
-    
-    
+
+
     const [loading, setLoading] = useState(false)
     const url = 'http://localhost:53410/api/Company/add';
     const [data, setData] = useState({
@@ -39,10 +40,10 @@ const CompanyAdd = () => {
 
 
 
-        
+
         e.preventDefault();
         setLoading(false);
-        axios.post(url,formData, {
+        axios.post(url, formData, {
             name: data.name,
             mail: data.mail,
             telNumber: data.telNumber,
@@ -54,7 +55,7 @@ const CompanyAdd = () => {
             }
         }).then(res => {
             setLoading(false);
-            
+
             toast.success("Uğurla Əlavə Olundu");
             navigate("/companyadmin")
         }).catch(() => {
@@ -75,6 +76,10 @@ const CompanyAdd = () => {
         newData[e.target.id] = e.target.files[0];
         setData(newData);
     }
+   
+
+
+console.log(data)
 
 
     return (
@@ -107,18 +112,24 @@ const CompanyAdd = () => {
                                         </div>
                                     </div>
 
-    
-                                    
+
+
                                     <div className="row mb-3">
-                                        <label for="inputEmail" className="col-sm-2 col-form-label">İmage upload</label>
-                                        <div className="col-sm-7">
-                                            <input onChange={(e) => handles(e)} value={data.value}  accept='image/*' type="file" className="form-control" id="ImageFile" placeholder="Path" />
-                                        </div>
+                                        <label for="inputEmail" className="col-sm-2 col-form-label"></label>
+
+                                        <label for="images" class="col-sm-7 drop-container">
+                                            <span class="drop-title">Faylı bura atın</span>
+                                            və ya
+                                            <input onChange={(e) => handles(e)} value={data.value} accept='image/*' type="file" className="form-control" id="ImageFile" placeholder="Path" />
+                                        </label>
+                                        {/* Images Area */}
+                                        {/* <img src={data.ImageFile.name} alt='valie'/> */}
+
                                     </div>
 
                                     <div className="row">
                                         <div className="col-sm-7 offset-sm-2">
-                                            <button type="submit"  style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
+                                            <button type="submit" style={{ 'background-color': '#785BF4', "outline": 'none', 'border': 'none' }} className="btn btn-primary">Əlavə Et</button>
                                         </div>
                                     </div>
                                 </form>
