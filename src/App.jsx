@@ -44,8 +44,6 @@ function App() {
     <div className="App">
 
       {/* <ToastContainer /> */}
-      {/* <BrowserRouter> */}
-
       <HashRouter>
         <Header />
         <Routes>
@@ -97,7 +95,6 @@ function App() {
         </Routes>
         <Footer />
       </HashRouter>
-      {/* </BrowserRouter> */}
 
     </div>
   );
