@@ -15,7 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './Layouts/Header/Index'
 import Error from './Pages/UserPanel/ErrorPage'
 import { Footer } from './Layouts/Footer/Index'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import VacancyAdmin from './Pages/AdminPanel/Pages/VacancyAdmin';
 import CompanyAdmin from './Pages/AdminPanel/Pages/CompanyAdmin';
 import CategoryAdmin from './Pages/AdminPanel/Pages/CategoryAdmin';
@@ -35,9 +35,7 @@ import Companies from './Pages/UserPanel/Companies';
 import CompaniesList from './Pages/UserPanel/CompaniesList';
 import Categories from './Pages/UserPanel/Categories';
 import CategoriesList from './Pages/UserPanel/CategoriesList';
-
-
-
+import HashRouter from 'react-router-dom'
 
 
 function App() {
@@ -46,7 +44,9 @@ function App() {
     <div className="App">
 
       {/* <ToastContainer /> */}
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
+
+      <HashRouter>
         <Header />
         <Routes>
           {/* User Panel Pages */}
@@ -96,7 +96,8 @@ function App() {
 
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
+      {/* </BrowserRouter> */}
 
     </div>
   );
