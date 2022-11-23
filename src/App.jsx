@@ -35,7 +35,6 @@ import Companies from './Pages/UserPanel/Companies';
 import CompaniesList from './Pages/UserPanel/CompaniesList';
 import Categories from './Pages/UserPanel/Categories';
 import CategoriesList from './Pages/UserPanel/CategoriesList';
-import HashRouter from 'react-router-dom'
 
 
 function App() {
@@ -84,14 +83,6 @@ function App() {
           <Route path='/companyupdate/:id' element={<CompanyUpdate />} />
           <Route path='/categoryupdate/:id' element={<CategoryUpdate />} />
           <Route path='/cityupdate/:id' element={<CityUpdate />} />
-
-
-
-
-
-
-
-
         </Routes>
         <Footer />
       </HashRouter>

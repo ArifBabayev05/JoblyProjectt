@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://arifbabayev05.github.io/JoblyProjectt/",
+  "homepage": "https://github.com/ArifBabayev05/DeployReact.git",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
