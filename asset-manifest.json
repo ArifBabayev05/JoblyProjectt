@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/JoblyProjectt/static/css/main.155dde59.css",
-    "main.js": "/JoblyProjectt/static/js/main.d5ca873e.js",
+    "main.js": "/JoblyProjectt/static/js/main.9da23ac4.js",
     "static/js/787.28cb0dcd.chunk.js": "/JoblyProjectt/static/js/787.28cb0dcd.chunk.js",
     "static/media/about.png": "/JoblyProjectt/static/media/about.edca9a8b8a11ed1b7d96.png",
     "static/media/img.png": "/JoblyProjectt/static/media/img.6adcd2803f035fdf8ab9.png",
@@ -23,11 +23,11 @@
     "static/media/lq.svg": "/JoblyProjectt/static/media/lq.ac3bb1381b42989f59ddecd544e0f506.svg",
     "index.html": "/JoblyProjectt/index.html",
     "main.155dde59.css.map": "/JoblyProjectt/static/css/main.155dde59.css.map",
-    "main.d5ca873e.js.map": "/JoblyProjectt/static/js/main.d5ca873e.js.map",
+    "main.9da23ac4.js.map": "/JoblyProjectt/static/js/main.9da23ac4.js.map",
     "787.28cb0dcd.chunk.js.map": "/JoblyProjectt/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.155dde59.css",
-    "static/js/main.d5ca873e.js"
+    "static/js/main.9da23ac4.js"
   ]
 }
